@@ -1,0 +1,1 @@
+@extends('fontend.layouts.master')
