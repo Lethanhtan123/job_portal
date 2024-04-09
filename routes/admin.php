@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Admin\Auth\EmailVerificationNotificationController;
@@ -58,3 +59,4 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+

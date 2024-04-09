@@ -33,6 +33,7 @@ class RedirectIfAuthenticated
                 }elseif($request->user()->role==='candidate')
                 {
                     return redirect(RouteServiceProvider::CANDIDATE_DASHBOARD);
+
                 }
             }
         }
