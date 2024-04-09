@@ -24,34 +24,35 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
-/* candidate route */
+//**Candidate Routes */
 Route::group(
     [
-        'middleware' => ['auth', 'verified', 'user.role:candidate'],
-        'prefix' => 'candidate',
-        'as' => 'candidate.'
+        'middleware'=>['auth', 'verified','user.role:candidate'],
+        'prefix'=>'candidate',
+        'as'=>'candidate.',
     ],
     function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
-    }
-);
 
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
+});
 
-/* company route */
+//**Company Routes */
 Route::group(
     [
-        'middleware' => ['auth', 'verified', 'user.role:company'],
-        'prefix' => 'company',
-        'as' => 'company.'
+        'middleware'=>['auth', 'verified','user.role:company'],
+        'prefix'=>'company',
+        'as'=>'company.',
     ],
     function () {
-        Route::get('/dashboard', function () {
-            return view('frontend.company-dashboard.dashboard');
-        })->name('dashboard');
-    }
-);
+
+    Route::get('/dashboard', function () {
+        return view('fontend.company-dashboard.dashboard');
+    })->name('dashboard');
+
+
+});
