@@ -1,3 +1,4 @@
+
 @extends('admin.layouts.master')
 
 @section('contents')
@@ -70,3 +71,4 @@
     
   </section>
 @endsection
+
