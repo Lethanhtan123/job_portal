@@ -51,7 +51,7 @@ Route::group(
     function () {
 
     Route::get('/dashboard', function () {
-        return view('fontend.company-dashboard.dashboard');
+        return view('frontend.company-dashboard.dashboard');
     })->name('dashboard');
 
 
