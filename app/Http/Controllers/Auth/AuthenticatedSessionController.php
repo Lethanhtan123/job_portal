@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $request->authenticate('');
 
         $request->session()->regenerate();
 
@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         {
             return redirect()->intended(RouteServiceProvider::COMPANY_DASHBOARD);
         }elseif($request->user()->role ==='candidate'){
-            return redirect()->intended(RouteServiceProvider::ADMIN_DASHBOARD);
+            return redirect()->intended(RouteServiceProvider::CANDIDATE_DASHBOARD);
         }
     }
 
