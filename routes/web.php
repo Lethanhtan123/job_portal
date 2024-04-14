@@ -51,13 +51,9 @@ Route::group(
     ],
     function () {
 
-
     /** dashboard */
     Route::get('/dashboard', [CompanyDashboardController::class,'index'])->name('dashboard');
 
     /** Company profile dashboard */
     Route::get('/profile', [CompanyProfileController::class,'index'])->name('profile');
-
-
-
 });
