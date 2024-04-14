@@ -24,9 +24,9 @@
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center"><img src="{{ asset('fontend/assets/imgs/template/loading.gif') }}"
-                        alt="joblist"></div>
-            </div>
-        </div>
+    alt="joblist"></div>
+    </div>
+    </div>
     </div> --}}
 
     @include('fontend.layouts.header')
@@ -50,8 +50,7 @@
                         <div class="col-lg-6">
                             <div class="box-form-newsletter">
                                 <form class="form-newsletter">
-                                    <input class="input-newsletter" type="text" value=""
-                                        placeholder="Enter your email here">
+                                    <input class="input-newsletter" type="text" value="" placeholder="Enter your email here">
                                     <button class="btn btn-default font-heading">Subscribe</button>
                                 </form>
                             </div>
@@ -80,6 +79,8 @@
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
     <script src="assets/js/plugins/counterup.js"></script>
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
