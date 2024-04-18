@@ -9642,3 +9642,16 @@ footer .color-text-paragraph {
 .form-check-label:hover {
   color: #198754;
 }
+
+/** custom css **/
+
+/** css profile edit **/
+.nav-cus .nav-link {
+  color: var(--colorBlack) ;
+  border-radius: 0;
+}
+
+.nav-pills.nav-cus .nav-link.active,
+.nav-pills.nav-cus .show>.nav-link {
+  background-color: var(--colorPrimary);
+}

@@ -1,27 +1,27 @@
 @extends('fontend/layouts.master')
 @section('contents')
-    <section class="section-box mt-75">
-        <div class="breacrumb-cover">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <h2 class="mb-20">Blog</h2>
-                        <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
-                            <li>Blog</li>
-                        </ul>
-                    </div>
+<section class="section-box mt-75">
+    <div class="breacrumb-cover">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <h2 class="mb-20">Blog</h2>
+                    <ul class="breadcrumbs">
+                        <li><a class="home-icon" href="index.html">Home</a></li>
+                        <li>Blog</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="section-box mt-120">
-        <div class="container">
-            <div class="row">
-               @include('fontend.company-dashboard.sidebar')
-                <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-50">
-                    <div class="content-single">
+<section class="section-box mt-120">
+    <div class="container">
+        <div class="row">
+            @include('fontend.company-dashboard.sidebar')
+            <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-50">
+                <!-- <div class="content-single">
                         <h3 class="mt-0 mb-15 color-brand-1">My Account</h3><a class="font-md color-text-paragraph-2"
                             href="#">Update your profile</a>
                         <div class="mt-35 mb-40 box-info-profie">
@@ -115,9 +115,53 @@
                                 <button class="btn btn-apply-big font-md font-bold">Save All Changes</button>
                             </div>
                         </div>
+                    </div> -->
+                <ul class="nav nav-pills nav-cus mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Company Info</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Founding Info</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Account Settings</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <form action="">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-sm text-capitalize color-text-mutted mb-10">Company name * </label>
+                                        <input class="form-control" type="text" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-sm text-capitalize color-text-mutted mb-10">Logo * </label>
+                                        <input class="form-control" type="file" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="font-sm text-capitalize color-text-mutted mb-10">Company bio * </label>
+                                        <textarea name="" class=" summernote"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-button mt-15">
+                                <button class="btn btn-apply-big font-md font-bold">Save All Changes</button>
+                            </div>
+
+                        </form>
                     </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">profile</div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">contact</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection

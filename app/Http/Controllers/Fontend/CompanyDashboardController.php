@@ -8,7 +8,7 @@ use Illuminate\View\view;
 
 class CompanyDashboardController extends Controller
 {
-    function index() : view{
+    function index() : View{
         return view('fontend.company-dashboard.dashboard');
     }
 }
