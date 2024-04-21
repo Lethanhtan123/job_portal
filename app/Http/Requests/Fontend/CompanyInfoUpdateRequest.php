@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Fontend;
 
+use App\Models\Company;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CompanyInfoUpdateRequest extends FormRequest
@@ -16,11 +17,19 @@ class CompanyInfoUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'logo' => ['required', 'image', 'max:1500'],
-            'name' => ['required', 'string', 'max:100'],
+        $rules = [
+            'logo' => ['image', 'max:1500'],
+            'name' => ['string', 'max:100'],
             'bio' => ['required'],
 
         ];
+
+        $company =  Company::where('user_id', auth()->user()->id)->first();
+
+        if ((empty($company) || !$company->logo)) {
+            $rules['logo'][] = 'required';
+        }
+
+        return $rules;
     }
 }
