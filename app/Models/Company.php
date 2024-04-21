@@ -15,7 +15,14 @@ class Company extends Model
         'user_id',
         'logo',
         'name',
-        'bio'
+        'bio',
+        'website',
+        'establishment_date',
+        'email',
+        'phone',
+        'country',
+        'address',
+        'map_link'
     ];
 
     public function sluggable(): array
