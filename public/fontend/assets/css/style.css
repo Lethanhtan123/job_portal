@@ -9655,3 +9655,7 @@ footer .color-text-paragraph {
 .nav-pills.nav-cus .show>.nav-link {
   background-color: var(--colorPrimary);
 }
+
+.notify {
+  z-index: 9999 !important;
+}
