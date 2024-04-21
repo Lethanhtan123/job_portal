@@ -15,17 +15,24 @@
             <li class="menu-header">Starter</li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Layout</span></a>
+                    <span>Actributes</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+
+                </ul>
+
+                {{-- <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Actributes</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
                     <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
                     <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                </ul>
+                </ul> --}}
             </li>
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+            {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li> --}}
         </ul>
 
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+        <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
             <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
                 <i class="fas fa-rocket"></i> Documentation
             </a>
@@ -34,8 +41,8 @@
 </div>
 
 <nav class="navbar navbar-expand-lg main-navbar">
-    <form class="form-inline mr-auto">
-        <ul class="navbar-nav mr-3">
+    <form class="mr-auto form-inline">
+        <ul class="mr-3 navbar-nav">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
             </li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
@@ -65,7 +72,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="dropdown-footer text-center">
+                <div class="text-center dropdown-footer">
                     <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
@@ -80,7 +87,7 @@
                 </div>
                 <div class="dropdown-list-content dropdown-list-icons">
                     <a href="#" class="dropdown-item dropdown-item-unread">
-                        <div class="dropdown-item-icon bg-primary text-white">
+                        <div class="text-white dropdown-item-icon bg-primary">
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="dropdown-item-desc">
@@ -90,14 +97,14 @@
                     </a>
 
                 </div>
-                <div class="dropdown-footer text-center">
+                <div class="text-center dropdown-footer">
                     <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                <img alt="image" src="assets/img/avatar/avatar-1.png" class="mr-1 rounded-circle">
                 <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -112,7 +119,7 @@
                 <div class="dropdown-divider"></div>
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
-                    
+
                     <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
                     this.closest('form').submit();"class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
