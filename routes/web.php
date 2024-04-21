@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,35 +27,38 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 //**Candidate Routes */
 Route::group(
     [
-        'middleware'=>['auth', 'verified','user.role:candidate'],
-        'prefix'=>'candidate',
-        'as'=>'candidate.',
+        'middleware' => ['auth', 'verified', 'user.role:candidate'],
+        'prefix' => 'candidate',
+        'as' => 'candidate.',
     ],
     function () {
 
-    Route::get('/dashboard',[CandidateDashboardController::class,'index'])->name('dashboard');
-
-});
+        Route::get('/dashboard', [CandidateDashboardController::class, 'index'])->name('dashboard');
+    }
+);
 
 //**Company Routes */
 Route::group(
     [
-        'middleware'=>['auth', 'verified','user.role:company'],
-        'prefix'=>'company',
-        'as'=>'company.',
+        'middleware' => ['auth', 'verified', 'user.role:company'],
+        'prefix' => 'company',
+        'as' => 'company.',
     ],
     function () {
 
-    /** dashboard */
-    Route::get('/dashboard', [CompanyDashboardController::class,'index'])->name('dashboard');
+        /** dashboard */
+        Route::get('/dashboard', [CompanyDashboardController::class, 'index'])->name('dashboard');
 
-    /** Company profile dashboard */
-    Route::get('/profile', [CompanyProfileController::class,'index'])->name('profile');
-
-
-});
+        /** Company profile dashboard */
+        Route::get('/profile', [CompanyProfileController::class, 'index'])->name('profile');
+        Route::post('/profile/company-info', [CompanyProfileController::class, 'updateComInfo'])->name('profile.company-info');
+        Route::post('/profile/founding-info', [CompanyProfileController::class, 'updateFoundingInfo'])->name('profile.founding-info');
+        Route::post('/profile/account-info', [CompanyProfileController::class, 'updateAccountInfo'])->name('profile.account-info');
+        Route::post('/profile/password-update', [CompanyProfileController::class, 'updatePassword'])->name('profile.password-update');
+    }
+);

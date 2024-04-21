@@ -106,6 +106,8 @@ class ViewErrorBag implements Countable
         return $this->getBag($key);
     }
 
+    
+
     /**
      * Dynamically set a view error bag.
      *

@@ -1,5 +1,6 @@
 @extends('fontend.layouts.master')
 @section('contents')
+
     <section class="section-box mt-75">
         <div class="breacrumb-cover">
             <div class="container">

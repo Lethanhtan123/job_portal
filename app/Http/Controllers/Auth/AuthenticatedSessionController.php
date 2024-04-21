@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+// use Alert;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -25,15 +26,15 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $request->authenticate('');
 
         $request->session()->regenerate();
 
-        if($request->user()->role ==='company')
-        {
+        if ($request->user()->role === 'company') {
+            // Alert()::success('Login Successfull', 'Welcome to Job Portal');
             return redirect()->intended(RouteServiceProvider::COMPANY_DASHBOARD);
-        }elseif($request->user()->role ==='candidate'){
-            return redirect()->intended(RouteServiceProvider::ADMIN_DASHBOARD);
+        } elseif ($request->user()->role === 'candidate') {
+            return redirect()->intended(RouteServiceProvider::CANDIDATE_DASHBOARD);
         }
     }
 

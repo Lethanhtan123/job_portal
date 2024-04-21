@@ -12,7 +12,11 @@
     <meta name="description" content="Index page">
     <meta name="keywords" content="index, page">
     <meta name="author" content="">
+    @notifyCss
+
     <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
     <link href="{{ asset('fontend/assets/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontend/assets/css/style.css') }}" rel="stylesheet">
     <title>joblist - Job Portal HTML Template </title>
@@ -20,13 +24,15 @@
 
 <body>
 
+
+
     {{-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center"><img src="{{ asset('fontend/assets/imgs/template/loading.gif') }}"
-                        alt="joblist"></div>
-            </div>
-        </div>
+    alt="joblist"></div>
+    </div>
+    </div>
     </div> --}}
 
     @include('fontend.layouts.header')
@@ -80,6 +86,40 @@
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
     <script src="assets/js/plugins/counterup.js"></script>
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Laravel notify start -->
+    <x-notify::notify />
+    <!-- Laravel notify end -->
+    @notifyJs
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $('.datepicker').datepicker({
+             format: 'yyyy-mm-dd',
+              
+        });
+        /*
+                function confirmation(ev) {
+                    ev.preventDefault();
+                    var urlToDirect = ev.currentTarget.getAttribute('href');
+                    console.log(urlToRedirect);
+                    swal({
+                        title: "Are you sure to change this",
+                        text: "onlick",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    }).then((willCancel) => {
+                        {
+                            if (willCancel) {
+                                window.location.href = urlToDirect;
+                            }
+                        }
+                    })
+                }*/
+    </script>
 </body>
 
 </html>
