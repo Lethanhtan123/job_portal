@@ -84,7 +84,8 @@
     <script src="{{ asset('fontend/assets/js/plugins/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/Font-Awesome.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
-    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
@@ -98,7 +99,7 @@
     <script>
         $('.datepicker').datepicker({
              format: 'yyyy-mm-dd',
-              
+
         });
         /*
                 function confirmation(ev) {
