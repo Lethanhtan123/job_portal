@@ -18,6 +18,7 @@
                     <span>Actributes</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
 
                 </ul>
 
