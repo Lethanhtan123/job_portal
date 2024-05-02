@@ -14,7 +14,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\OrganizationTypeController;
-use App\Models\IndustryType;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> ['guest:admin'],'prefix'=> 'admin','as'=>'admin.'], function () {
@@ -50,6 +49,10 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
 
      /** Organization Type Route */
      Route::resource('organization-types', OrganizationTypeController::class);
+
+
+     /** Language Route */
+    Route::resource('languages', LanguageController::class);
 
 
 });
