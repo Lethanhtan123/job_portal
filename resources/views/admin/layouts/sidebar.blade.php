@@ -17,8 +17,9 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Actributes</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
+                    <li class="" ><a class="nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.languages.index') }}">Languages</a></li>
 
                 </ul>
 

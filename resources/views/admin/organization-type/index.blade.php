@@ -33,7 +33,7 @@
                             </tr>
 
                             <tbody>
-                                {{-- @foreach ($industryType as $type)
+                                {{-- @forelse ($industryType as $type)
                                 <tr>
                                     <th>{{ $type->name }}</th>
                                     <th>{{ $type->slug }}</th>
@@ -42,7 +42,11 @@
                                         <a href="{{ route('admin.industry-types.destroy',$type->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
                                     </th>
                                 </tr>
-                                @endforeach --}}
+                                                                        @empty 
+                                        <tr>
+                                        <td colspan="3" class="text-center" > No result found!</td>
+                                        </tr>
+                                @endforelse --}}
                             </tbody>
 
 
