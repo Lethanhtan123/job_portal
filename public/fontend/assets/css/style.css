@@ -457,7 +457,7 @@ a {
   border-radius: 4px;
   padding: 10px 20px 10px 20px;
   display: inline-block;
-  width: 100% !important;
+  width: 100% !important;background-color: #fff;
 }
 
 .select-style .select2 .select2-selection__arrow {

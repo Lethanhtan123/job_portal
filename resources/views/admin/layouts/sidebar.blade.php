@@ -8,36 +8,47 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="dropdown active">
-                <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            <li class="dropdown {{ setSidebarActive(['admin.dashboard']) }}">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
 
             </li>
             <li class="menu-header">Starter</li>
-            <li class="dropdown">
+            <li class="dropdown
+
+            {{ setSidebarActive(
+                ['admin.industry-types.*',
+                'admin.organization-types.*'] ) }}
+            ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Actributes</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
-                    <li><a class="nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
-
+                    <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
                 </ul>
-
-                {{-- <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Actributes</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                    <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                    <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                </ul> --}}
             </li>
-            {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li> --}}
+
+            <li class="dropdown
+
+            {{ setSidebarActive(
+                ['admin.country.*',
+                'admin.state.*',
+                'admin.city.*'] ) }}
+            ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Location</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="{{ setSidebarActive(['admin.country.*']) }} nav-link" href="{{ route('admin.country.index') }}">Countries</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link" href="{{ route('admin.state.index') }}">State</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link" href="{{ route('admin.city.index') }}">City</a></li>
+                </ul>
+            </li>
         </ul>
 
-        <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
+        {{-- <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
             <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
                 <i class="fas fa-rocket"></i> Documentation
             </a>
-        </div>
+        </div> --}}
     </aside>
 </div>
 

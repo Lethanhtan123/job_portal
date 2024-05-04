@@ -1,30 +1,28 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-use App\Traits\Searchable;
-use App\Models\OrganizationType;
 use App\Services\Notify;
+use App\Http\Controllers\Controller;
+use App\Models\Country;
+use Illuminate\Http\Request;
+use App\Traits\Searchable;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
+use Illuminate\View\View;
 
-class OrganizationTypeController extends Controller
+
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     use Searchable;
 
-
-    public function index() :View
+    public function index()
     {
-        $query= OrganizationType::query();
+        $query= Country::query();
         $this->search($query,['name']);
-        $OrganizationType = $query->Orderby('id','DESC')->paginate(10);
-        return view('admin.organization-type.index',compact('OrganizationType'));
+        $Country = $query->Orderby('id','DESC')->paginate(10);
+        return view('admin.location.country.index',compact('Country'));
     }
 
     /**
@@ -32,7 +30,9 @@ class OrganizationTypeController extends Controller
      */
     public function create()
     {
-        return view('admin.organization-type.create');    }
+        return view('admin.location.country.create');
+
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -40,15 +40,14 @@ class OrganizationTypeController extends Controller
     public function store(Request $request) :RedirectResponse
     {
         $request->validate([
-            'name'=>['required','max:255','unique:organization_types,name']
+            'name'=>['required','max:255','unique:countries,name']
         ]);
-        $type = new OrganizationType();
+        $type = new Country();
         $type->name = $request->name;
         $type->save();
 
         Notify::createdNotifycation();
-
-        return to_route('admin.organization-types.index');
+        return to_route('admin.country.index');
     }
 
     /**
@@ -64,8 +63,8 @@ class OrganizationTypeController extends Controller
      */
     public function edit(string $id)
     {
-        $OrganizationType = OrganizationType::findOrFail($id);
-        return view('admin.organization-type.edit',compact('OrganizationType'));
+        $Country = Country::findOrFail($id);
+        return view('admin.location.country.edit',compact('Country'));
     }
 
     /**
@@ -74,24 +73,24 @@ class OrganizationTypeController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name'=>['required','max:255','unique:organization_types,name,'.$id]
+            'name'=>['required','max:255','unique:countries,name,'.$id]
         ]);
-        $type = OrganizationType::findOrFail($id);
+        $type = Country::findOrFail($id);
         $type->name = $request->name;
         $type->save();
 
         Notify::updatedNotifycation();
 
-        return to_route('admin.organization-types.index');
+        return to_route('admin.country.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id) :Response
+    public function destroy(string $id)
     {
         try{
-            OrganizationType::findOrFail($id)->delete();
+            Country::findOrFail($id)->delete();
             Notify::deletedNotifycation();
 
             return response(['message'=>'success'],200);

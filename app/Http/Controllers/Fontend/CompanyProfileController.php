@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Fontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Fontend\CompanyFoundingInfoUpdateRequest;
 use App\Http\Requests\Fontend\CompanyInfoUpdateRequest;
+use App\Models\City;
 use App\Models\Company;
+use App\Models\Country;
+use App\Models\IndustryType;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Traits\FileUploadTrait;
@@ -22,7 +26,11 @@ class CompanyProfileController extends Controller
     function index(): View
     {
         $companyInfo = Company::where('user_id', auth()->user()->id)->first();
-        return view('fontend.company-dashboard.profile.index', compact('companyInfo'));
+        $IndustryType= IndustryType::all();
+        $Country= Country::all();
+        $State= State::all();
+        $City= City::all();
+        return view('fontend.company-dashboard.profile.index', compact('companyInfo','Country','IndustryType','City','State'));
     }
 
     function updateComInfo(CompanyInfoUpdateRequest $request): RedirectResponse
@@ -76,7 +84,7 @@ class CompanyProfileController extends Controller
         ]);
 
         Auth::user()->update($validatedData);
-        
+
         notify()->success('Update Successfully', 'Success!');
 
         return redirect()->back();
@@ -88,7 +96,7 @@ class CompanyProfileController extends Controller
 
          $request->validate([
             'password' =>  ['required', 'confirmed', Rules\Password::defaults()],
-            
+
         ]);
 
         Auth::user()->update(['password' => bcrypt($request->password)]);

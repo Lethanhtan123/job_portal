@@ -2,7 +2,7 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <a href="{{ route('admin.industry-types.index') }}"><h1>All Industry Type</h1></a>
+        <a href="{{ route('admin.state.index') }}"><h1>All State</h1></a>
 
     </div>
     <div class="section-body">
@@ -11,7 +11,7 @@
                 <div class="card-header">
                     <h4>Advanced Table</h4>
                     <div class="card-header-form">
-                        <form action="{{ route('admin.industry-types.index') }}" method="GET">
+                        <form action="{{ route('admin.state.index') }}" method="GET">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search" name="search">
                                 <div class="input-group-btn">
@@ -21,25 +21,25 @@
                         </form>
                     </div>
 
-                    <a href="{{ route('admin.industry-types.create') }}" class="ml-2 btn btn-primary">Create new</a>
+                    <a href="{{ route('admin.state.create') }}" class="ml-2 btn btn-primary">Create new</a>
                 </div>
                 <div class="p-0 card-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <tr>
                                 <th>Name</th>
-                                <th>Slug</th>
+                                <th>Country</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
 
                             <tbody>
-                                @forelse ($industryType as $type)
+                                @forelse ($State as $type)
                                 <tr>
                                     <th>{{ $type->name }}</th>
-                                    <th>{{ $type->slug }}</th>
+                                    <th>{{ $type->country?->name }}</th>
                                     <th>
-                                        <a href="{{ route('admin.industry-types.edit',$type->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="{{ route('admin.industry-types.destroy',$type->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
+                                        <a href="{{ route('admin.state.edit',$type->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                        <a href="{{ route('admin.state.destroy',$type->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
                                     </th>
                                 </tr>
                                 @empty
@@ -53,25 +53,8 @@
                         </table>
                     </div>
                     <div class="text-right card-footer">
-                        {{-- <nav class="d-inline-block">
-                            <ul class="mb-0 pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><i
-                                            class="fas fa-chevron-left"></i></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1 <span
-                                            class="sr-only">(current)</span></a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav> --}}
-                        @if ($industryType->hasPages())
-                            {{ $industryType->withQueryString()->links() }}
+                        @if ($State->hasPages())
+                            {{ $Country->withQueryString()->links() }}
                         @endif
                     </div>
                 </div>

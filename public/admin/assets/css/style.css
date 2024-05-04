@@ -68,6 +68,9 @@ a {
   -webkit-transition: all .5s;
   -o-transition: all .5s; }
 
+  .main-sidebar .sidebar-menu li a.active{
+    color: #6777ef !important;
+}
 
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fas,
