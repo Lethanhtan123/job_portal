@@ -10,10 +10,17 @@ use App\Http\Controllers\Admin\Auth\PasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
+use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\OrganizationTypeController;
+
+use App\Http\Controllers\Admin\StateController;
+use App\Models\IndustryType;
+
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> ['guest:admin'],'prefix'=> 'admin','as'=>'admin.'], function () {
@@ -47,9 +54,18 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     /** Industry Type Route */
     Route::resource('industry-types', IndustryTypeController::class);
 
-     /** Organization Type Route */
-     Route::resource('organization-types', OrganizationTypeController::class);
+    /** Organization Type Route */
+    Route::resource('organization-types', OrganizationTypeController::class);
 
+    /** Country Route */
+    Route::resource('country', CountryController::class);
+
+    /** State Route */
+    Route::resource('state', StateController::class);
+
+    /** City Route */
+    Route::resource('city', CityController::class);
+    Route::get('get-states/{country_id}', [LocationController::class, 'getStatesOfCountry'])->name('get-states');
 
      /** Language Route */
     Route::resource('languages', LanguageController::class);

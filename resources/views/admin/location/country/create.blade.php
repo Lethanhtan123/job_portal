@@ -2,16 +2,16 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <h1>All Organization Type</h1>
+        <h1>All Country</h1>
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Create new organization type</h4>
+                    <h4>Create new Country </h4>
                 </div>
                 <div class=" card-body">
-                    <form action="{{ route('admin.organization-types.store') }}" method="POST">
+                    <form action="{{ route('admin.country.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="">Name</label>
