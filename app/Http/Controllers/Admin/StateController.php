@@ -107,7 +107,7 @@ class StateController extends Controller
             return response(['message'=>'success'],200);
         }catch(\Exception $e){
             logger($e);
-            return response(['message'=>'som things went wrong , try again'],500);
+            return response(['message'=> 'Somethings went wrong, please try again!'],500);
         }
     }
 }
