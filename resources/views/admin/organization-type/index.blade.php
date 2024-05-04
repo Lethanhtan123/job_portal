@@ -33,7 +33,9 @@
                             </tr>
 
                             <tbody>
+
                                 @forelse ($OrganizationType as $type)
+
                                 <tr>
                                     <th>{{ $type->name }}</th>
                                     <th>{{ $type->slug }}</th>
@@ -42,11 +44,13 @@
                                         <a href="{{ route('admin.organization-types.destroy',$type->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
                                     </th>
                                 </tr>
+
                                 @empty
                                 <tr>
                                     <td colspan="3" class="text-center">Không tìm thấy kết quả</td>
                                 </tr>
                                 @endforelse
+
                             </tbody>
 
                         </table>

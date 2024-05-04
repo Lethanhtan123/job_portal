@@ -22,8 +22,10 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Actributes</span></a>
                 <ul class="dropdown-menu">
+
                     <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
                     <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
+
                 </ul>
             </li>
 
