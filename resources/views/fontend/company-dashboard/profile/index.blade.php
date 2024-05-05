@@ -132,51 +132,67 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+
+                                
+                                <div class="col-md-6">
                                     <div class="form-group select-style">
                                         <label class="mb-10 font-sm text-capitalize color-text-mutted">Country
                                             *</label>
                                         <select name="country" id=""
-                                            class=" form-control form-icons select-active  {{ $errors->has('country') ? 'is-invalid' : '' }}"
-                                            value="{{ $companyInfo?->country }}">
+                                            class=" form-control form-icons select-active  {{ $errors->has('country') ? 'is-invalid' : '' }}">
                                             <option value="">Select</option>
                                             @foreach ($Country as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            <option @selected($item->id === $companyInfo?->country) value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                         <x-input-error :messages="$errors->get('country')" class="mt-2" />
 
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group select-style">
-                                        <label class="mb-10 font-sm text-capitalize color-text-mutted">City
-                                            *</label>
-                                        <select name="country" id=""
-                                            class=" form-control form-icons select-active  {{ $errors->has('country') ? 'is-invalid' : '' }}"
-                                            value="{{ $companyInfo?->country }}">
-                                            <option value="">Select</option>
-                                            @foreach ($City as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <x-input-error :messages="$errors->get('country')" class="mt-2" />
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group select-style">
                                         <label class="mb-10 font-sm text-capitalize color-text-mutted">State
                                             *</label>
-                                        <select name="country" id=""
-                                            class=" form-control form-icons select-active  {{ $errors->has('country') ? 'is-invalid' : '' }}"
-                                            value="{{ $companyInfo?->country }}">
+                                        <select name="state" id=""
+                                            class=" form-control form-icons select-active  {{ $errors->has('state') ? 'is-invalid' : '' }}">
                                             <option value="">Select</option>
                                             @foreach ($State as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            <option @selected($item->id === $companyInfo?->state) value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
-                                        <x-input-error :messages="$errors->get('country')" class="mt-2" />
+                                        <x-input-error :messages="$errors->get('state')" class="mt-2" />
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group select-style">
+                                        <label class="mb-10 font-sm text-capitalize color-text-mutted">City
+                                            *</label>
+                                        <select name="city" id=""
+                                            class=" form-control form-icons select-active  {{ $errors->has('city') ? 'is-invalid' : '' }}">
+                                            <option value="">Select</option>
+                                            @foreach ($City as $item)
+                                            <option @selected($item->id === $companyInfo?->city) value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <x-input-error :messages="$errors->get('city')" class="mt-2" />
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group select-style">
+                                        <label class="mb-10 font-sm text-capitalize color-text-mutted">Industry Type
+                                            *</label>
+                                        <select name="industry_type" id=""
+                                            class=" form-control form-icons select-active  {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
+                                            <option value="">Select</option>
+                                            @foreach ($IndustryType as $item)
+                                            <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
 
                                     </div>
                                 </div>

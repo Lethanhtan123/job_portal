@@ -43,12 +43,21 @@ class CompanyProfileController extends Controller
         if (!empty($logoPath)) $data['logo'] = $logoPath;
         $data['name'] = $request->name;
         $data['bio'] = $request->bio;
+        $data['vision'] = $request->vision;
 
 
         Company::updateOrCreate(
             ['user_id' => auth()->user()->id],
             $data
         );
+
+        if(isCompanyProfileComplete())
+        {
+            $companyProfile=Company::where('user_id',auth()->user()->id)->first();
+            $companyProfile->profile_completion=1;
+            $companyProfile->visibility=1;
+            $companyProfile->save();
+        }
 
         notify()->success('Update Successfully', 'Success!');
 
@@ -60,15 +69,26 @@ class CompanyProfileController extends Controller
         Company::updateOrCreate(
             ['user_id' => auth()->user()->id],
             [
-                'website' => $request->website,
+                'industry_type_id' => $request->industry_type,
                 'establishment_date' => $request->establishment_date,
+                'website' => $request->website,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'country' => $request->country,
+                'state' => $request->state,
+                'city' => $request->city,
                 'address' => $request->address,
                 'map_link' => $request->map_link
             ]
         );
+
+        if(isCompanyProfileComplete())
+        {
+            $companyProfile=Company::where('user_id',auth()->user()->id)->first();
+            $companyProfile->profile_completion=1;
+            $companyProfile->visibility=1;
+            $companyProfile->save();
+        }
 
         notify()->success('Update Successfully', 'Success!');
 

@@ -52,6 +52,7 @@ class StateController extends Controller
         $state->name = $request->name;
         $state->country_id = $request->country;
         $state->save();
+        
         Notify::createdNotifycation();
 
         return to_route('admin.state.index');
