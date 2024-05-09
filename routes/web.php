@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Fontend\CandidateDashboardController;
+use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
@@ -39,6 +40,7 @@ Route::group(
     function () {
 
         Route::get('/dashboard', [CandidateDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/profile', [CandidateProfileController::class, 'index'])->name('profile.index');
     }
 );
 
@@ -62,3 +64,5 @@ Route::group(
         Route::post('/profile/password-update', [CompanyProfileController::class, 'updatePassword'])->name('profile.password-update');
     }
 );
+
+

@@ -19,7 +19,7 @@
 <section class="section-box mt-120">
     <div class="container">
         <div class="row">
-            @include('fontend.company-dashboard.sidebar')
+            @include('fontend.candidate-dashboard.sidebar')
             <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-50">
 
                 <ul class="mb-3 nav nav-pills nav-cus" id="pills-tab" role="tablist">
@@ -48,7 +48,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-2 box-avt">
-                                        <x-image-preview :height="200" :width="200" :source="$companyInfo?->logo" />
+                                        {{-- <x-image-preview :height="200" :width="200" :source="" /> --}}
                                     </div>
                                     <div class="btm-box-avt">
                                         <div class="form-group">
@@ -65,22 +65,13 @@
                                         <label class="mb-10 font-sm text-capitalize color-text-mutted">Company name *
                                         </label>
                                         <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }} "
-                                            type="text" value="{{ $companyInfo?->name }}" name="name">
+                                            type="text" value="" name="name">
                                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
 
                                     </div>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="mb-10 font-sm text-capitalize color-text-mutted">Company bio *
-                                        </label>
-                                        <textarea name="bio"
-                                            class="  {{ $errors->has('bio') ? 'is-invalid' : '' }}  summernote">{{ $companyInfo?->bio }}</textarea>
-                                        <x-input-error :messages="$errors->get('bio')" class="mt-2" />
-
-                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="box-button mt-15">
                                 <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
@@ -88,7 +79,7 @@
 
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    {{-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <form action="{{ route('company.profile.founding-info') }}" method="POST"
                             enctype="mulipart/form-data">
                             @csrf
@@ -223,8 +214,8 @@
                             </div>
 
                         </form>
-                    </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    </div> --}}
+                    {{-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <form action="{{ route('company.profile.account-info') }}" method="POST"
                             enctype="mulipart/form-data">
                             @csrf
@@ -289,7 +280,7 @@
 
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
 
                 {{-- <ul class="mb-3 nav nav-pills" id="pills-tab" role="tablist">
