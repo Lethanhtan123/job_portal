@@ -328,7 +328,7 @@
 </section>
 @endsection
 
-{{-- @push('scripts')
+ @push('scripts')
 <script>
     $(document).ready(function() {
         $('.country').on('change', function() {
@@ -375,4 +375,4 @@
         })
     })
 </script>
-@endpush --}}
+@endpush 
