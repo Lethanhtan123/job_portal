@@ -26,12 +26,17 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                            aria-selected="true">Company Info</button>
+                            aria-selected="true">Basic</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">Founding Info</button>
+                            aria-selected="false">Profile</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Exeperience & Education</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
@@ -40,45 +45,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                        aria-labelledby="pills-home-tab">
-                        <form action=" {{ route('company.profile.company-info') }}" method="POST"
-                            enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-2 box-avt">
-                                        {{-- <x-image-preview :height="200" :width="200" :source="" /> --}}
-                                    </div>
-                                    <div class="btm-box-avt">
-                                        <div class="form-group">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Logo *
-                                            </label>
-                                            <input class="form-control  {{ $errors->has('logo') ? 'is-invalid' : '' }} "
-                                                type="file" value="" name="logo">
-                                            <x-input-error :messages="$errors->get('logo')" class="mt-2" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label class="mb-10 font-sm text-capitalize color-text-mutted">Company name *
-                                        </label>
-                                        <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }} "
-                                            type="text" value="" name="name">
-                                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
-
-                                    </div>
-                                </div>
-
-                                
-                            </div>
-                            <div class="box-button mt-15">
-                                <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
-                            </div>
-
-                        </form>
-                    </div>
+                    @include('fontend.candidate-dashboard.profile.sections.basic-sections')
                     {{-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <form action="{{ route('company.profile.founding-info') }}" method="POST"
                             enctype="mulipart/form-data">
