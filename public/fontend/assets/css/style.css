@@ -7862,6 +7862,7 @@ ul li:last-child .card-list-4 {
     font-size: 14px;
 }
 
+
 .bg-homepage1 {
     background: url(../imgs/page/homepage1/bg-banner.jpg) no-repeat top center;
     /* background-repeat: repeat-y; */
@@ -7875,6 +7876,7 @@ ul li:last-child .card-list-4 {
     top: 0;
     right: 0;
 }
+
 
 .nav-tabs {
     border: 0px;
@@ -9697,4 +9699,12 @@ footer .color-text-paragraph {
 
 .ck-editor__editable {
     min-height: 20vh;
+}
+.logo_company img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.logo_company{
+    padding-bottom:10px;display: inline-block;
 }

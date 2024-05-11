@@ -8,7 +8,7 @@
             <div class="header-nav">
                 <nav class="nav-main-menu">
                     <ul class="main-menu">
-                        <li class="has-children"><a class="active" href="index.html">Home</a></li>
+                        <li class="has-children"><a class="active" href="{{ route('companies.index') }}">Home</a></li>
                         <li class="has-children"><a href="jobs-list.html">Find a Job</a></li>
                         <li class="has-children"><a href="companies-grid.html">Recruiters</a></li>
                         <li class="has-children"><a href="candidates-grid.html">Candidates</a></li>
@@ -33,15 +33,15 @@
                 <div class="block-signin">
                     <!-- <a class="text-link-bd-btom hover-up" href="page-register.html">Register</a> -->
                     @guest
-                        <a class="btn btn-default btn-shadow ml-40 hover-up" href="{{ route('login') }}">Sign in</a>
+                        <a class="ml-40 btn btn-default btn-shadow hover-up" href="{{ route('login') }}">Sign in</a>
                     @endguest
 
                     @auth
                         @if (auth()->user()->role === 'company')
-                            <a class="btn btn-default btn-shadow ml-40 hover-up" style="width:200px"
+                            <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:200px"
                                 href="{{ route('company.dashboard') }}">Company dashboard</a>
                         @elseif (auth()->user()->role === 'candidate')
-                        <a class="btn btn-default btn-shadow ml-40 hover-up" style="width:200px"
+                        <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:200px"
                         href="{{ route('candidate.dashboard') }}">Candidate dashboard</a>
                         @endif
                     @endauth
