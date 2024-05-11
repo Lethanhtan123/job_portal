@@ -7858,20 +7858,6 @@ ul li:last-child .card-list-4 {
   font-size: 14px;
 }
 
-.bg-homepage1 {
-  background-image: url(../imgs/page/homepage1/bg-banner.jpg);
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
-  background-size: cover;
-  min-height: 1000px;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  top: 0;
-  right: 0;
-}
-
 .nav-tabs {
   border: 0px;
   display: inline-block;
@@ -9658,4 +9644,12 @@ footer .color-text-paragraph {
 
 .notify {
   z-index: 9999 !important;
+}
+.logo_company img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.logo_company{
+    padding-bottom:10px;display: inline-block;
 }

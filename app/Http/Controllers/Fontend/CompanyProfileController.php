@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Traits\FileUploadTrait;
 use Illuminate\Validation\Rules;
+use App\Services\Notify;
+
 
 use Auth;
 use Illuminate\Http\RedirectResponse;
@@ -59,13 +61,14 @@ class CompanyProfileController extends Controller
             $companyProfile->save();
         }
 
-        notify()->success('Update Successfully', 'Success!');
+        // notify()->success('Update Successfully', 'Success!');
+
+        Notify::updatedNotifycation();
 
         return redirect()->back();
     }
 
-    function updateFoundingInfo(CompanyFoundingInfoUpdateRequest $request): RedirectResponse
-    {
+    function updateFoundingInfo(CompanyFoundingInfoUpdateRequest $request) : RedirectResponse {
         Company::updateOrCreate(
             ['user_id' => auth()->user()->id],
             [
@@ -82,15 +85,14 @@ class CompanyProfileController extends Controller
             ]
         );
 
-        if(isCompanyProfileComplete())
-        {
-            $companyProfile=Company::where('user_id',auth()->user()->id)->first();
-            $companyProfile->profile_completion=1;
-            $companyProfile->visibility=1;
+        if(isCompanyProfileComplete()) {
+            $companyProfile = Company::where('user_id', auth()->user()->id)->first();
+            $companyProfile->profile_completion = 1;
+            $companyProfile->visibility = 1;
             $companyProfile->save();
         }
 
-        notify()->success('Update Successfully', 'Success!');
+        Notify::updatedNotifycation();
 
         return redirect()->back();
     }

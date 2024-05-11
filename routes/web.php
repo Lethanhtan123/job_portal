@@ -4,6 +4,7 @@ use App\Http\Controllers\Fontend\CandidateDashboardController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
+use App\Http\Controllers\Fontend\FrontendCompanyPageController;
 use App\Http\Controllers\Fontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('companies', [FrontendCompanyPageController::class, 'index'])->name('companies.index');
+Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->name('companies.show');
 
 //**Candidate Routes */
 Route::group(
