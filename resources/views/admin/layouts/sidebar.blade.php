@@ -25,8 +25,8 @@
 
                     <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
 
-                    <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li>
-                    <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link" href="{{ route('admin.languages.index') }}">Languages</a></li>
+                    {{-- <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li> --}}
+                    {{-- <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link" href="{{ route('admin.languages.index') }}">Languages</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.professions.*']) }} nav-link" href="{{ route('admin.professions.index') }}">Professions</a></li>
 
                     <li><a class="{{ setSidebarActive(['admin.skills.*']) }} nav-link" href="{{ route('admin.skills.index') }}">Skills</a></li>

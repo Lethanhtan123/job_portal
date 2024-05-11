@@ -27,7 +27,7 @@ if(!function_exists('setSidebarActive')) {
 if(!function_exists('isCompanyProfileComplete')) {
     function isCompanyProfileComplete() : bool
     {
-        $requiredFields = ['logo', 'banner', 'bio', 'vision', 'name', 'industry_type_id','city', 'establishment_date', 'phone', 'email', 'country'];
+        $requiredFields = ['logo', 'banner', 'bio', 'vision', 'name', 'industry_type_id','establishment_date', 'phone', 'email', 'country'];
         $companyProfile = Company::where('user_id', auth()->user()->id)->first();
 
         foreach($requiredFields as $field) {
@@ -37,5 +37,16 @@ if(!function_exists('isCompanyProfileComplete')) {
         }
 
         return true;
+    }
+}
+/** format date */
+if(!function_exists('formatDate')) {
+    function formatDate(?string $date) : ?string
+    {
+        if($date) {
+            return date('d M Y',  strtotime($date));
+        }
+
+        return null;
     }
 }
