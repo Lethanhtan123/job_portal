@@ -5,6 +5,7 @@ use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
+use App\Http\Controllers\Fontend\FrontendCandidatePageController;
 use App\Http\Controllers\Fontend\FrontendCompanyPageController;
 use App\Http\Controllers\Fontend\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,8 @@ require __DIR__ . '/auth.php';
 
 Route::get('companies', [FrontendCompanyPageController::class, 'index'])->name('companies.index');
 Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->name('companies.show');
+
+Route::get('candidates', [FrontendCandidatePageController::class, 'index'])->name('candidates.index');
 
 //**Candidate Routes */
 Route::group(
