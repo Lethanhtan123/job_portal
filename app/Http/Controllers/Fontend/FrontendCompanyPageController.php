@@ -18,6 +18,7 @@ class FrontendCompanyPageController extends Controller
     function show(string $slug): View
     {
         $company=Company::Where(['profile_completion'=>0,'visibility'=>0,'slug'=>$slug])->firstOrFail();
+      
         return view('fontend.pages.company-details',compact('company'));
     }
 }

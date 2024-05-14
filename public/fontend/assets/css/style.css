@@ -9697,14 +9697,23 @@ footer .color-text-paragraph {
     background: #0a9562 !important;
 }
 
+.select-height~.select2 .selection {
+    display: block;
+    max-height: 36px;
+    overflow-y: auto;
+    min-height: 35px;
+}
+
 .ck-editor__editable {
     min-height: 20vh;
 }
-.logo_company img{
+
+.logo_company img {
     max-width: 80px;
     max-height: 80px;
 }
 
-.logo_company{
-    padding-bottom:10px;display: inline-block;
+.logo_company {
+    padding-bottom: 10px;
+    display: inline-block;
 }

@@ -61,7 +61,7 @@
                     <label class="mb-10 font-sm text-capitalize color-text-mutted">Skills you have
                     </label>
                     <select multiple="" name="skill[]" id=""
-                        class=" {{ $errors->has('skill') ? 'is-invalid' : '' }}  form-icons select-active">
+                        class=" {{ $errors->has('skill') ? 'is-invalid' : '' }} select-height  form-icons select-active">
                         <option value="" readonly> Select one </option>
 
                         @foreach ($skills as $skill)
@@ -80,7 +80,7 @@
                     <label class="mb-10 font-sm text-capitalize color-text-mutted">Languages You Know
                     </label>
                     <select multiple="" name="language_you_know[]" id=""
-                        class=" {{ $errors->has('language_you_know') ? 'is-invalid' : '' }}  form-icons select-active">
+                        class=" {{ $errors->has('language_you_know') ? 'is-invalid' : '' }}  select-height form-icons select-active">
                         <option value=""> Select one </option>
 
 
