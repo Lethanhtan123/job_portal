@@ -1,4 +1,4 @@
-<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+<div class="tab-pane fade" id="pills-experience" role="tabpanel" aria-labelledby="pills-experience-tab">
     <form action=" {{ route('candidate.profile.profile-info.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
 

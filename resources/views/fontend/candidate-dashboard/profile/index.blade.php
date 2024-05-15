@@ -34,8 +34,8 @@
                             aria-selected="false">Profile</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-experience" type="button" role="tab" aria-controls="pills-experience"
                             aria-selected="false">Exeperience & Education</button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -47,6 +47,7 @@
                 <div class="tab-content" id="pills-tabContent">
                     @include('fontend.candidate-dashboard.profile.sections.basic-sections')
                     @include('fontend.candidate-dashboard.profile.sections.profile-sections')
+                    @include('fontend.candidate-dashboard.profile.sections.experience-sections')
                 </div>
             </div>
         </div>
