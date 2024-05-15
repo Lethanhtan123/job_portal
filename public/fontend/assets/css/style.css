@@ -9717,3 +9717,7 @@ footer .color-text-paragraph {
     padding-bottom: 10px;
     display: inline-block;
 }
+
+.w-th-action {
+    width: 180px;
+}
