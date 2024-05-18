@@ -9,7 +9,8 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="dropdown {{ setSidebarActive(['admin.dashboard']) }}">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i
+                        class="fas fa-fire"></i><span>Dashboard</span></a>
 
             </li>
             <li class="menu-header">Starter</li>
@@ -17,19 +18,29 @@
 
             {{ setSidebarActive(
                 ['admin.industry-types.*',
-                'admin.organization-types.*'] ) }}
+                'admin.organization-types.*',
+                'admin.languages.*',
+                'admin.professions.*',
+                'admin.skills.*',
+
+                ] ) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Actributes</span></a>
                 <ul class="dropdown-menu">
 
-                    <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link" href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link"
+                            href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
 
-                    {{-- <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link" href="{{ route('admin.organization-types.index') }}">Organization types</a></li> --}}
-                    {{-- <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link" href="{{ route('admin.languages.index') }}">Languages</a></li> --}}
-                    <li><a class="{{ setSidebarActive(['admin.professions.*']) }} nav-link" href="{{ route('admin.professions.index') }}">Professions</a></li>
+                    {{-- <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link"
+                            href="{{ route('admin.organization-types.index') }}">Organization types</a></li> --}}
+                    {{-- <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link"
+                            href="{{ route('admin.languages.index') }}">Languages</a></li> --}}
+                    <li><a class="{{ setSidebarActive(['admin.professions.*']) }} nav-link"
+                            href="{{ route('admin.professions.index') }}">Professions</a></li>
 
-                    <li><a class="{{ setSidebarActive(['admin.skills.*']) }} nav-link" href="{{ route('admin.skills.index') }}">Skills</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.skills.*']) }} nav-link"
+                            href="{{ route('admin.skills.index') }}">Skills</a></li>
 
                 </ul>
             </li>
@@ -44,10 +55,70 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Location</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="{{ setSidebarActive(['admin.country.*']) }} nav-link" href="{{ route('admin.country.index') }}">Countries</a></li>
-                    <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link" href="{{ route('admin.state.index') }}">State</a></li>
-                    <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link" href="{{ route('admin.city.index') }}">City</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.country.*']) }} nav-link"
+                            href="{{ route('admin.country.index') }}">Countries</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
+                            href="{{ route('admin.state.index') }}">State</a></li>
+                    <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link"
+                            href="{{ route('admin.city.index') }}">City</a></li>
                 </ul>
+            </li>
+
+
+            <li class="dropdown
+
+            {{ setSidebarActive(
+                ['admin.job-categories.*',
+                'admin.educations.*',
+                'admin.salary-types.*',
+                'admin.job-types.*',
+                'admin.job-roles.*',
+                'admin.job-experiences.*',
+                'admin.job-tags.*'
+                ] ) }}
+            ">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                    <span>Job</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setSidebarActive(['admin.job-categories.*']) }}">
+                        <a href="{{ route('admin.job-categories.index') }}" class="">
+                            <span>Job Category</span></a>
+                    </li>
+                    <li class="{{ setSidebarActive(['admin.educations.*']) }}">
+                        <a href="{{ route('admin.educations.index') }}" class="">
+                            <span>Education</span></a>
+                    </li>
+
+                    <li class="{{ setSidebarActive(['admin.job-types.*']) }}">
+                        <a href="{{ route('admin.job-types.index') }}" class="">
+                            <span>Job Type</span></a>
+                    </li>
+
+                    <li class="{{ setSidebarActive(['admin.salary-types.*']) }}">
+                        <a href="{{ route('admin.salary-types.index') }}" class="">
+                            <span>Salary Type</span></a>
+                    </li>
+                    <li class="{{ setSidebarActive(['admin.job-roles.*']) }}">
+                        <a href="{{ route('admin.job-roles.index') }}" class="">
+                            <span>Job Role</span></a>
+                    </li>
+                    <li class="{{ setSidebarActive(['admin.job-experiences.*']) }}">
+                        <a href="{{ route('admin.job-experiences.index') }}" class="">
+                            <span>Job Experience</span></a>
+                    </li>
+
+                    <li class="{{ setSidebarActive(['admin.job-tags.*']) }}">
+                        <a href="{{ route('admin.job-tags.index') }}" class="">
+                            <span>Job Tag</span></a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="{{ setSidebarActive(['admin.jobs.*']) }}">
+                <a href="{{ route('admin.jobs.index') }}" class="">
+                    <i class="fas fa-columns"></i>
+                    <span>Job Post</span></a>
             </li>
         </ul>
 
@@ -140,7 +211,7 @@
                     @csrf
 
                     <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
-                    this.closest('form').submit();"class="dropdown-item has-icon text-danger">
+                    this.closest('form').submit();" class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </form>

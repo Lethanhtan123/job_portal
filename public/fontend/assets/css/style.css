@@ -7863,6 +7863,12 @@ ul li:last-child .card-list-4 {
 }
 
 
+.eye_button{
+    width: 20px;
+    height: 20px;
+    background-color: rebeccapurple;
+}
+
 .bg-homepage1 {
     background: url(../imgs/page/homepage1/bg-banner.jpg) no-repeat top center;
     /* background-repeat: repeat-y; */
@@ -7876,8 +7882,6 @@ ul li:last-child .card-list-4 {
     top: 0;
     right: 0;
 }
-
-
 .nav-tabs {
     border: 0px;
     display: inline-block;
