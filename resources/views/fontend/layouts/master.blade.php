@@ -12,7 +12,7 @@
     <meta name="description" content="Index page">
     <meta name="keywords" content="index, page">
     <meta name="author" content="">
-    @notifyCss
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="">
     <link rel="stylesheet"
@@ -85,30 +85,27 @@
     <script src="{{ asset('fontend/assets/js/plugins/Font-Awesome.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/super-build/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
-        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Laravel notify start -->
-    <x-notify::notify />
-    <!-- Laravel notify end -->
-    @notifyJs
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js"></script>
     <script>
+        var notyf = new Notyf();
         $('.datepicker').datepicker({
-             format: 'yyyy-mm-dd',
-
+            format: 'yyyy-mm-dd',
         });
 
-         ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
 
         /*
                 function confirmation(ev) {
@@ -129,7 +126,10 @@
                         }
                     })
                 }*/
+
+
     </script>
+
 </body>
 
 </html>
