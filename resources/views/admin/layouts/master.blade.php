@@ -43,8 +43,7 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; {{ date('Y') }} <div class="bullet"></div> Design By <a
-                        href="">Jobfind</a>
+                    Copyright &copy; {{ date('Y') }} <div class="bullet"></div> Design By <a href="">Jobfind</a>
                 </div>
                 <div class="footer-right">
 
@@ -79,39 +78,37 @@
 
     <script>
         $(".delete-item").on('click', function(e) {
-            e.preventDefault();
+    e.preventDefault();
 
-            swal({
-                    title: 'Are you sure?',
-                    text: 'Once deleted, you will not be able to recover this data!',
-                    icon: 'warning',
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        let url = $(this).attr('href')
+    swal({
+    title: 'Are you sure?',
+                text: 'Once deleted, you will not be able to recover this data!',
+                icon: 'warning',
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    let url = $(this).attr('href')
 
-                        $.ajax({
-                            method: 'DELETE',
-                            url: url,
-                            data: {
-                                _token: "{{ csrf_token() }}"
-                            },
-                            success: function(response) {
-                                window.location.reload();
-                            },
-                            error: function(xhr, status, error) {
-                                console.log(xhr);
-                                swal(hxr.responseJSON.message, {
-                                    icon: 'error',
-                                });
-                            }
-                        })
+                    $.ajax({
+                        method: 'DELETE',
+                        url: url,
+                        data: {_token: "{{ csrf_token() }}"},
+                        success: function(response) {
+                            window.location.reload();
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            swal(hxr.responseJSON.message,{
+                                icon:'error',
+                            });
+                        }
+                    })
 
-                    }
-                });
-        });
+                }
+            });
+    });
     </script>
 
 
