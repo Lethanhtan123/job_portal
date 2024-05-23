@@ -1,6 +1,5 @@
 @extends('fontend.layouts.master')
 @section('contents')
-
     <section class="section-box mt-75">
         <div class="breacrumb-cover">
             <div class="container">
@@ -50,22 +49,25 @@
                                 </div>
 
                                 <div class="col-xl-6">
-                                    <div class="form-group">
+                                    <div class="form-group icon-side">
                                         <label class="form-label" for="input-4">Password *</label>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
                                             placeholder="************">
+                                        <i class="fa-regular fa-eye" id="togglePassword"></i>
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6">
-                                    <div class="form-group">
+                                    <div class="form-group icon-side">
                                         <label class="form-label" for="input-5">Re-Password *</label>
                                         <input
                                             class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                             id="input-5" type="password" required="" name="password_confirmation"
                                             placeholder="************">
+                                        <i class="fa-regular fa-eye" id="togglePasswordCf"></i>
+
                                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                     </div>
                                 </div>
@@ -113,3 +115,30 @@
     </section>
     <div class="mt-120"></div>
 @endsection
+
+@push('scripts')
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const togglePassword = document.querySelector("#togglePassword");
+            const togglePasswordCf = document.querySelector("#togglePasswordCf");
+            const password = document.querySelector("#input-4");
+            const passwordConfirm = document.querySelector("#input-5");
+
+            togglePassword.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const type =  password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            togglePasswordCf.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const typeCf =  passwordConfirm.getAttribute("type") === "password" ? "text" : "password";
+                passwordConfirm.setAttribute("type", typeCf);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("fa-eye-slash");
+            });
+        });
+    </script>
+@endpush

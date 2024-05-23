@@ -15,11 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="{{ asset('fontend/assets/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontend/assets/css/style.css') }}" rel="stylesheet">
     <title>joblist - Job Portal HTML Template </title>
+     @stack('scripts')
 </head>
 
 <body>

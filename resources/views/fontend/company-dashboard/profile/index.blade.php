@@ -269,23 +269,27 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group icon-side">
                                             <label class="mb-10 font-sm text-capitalize color-text-mutted">Password *
                                             </label>
                                             <input
                                                 class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                                type="password" name="password">
+                                                type="password" name="password" id="password_com">
+                                            <i class="fa-regular fa-eye" id="togglePasswordCom"></i>
+
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                        <div class="form-group icon-side">
                                             <label class="mb-10 font-sm text-capitalize color-text-mutted">Confirm Password
                                                 * </label>
                                             <input
                                                 class="form-control  {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
-                                                type="password" name="password_confirmation">
+                                                type="password" name="password_confirmation" id="password_com_cf">
+                                            <i class="fa-regular fa-eye" id="togglePasswordComCf"></i>
+
                                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 
                                         </div>
@@ -389,3 +393,30 @@
         })
     </script>
 @endpush --}}
+
+@push('scripts')
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const togglePassword = document.querySelector("#togglePasswordCom");
+            const togglePasswordCf = document.querySelector("#togglePasswordComCf");
+            const password = document.querySelector("#password_com");
+            const passwordConfirm = document.querySelector("#password_com_cf");
+
+            togglePassword.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const type =  password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            togglePasswordCf.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const typeCf =  passwordConfirm.getAttribute("type") === "password" ? "text" : "password";
+                passwordConfirm.setAttribute("type", typeCf);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("fa-eye-slash");
+            });
+        });
+    </script>
+@endpush
