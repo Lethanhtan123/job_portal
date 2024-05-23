@@ -47,12 +47,14 @@
                                 <div class="col-xl-12">
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="input-4">Password *</label>
+                                            <label class="form-label" for="password">Password *</label>
                                             <a href="{{ route('password.request') }}">forgot password?</a>
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
                                             placeholder="************">
+
+                                        <i class="bi bi-eye-slash" id="togglePassword">hide</i>
 
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
@@ -84,6 +86,22 @@
             </div>
         </div>
     </section>
-
-    <div class="mt-120"></div>
 @endsection
+
+@push('scripts')
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const togglePassword = document.querySelector("#togglePassword");
+            const password = document.querySelector("#input-4");
+
+            togglePassword.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const type =  password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("bi-eye");
+            });
+        });
+    </script>
+@endpush
+

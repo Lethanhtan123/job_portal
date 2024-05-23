@@ -20,6 +20,7 @@
     <link href="{{ asset('fontend/assets/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontend/assets/css/style.css') }}" rel="stylesheet">
     <title>joblist - Job Portal HTML Template </title>
+     @stack('scripts')
 </head>
 
 <body>
