@@ -9721,3 +9721,10 @@ footer .color-text-paragraph {
 .w-th-action {
     width: 180px;
 }
+
+.form-group.icon-side i {
+    right: 15px;
+    left: unset;
+    top: unset;
+    bottom: 10px;
+}

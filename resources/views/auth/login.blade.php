@@ -45,7 +45,7 @@
                                 </div>
 
                                 <div class="col-xl-12">
-                                    <div class="form-group">
+                                    <div class="form-group icon-side">
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Password *</label>
                                             <a href="{{ route('password.request') }}">forgot password?</a>
@@ -53,9 +53,7 @@
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
                                             placeholder="************">
-
-                                        <i class="bi bi-eye-slash" id="togglePassword">hide</i>
-
+                                        <i class="fa-regular fa-eye" id="togglePassword"></i>
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                     </div>
                                 </div>
@@ -99,7 +97,7 @@
                 const type =  password.getAttribute("type") === "password" ? "text" : "password";
                 password.setAttribute("type", type);
                 // toggle the eye / eye slash icon
-                this.classList.toggle("bi-eye");
+                this.classList.toggle("fa-eye-slash");
             });
         });
     </script>
