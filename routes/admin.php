@@ -13,16 +13,22 @@ use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\IndustryTypeController;
+use App\Http\Controllers\Admin\JobCategoryController;
+use App\Http\Controllers\Admin\JobController;
+use App\Http\Controllers\Admin\JobExperienceController;
+use App\Http\Controllers\Admin\JobRoleController;
+use App\Http\Controllers\Admin\JobTypeController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\OrganizationTypeController;
 use App\Http\Controllers\Admin\ProfessionController;
+use App\Http\Controllers\Admin\SalaryTypeController;
 use App\Http\Controllers\Admin\SkillController;
 
 use App\Http\Controllers\Admin\StateController;
-use App\Models\IndustryType;
-
+use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> ['guest:admin'],'prefix'=> 'admin','as'=>'admin.'], function () {
@@ -77,6 +83,30 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
 
     /** Skill Route */
     Route::resource('skills', SkillController::class);
+
+    /** Job Category Routes */
+    Route::resource('job-categories', JobCategoryController::class);
+
+    /** Education Routes */
+    Route::resource('educations', EducationController::class);
+
+    /** Job Type Routes */
+    Route::resource('job-types', JobTypeController::class);
+
+    /** Salary Type Routes */
+    Route::resource('salary-types', SalaryTypeController::class);
+
+    /** Job Role Routes */
+    Route::resource('job-roles', JobRoleController::class);
+
+    /** Job Experience Routes */
+    Route::resource('job-experiences', JobExperienceController::class);
+
+    /** Job Tag */
+    Route::resource('job-tags', TagController::class);
+
+     /** Job Experience Routes */
+     Route::resource('jobs', JobController::class);
 
 
 });

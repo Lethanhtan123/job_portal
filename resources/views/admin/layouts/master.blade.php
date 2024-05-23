@@ -24,6 +24,8 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.min.css') }}">
+
 
     <!-- /END GA -->
 </head>
@@ -72,16 +74,24 @@
     <!-- Template JS File -->
     <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
 
 
     @stack('scripts')
 
     <script>
-        $(".delete-item").on('click', function(e) {
-    e.preventDefault();
+        ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 
-    swal({
-    title: 'Are you sure?',
+
+        $(".delete-item").on('click', function(e) {
+        e.preventDefault();
+
+        swal({
+        title: 'Are you sure?',
                 text: 'Once deleted, you will not be able to recover this data!',
                 icon: 'warning',
                 buttons: true,
@@ -123,8 +133,5 @@
             });
         });
     </script>
-
-
 </body>
-
 </html>

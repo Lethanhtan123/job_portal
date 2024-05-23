@@ -2,14 +2,14 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <a href="{{ route('admin.industry-types.index') }}"><h1>All Industry Type</h1></a>
+        <a href="{{ route('admin.job-categories.index') }}"><h1>Job Categories</h1></a>
 
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Advanced Table</h4>
+                    <h4>All Job Categories</h4>
                     <div class="card-header-form">
                         <form action="{{ route('admin.job-categories.index') }}" method="GET">
                             <div class="input-group">
@@ -27,19 +27,21 @@
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <tr>
+                                <th>Icon</th>
                                 <th>Name</th>
                                 <th>Slug</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
 
                             <tbody>
-                                @forelse ($industryType as $type)
+                                @forelse ($Category as $item)
                                 <tr>
-                                    <th>{{ $type->name }}</th>
-                                    <th>{{ $type->slug }}</th>
+                                    <th><i style="font-size:30px;" class="{{ $item->icon }}"></i></th>
+                                    <th>{{ $item->name }}</th>
+                                    <th>{{ $item->slug }}</th>
                                     <th>
-                                        <a href="{{ route('admin.industry-types.edit',$type->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="{{ route('admin.industry-types.destroy',$type->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
+                                        <a href="{{ route('admin.job-categories.edit',$item->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                        <a href="{{ route('admin.job-categories.destroy',$item->id) }}" class="btn btn-sm btn-danger delete-item">Delete</a>
                                     </th>
                                 </tr>
                                 @empty
@@ -70,9 +72,9 @@
                                 </li>
                             </ul>
                         </nav> --}}
-                        @if ($industryType->hasPages())
-                            {{ $industryType->withQueryString()->links() }}
-                        @endif
+                        {{-- @if ($Category->hasPages())
+                            {{ $Category->withQueryString()->links() }}
+                        @endif --}}
                     </div>
                 </div>
             </div>
