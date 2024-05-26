@@ -22,7 +22,7 @@
     <link href="{{ asset('fontend/assets/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontend/assets/css/style.css') }}" rel="stylesheet">
     <title>joblist - Job Portal HTML Template </title>
-     @stack('scripts')
+
 </head>
 
 <body>
@@ -74,6 +74,7 @@
     @include('fontend.layouts.footer')
 
     <script src="{{ asset('fontend/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+
     <script src="{{ asset('fontend/assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/vendor/jquery-migrate-3.3.0.min.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
@@ -92,8 +93,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/super-build/ckeditor.js"></script>
+
+       <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Laravel notify start -->
 
@@ -132,7 +134,7 @@
 
 
     </script>
-
+@stack('scripts')
 </body>
 
 </html>

@@ -43,7 +43,7 @@ class CandidateExperienceController extends Controller
 
         $experience->save();
 
-        return response(['message', 'Create Successfully'], 200);
+        return response(['message' => 'Created Successfully'], 200);
     }
 
     /**
@@ -71,7 +71,7 @@ class CandidateExperienceController extends Controller
 
         $experience =  CandidateExperience::findOrFail($id);
 
-        if(auth()->user()->candidateProfile->id !== $experience->candidate_id) {
+        if (auth()->user()->candidateProfile->id !== $experience->candidate_id) {
             abort(404);
         }
 
@@ -86,7 +86,7 @@ class CandidateExperienceController extends Controller
 
         $experience->save();
 
-        return response(['message', 'Update Successfully'], 200);
+        return response(['message' => 'Update Successfully'], 200);
     }
 
     /**
@@ -95,12 +95,15 @@ class CandidateExperienceController extends Controller
     public function destroy(string $id)
     {
         try {
-
-            CandidateExperience::finOrFail($id)->dalete();
-            return response(['message', 'Delete Successfully'], 500);
-        } catch(\Exception $e) {
+            $experience = CandidateExperience::findOrFail($id);
+            if (auth()->user()->candidateProfile->id !== $experience->candidate_id) {
+                abort(404);
+            }
+            $experience->delete();
+            return response(['message' => 'Deleted Successfully!'], 200);
+        } catch (\Exception $e) {
             logger($e);
-            return response(['message', 'Something went wrong. Please try again!'], 500);
+            return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
         }
     }
 }
