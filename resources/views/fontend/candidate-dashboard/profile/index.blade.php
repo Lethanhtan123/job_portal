@@ -62,7 +62,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="ExperienceForm">
+                    <form action="" method="" id="experience-form">
                         @csrf
                         <div class="row">
                             <div class="col-12">
@@ -122,5 +122,145 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        var editId = "";
+        var editMode = false;
+
+        // fetch experience
+
+
+        // Save experience data
+        $('#experience-form').on('submit', function(event) {
+            event.preventDefault();
+            const formData = $(this).serialize();
+
+
+            if (editMode) {
+                $.ajax({
+                    method: 'PUT',
+                    url: "{{ route('candidate.experience.update', ':id') }}".replace(':id', editId),
+                    data: formData,
+
+                    success: function(response) {
+                        //fetchExperience()
+
+                        $('#experience-form').trigger("reset");
+                        $('#experienceModal').modal('hide');
+                        editId = "";
+                        editMode = false;
+
+
+                        notyf.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+
+                        console.log(error)
+                    }
+
+                })
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ route('candidate.experience.store') }}",
+                    data: formData,
+
+                    success: function(response) {
+                       // fetchExperience();
+                        $('#experience-form').trigger("reset");
+                        $('#experienceModal').modal('hide');
+
+
+                        notyf.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                            console.log(error);
+                    }
+                })
+            }
+
+        });
+
+        $('body').on('click', '.edit-experience', function() {
+            $('#experience-form').trigger("reset");
+
+            let url = $(this).attr('href');
+
+            $.ajax({
+                method: 'GET',
+                url: url,
+                data: {},
+
+                success: function(response) {
+                    editId = response.id
+                    editMode = true;
+
+                    $.each(response, function(index, value) {
+                        $(`input[name="${index}"]:text`).val(value);
+                        if (index === 'currently_working' && value == 1) {
+                            $(`input[name="${index}"]:checkbox`).prop('checked', true);
+                        }
+                        if (index === 'responsibilities') {
+                            $(`textarea[name="${index}"]`).val(value);
+                        }
+                    })
+                    //hideLoader();
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                    //hideLoader();
+                }
+            })
+        })
+
+        // Delete experience item
+        $("body").on('click', '.delete-experience', function(e) {
+            e.preventDefault();
+
+            let url = $(this).attr('href');
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        method: 'DELETE',
+                        url: url,
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+
+                        success: function(response) {
+                            //fetchExperience();
+                            //hideLoader();
+                            notyf.success(response.message);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            swal(xhr.responseJSON.message, {
+                                icon: 'error',
+                            });
+                            //hideLoader();
+
+                        }
+                    })
+                }
+            });
+        });
+
+
+        // fetch education
+
+    </script>
+@endpush
+
 
 

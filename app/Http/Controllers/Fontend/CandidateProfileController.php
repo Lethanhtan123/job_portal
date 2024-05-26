@@ -27,7 +27,8 @@ class CandidateProfileController extends Controller
     function index(): View
     {
         $candidate = Candidate::with(['skills'])->where('user_id', auth()->user()->id)->first();
-        $candidateExperiences = CandidateExperience::where('candidate_id', $candidate->id)->orderBy('id', 'DESC')->get();
+        $candidateExperiences = CandidateExperience::where('candidate_id', $candidate?->id)->orderBy('id', 'DESC')->get();
+
 
         $experiences = Experience::all();
         $professions = Profession::all();
