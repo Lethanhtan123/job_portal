@@ -7,19 +7,23 @@ namespace Composer\Autoload;
 class ComposerStaticInit347509f04575cea5d0632a566142247c
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
+
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+
+        'da91a01b5badbe5394c83814ef5982ea' => __DIR__ . '/..' . '/php-flasher/flasher/helpers.php',
+
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
@@ -32,9 +36,15 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '38ea50801e981fa2297115e1c44a148b' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/helpers.php',
+
+        'f323534d89c794dd71128095d196a51d' => __DIR__ . '/..' . '/php-flasher/flasher-notyf/helpers.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
@@ -129,7 +139,6 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         array (
             'Monolog\\' => 8,
             'Mockery\\' => 8,
-            'Mckenziearts\\Notify\\' => 20,
         ),
         'L' => 
         array (
@@ -163,7 +172,14 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'F' => 
         array (
             'Fruitcake\\Cors\\' => 15,
+
             'Firebase\\JWT\\' => 13,
+
+            'Flasher\\Prime\\' => 14,
+            'Flasher\\Notyf\\Prime\\' => 20,
+            'Flasher\\Notyf\\Laravel\\' => 22,
+            'Flasher\\Laravel\\' => 16,
+
             'Faker\\' => 6,
         ),
         'E' => 
@@ -437,6 +453,7 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         array (
             0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
         ),
+
         'Mckenziearts\\Notify\\' => 
         array (
             0 => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src',
@@ -445,6 +462,7 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         array (
             0 => __DIR__ . '/..' . '/league/oauth1-client/src',
         ),
+
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -527,9 +545,27 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         array (
             0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
         ),
+
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+
+        'Flasher\\Prime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-flasher/flasher',
+        ),
+        'Flasher\\Notyf\\Prime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-flasher/flasher-notyf',
+        ),
+        'Flasher\\Notyf\\Laravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-flasher/flasher-notyf-laravel',
+        ),
+        'Flasher\\Laravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-flasher/flasher-laravel',
+
         ),
         'Faker\\' => 
         array (
@@ -644,19 +680,27 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'App\\Http\\Controllers\\Admin\\DistrictController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DistrictController.php',
         'App\\Http\\Controllers\\Admin\\EducationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/EducationController.php',
         'App\\Http\\Controllers\\Admin\\IndustryTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/IndustryTypeController.php',
+
         'App\\Http\\Controllers\\Admin\\JobCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/JobCategoryController.php',
         'App\\Http\\Controllers\\Admin\\JobController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/JobController.php',
         'App\\Http\\Controllers\\Admin\\JobExperienceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/JobExperienceController.php',
         'App\\Http\\Controllers\\Admin\\JobRoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/JobRoleController.php',
         'App\\Http\\Controllers\\Admin\\JobTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/JobTypeController.php',
+
+
         'App\\Http\\Controllers\\Admin\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LanguageController.php',
         'App\\Http\\Controllers\\Admin\\LocationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LocationController.php',
         'App\\Http\\Controllers\\Admin\\OrganizationTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OrganizationTypeController.php',
         'App\\Http\\Controllers\\Admin\\ProfessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProfessionController.php',
+
         'App\\Http\\Controllers\\Admin\\SalaryTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SalaryTypeController.php',
         'App\\Http\\Controllers\\Admin\\SkillController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SkillController.php',
         'App\\Http\\Controllers\\Admin\\StateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StateController.php',
         'App\\Http\\Controllers\\Admin\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TagController.php',
+
+        'App\\Http\\Controllers\\Admin\\SkillController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SkillController.php',
+        'App\\Http\\Controllers\\Admin\\StateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/StateController.php',
+
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
@@ -690,6 +734,9 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'App\\Http\\Requests\\Admin\\JobCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/JobCreateRequest.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\Fontend\\CandidateBasicProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Fontend/CandidateBasicProfileUpdateRequest.php',
+
+        'App\\Http\\Requests\\Fontend\\CandidateExperienceStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Fontend/CandidateExperienceStoreRequest.php',
+
         'App\\Http\\Requests\\Fontend\\CandidateProfileInfoUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Fontend/CandidateProfileInfoUpdateRequest.php',
         'App\\Http\\Requests\\Fontend\\CompanyFoundingInfoUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Fontend/CompanyFoundingInfoUpdateRequest.php',
         'App\\Http\\Requests\\Fontend\\CompanyInfoUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Fontend/CompanyInfoUpdateRequest.php',
@@ -702,8 +749,10 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'App\\Models\\City' => __DIR__ . '/../..' . '/app/Models/City.php',
         'App\\Models\\Company' => __DIR__ . '/../..' . '/app/Models/Company.php',
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
+
         'App\\Models\\District' => __DIR__ . '/../..' . '/app/Models/District.php',
         'App\\Models\\Education' => __DIR__ . '/../..' . '/app/Models/Education.php',
+
         'App\\Models\\Experience' => __DIR__ . '/../..' . '/app/Models/Experience.php',
         'App\\Models\\IndustryType' => __DIR__ . '/../..' . '/app/Models/IndustryType.php',
         'App\\Models\\Job' => __DIR__ . '/../..' . '/app/Models/Job.php',
@@ -716,10 +765,15 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'App\\Models\\Language' => __DIR__ . '/../..' . '/app/Models/Language.php',
         'App\\Models\\OrganizationType' => __DIR__ . '/../..' . '/app/Models/OrganizationType.php',
         'App\\Models\\Profession' => __DIR__ . '/../..' . '/app/Models/Profession.php',
+
         'App\\Models\\SalaryType' => __DIR__ . '/../..' . '/app/Models/SalaryType.php',
         'App\\Models\\Skill' => __DIR__ . '/../..' . '/app/Models/Skill.php',
         'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
         'App\\Models\\Tag' => __DIR__ . '/../..' . '/app/Models/Tag.php',
+
+        'App\\Models\\Skill' => __DIR__ . '/../..' . '/app/Models/Skill.php',
+        'App\\Models\\State' => __DIR__ . '/../..' . '/app/Models/State.php',
+
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -1646,14 +1700,121 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
-        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
-        'Firebase\\JWT\\CachedKeySet' => __DIR__ . '/..' . '/firebase/php-jwt/src/CachedKeySet.php',
-        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
-        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
-        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
-        'Firebase\\JWT\\JWTExceptionWithPayloadInterface' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php',
-        'Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
-        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
+
+        'Flasher\\Laravel\\Bridge\\Command\\FlasherCommand' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Bridge/Command/FlasherCommand.php',
+        'Flasher\\Laravel\\Bridge\\Legacy\\Command\\FlasherCommand' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Bridge/Legacy/Command/FlasherCommand.php',
+        'Flasher\\Laravel\\Bridge\\Typed\\Command\\FlasherCommand' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Bridge/Typed/Command/FlasherCommand.php',
+        'Flasher\\Laravel\\Command\\InstallCommand' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Command/InstallCommand.php',
+        'Flasher\\Laravel\\Component\\FlasherComponent' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Component/FlasherComponent.php',
+        'Flasher\\Laravel\\Container\\LaravelContainer' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Container/LaravelContainer.php',
+        'Flasher\\Laravel\\Facade\\Flasher' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Facade/Flasher.php',
+        'Flasher\\Laravel\\FlasherServiceProvider' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/FlasherServiceProvider.php',
+        'Flasher\\Laravel\\Http\\Request' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Http/Request.php',
+        'Flasher\\Laravel\\Http\\Response' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Http/Response.php',
+        'Flasher\\Laravel\\Middleware\\FlasherMiddleware' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Middleware/FlasherMiddleware.php',
+        'Flasher\\Laravel\\Middleware\\HttpKernelFlasherMiddleware' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Middleware/HttpKernelFlasherMiddleware.php',
+        'Flasher\\Laravel\\Middleware\\HttpKernelSessionMiddleware' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Middleware/HttpKernelSessionMiddleware.php',
+        'Flasher\\Laravel\\Middleware\\SessionMiddleware' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Middleware/SessionMiddleware.php',
+        'Flasher\\Laravel\\Storage\\SessionBag' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Storage/SessionBag.php',
+        'Flasher\\Laravel\\Support\\Laravel' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Support/Laravel.php',
+        'Flasher\\Laravel\\Support\\ServiceProvider' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Support/ServiceProvider.php',
+        'Flasher\\Laravel\\Template\\BladeTemplateEngine' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Template/BladeTemplateEngine.php',
+        'Flasher\\Laravel\\Translation\\Translator' => __DIR__ . '/..' . '/php-flasher/flasher-laravel/Translation/Translator.php',
+        'Flasher\\Notyf\\Laravel\\Facade\\Notyf' => __DIR__ . '/..' . '/php-flasher/flasher-notyf-laravel/Facade/Notyf.php',
+        'Flasher\\Notyf\\Laravel\\FlasherNotyfServiceProvider' => __DIR__ . '/..' . '/php-flasher/flasher-notyf-laravel/FlasherNotyfServiceProvider.php',
+        'Flasher\\Notyf\\Prime\\NotyfBuilder' => __DIR__ . '/..' . '/php-flasher/flasher-notyf/NotyfBuilder.php',
+        'Flasher\\Notyf\\Prime\\NotyfFactory' => __DIR__ . '/..' . '/php-flasher/flasher-notyf/NotyfFactory.php',
+        'Flasher\\Notyf\\Prime\\NotyfPlugin' => __DIR__ . '/..' . '/php-flasher/flasher-notyf/NotyfPlugin.php',
+        'Flasher\\Prime\\Aware\\FlasherAwareInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Aware/FlasherAwareInterface.php',
+        'Flasher\\Prime\\Aware\\FlasherAwareTrait' => __DIR__ . '/..' . '/php-flasher/flasher/Aware/FlasherAwareTrait.php',
+        'Flasher\\Prime\\Config\\Config' => __DIR__ . '/..' . '/php-flasher/flasher/Config/Config.php',
+        'Flasher\\Prime\\Config\\ConfigInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Config/ConfigInterface.php',
+        'Flasher\\Prime\\Container\\ContainerInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Container/ContainerInterface.php',
+        'Flasher\\Prime\\Container\\FlasherContainer' => __DIR__ . '/..' . '/php-flasher/flasher/Container/FlasherContainer.php',
+        'Flasher\\Prime\\EventDispatcher\\EventDispatcher' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventDispatcher.php',
+        'Flasher\\Prime\\EventDispatcher\\EventDispatcherInterface' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventDispatcherInterface.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\AddToStorageListener' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/AddToStorageListener.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\EventSubscriberInterface' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/EventSubscriberInterface.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\PresetListener' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/PresetListener.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\RemoveListener' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/RemoveListener.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\StampsListener' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/StampsListener.php',
+        'Flasher\\Prime\\EventDispatcher\\EventListener\\TranslationListener' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/EventListener/TranslationListener.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\FilterEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/FilterEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\PersistEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/PersistEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\PostPersistEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/PostPersistEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\PostRemoveEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/PostRemoveEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\PostUpdateEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/PostUpdateEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\PresentationEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/PresentationEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\RemoveEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/RemoveEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\ResponseEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/ResponseEvent.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\StoppableEventInterface' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/StoppableEventInterface.php',
+        'Flasher\\Prime\\EventDispatcher\\Event\\UpdateEvent' => __DIR__ . '/..' . '/php-flasher/flasher/EventDispatcher/Event/UpdateEvent.php',
+        'Flasher\\Prime\\Exception\\PresetNotFoundException' => __DIR__ . '/..' . '/php-flasher/flasher/Exception/PresetNotFoundException.php',
+        'Flasher\\Prime\\Factory\\NotificationFactory' => __DIR__ . '/..' . '/php-flasher/flasher/Factory/NotificationFactory.php',
+        'Flasher\\Prime\\Factory\\NotificationFactoryInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Factory/NotificationFactoryInterface.php',
+        'Flasher\\Prime\\Filter\\CriteriaBuilder' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/CriteriaBuilder.php',
+        'Flasher\\Prime\\Filter\\Filter' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Filter.php',
+        'Flasher\\Prime\\Filter\\Specification\\AndSpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/AndSpecification.php',
+        'Flasher\\Prime\\Filter\\Specification\\CallbackSpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/CallbackSpecification.php',
+        'Flasher\\Prime\\Filter\\Specification\\DelaySpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/DelaySpecification.php',
+        'Flasher\\Prime\\Filter\\Specification\\HopsSpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/HopsSpecification.php',
+        'Flasher\\Prime\\Filter\\Specification\\PrioritySpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/PrioritySpecification.php',
+        'Flasher\\Prime\\Filter\\Specification\\SpecificationInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/SpecificationInterface.php',
+        'Flasher\\Prime\\Filter\\Specification\\StampsSpecification' => __DIR__ . '/..' . '/php-flasher/flasher/Filter/Specification/StampsSpecification.php',
+        'Flasher\\Prime\\Flasher' => __DIR__ . '/..' . '/php-flasher/flasher/Flasher.php',
+        'Flasher\\Prime\\FlasherInterface' => __DIR__ . '/..' . '/php-flasher/flasher/FlasherInterface.php',
+        'Flasher\\Prime\\Http\\RequestExtension' => __DIR__ . '/..' . '/php-flasher/flasher/Http/RequestExtension.php',
+        'Flasher\\Prime\\Http\\RequestInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Http/RequestInterface.php',
+        'Flasher\\Prime\\Http\\ResponseExtension' => __DIR__ . '/..' . '/php-flasher/flasher/Http/ResponseExtension.php',
+        'Flasher\\Prime\\Http\\ResponseInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Http/ResponseInterface.php',
+        'Flasher\\Prime\\Notification\\Envelope' => __DIR__ . '/..' . '/php-flasher/flasher/Notification/Envelope.php',
+        'Flasher\\Prime\\Notification\\Notification' => __DIR__ . '/..' . '/php-flasher/flasher/Notification/Notification.php',
+        'Flasher\\Prime\\Notification\\NotificationBuilder' => __DIR__ . '/..' . '/php-flasher/flasher/Notification/NotificationBuilder.php',
+        'Flasher\\Prime\\Notification\\NotificationBuilderInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Notification/NotificationBuilderInterface.php',
+        'Flasher\\Prime\\Notification\\NotificationInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Notification/NotificationInterface.php',
+        'Flasher\\Prime\\Plugin\\FlasherPlugin' => __DIR__ . '/..' . '/php-flasher/flasher/Plugin/FlasherPlugin.php',
+        'Flasher\\Prime\\Plugin\\Plugin' => __DIR__ . '/..' . '/php-flasher/flasher/Plugin/Plugin.php',
+        'Flasher\\Prime\\Plugin\\PluginInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Plugin/PluginInterface.php',
+        'Flasher\\Prime\\Response\\Presenter\\ArrayPresenter' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Presenter/ArrayPresenter.php',
+        'Flasher\\Prime\\Response\\Presenter\\HtmlPresenter' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Presenter/HtmlPresenter.php',
+        'Flasher\\Prime\\Response\\Presenter\\PresenterInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Presenter/PresenterInterface.php',
+        'Flasher\\Prime\\Response\\Resource\\ResourceManager' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Resource/ResourceManager.php',
+        'Flasher\\Prime\\Response\\Resource\\ResourceManagerInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Resource/ResourceManagerInterface.php',
+        'Flasher\\Prime\\Response\\Response' => __DIR__ . '/..' . '/php-flasher/flasher/Response/Response.php',
+        'Flasher\\Prime\\Response\\ResponseManager' => __DIR__ . '/..' . '/php-flasher/flasher/Response/ResponseManager.php',
+        'Flasher\\Prime\\Response\\ResponseManagerInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Response/ResponseManagerInterface.php',
+        'Flasher\\Prime\\Stamp\\ContextStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/ContextStamp.php',
+        'Flasher\\Prime\\Stamp\\CreatedAtStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/CreatedAtStamp.php',
+        'Flasher\\Prime\\Stamp\\DelayStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/DelayStamp.php',
+        'Flasher\\Prime\\Stamp\\HandlerStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/HandlerStamp.php',
+        'Flasher\\Prime\\Stamp\\HopsStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/HopsStamp.php',
+        'Flasher\\Prime\\Stamp\\OrderableStampInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/OrderableStampInterface.php',
+        'Flasher\\Prime\\Stamp\\PresentableStampInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/PresentableStampInterface.php',
+        'Flasher\\Prime\\Stamp\\PresetStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/PresetStamp.php',
+        'Flasher\\Prime\\Stamp\\PriorityStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/PriorityStamp.php',
+        'Flasher\\Prime\\Stamp\\StampInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/StampInterface.php',
+        'Flasher\\Prime\\Stamp\\TranslationStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/TranslationStamp.php',
+        'Flasher\\Prime\\Stamp\\UnlessStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/UnlessStamp.php',
+        'Flasher\\Prime\\Stamp\\UuidStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/UuidStamp.php',
+        'Flasher\\Prime\\Stamp\\ViewStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/ViewStamp.php',
+        'Flasher\\Prime\\Stamp\\WhenStamp' => __DIR__ . '/..' . '/php-flasher/flasher/Stamp/WhenStamp.php',
+        'Flasher\\Prime\\Storage\\Bag\\ArrayBag' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/Bag/ArrayBag.php',
+        'Flasher\\Prime\\Storage\\Bag\\BagInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/Bag/BagInterface.php',
+        'Flasher\\Prime\\Storage\\Bag\\StaticBag' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/Bag/StaticBag.php',
+        'Flasher\\Prime\\Storage\\StorageBag' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/StorageBag.php',
+        'Flasher\\Prime\\Storage\\StorageInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/StorageInterface.php',
+        'Flasher\\Prime\\Storage\\StorageManager' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/StorageManager.php',
+        'Flasher\\Prime\\Storage\\StorageManagerInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Storage/StorageManagerInterface.php',
+        'Flasher\\Prime\\Template\\Engine' => __DIR__ . '/..' . '/php-flasher/flasher/Template/Engine.php',
+        'Flasher\\Prime\\Template\\EngineInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Template/EngineInterface.php',
+        'Flasher\\Prime\\Template\\PHPTemplateEngine' => __DIR__ . '/..' . '/php-flasher/flasher/Template/PHPTemplateEngine.php',
+        'Flasher\\Prime\\Template\\TemplateEngineInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Template/TemplateEngineInterface.php',
+        'Flasher\\Prime\\Translation\\EchoTranslator' => __DIR__ . '/..' . '/php-flasher/flasher/Translation/EchoTranslator.php',
+        'Flasher\\Prime\\Translation\\Language' => __DIR__ . '/..' . '/php-flasher/flasher/Translation/Language.php',
+        'Flasher\\Prime\\Translation\\Messages' => __DIR__ . '/..' . '/php-flasher/flasher/Translation/Messages.php',
+        'Flasher\\Prime\\Translation\\ResourceInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Translation/ResourceInterface.php',
+        'Flasher\\Prime\\Translation\\TranslatorInterface' => __DIR__ . '/..' . '/php-flasher/flasher/Translation/TranslatorInterface.php',
+
         'Fruitcake\\Cors\\CorsService' => __DIR__ . '/..' . '/fruitcake/php-cors/src/CorsService.php',
         'Fruitcake\\Cors\\Exceptions\\InvalidOptionException' => __DIR__ . '/..' . '/fruitcake/php-cors/src/Exceptions/InvalidOptionException.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
@@ -3066,7 +3227,10 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Laravel\\Prompts\\Concerns\\Truncation' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Truncation.php',
         'Laravel\\Prompts\\Concerns\\TypedValue' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/TypedValue.php',
         'Laravel\\Prompts\\ConfirmPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/ConfirmPrompt.php',
+        'Laravel\\Prompts\\Exceptions\\FormRevertedException' => __DIR__ . '/..' . '/laravel/prompts/src/Exceptions/FormRevertedException.php',
         'Laravel\\Prompts\\Exceptions\\NonInteractiveValidationException' => __DIR__ . '/..' . '/laravel/prompts/src/Exceptions/NonInteractiveValidationException.php',
+        'Laravel\\Prompts\\FormBuilder' => __DIR__ . '/..' . '/laravel/prompts/src/FormBuilder.php',
+        'Laravel\\Prompts\\FormStep' => __DIR__ . '/..' . '/laravel/prompts/src/FormStep.php',
         'Laravel\\Prompts\\Key' => __DIR__ . '/..' . '/laravel/prompts/src/Key.php',
         'Laravel\\Prompts\\MultiSearchPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/MultiSearchPrompt.php',
         'Laravel\\Prompts\\MultiSelectPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/MultiSelectPrompt.php',
@@ -3084,9 +3248,11 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Laravel\\Prompts\\Table' => __DIR__ . '/..' . '/laravel/prompts/src/Table.php',
         'Laravel\\Prompts\\Terminal' => __DIR__ . '/..' . '/laravel/prompts/src/Terminal.php',
         'Laravel\\Prompts\\TextPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/TextPrompt.php',
+        'Laravel\\Prompts\\TextareaPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/TextareaPrompt.php',
         'Laravel\\Prompts\\Themes\\Contracts\\Scrolling' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Contracts/Scrolling.php',
         'Laravel\\Prompts\\Themes\\Default\\Concerns\\DrawsBoxes' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/Concerns/DrawsBoxes.php',
         'Laravel\\Prompts\\Themes\\Default\\Concerns\\DrawsScrollbars' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/Concerns/DrawsScrollbars.php',
+        'Laravel\\Prompts\\Themes\\Default\\Concerns\\InteractsWithStrings' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/Concerns/InteractsWithStrings.php',
         'Laravel\\Prompts\\Themes\\Default\\ConfirmPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/ConfirmPromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\MultiSearchPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/MultiSearchPromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\MultiSelectPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/MultiSelectPromptRenderer.php',
@@ -3101,6 +3267,7 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Laravel\\Prompts\\Themes\\Default\\SuggestPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/SuggestPromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\TableRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/TableRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\TextPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/TextPromptRenderer.php',
+        'Laravel\\Prompts\\Themes\\Default\\TextareaPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/TextareaPromptRenderer.php',
         'Laravel\\Sail\\Console\\AddCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/AddCommand.php',
         'Laravel\\Sail\\Console\\Concerns\\InteractsWithDockerComposeServices' => __DIR__ . '/..' . '/laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',
@@ -3538,6 +3705,7 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
+
         'League\\OAuth1\\Client\\Credentials\\ClientCredentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Credentials/ClientCredentials.php',
         'League\\OAuth1\\Client\\Credentials\\ClientCredentialsInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Credentials/ClientCredentialsInterface.php',
         'League\\OAuth1\\Client\\Credentials\\Credentials' => __DIR__ . '/..' . '/league/oauth1-client/src/Credentials/Credentials.php',
@@ -3566,6 +3734,7 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Mckenziearts\\Notify\\LaravelNotify' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotify.php',
         'Mckenziearts\\Notify\\LaravelNotifyServiceProvider' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/LaravelNotifyServiceProvider.php',
         'Mckenziearts\\Notify\\Storage\\Session' => __DIR__ . '/..' . '/mckenziearts/laravel-notify/src/Storage/Session.php',
+
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -4833,7 +5002,6 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'PHPUnit\\Util\\PHP\\AbstractPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/AbstractPhpProcess.php',
         'PHPUnit\\Util\\PHP\\DefaultPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/DefaultPhpProcess.php',
         'PHPUnit\\Util\\PHP\\PhpProcessException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Exception/PhpProcessException.php',
-        'PHPUnit\\Util\\PHP\\WindowsPhpProcess' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/PHP/WindowsPhpProcess.php',
         'PHPUnit\\Util\\Reflection' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Reflection.php',
         'PHPUnit\\Util\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Test.php',
         'PHPUnit\\Util\\ThrowableToStringMapper' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/ThrowableToStringMapper.php',
@@ -5790,8 +5958,11 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Spatie\\Backtrace\\Arguments\\Reducers\\StringableArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/StringableArgumentReducer.php',
         'Spatie\\Backtrace\\Arguments\\Reducers\\SymphonyRequestArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/SymphonyRequestArgumentReducer.php',
         'Spatie\\Backtrace\\Backtrace' => __DIR__ . '/..' . '/spatie/backtrace/src/Backtrace.php',
-        'Spatie\\Backtrace\\CodeSnippet' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippet.php',
-        'Spatie\\Backtrace\\File' => __DIR__ . '/..' . '/spatie/backtrace/src/File.php',
+        'Spatie\\Backtrace\\CodeSnippets\\CodeSnippet' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippets/CodeSnippet.php',
+        'Spatie\\Backtrace\\CodeSnippets\\FileSnippetProvider' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippets/FileSnippetProvider.php',
+        'Spatie\\Backtrace\\CodeSnippets\\LaravelSerializableClosureSnippetProvider' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippets/LaravelSerializableClosureSnippetProvider.php',
+        'Spatie\\Backtrace\\CodeSnippets\\NullSnippetProvider' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippets/NullSnippetProvider.php',
+        'Spatie\\Backtrace\\CodeSnippets\\SnippetProvider' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippets/SnippetProvider.php',
         'Spatie\\Backtrace\\Frame' => __DIR__ . '/..' . '/spatie/backtrace/src/Frame.php',
         'Spatie\\FlareClient\\Api' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Api.php',
         'Spatie\\FlareClient\\Concerns\\HasContext' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Concerns/HasContext.php',
@@ -5873,8 +6044,10 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Spatie\\LaravelIgnition\\Exceptions\\ViewException' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Exceptions/ViewException.php',
         'Spatie\\LaravelIgnition\\Exceptions\\ViewExceptionWithSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Exceptions/ViewExceptionWithSolution.php',
         'Spatie\\LaravelIgnition\\Facades\\Flare' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Facades/Flare.php',
+        'Spatie\\LaravelIgnition\\FlareMiddleware\\AddContext' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddContext.php',
         'Spatie\\LaravelIgnition\\FlareMiddleware\\AddDumps' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddDumps.php',
         'Spatie\\LaravelIgnition\\FlareMiddleware\\AddEnvironmentInformation' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddEnvironmentInformation.php',
+        'Spatie\\LaravelIgnition\\FlareMiddleware\\AddExceptionHandledStatus' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddExceptionHandledStatus.php',
         'Spatie\\LaravelIgnition\\FlareMiddleware\\AddExceptionInformation' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddExceptionInformation.php',
         'Spatie\\LaravelIgnition\\FlareMiddleware\\AddJobs' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddJobs.php',
         'Spatie\\LaravelIgnition\\FlareMiddleware\\AddLogs' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/FlareMiddleware/AddLogs.php',
@@ -5923,6 +6096,8 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedLivewireMethodSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UndefinedLivewireMethodSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedLivewirePropertySolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UndefinedLivewirePropertySolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedViewVariableSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UndefinedViewVariableSolutionProvider.php',
+        'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UnknownMariadbCollationSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UnknownMariadbCollationSolutionProvider.php',
+        'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UnknownMysql8CollationSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UnknownMysql8CollationSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UnknownValidationSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UnknownValidationSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\ViewNotFoundSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/ViewNotFoundSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionTransformers\\LaravelSolutionTransformer' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionTransformers/LaravelSolutionTransformer.php',
@@ -5931,6 +6106,8 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Spatie\\LaravelIgnition\\Solutions\\SuggestLivewireMethodNameSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SuggestLivewireMethodNameSolution.php',
         'Spatie\\LaravelIgnition\\Solutions\\SuggestLivewirePropertyNameSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SuggestLivewirePropertyNameSolution.php',
         'Spatie\\LaravelIgnition\\Solutions\\SuggestUsingCorrectDbNameSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SuggestUsingCorrectDbNameSolution.php',
+        'Spatie\\LaravelIgnition\\Solutions\\SuggestUsingMariadbDatabaseSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SuggestUsingMariadbDatabaseSolution.php',
+        'Spatie\\LaravelIgnition\\Solutions\\SuggestUsingMysql8DatabaseSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SuggestUsingMysql8DatabaseSolution.php',
         'Spatie\\LaravelIgnition\\Solutions\\UseDefaultValetDbCredentialsSolution' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/UseDefaultValetDbCredentialsSolution.php',
         'Spatie\\LaravelIgnition\\Support\\Composer\\Composer' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/Composer/Composer.php',
         'Spatie\\LaravelIgnition\\Support\\Composer\\ComposerClassMap' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/Composer/ComposerClassMap.php',
@@ -6878,7 +7055,9 @@ class ComposerStaticInit347509f04575cea5d0632a566142247c
         'Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
         'Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/SubscribedService.php',
         'Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
+        'Symfony\\Contracts\\Service\\ServiceCollectionInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceCollectionInterface.php',
         'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceLocatorTrait.php',
+        'Symfony\\Contracts\\Service\\ServiceMethodsSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceMethodsSubscriberTrait.php',
         'Symfony\\Contracts\\Service\\ServiceProviderInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceProviderInterface.php',
         'Symfony\\Contracts\\Service\\ServiceSubscriberInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberInterface.php',
         'Symfony\\Contracts\\Service\\ServiceSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberTrait.php',

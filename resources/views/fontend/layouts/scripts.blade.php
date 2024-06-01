@@ -1,4 +1,5 @@
 <script>
+
     /**
      * -----------------------------------
      * Thard party plugin initialization
@@ -22,10 +23,12 @@
     });
 
 
+
     ClassicEditor
         .create(document.querySelector('#editor'))
         .catch(error => {
             console.error(error);
+
     });
 
 
@@ -77,6 +80,7 @@
                     }
                 });
         });
+
 
 
 

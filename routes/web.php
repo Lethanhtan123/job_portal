@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Fontend\CandidateDashboardController;
+use App\Http\Controllers\Fontend\CandidateExperienceController;
 use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Fontend\FrontendJobPageController;
 use App\Http\Controllers\Fontend\HomeController;
 use App\Http\Controllers\Fontend\JobController;
 use App\Http\Controllers\ProfileController;
+use App\Models\CandidateExperience;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +53,8 @@ Route::group(
         Route::get('/profile', [CandidateProfileController::class, 'index'])->name('profile.index');
         Route::post('/profile/basic-info-upate',[CandidateProfileController::class,'basicInfoUpdate'])->name('profile.basic-info.update');
         Route::post('/profile/profile-info-upate', [CandidateProfileController::class, 'profileInfoUpdate'])->name('profile.profile-info.update');
+
+        Route::resource('experience', CandidateExperienceController::class);
     }
 );
 

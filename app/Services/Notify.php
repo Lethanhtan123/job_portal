@@ -6,17 +6,17 @@ class Notify {
 
     //Create success notify
     static function createdNotifycation(){
-       return notify()->success('Created Successfully', 'Success!');
+       return notyf()->success('Created Successfully', 'Success!');
 
     }
      //Updated success notify
      static function updatedNotifycation(){
-        return notify()->success('Updated Successfully', 'Success!');
+        return notyf()->success('Updated Successfully', 'Success!');
 
      }
 
      static function deletedNotifycation(){
-        return notify()->success('Deleted Successfully', 'Success!');
+        return notyf()->success('Deleted Successfully', 'Success!');
 
      }
 }

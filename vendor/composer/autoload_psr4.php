@@ -64,8 +64,10 @@ return array(
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Mockery\\' => array($vendorDir . '/mockery/mockery/library/Mockery'),
+
     'Mckenziearts\\Notify\\' => array($vendorDir . '/mckenziearts/laravel-notify/src'),
     'League\\OAuth1\\Client\\' => array($vendorDir . '/league/oauth1-client/src'),
+
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
     'League\\Flysystem\\Local\\' => array($vendorDir . '/league/flysystem-local'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
@@ -86,7 +88,14 @@ return array(
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Fruitcake\\Cors\\' => array($vendorDir . '/fruitcake/php-cors/src'),
+
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
+
+    'Flasher\\Prime\\' => array($vendorDir . '/php-flasher/flasher'),
+    'Flasher\\Notyf\\Prime\\' => array($vendorDir . '/php-flasher/flasher-notyf'),
+    'Flasher\\Notyf\\Laravel\\' => array($vendorDir . '/php-flasher/flasher-notyf-laravel'),
+    'Flasher\\Laravel\\' => array($vendorDir . '/php-flasher/flasher-laravel'),
+
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
