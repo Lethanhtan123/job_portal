@@ -21,7 +21,7 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class="experience-tbody" >
             @foreach ($candidateExperiences as $canEx)
                 <tr>
                     <td>{{ $canEx->company }}</td>

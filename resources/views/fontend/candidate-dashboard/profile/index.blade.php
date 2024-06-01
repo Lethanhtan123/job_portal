@@ -58,7 +58,7 @@
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Experience</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm Kinh nghiệm</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -67,32 +67,32 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="">Company *</label>
+                                    <label for="">Công ty *</label>
                                     <input type="text" required="" class="form-control" name="company" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Department *</label>
+                                    <label for="">Phòng *</label>
                                     <input type="text" required class="form-control" name="department" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Designation *</label>
+                                    <label for="">Chức vụ *</label>
                                     <input type="text" required class="form-control" name="designation" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Start Date *</label>
+                                    <label for="">Ngày bắt đầu *</label>
                                     <input type="text" required class="form-control datepicker" name="start"
                                         id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">End Date *</label>
+                                    <label for="">Ngày kết thúc *</label>
                                     <input type="text" class="form-control datepicker" required name="end"
                                         id="">
                                 </div>
@@ -101,19 +101,19 @@
                                 <div class="form-group form-check form-check-inline">
                                     <input type="checkbox" value="1" class=" form-check-input me-3 "
                                         name="currently_working" id="">
-                                    <label class=" form-check-label" for="">I'm currently working</label>
+                                    <label class=" form-check-label" for="">Hiện tại vẫn đang làm.</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="">Responsibilities</label>
+                                    <label for="">Trách nhiệm</label>
                                     <textarea maxlenght="500" class="form-control" name="responsibilities" id=""></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end align-items-center">
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Add Experience</button>
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
                         </div>
                     </form>
                 </div>
@@ -129,7 +129,19 @@
         var editMode = false;
 
         // fetch experience
-
+        function fetchExperience() {
+            $.ajax({
+                method: 'GET',
+                url: "{{ route('candidate.experience.index') }}",
+                data: {},
+                success: function(response) {
+                    $('.experience-tbody').html(response);
+                },
+                error: function(xhr, status, error) {
+                    console.log(error)
+                }
+            })
+        }
 
         // Save experience data
         $('#experience-form').on('submit', function(event) {
@@ -142,22 +154,24 @@
                     method: 'PUT',
                     url: "{{ route('candidate.experience.update', ':id') }}".replace(':id', editId),
                     data: formData,
+                    beforeSend: function() {
+                        showLoader();
+                    },
 
                     success: function(response) {
-                        //fetchExperience()
+                        fetchExperience();
 
                         $('#experience-form').trigger("reset");
                         $('#experienceModal').modal('hide');
                         editId = "";
                         editMode = false;
-
-
+                        hideLoader();
                         notyf.success(response.message);
                     },
                     error: function(xhr, status, error) {
-
                         console.log(error)
-                    }
+                    },
+
 
                 })
             } else {
@@ -165,9 +179,11 @@
                     method: 'POST',
                     url: "{{ route('candidate.experience.store') }}",
                     data: formData,
-
+                    beforeSend: function() {
+                        showLoader();
+                    },
                     success: function(response) {
-                       // fetchExperience();
+                        fetchExperience();
                         $('#experience-form').trigger("reset");
                         $('#experienceModal').modal('hide');
 
@@ -175,7 +191,7 @@
                         notyf.success(response.message);
                     },
                     error: function(xhr, status, error) {
-                            console.log(error);
+                        console.log(error);
                     }
                 })
             }
@@ -192,6 +208,10 @@
                 url: url,
                 data: {},
 
+                beforeSend: function() {
+                    showLoader();
+                },
+
                 success: function(response) {
                     editId = response.id
                     editMode = true;
@@ -205,7 +225,7 @@
                             $(`textarea[name="${index}"]`).val(value);
                         }
                     })
-                    //hideLoader();
+                    hideLoader();
                 },
                 error: function(xhr, status, error) {
                     console.log(error);
@@ -237,10 +257,12 @@
                         data: {
                             _token: "{{ csrf_token() }}"
                         },
-
+                        beforeSend: function() {
+                            showLoader();
+                        },
                         success: function(response) {
-                            //fetchExperience();
-                            //hideLoader();
+                            fetchExperience();
+                            hideLoader();
                             notyf.success(response.message);
                         },
                         error: function(xhr, status, error) {
@@ -248,19 +270,11 @@
                             swal(xhr.responseJSON.message, {
                                 icon: 'error',
                             });
-                            //hideLoader();
-
+                            hideLoader();
                         }
                     })
                 }
             });
         });
-
-
-        // fetch education
-
     </script>
 @endpush
-
-
-
