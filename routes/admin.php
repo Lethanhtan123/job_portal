@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\JobCategoryController;
@@ -72,8 +73,14 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     Route::resource('state', StateController::class);
 
     /** City Route */
+    Route::resource('district', DistrictController::class);
+    //Route::get('get-states/{country_id}', [LocationController::class, 'getStatesOfCountry'])->name('get-states');
+
+    /** District Route */
     Route::resource('city', CityController::class);
     Route::get('get-states/{country_id}', [LocationController::class, 'getStatesOfCountry'])->name('get-states');
+    Route::get('get-cities/{country_id}', [LocationController::class, 'getCityOfCountry'])->name('get-cities');
+    Route::get('get-districts/{city_id}', [LocationController::class, 'getDistrictsOfCity'])->name('get-districts');
 
      /** Language Route */
     Route::resource('languages', LanguageController::class);
@@ -105,7 +112,8 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     /** Job Tag */
     Route::resource('job-tags', TagController::class);
 
-     /** Job Experience Routes */
+     /** Job Routes */
+     Route::post('job-status/{id}', [JobController::class, 'changeStatus'])->name('job-status.update');
      Route::resource('jobs', JobController::class);
 
 

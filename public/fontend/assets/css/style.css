@@ -372,11 +372,20 @@ input[type=number]:focus,
 
 .form-group i {
     position: absolute;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
-    left: 15px;
+    right: 15px;
     font-size: 18px;
-    color: #A0ABB8;
+    color: #A0ABB8;cursor: pointer;
+}
+.input_but {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 64%;
+    transform: translateY(-50%) scale(1.4);
+    right: 17px;
 }
 
 .form-icons {
@@ -392,7 +401,9 @@ input[type=number]:focus,
         max-width: 1350px;
     }
 }
-
+.width53{
+    width: 53px !important;
+}
 strong {
     font-weight: bold;
 }
@@ -7861,7 +7872,9 @@ ul li:last-child .card-list-4 {
     line-height: 53px;
     font-size: 14px;
 }
-
+.cus_sidebar{
+    padding: 20px !important;
+}
 
 .eye_button{
     width: 20px;
@@ -7882,6 +7895,42 @@ ul li:last-child .card-list-4 {
     top: 0;
     right: 0;
 }
+.job-skill {
+    background: var(--colorPrimary) !important;
+    padding: 7px 10px 7px 10px !important;
+    color: white !important;
+}
+
+.job-skill:hover {
+    color: white !important;
+}
+
+.featured {
+    background: #ae00ae !important;
+  color: white !important;
+}
+
+.featured:hover {
+  color: white !important;
+}
+
+.highlight {
+    background: #f05d04 !important;
+  color: white !important;
+}
+
+.highlight:hover {
+    color: white !important;
+}
+.active>.page-link, .page-link.active {
+    z-index: 3;
+    color: #fff !important;
+    background-color: var(--colorPrimary) !important;
+    border-color: var(--colorPrimary) !important;
+}
+
+
+
 .nav-tabs {
     border: 0px;
     display: inline-block;

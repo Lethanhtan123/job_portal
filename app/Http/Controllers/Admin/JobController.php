@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\JobCreateRequest;
 use App\Models\City;
 use App\Models\Company;
 use App\Models\Country;
+use App\Models\District;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Job;
@@ -22,9 +23,12 @@ use App\Models\Tag;
 use App\Services\Notify;
 use App\Traits\Searchable;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as HttpResponse;
 use Illuminate\View\View;
 use Illuminate\View\ViewException;
 use PHPUnit\Framework\Constraint\Count;
+use Illuminate\Http\Response;
+
 
 class JobController extends Controller
 {
@@ -36,7 +40,7 @@ class JobController extends Controller
     {
         $query = Job::query();
         $this->search($query, ['title', 'slug']);
-        $jobs = $query->orderBy('id', 'DESC')->paginate(20);
+        $jobs = $query->orderBy('id', 'DESC')->paginate(10);
 
         return view('admin.job.index', compact('jobs'));
     }
@@ -50,7 +54,8 @@ class JobController extends Controller
         $companies = Company::where(['profile_completion' => 1, 'visibility' => 1])->get();
         $categories = JobCategory::all();
         $countries = Country::all();
-        $states = State::all();
+        // $states = State::all();
+        $district = District::all();
         $cities = City::all();
         $salaryTypes = SalaryType::all();
         $experiences = Experience::all();
@@ -70,7 +75,8 @@ class JobController extends Controller
             'jobTypes',
             'tags',
             'cities',
-            'states',
+            'district',
+            // 'states',
             'skills'
 
         ));
@@ -91,8 +97,9 @@ class JobController extends Controller
         $job->deadline = $request->deadline;
 
         $job->country_id = $request->country;
-        $job->state_id = $request->state;
+        // $job->state_id = $request->state;
         $job->city_id = $request->city;
+        $job->district_id = $request->district;
         $job->address = $request->address;
 
         $job->salary_mode = $request->salary_mode;
@@ -100,6 +107,9 @@ class JobController extends Controller
         $job->max_salary = $request->max_salary;
         $job->custom_salary = $request->custom_salary;
         $job->salary_type_id = $request->salary_type;
+        $job->tygia = $request->tygia;
+
+
         $job->job_experience_id = $request->experience;
         $job->job_role_id = $request->job_role;
         $job->education_id = $request->education;
@@ -145,15 +155,98 @@ class JobController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $job= Job::FindOrFail($id);
+        $companies = Company::where(['profile_completion' => 1, 'visibility' => 1])->get();
+        $categories = JobCategory::all();
+        $countries = Country::all();
+        // $states = State::all();
+        $district = District::all();
+        $cities = City::all();
+        $salaryTypes = SalaryType::all();
+        $experiences = Experience::all();
+        $jobRoles = JobRole::all();
+        $educations = Education::all();
+        $jobTypes = JobType::all();
+        $tags = Tag::all();
+        $skills = Skill::all();
+        return view('admin.job.edit', compact(
+            'companies',
+            'categories',
+            'countries',
+            'salaryTypes',
+            'experiences',
+            'jobRoles',
+            'educations',
+            'jobTypes',
+            'tags',
+            'cities',
+            'district',
+            // 'states',
+            'skills',
+            'job'
+
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(JobCreateRequest $request, string $id)
     {
-        //
+        //dd($request->all());
+        $job = Job::findOrFail($id);
+        $job->title = $request->title;
+        $job->company_id = $request->company;
+        $job->job_category_id = $request->category;
+        $job->vacancies = $request->vacancies;
+        $job->deadline = $request->deadline;
+
+        $job->country_id = $request->country;
+        // $job->state_id = $request->state;
+        $job->city_id = $request->city;
+        $job->district_id = $request->district;
+        $job->address = $request->address;
+
+        $job->salary_mode = $request->salary_mode;
+        $job->min_salary = $request->min_salary;
+        $job->max_salary = $request->max_salary;
+        $job->custom_salary = $request->custom_salary;
+        $job->salary_type_id = $request->salary_type;
+        $job->tygia = $request->tygia;
+
+
+        $job->job_experience_id = $request->experience;
+        $job->job_role_id = $request->job_role;
+        $job->education_id = $request->education;
+        $job->job_type_id = $request->job_type;
+        $job->job_type_id = $request->job_type;
+        $job->featured = $request->featured;
+        $job->highlight = $request->highlight;
+        $job->description = $request->description;
+        $job->status = 'active';
+        $job->save();
+
+         // insert tags
+         JobTag::where('job_id', $id)->delete();
+         foreach($request->tags as $tag) {
+            $createTag = new JobTag();
+            $createTag->job_id = $job->id;
+            $createTag->tag_id = $tag;
+            $createTag->save();
+        }
+
+        // insert skills
+        JobSkills::where('job_id', $id)->delete();
+        foreach($request->skills as $skill) {
+            $createSkill = new JobSkills();
+            $createSkill->job_id = $job->id;
+            $createSkill->skill_id = $skill;
+            $createSkill->save();
+        }
+
+        Notify::updatedNotifycation();
+
+        return to_route('admin.jobs.index');
     }
 
     /**
@@ -161,6 +254,21 @@ class JobController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            Job::findOrFail($id)->delete();
+            Notify::deletedNotifycation();
+            return response(['message' => 'success'], 200);
+
+        }catch(\Exception $e) {
+            logger($e);
+            return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
+        }
+    }
+    function changeStatus(string $id) : Response {
+        $job = Job::findOrFail($id);
+        $job->status = $job->status == 'active' ? 'pending' : 'active';
+        $job->save();
+        Notify::updatedNotifycation();
+        return response(['message' => 'success'], 200);
     }
 }

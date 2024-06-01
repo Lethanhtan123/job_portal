@@ -31,8 +31,10 @@
                                 <th>Job</th>
                                 <th>Category/Role</th>
                                 <th>Salary</th>
+                                <th>Tỷ giá</th>
                                 <th>Deadline</th>
                                 <th>Status</th>
+                                <th>Change Status</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
 
@@ -72,6 +74,10 @@
 
                                         @endif
                                     </td>
+
+                                    <td><b>{{ $job->tygia }} /VNĐ</b></td>
+
+
                                     <td>{{ formatDate($job->deadline) }}</td>
                                     <td>
                                         @if ($job->status === 'pending')
@@ -82,7 +88,7 @@
                                         <span class="badge bg-danger text-dark">Expired</span>
                                         @endif
                                     </td>
-                                    {{-- <td>
+                                    <td>
                                         <div class="form-group">
                                             <label class="mt-2 custom-switch">
                                                 <input @checked($job->status === 'active') type="checkbox" data-id="{{
@@ -90,7 +96,7 @@
                                                 <span class="custom-switch-indicator"></span>
                                             </label>
                                         </div>
-                                    </td> --}}
+                                    </td>
                                     <td>
                                         <a href="{{ route('admin.jobs.edit', $job->id) }}"
                                             class="btn-sm btn btn-primary"><i class="fas fa-edit"></i></a>
@@ -110,10 +116,9 @@
                         </table>
                     </div>
                     <div class="text-right card-footer">
-
-                        {{-- @if ($Salarytype->hasPages())
-                        {{ $Salarytype->withQueryString()->links() }}
-                        @endif --}}
+                        @if ($jobs->hasPages())
+                        {{ $jobs->withQueryString()->links() }}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -122,3 +127,26 @@
 </section>
 @endsection
 
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.post_status').on('change', function(){
+                let id = $(this).data('id');
+
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route("admin.job-status.update", ":id") }}'.replace(":id", id),
+                    data: {_token:"{{ csrf_token() }}"},
+                    success: function(response) {
+                        if(response.message == 'success') {
+                            window.location.reload();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+
+                    }
+                });
+            })
+        })
+    </script>
+@endpush

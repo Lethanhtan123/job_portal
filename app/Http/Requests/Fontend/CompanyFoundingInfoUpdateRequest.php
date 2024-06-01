@@ -25,8 +25,8 @@ class CompanyFoundingInfoUpdateRequest extends FormRequest
             'email' => ['required', 'email'],
             'phone' => ['required'],
             'country' => ['required', 'integer'],
-            'state' => ['nullable', 'integer'],
-            'city' => ['nullable', 'integer'],
+            'state' => ['required', 'integer'],
+            'city' => ['required', 'integer'],
             'address' => ['string', 'max:255'],
             'map_link' => ['nullable']
         ];

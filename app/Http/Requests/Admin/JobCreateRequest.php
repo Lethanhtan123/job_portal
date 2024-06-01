@@ -34,6 +34,7 @@ class JobCreateRequest extends FormRequest
             'job_type' => ['required', 'integer'],
             'job_type' => ['required', 'integer'],
             'tags' => ['nullable'],
+            'tygia' => ['nullable'],
             'benefits' => ['nullable'],
             'skills' => ['required'],
             'receive_applications' => ['required'],

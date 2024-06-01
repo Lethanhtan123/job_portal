@@ -163,7 +163,8 @@
                                             class="form-control form-icons industry_type select-active {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
                                             <option value="">Select</option>
                                             @foreach ($IndustryType as $item)
-                                            <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">{{ $item->name }}</option>
+                                            <option @selected($item->id === $companyInfo?->industry_type_id) value="{{
+                                                $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                         <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
@@ -272,8 +273,12 @@
                                         <label class="mb-10 font-sm text-capitalize color-text-mutted">Password *
                                         </label>
                                         <input class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                            type="password" name="password">
+                                            type="password" name="password" id="password1">
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+                                        <div class="input_but_pass1 input_but">
+                                            <span class="fas fa-eye"></span>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -283,8 +288,12 @@
                                             * </label>
                                         <input
                                             class="form-control  {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
-                                            type="password" name="password_confirmation">
+                                            type="password" name="password_confirmation" id="password2">
                                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
+                                        <div class="input_but_pass2 input_but">
+                                            <span class="fas fa-eye"></span>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -335,7 +344,39 @@
 </section>
 @endsection
 
- {{-- @push('scripts')
+@push('scripts')
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+    $('.input_but_pass2').click(function() {
+        if ($('#password2').val()) {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('#password2').attr('type', 'password');
+            } else {
+                $(this).addClass('active');
+                $('#password2').attr('type', 'text');
+            }
+            $(this).find('span').toggleClass('fa-eye-slash');
+        }
+    });
+
+    $('.input_but_pass1').click(function() {
+        if ($('#password1').val()) {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('#password1').attr('type', 'password');
+            } else {
+                $(this).addClass('active');
+                $('#password1').attr('type', 'text');
+            }
+            $(this).find('span').toggleClass('fa-eye-slash');
+        }
+    });
+});
+</script>
+@endpush
+
+{{-- @push('scripts')
 <script>
     $(document).ready(function() {
         $('.country').on('change', function() {
@@ -382,4 +423,4 @@
         })
     })
 </script>
-@endpush  --}}
+@endpush --}}

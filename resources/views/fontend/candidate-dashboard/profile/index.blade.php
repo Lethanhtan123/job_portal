@@ -33,11 +33,11 @@
                                 data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                                 aria-selected="false">Profile</button>
                         </li>
-                        <li class="nav-item" role="presentation">
+                        {{-- <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-experience" type="button" role="tab"
                                 aria-controls="pills-experience" aria-selected="false">Exeperience & Education</button>
-                        </li>
+                        </li> --}}
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
@@ -96,7 +96,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group form-check form-check-inline">
-                                    <input type="checkbox" class=" form-check-input me-3 "  name="" id="">
+                                    <input type="checkbox" class=" form-check-input me-3"  name="" id="">
                                     <label class=" form-check-label" for="">I'm currently working</label>
                                 </div>
                             </div>

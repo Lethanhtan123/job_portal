@@ -27,7 +27,7 @@ if(!function_exists('setSidebarActive')) {
 if(!function_exists('isCompanyProfileComplete')) {
     function isCompanyProfileComplete() : bool
     {
-        $requiredFields = ['logo', 'banner', 'bio', 'vision', 'name', 'industry_type_id','establishment_date', 'phone', 'email', 'country'];
+        $requiredFields = ['logo',  'bio', 'name', 'establishment_date', 'phone', 'email', 'country'];
         $companyProfile = Company::where('user_id', auth()->user()->id)->first();
 
         foreach($requiredFields as $field) {

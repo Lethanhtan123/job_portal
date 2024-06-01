@@ -7,7 +7,9 @@ use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
 use App\Http\Controllers\Fontend\FrontendCandidatePageController;
 use App\Http\Controllers\Fontend\FrontendCompanyPageController;
+use App\Http\Controllers\Fontend\FrontendJobPageController;
 use App\Http\Controllers\Fontend\HomeController;
+use App\Http\Controllers\Fontend\JobController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,7 +72,16 @@ Route::group(
         Route::post('/profile/founding-info', [CompanyProfileController::class, 'updateFoundingInfo'])->name('profile.founding-info');
         Route::post('/profile/account-info', [CompanyProfileController::class, 'updateAccountInfo'])->name('profile.account-info');
         Route::post('/profile/password-update', [CompanyProfileController::class, 'updatePassword'])->name('profile.password-update');
+
+        /** Job Routes */
+        //Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
+        Route::resource('jobs', JobController::class);
     }
 );
 
+/** Find a job route */
+Route::get('jobs', [FrontendJobPageController::class, 'index'])->name('jobs.index');
+Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('jobs.show');
+//Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
+//Route::get('job-bookmark/{id}', [CandidateJobBookmarkController::class, 'save'])->name('job.bookmark');
 

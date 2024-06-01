@@ -30,7 +30,6 @@
                         <table class="table table-striped">
                             <tr>
                                 <th>Name</th>
-                                <th>State</th>
                                 <th>Country</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
@@ -39,7 +38,6 @@
                                 @forelse ($City as $type)
                                 <tr>
                                     <th>{{ $type->name }}</th>
-                                    <th>{{ $type->state?->name }}</th>
                                     <th>{{ $type->country?->name }}</th>
                                     <th>
                                         <a href="{{ route('admin.city.edit',$type->id) }}"
@@ -60,7 +58,7 @@
                     </div>
                     <div class="text-right card-footer">
                         @if ($City->hasPages())
-                        {{ $Country->withQueryString()->links() }}
+                        {{ $City->withQueryString()->links() }}
                         @endif
                     </div>
                 </div>

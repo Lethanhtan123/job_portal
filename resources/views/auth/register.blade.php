@@ -20,13 +20,13 @@
     <section class="pt-120 login-register">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+                <div class="mx-auto col-lg-6 col-md-6 col-sm-12">
                     <div class="login-register-cover">
                         <div class="text-center">
                             <h2 class="mb-5 text-brand-1">Register</h2>
                             <p class="font-sm text-muted mb-30">Dont have account ? Create one.</p>
                         </div>
-                        <form class="login-register text-start mt-20" method="POST" action="{{ route('register') }}">
+                        <form class="mt-20 login-register text-start" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">
@@ -52,10 +52,15 @@
                                 <div class="col-xl-6">
                                     <div class="form-group">
                                         <label class="form-label" for="input-4">Password *</label>
-                                        <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                                        <input class="input-4-re1 password1 form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
                                             placeholder="************">
+
                                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+                                            <div class="input_but input_but_register1">
+                                                <span class="fas fa-eye"></span>
+                                            </div>
                                     </div>
                                 </div>
 
@@ -63,14 +68,19 @@
                                     <div class="form-group">
                                         <label class="form-label" for="input-5">Re-Password *</label>
                                         <input
-                                            class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
-                                            id="input-5" type="password" required="" name="password_confirmation"
+                                            class="input-4-re2 password2 form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                                            id="input-4" type="password" required="" name="password_confirmation"
                                             placeholder="************">
+
                                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
+                                            <div class="input_but input_but_register2">
+                                                <span class="fas fa-eye"></span>
+                                            </div>
                                     </div>
                                 </div>
 
-                                <div class="col-12 mb-3">
+                                <div class="mb-3 col-12">
                                     <hr>
                                     <h6 for="" class="mb-2">Create Account For</h6>
                                     <div class="form-check form-check-inline">
@@ -96,13 +106,13 @@
                                         &amp;
                                         Register</button>
                                 </div>
-                                <div class="text-muted text-center">Already have an account?
+                                <div class="text-center text-muted">Already have an account?
                                     <a href="{{ route('login') }}">Sign in</a>
                                 </div>
                         </form>
-                        {{-- <div class="text-center mt-20">
+                        {{-- <div class="mt-20 text-center">
                             <div class="divider-text-center"><span>Or continue with</span></div>
-                            <button class="btn social-login hover-up mt-20"><img
+                            <button class="mt-20 btn social-login hover-up"><img
                                     src="assets/imgs/template/icons/icon-google.svg" alt="joblist"><strong>Sign up with
                                     Google</strong></button>
                         </div> --}}
@@ -113,3 +123,35 @@
     </section>
     <div class="mt-120"></div>
 @endsection
+
+
+@push('scripts')
+<script>
+   window.addEventListener("DOMContentLoaded", function() {
+    $('.input_but_register1').click(function() {
+        if ($('.input-4-re1').val()) {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('.input-4-re1').attr('type', 'password');
+            } else {
+                $(this).addClass('active');
+                $('.input-4-re1').attr('type', 'text');
+            }
+            $(this).find('span').toggleClass('fa-eye-slash');
+        }
+    });
+    $('.input_but_register2').click(function() {
+        if ($('.input-4-re2').val()) {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('.input-4-re2').attr('type', 'password');
+            } else {
+                $(this).addClass('active');
+                $('.input-4-re2').attr('type', 'text');
+            }
+            $(this).find('span').toggleClass('fa-eye-slash');
+        }
+    });
+});
+</script>
+@endpush

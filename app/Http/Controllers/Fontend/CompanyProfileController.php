@@ -95,6 +95,7 @@ class CompanyProfileController extends Controller
         Notify::updatedNotifycation();
 
         return redirect()->back();
+        dd($request->all());
     }
 
     function updateAccountInfo(Request $request): RedirectResponse

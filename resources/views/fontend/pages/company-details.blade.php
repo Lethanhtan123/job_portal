@@ -197,7 +197,8 @@
                             <li>
                                 <div class="sidebar-icon-item"><i class="fi-rr-marker"></i></div>
                                 <div class="sidebar-text-info"><span class="text-description">Location</span><strong
-                                        class="small-heading">{{ $company->companyCountry->name }}</strong></div>
+                                        class="small-heading">
+                                        {{ $company->companyCountry->name }}</strong></div>
                             </li>
 
                             <li>
@@ -205,11 +206,11 @@
                                 <div class="sidebar-text-info"><span class="text-description">Establis Date</span><strong
                                         class="small-heading">{{ formatDate($company->establishment_date) }}</strong></div>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <div class="sidebar-icon-item"><i class="fi-rr-time-fast"></i></div>
                                 <div class="sidebar-text-info"><span class="text-description">Last Jobs
                                         Posted</span><strong class="small-heading">4 days</strong></div>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="sidebar-list-job">

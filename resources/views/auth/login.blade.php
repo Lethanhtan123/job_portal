@@ -27,7 +27,7 @@
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <div class="text-center">
-                        <h2 class="mb-5 text-brand-1">Login</h2>
+                        <h2 class="mb-5 text-brand-1">Đăng nhập</h2>
                         <p class="font-sm text-muted mb-30">Please provide your valid cradentials.</p>
                     </div>
                     <form class="mt-20 login-register text-start" method="POST" action="{{ route('login') }}">
@@ -47,16 +47,16 @@
                             <div class="col-xl-12">
                                 <div class="form-group">
                                     <div class="d-flex justify-content-between">
-                                        <label class="form-label" for="input-4">Password *</label>
+                                        <label class="form-label" for="password">Password *</label>
                                         <a href="{{ route('password.request') }}">forgot password?</a>
                                     </div>
-                                    <input class=" form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                        id="input-4 password1" type="password" required="" name="password"
+                                    <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                                        id="input-4" type="password" required="" name="password"
                                         placeholder="************">
 
-{{-- <div class="input_but">
-    <span class="fas fa-eye" ></span>
-</div> --}}
+                                    <div class="input_but">
+                                        <span class="fas fa-eye"></span>
+                                    </div>
 
                                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                 </div>
@@ -91,21 +91,42 @@
 </section>
 
 <div class="mt-120"></div>
+
+
 @endsection
 
-
-
-{{-- <script>
-$('.input_but').click(function() {
-    if ($('#password1').val()) {
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('#password1').attr('type', 'password');
-        } else {
-            $(this).addClass('active');
-            $('#password1').attr('type', 'text');
+@push('scripts')
+<script>
+   window.addEventListener("DOMContentLoaded", function() {
+    $('.input_but').click(function() {
+        if ($('#input-4').val()) {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('#input-4').attr('type', 'password');
+            } else {
+                $(this).addClass('active');
+                $('#input-4').attr('type', 'text');
+            }
+            $(this).find('span').toggleClass('fa-eye-slash');
         }
-        $(this).find('span').toggleClass(' fa-eye-slash');
-    }
+    });
 });
-</script> --}}
+</script>
+@endpush
+
+{{-- @push('scripts')
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+            const togglePassword = document.querySelector("#togglePassword");
+            const password = document.querySelector("#input-4");
+
+            togglePassword.addEventListener("click", function(e) {
+                // toggle the type attribute
+                const type =  password.getAttribute("type") === "password" ? "text" : "password";
+                password.setAttribute("type", type);
+                // toggle the eye / eye slash icon
+                this.classList.toggle("fas fa-eye");
+            });
+        });
+</script>
+@endpush --}}
