@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\JobCreateRequest;
+use App\Http\Requests\Fontend\JobCreateRequest;
 use App\Models\City;
 use App\Models\Company;
 use App\Models\Country;
@@ -18,16 +18,14 @@ use App\Models\JobTag;
 use App\Models\JobType;
 use App\Models\SalaryType;
 use App\Models\Skill;
-use App\Models\State;
 use App\Models\Tag;
 use App\Services\Notify;
 use App\Traits\Searchable;
+use Auth;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response as HttpResponse;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\View\View;
-use Illuminate\View\ViewException;
-use PHPUnit\Framework\Constraint\Count;
-use Illuminate\Http\Response;
 
 
 class JobController extends Controller
@@ -36,26 +34,24 @@ class JobController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() :View
+    public function index()
     {
-        $query = Job::query();
+        $query =  Job::query();
         $this->search($query, ['title', 'slug']);
-        $jobs = $query->orderBy('id', 'DESC')->paginate(10);
-
-        return view('admin.job.index', compact('jobs'));
+        $jobs = $query->orderBy('id','DESC')->paginate(20);
+        return view('fontend.company-dashboard.job.index',compact('jobs'));
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create() : View|RedirectResponse
     {
         $companies = Company::where(['profile_completion' => 1, 'visibility' => 1])->get();
         $categories = JobCategory::all();
         $countries = Country::all();
         // $states = State::all();
-        $district = District::all();
+        $districts = District::all();
         $cities = City::all();
         $salaryTypes = SalaryType::all();
         $experiences = Experience::all();
@@ -64,7 +60,7 @@ class JobController extends Controller
         $jobTypes = JobType::all();
         $tags = Tag::all();
         $skills = Skill::all();
-        return view('admin.job.create', compact(
+        return view('fontend.company-dashboard.job.create', compact(
             'companies',
             'categories',
             'countries',
@@ -75,7 +71,7 @@ class JobController extends Controller
             'jobTypes',
             'tags',
             'cities',
-            'district',
+            'districts',
             // 'states',
             'skills'
 
@@ -86,12 +82,12 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(JobCreateRequest $request)
+    public function store(Request $request) : RedirectResponse
     {
         //dd($request->all());
         $job = new Job();
         $job->title = $request->title;
-        $job->company_id = $request->company;
+        $job->company_id =auth()->user()->company->id;
         $job->job_category_id = $request->category;
         $job->vacancies = $request->vacancies;
         $job->deadline = $request->deadline;
@@ -139,7 +135,7 @@ class JobController extends Controller
 
         Notify::createdNotifycation();
 
-        return to_route('admin.jobs.index');
+        return to_route('company.jobs.index');
     }
 
     /**
@@ -160,7 +156,7 @@ class JobController extends Controller
         $categories = JobCategory::all();
         $countries = Country::all();
         // $states = State::all();
-        $district = District::all();
+        $districts = District::all();
         $cities = City::all();
         $salaryTypes = SalaryType::all();
         $experiences = Experience::all();
@@ -169,7 +165,7 @@ class JobController extends Controller
         $jobTypes = JobType::all();
         $tags = Tag::all();
         $skills = Skill::all();
-        return view('admin.job.edit', compact(
+        return view('fontend.company-dashboard.job.edit', compact(
             'companies',
             'categories',
             'countries',
@@ -180,7 +176,7 @@ class JobController extends Controller
             'jobTypes',
             'tags',
             'cities',
-            'district',
+            'districts',
             // 'states',
             'skills',
             'job'
@@ -191,12 +187,12 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(JobCreateRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
         //dd($request->all());
         $job = Job::findOrFail($id);
         $job->title = $request->title;
-        $job->company_id = $request->company;
+        $job->company_id =auth()->user()->company->id;
         $job->job_category_id = $request->category;
         $job->vacancies = $request->vacancies;
         $job->deadline = $request->deadline;
@@ -227,7 +223,6 @@ class JobController extends Controller
         $job->save();
 
          // insert tags
-         JobTag::where('job_id', $id)->delete();
          foreach($request->tags as $tag) {
             $createTag = new JobTag();
             $createTag->job_id = $job->id;
@@ -236,7 +231,6 @@ class JobController extends Controller
         }
 
         // insert skills
-        JobSkills::where('job_id', $id)->delete();
         foreach($request->skills as $skill) {
             $createSkill = new JobSkills();
             $createSkill->job_id = $job->id;
@@ -246,7 +240,7 @@ class JobController extends Controller
 
         Notify::updatedNotifycation();
 
-        return to_route('admin.jobs.index');
+        return to_route('company.jobs.index');
     }
 
     /**
@@ -263,12 +257,5 @@ class JobController extends Controller
             logger($e);
             return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
         }
-    }
-    function changeStatus(string $id) : Response {
-        $job = Job::findOrFail($id);
-        $job->status = $job->status == 'active' ? 'pending' : 'active';
-        $job->save();
-        Notify::updatedNotifycation();
-        return response(['message' => 'success'], 200);
     }
 }

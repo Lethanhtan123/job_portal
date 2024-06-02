@@ -34,8 +34,8 @@
 
                     {{-- <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link"
                             href="{{ route('admin.organization-types.index') }}">Organization types</a></li> --}}
-                    {{-- <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link"
-                            href="{{ route('admin.languages.index') }}">Languages</a></li> --}}
+                    <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link"
+                            href="{{ route('admin.languages.index') }}">Languages</a></li>
                     <li><a class="{{ setSidebarActive(['admin.professions.*']) }} nav-link"
                             href="{{ route('admin.professions.index') }}">Professions</a></li>
 
@@ -57,10 +57,13 @@
                 <ul class="dropdown-menu">
                     <li><a class="{{ setSidebarActive(['admin.country.*']) }} nav-link"
                             href="{{ route('admin.country.index') }}">Countries</a></li>
-                    <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
-                            href="{{ route('admin.state.index') }}">State</a></li>
+                    {{-- <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
+                            href="{{ route('admin.state.index') }}">State</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link"
                             href="{{ route('admin.city.index') }}">City</a></li>
+
+                    <li><a class="{{ setSidebarActive(['admin.district.*']) }} nav-link"
+                            href="{{ route('admin.district.index') }}">District</a></li>
                 </ul>
             </li>
 
