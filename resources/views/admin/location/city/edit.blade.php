@@ -15,7 +15,7 @@
                         @csrf
                         @method('PUT')
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Country</label>
 
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">State</label>
 
@@ -41,9 +41,9 @@
                                     </select>
                                     <x-input-error :messages="$errors->get('state')" class="mt-2" />
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">City Name</label>
                                     <input type="text" name="city" class="form-control {{ hasError($errors, 'city') }}"

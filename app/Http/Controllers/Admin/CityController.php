@@ -46,13 +46,13 @@ class CityController extends Controller
     {
         $request->validate([
             'country' => ['required', 'integer'],
-            'state' => ['required', 'integer'],
+            // 'state' => ['required', 'integer'],
             'city' => ['required', 'string', 'max:255']
         ]);
 
         $city = new City();
         $city->name = $request->city;
-        $city->state_id = $request->state;
+        // $city->state_id = $request->state;
         $city->country_id = $request->country;
         $city->save();
 
@@ -76,8 +76,8 @@ class CityController extends Controller
     {
         $City= City::FindOrFail($id);
         $Country= Country::all();
-        $State= State::where('country_id',$City->country_id)->get();
-        return view('admin.location.city.edit',compact('State','City','Country'));
+        // $State= State::where('country_id',$City->country_id)->get();
+        return view('admin.location.city.edit',compact('City','Country'));
     }
 
     /**
@@ -87,13 +87,13 @@ class CityController extends Controller
     {
         $request->validate([
             'country' => ['required', 'integer'],
-            'state' => ['required', 'integer'],
+            // 'state' => ['required', 'integer'],
             'city' => ['required', 'string', 'max:255']
         ]);
 
         $city = City::FindOrFail($id);
         $city->name = $request->city;
-        $city->state_id = $request->state;
+        // $city->state_id = $request->state;
         $city->country_id = $request->country;
         $city->save();
 

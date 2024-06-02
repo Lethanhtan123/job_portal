@@ -53,9 +53,9 @@ class Job extends Model
     // function benefits() : HasMany {
     //     return $this->hasMany(JobBenefits::class, 'job_id', 'id');
     // }
-    // function skills() : HasMany {
-    //     return $this->hasMany(JobSkills::class, 'job_id', 'id');
-    // }
+    function skills() : HasMany {
+        return $this->hasMany(JobSkills::class, 'job_id', 'id');
+    }
 
     function country() : BelongsTo {
         return $this->belongsTo(Country::class);
