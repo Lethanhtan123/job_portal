@@ -48,7 +48,7 @@
                                     <div class="form-group icon-side">
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Password *</label>
-                                            <a href="{{ route('password.request') }}">forgot password?</a>
+                                            <a href="{{ route('password.request') }}">Forgot password?</a>
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
