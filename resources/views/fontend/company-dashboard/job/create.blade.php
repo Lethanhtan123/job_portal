@@ -480,12 +480,14 @@
     };
 
     $(document).ready(function() {
+
         $('.country').on('change', function() {
+
             let country_id = $(this).val();
 
             $.ajax({
                 mehtod: 'GET',
-                url: '{{ route("admin.get-cities", ":id") }}'.replace(":id", country_id),
+                url: '{{ route("get-cities", ":id") }}'.replace(":id", country_id),
                 data: {},
                 success: function(response) {
                     let html = '';
@@ -512,7 +514,7 @@
 
             $.ajax({
                 mehtod: 'GET',
-                url: '{{ route("admin.get-districts", ":id") }}'.replace(":id", city_id),
+                url: '{{ route("get-districts", ":id") }}'.replace(":id", city_id),
                 data: {},
                 success: function(response) {
                     let html = '';

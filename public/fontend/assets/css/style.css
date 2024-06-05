@@ -7912,7 +7912,9 @@ ul li:last-child .card-list-4 {
     background: #f05d04 !important;
     color: white !important;
 }
-
+.width53{
+    width: 53px !important;
+}
 .highlight:hover {
     color: white !important;
 }

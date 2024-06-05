@@ -98,10 +98,10 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="{{ route('admin.jobs.edit', $job->id) }}"
-                                            class="btn-sm btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('admin.jobs.destroy', $job->id) }}"
-                                            class="btn-sm btn btn-danger delete-item"><i
+                                        <a href="{{ route('company.jobs.edit', $job->id) }}"
+                                            class="width53 btn-sm btn btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('company.jobs.destroy', $job->id) }}"
+                                            class="width53 btn-sm btn btn-danger delete-item"><i
                                                 class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>

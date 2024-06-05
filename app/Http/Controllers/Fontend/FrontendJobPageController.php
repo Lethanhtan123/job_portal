@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Fontend;
 use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class FrontendJobPageController extends Controller
 {
@@ -38,9 +39,11 @@ class FrontendJobPageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
+    function show(string $slug) : View {
+        $job = Job::where('slug', $slug)->firstOrFail();
+        // $openJobs = Job::where('company_id', $job->company->id)->where('status', 'active')->where('deadline', '>=', date('Y-m-d'))->count();
+        // $alreadyApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->exists();
+        return view('fontend.pages.job-show', compact('job' ));
     }
 
     /**

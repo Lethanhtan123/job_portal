@@ -78,12 +78,13 @@ class CompanyProfileController extends Controller
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'country' => $request->country,
-                'state' => $request->state,
+                // 'state' => $request->state,
                 'city' => $request->city,
                 'address' => $request->address,
                 'map_link' => $request->map_link
             ]
         );
+
 
         if(isCompanyProfileComplete()) {
             $companyProfile = Company::where('user_id', auth()->user()->id)->first();

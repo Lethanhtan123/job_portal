@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label class="mb-10 font-sm color-text-mutted">State *</label>
                                             <select name="state" id=""
@@ -202,7 +202,7 @@
                                             <x-input-error :messages="$errors->get('city')" class="mt-2" />
 
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="col-md-12">
                                         <div class="form-group">
