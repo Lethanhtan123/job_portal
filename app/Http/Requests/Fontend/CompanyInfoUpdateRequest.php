@@ -19,6 +19,7 @@ class CompanyInfoUpdateRequest extends FormRequest
     {
         $rules = [
             'logo' => ['image', 'max:1500'],
+            'banner' => ['image', 'max:1500'],
             'name' => ['string', 'max:100'],
             'bio' => ['required'],
 
@@ -28,6 +29,10 @@ class CompanyInfoUpdateRequest extends FormRequest
 
         if ((empty($company) || !$company->logo)) {
             $rules['logo'][] = 'required';
+        }
+
+        if ((empty($company) || !$company->banner)) {
+            $rules['banner'][] = 'required';
         }
 
         return $rules;

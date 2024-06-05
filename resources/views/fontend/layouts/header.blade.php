@@ -38,7 +38,7 @@
 
                     @auth
                         @if (auth()->user()->role === 'company')
-                            <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:200px"
+                            <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:250px"
                                 href="{{ route('company.dashboard') }}">Company dashboard</a>
                         @elseif (auth()->user()->role === 'candidate')
                         <a class="ml-40 btn btn-default btn-shadow hover-up" style="min-width:250px"
