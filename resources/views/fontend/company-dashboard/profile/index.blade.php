@@ -60,6 +60,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                     <div class="col-md-6">
+                                        <div class="mb-2 box-avt">
+                                            <x-image-preview :height="200" :width="400" :source="$companyInfo?->banner" />
+                                        </div>
+                                        <div class="btm-box-avt">
+                                            <div class="form-group">
+                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Banner *
+                                                </label>
+                                                <input class="form-control  {{ $errors->has('banner') ? 'is-invalid' : '' }} "
+                                                    type="file" value="" name="banner">
+                                                <x-input-error :messages="$errors->get('banner')" class="mt-2" />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label class="mb-10 font-sm text-capitalize color-text-mutted">Company name *
@@ -155,22 +169,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Industry Type *</label>
-                                            <select name="industry_type" id=""
-                                                class="form-control form-icons industry_type select-active {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
-                                                <option value="">Select</option>
-                                                @foreach ($IndustryType as $item)
-                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
-                                                        {{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
+                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label class="mb-10 font-sm color-text-mutted">City *</label>
                                             <select name="city" id=""
@@ -186,6 +185,40 @@
 
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group select-style">
+                                            <label class="mb-10 font-sm color-text-mutted">District *</label>
+                                            <select name="district" id=""
+                                                class="form-control form-icons districts select-active {{ $errors->has('district') ? 'is-invalid' : '' }}"
+                                                value="{{ $companyInfo?->districts }}">
+                                                <option value="">Select</option>
+                                                @foreach ($District as $item)
+                                                    <option @selected($item->id === $companyInfo?->districts) value="{{ $item->id }}">
+                                                        {{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <x-input-error :messages="$errors->get('district')" class="mt-2" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group select-style">
+                                            <label class="mb-10 font-sm color-text-mutted">Industry Type *</label>
+                                            <select name="industry_type" id=""
+                                                class="form-control form-icons industry_type select-active {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
+                                                <option value="">Select</option>
+                                                @foreach ($IndustryType as $item)
+                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
+                                                        {{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
+                                        </div>
+                                    </div>
+
+
 
                                     {{-- <div class="col-md-6">
                                         <div class="form-group select-style">

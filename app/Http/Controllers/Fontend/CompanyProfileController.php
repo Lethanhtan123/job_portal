@@ -8,6 +8,7 @@ use App\Http\Requests\Fontend\CompanyInfoUpdateRequest;
 use App\Models\City;
 use App\Models\Company;
 use App\Models\Country;
+use App\Models\District;
 use App\Models\IndustryType;
 use App\Models\State;
 use Illuminate\Http\Request;
@@ -32,7 +33,8 @@ class CompanyProfileController extends Controller
         $Country= Country::all();
         $State= State::all();
         $City= City::all();
-        return view('fontend.company-dashboard.profile.index', compact('companyInfo','Country','IndustryType','City','State'));
+        $District = District::all();
+        return view('fontend.company-dashboard.profile.index', compact('companyInfo','Country','IndustryType','City','State','District'));
     }
 
     function updateComInfo(CompanyInfoUpdateRequest $request): RedirectResponse
@@ -40,9 +42,13 @@ class CompanyProfileController extends Controller
 
         $logoPath = $this->uploadFile($request, 'logo');
 
+        $bannerPath = $this->uploadFile($request, 'banner');
+
+
         $data = [];
 
         if (!empty($logoPath)) $data['logo'] = $logoPath;
+        if (!empty($bannerPath)) $data['banner'] = $bannerPath;
         $data['name'] = $request->name;
         $data['bio'] = $request->bio;
         $data['vision'] = $request->vision;
