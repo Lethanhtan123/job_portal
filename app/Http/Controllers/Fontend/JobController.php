@@ -36,10 +36,11 @@ class JobController extends Controller
      */
     public function index()
     {
-        $query =  Job::query();
+        $query = Job::query();
+        // $query->withCount('applications');
         $this->search($query, ['title', 'slug']);
-        $jobs = $query->orderBy('id','DESC')->paginate(20);
-        return view('fontend.company-dashboard.job.index',compact('jobs'));
+        $jobs = $query->where('company_id', auth()->user()->company?->id)->orderBy('id', 'DESC')->paginate(20);
+        return view('fontend.company-dashboard.job.index', compact('jobs'));
     }
 
     /**
@@ -248,14 +249,15 @@ class JobController extends Controller
      */
     public function destroy(string $id)
     {
-        try {
-            Job::findOrFail($id)->delete();
-            Notify::deletedNotifycation();
-            return response(['message' => 'success'], 200);
+        Job::findOrFail($id)->delete();
+        // try {
 
-        }catch(\Exception $e) {
-            logger($e);
-            return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
-        }
+        //     Notify::deletedNotifycation();
+        //     return response(['message' => 'success'], 200);
+
+        // }catch(\Exception $e) {
+        //     logger($e);
+        //     return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
+        // }
     }
 }

@@ -106,7 +106,7 @@
                                             <a href="{{ route('company.jobs.edit', $job->id) }}"
                                                 class="mb-2 width53 btn-sm btn btn-primary"><i class="fas fa-edit"></i></a>
                                             <a href="{{ route('company.jobs.destroy', $job->id) }}"
-                                                class="width53 btn-sm btn btn-danger"><i
+                                                class="width53 btn-sm btn btn-danger delete-item"><i
                                                     class="fas fa-trash-alt"></i></a>
 
                                         </td>

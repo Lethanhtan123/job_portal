@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Fontend\CandidateDashboardController;
 use App\Http\Controllers\Fontend\CandidateExperienceController;
 use App\Http\Controllers\Fontend\CandidateProfileController;
@@ -35,6 +36,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('get-cities/{country_id}', [LocationController::class, 'getCityOfCountry'])->name('get-cities');
+Route::get('get-districts/{city_id}', [LocationController::class, 'getDistrictsOfCity'])->name('get-districts');
 
 Route::get('companies', [FrontendCompanyPageController::class, 'index'])->name('companies.index');
 Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->name('companies.show');
@@ -80,6 +84,8 @@ Route::group(
         /** Job Routes */
         //Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
         Route::resource('jobs', JobController::class);
+
+
     }
 );
 

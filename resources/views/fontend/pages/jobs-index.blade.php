@@ -77,10 +77,10 @@
 
                                     <div class="mt-20 card-2-bottom">
                                         <div class="row">
-                                            {{-- @if ($job->salary_mode === 'range')
-                                            <div class="col-lg-7 col-7"><span class="card-text-price">
+                                            @if ($job->salary_mode === 'range')
+                                            <div class="col-lg-7 col-7"><span class="card-text-price"> Mức lương :
                                                     {{ $job->min_salary }} - {{ $job->max_salary }} {{
-                                                    config('settings.site_default_currency') }}
+                                                    config('settings.site_default_currency') }}  {{ $job->tygia }}/VNĐ
                                                 </span><span class="text-muted"></span>
                                             </div>
                                             @else
@@ -89,7 +89,7 @@
                                                 </span><span class="text-muted"></span>
                                             </div>
                                             @endif
-                                            @php
+                                            {{-- @php
                                             $bookmarkedIds = \App\Models\JobBookmark::where('candidate_id',
                                             auth()?->user()?->candidateProfile?->id)->pluck('job_id')->toArray();
 
