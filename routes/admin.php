@@ -10,11 +10,13 @@ use App\Http\Controllers\Admin\Auth\PasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\JobCategoryController;
 use App\Http\Controllers\Admin\JobController;
@@ -26,10 +28,12 @@ use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\OrganizationTypeController;
 use App\Http\Controllers\Admin\ProfessionController;
 use App\Http\Controllers\Admin\SalaryTypeController;
+use App\Http\Controllers\Admin\SearchMainController;
 use App\Http\Controllers\Admin\SkillController;
 
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\TagController;
+use App\Models\Search_Main;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=> ['guest:admin'],'prefix'=> 'admin','as'=>'admin.'], function () {
@@ -115,5 +119,10 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     Route::post('job-status/{id}', [JobController::class, 'changeStatus'])->name('job-status.update');
     Route::resource('jobs', JobController::class);
 
+    /** Blog Routes */
+    Route::resource('blogs', BlogController::class);
+
+      /** Hero Section */
+      Route::resource('hero', HeroController::class);
 });
 

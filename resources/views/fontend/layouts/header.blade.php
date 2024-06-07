@@ -2,17 +2,17 @@
     <div class="container">
         <div class="main-header">
             <div class="header-left">
-                <div class="header-logo"><a class="d-flex" href="index.html"><img alt="joblist"
+                <div class="header-logo peShiner"><a class="d-flex" href="index.html"><img alt="joblist"
                             src="{{ asset('fontend/assets/imgs/template/logo.png') }}"></a></div>
             </div>
             <div class="header-nav">
                 <nav class="nav-main-menu">
                     <ul class="main-menu">
-                        <li class="has-children"><a class="active" href="{{ route('companies.index') }}">Home</a></li>
+                        <li class="has-children"><a class="active" href="{{ route('home') }}">Trang chủ</a></li>
                         <li class="has-children"><a href="{{ route('jobs.index') }}">Tin Tuyển Dụng</a></li>
                         <li class="has-children"><a href="{{ route('companies.index') }}">Nhà Tuyển Dụng</a></li>
                         <li class="has-children"><a href="candidates-grid.html">Ứng Viên</a></li>
-                        <li class="has-children"><a href="blog-grid.html">Tin tức</a>
+                        <li class="has-children"><a href="blog-grid.html">Pages</a>
                             <ul class="sub-menu">
                                 <li><a href="page-about.html">About Us</a></li>
                                 <li><a href="page-pricing.html">Pricing Plan</a></li>
@@ -23,7 +23,7 @@
                                 <li><a href="blog-details.html">Blog Single</a></li>
                             </ul>
                         </li>
-                        <li class="has-children"><a href="blog-grid.html">Blog</a></li>
+                        <li class="has-children"><a href="{{ route('blogs.index') }}">Tin tức</a></li>
                     </ul>
                 </nav>
                 <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span
@@ -33,7 +33,7 @@
                 <div class="block-signin">
                     <!-- <a class="text-link-bd-btom hover-up" href="page-register.html">Register</a> -->
                     @guest
-                        <a class="ml-40 btn btn-default btn-shadow hover-up" href="{{ route('login') }}">Sign in</a>
+                        <a class="ml-40 btn btn-default btn-shadow hover-up" href="{{ route('login') }}">Đăng nhập</a>
                     @endguest
 
                     @auth
@@ -215,3 +215,4 @@
         </div>
     </div>
 </div>
+
