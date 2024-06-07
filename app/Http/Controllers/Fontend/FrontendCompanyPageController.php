@@ -3,22 +3,68 @@
 namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Company;
+use App\Models\Country;
+use App\Models\District;
+use App\Models\IndustryType;
+use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class FrontendCompanyPageController extends Controller
 {
-    function index(): View
+    function index(Request $request): View
     {
-        $companies=Company::Where(['profile_completion'=>1,'visibility'=>1])->get();
-        return view('fontend.pages.company-index',compact('companies'));
+        $countries = Country::all();
+        $industryTypes = IndustryType::withCount('companies')->get();
+
+        $selectedCites = null;
+        $selectedDistricts = null;
+
+        $query = Company::query();
+
+        $query->withCount(['jobs' => function($query) {
+            $query->where('status', 'active')->where('deadline', '>=', date('Y-m-d'));
+        }])
+        ->where(['profile_completion' => 1, 'visibility' => 1]);
+
+        if($request->has('search') && $request->filled('search')) {
+            $query->where('name', 'like', '%'. $request->search . '%');
+        }
+
+        if($request->has('country') && $request->filled('country')) {
+            $query->where('country', $request->country);
+        }
+
+        if($request->has('city') && $request->filled('city')) {
+            $query->where('city', $request->city);
+            $selectedCities = City::where('country_id', $request->country)->get();
+            $selectedDistricts = District::where('city_id', $request->city)->get();
+        }
+
+        if($request->has('district') && $request->filled('district')) {
+            $query->where('district', $request->district);
+        }
+
+        if($request->has('industry') && $request->filled('industry')) {
+            $query->whereHas('industryType', function($query) use ($request) {
+                $query->where('slug', $request->industry);
+            });
+        }
+
+        
+        $companies = $query->paginate(21);
+
+
+        return view('fontend.pages.company-index',compact('companies','countries','selectedDistricts','selectedCites','industryTypes'));
     }
 
     function show(string $slug): View
     {
-        $company=Company::Where(['profile_completion'=>1,'visibility'=>1,'slug'=>$slug])->firstOrFail();
+        $company = Company::where(['profile_completion' => 1, 'visibility' => 1, 'slug' => $slug])->firstOrFail();
+        $openJobs = Job::where('company_id', $company->id)->where('status', 'active')->where('deadline', '>=', date('Y-m-d'))->paginate(10);
 
-        return view('fontend.pages.company-details',compact('company'));
+        return view('fontend.pages.company-details',compact('company','openJobs'));
     }
 }

@@ -14,7 +14,7 @@ $(document).ready(function () {
             prefix: ""
         });
         noUiSlider.create(rangeSlider, {
-            start: 280,
+            start: 100,
             animate: false,
             tooltips: true,
             step: 1,

@@ -6948,8 +6948,8 @@ ul li:last-child .card-list-4 {
 
 .sidebar-border .sidebar-heading .avatar-sidebar figure img,
 .sidebar-shadow .sidebar-heading .avatar-sidebar figure img {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     border-radius: 16px;
 }
 
@@ -7918,6 +7918,20 @@ ul li:last-child .card-list-4 {
 .highlight:hover {
     color: white !important;
 }
+.min_w {
+    min-width: max-content;
+    margin-right: 20px;
+}
+.box-map iframe{
+    height: 50vh !important;
+}
+.x-radio {
+    height: 18px !important;
+    width: 40px !important;
+  }
+
+
+
 
 .active>.page-link,
 .page-link.active {
@@ -7927,6 +7941,26 @@ ul li:last-child .card-list-4 {
     border-color: var(--colorPrimary) !important;
 }
 
+.min-value-money {
+    height: unset !important;
+    padding-left: unset !important;
+    position: relative;
+    top: 6px;
+}
+.list-checkbox.overflow{
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+.list-checkbox.overflow::-webkit-scrollbar {
+    width: 2px; /* Độ rộng của thanh cuộn */
+}
+
+/* Tùy chỉnh màu sắc của thanh cuộn */
+.list-checkbox.overflow::-webkit-scrollbar-thumb {
+    background-color: #1ca774; /* Màu của thanh cuộn */
+}
 .nav-tabs {
     border: 0px;
     display: inline-block;

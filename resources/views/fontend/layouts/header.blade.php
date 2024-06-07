@@ -9,10 +9,10 @@
                 <nav class="nav-main-menu">
                     <ul class="main-menu">
                         <li class="has-children"><a class="active" href="{{ route('companies.index') }}">Home</a></li>
-                        <li class="has-children"><a href="jobs-list.html">Find a Job</a></li>
-                        <li class="has-children"><a href="companies-grid.html">Recruiters</a></li>
-                        <li class="has-children"><a href="candidates-grid.html">Candidates</a></li>
-                        <li class="has-children"><a href="blog-grid.html">Pages</a>
+                        <li class="has-children"><a href="{{ route('jobs.index') }}">Tin Tuyển Dụng</a></li>
+                        <li class="has-children"><a href="{{ route('companies.index') }}">Nhà Tuyển Dụng</a></li>
+                        <li class="has-children"><a href="candidates-grid.html">Ứng Viên</a></li>
+                        <li class="has-children"><a href="blog-grid.html">Tin tức</a>
                             <ul class="sub-menu">
                                 <li><a href="page-about.html">About Us</a></li>
                                 <li><a href="page-pricing.html">Pricing Plan</a></li>
