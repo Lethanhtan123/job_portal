@@ -45,9 +45,33 @@ if(!function_exists('formatDate')) {
     function formatDate(?string $date) : ?string
     {
         if($date) {
-            return date('d M Y',  strtotime($date));
+            return date('d/m/Y',  strtotime($date));
         }
 
         return null;
+    }
+}
+
+
+
+/** format location */
+if(!function_exists('formatLocation')) {
+    function formatLocation($country = null, $city = null,$district = null, $address = null) : string
+    {
+        $location = '';
+        if($country) {
+            $location .= $city ? ''.$country : $country;
+        }
+        if($city) {
+            $location .= $district ? ', '.$city : $city;
+        }
+        if($district) {
+            $location .= $address ? ', '.$district : $district;
+        }
+        if($address) {
+            $location .= $address;
+        }
+
+        return $location;
     }
 }

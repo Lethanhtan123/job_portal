@@ -40,7 +40,7 @@ class Job extends Model
         return $this->belongsTo(SalaryType::class, 'salary_type_id', 'id');
     }
     function jobExperience() : BelongsTo {
-        return $this->belongsTo(JobExperience::class, 'job_experience_id', 'id');
+        return $this->belongsTo(Experience::class, 'job_experience_id', 'id');
     }
 
     function jobEduction() : BelongsTo {
@@ -62,6 +62,9 @@ class Job extends Model
     }
     function state() : BelongsTo {
         return $this->belongsTo(State::class);
+    }
+    function district() : BelongsTo {
+        return $this->belongsTo(District::class);
     }
     function city() : BelongsTo {
         return $this->belongsTo(City::class);

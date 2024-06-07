@@ -97,14 +97,17 @@
     <script src="{{ asset('fontend/assets/js/plugins/Font-Awesome.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
     <script src="{{ asset('fontend/assets/js/plugins/counterup.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="{{ asset('fontend/assets/js/noUISlider.js') }}"></script>
+    <script src="{{ asset('fontend/assets/js/slider.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Laravel notify start -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js"></script>
