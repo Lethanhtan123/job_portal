@@ -3044,7 +3044,6 @@ ul li:last-child .card-list-4 {
     position: relative;
     max-width: 1770px;
     margin: 0 auto;
-    margin-top: 120px;
 }
 
 .banner-hero .banner-inner {
@@ -3117,7 +3116,7 @@ ul li:last-child .card-list-4 {
 .banner-hero .block-banner .form-find .form-input {
     border: none !important;
     border-radius: 0px;
-    padding: 10px 20px 10px 34px;
+    padding: 10px 20px 10px 40px;
     display: inline-block;
     width: 100%;
 }
@@ -5379,7 +5378,7 @@ ul li:last-child .card-list-4 {
 }
 
 .mt-120 {
-    margin-top: 120px !important;
+    margin-top: 80px !important;
 }
 
 .mt-125 {
@@ -7877,10 +7876,8 @@ ul li:last-child .card-list-4 {
 
 .bg-homepage1 {
     background: url(../imgs/page/homepage1/bg-banner.jpg) no-repeat top center;
-    /* background-repeat: repeat-y; */
-    /* background-position: 0px 0px; */
     background-size: cover;
-    /* min-height: 1000px; */
+
     height: 100%;
     position: absolute;
     z-index: -1;
@@ -7888,7 +7885,10 @@ ul li:last-child .card-list-4 {
     top: 0;
     right: 0;
 }
-
+.hero_section{
+    background-size: cover;
+    padding: 5px 0px 50px 0px;
+}
 .job-skill {
     background: var(--colorPrimary) !important;
     padding: 7px 10px 7px 10px !important;

@@ -123,6 +123,18 @@
                     <i class="fas fa-columns"></i>
                     <span>Job Post</span></a>
             </li>
+
+            <li class="{{ setSidebarActive(['admin.blogs.*']) }}">
+                <a href="{{ route('admin.blogs.index') }}" class="">
+                    <i class="fas fa-columns"></i>
+                    <span>Tin tức</span></a>
+            </li>
+
+            <li class="{{ setSidebarActive(['admin.hero.index.*']) }}">
+                <a href="{{ route('admin.hero.index') }}" class="">
+                    <i class="fas fa-columns"></i>
+                    <span>Tìm kiếm trang chủ</span></a>
+            </li>
         </ul>
 
         {{-- <div class="p-3 mt-4 mb-4 hide-sidebar-mini">

@@ -7,11 +7,13 @@ use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
+use App\Http\Controllers\Fontend\FontendBlogPageController as FontendFontendBlogPageController;
 use App\Http\Controllers\Fontend\FrontendCandidatePageController;
 use App\Http\Controllers\Fontend\FrontendCompanyPageController;
 use App\Http\Controllers\Fontend\FrontendJobPageController;
 use App\Http\Controllers\Fontend\HomeController;
 use App\Http\Controllers\Fontend\JobController;
+use App\Http\Controllers\Frontend\FontendBlogPageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\CandidateExperience;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -95,3 +97,7 @@ Route::get('jobs', [FrontendJobPageController::class, 'index'])->name('jobs.inde
 Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('jobs.show');
 //Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
 //Route::get('job-bookmark/{id}', [CandidateJobBookmarkController::class, 'save'])->name('job.bookmark');
+
+/** Blog Routes */
+Route::get('blogs', [FontendFontendBlogPageController::class, 'index'])->name('blogs.index');
+Route::get('blogs/{slug}', [FontendFontendBlogPageController::class, 'show'])->name('blogs.show');
