@@ -9,4 +9,3 @@ class CandidateEducation extends Model
 {
     use HasFactory;
 }
-`

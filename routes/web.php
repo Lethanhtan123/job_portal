@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Fontend\CandidateDashboardController;
+use App\Http\Controllers\Fontend\CandidateEducationController;
 use App\Http\Controllers\Fontend\CandidateExperienceController;
 use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
@@ -61,6 +62,7 @@ Route::group(
         Route::post('/profile/profile-info-upate', [CandidateProfileController::class, 'profileInfoUpdate'])->name('profile.profile-info.update');
 
         Route::resource('experience', CandidateExperienceController::class);
+        Route::resource('education', CandidateEducationController::class);
     }
 );
 
