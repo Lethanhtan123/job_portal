@@ -53,7 +53,7 @@
             </div>
         </div>
     </section>
-    {{-- experience--}}
+    {{-- experience --}}
     <div class="modal fade" id="experienceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
@@ -122,7 +122,7 @@
             </div>
         </div>
     </div>
-     {{-- education--}}
+    {{-- education --}}
     <div class="modal fade" id="educationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
@@ -137,47 +137,29 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="">Công ty *</label>
-                                    <input type="text" required="" class="form-control" name="company" id="">
+                                    <label for="">Bằng cấp *</label>
+                                    <input type="text" required class="form-control" name="degree" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Phòng *</label>
-                                    <input type="text" required class="form-control" name="department" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Chức vụ *</label>
-                                    <input type="text" required class="form-control" name="designation" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Ngày bắt đầu *</label>
-                                    <input type="text" required class="form-control datepicker" name="start"
+                                    <label for="">Bậc *</label>
+                                    <input type="text" required="" class="form-control" name="level"
                                         id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Ngày kết thúc *</label>
-                                    <input type="text" class="form-control datepicker" required name="end"
+                                    <label for="">Năm hoàn thành *</label>
+                                    <input type="text" required class="form-control yearpicker" name="year"
                                         id="">
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="form-group form-check form-check-inline">
-                                    <input type="checkbox" value="1" class=" form-check-input me-3 "
-                                        name="currently_working" id="">
-                                    <label class=" form-check-label" for="">Hiện tại vẫn đang làm.</label>
-                                </div>
-                            </div>
+
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="">Trách nhiệm</label>
-                                    <textarea maxlenght="500" class="form-control" name="responsibilities" id=""></textarea>
+                                    <label for="">Ghi chú</label>
+                                    <textarea maxlenght="500" class="form-control" name="note" id=""></textarea>
                                 </div>
                             </div>
                         </div>
@@ -257,11 +239,12 @@
                         $('#experience-form').trigger("reset");
                         $('#experienceModal').modal('hide');
 
-
+                      hideLoader();
                         notyf.success(response.message);
                     },
                     error: function(xhr, status, error) {
                         console.log(error);
+                        hideLoader();
                     }
                 })
             }
@@ -346,5 +329,195 @@
                 }
             });
         });
+
+        function fetchEducation() {
+            $.ajax({
+                method: 'GET',
+                url: "{{ route('candidate.education.index') }}",
+                data: {},
+                success: function(response) {
+                    $('.education-tbody').html(response);
+                },
+                error: function(xhr, status, error) {
+                    console.log(error)
+                }
+            })
+        }
+
+        // Save education data
+        $('#education-form').on('submit', function(event) {
+            event.preventDefault();
+            const formData = $(this).serialize();
+
+            if (editMode) {
+                $.ajax({
+                    method: 'PUT',
+                    url: "{{ route('candidate.education.update', ':id') }}".replace(':id', editId),
+                    data: formData,
+                    beforeSend: function() {
+                        showLoader();
+                    },
+
+                    success: function(response) {
+                        fetchEducation();
+
+                        $('#education-form').trigger("reset");
+                        $('#educationModal').modal('hide');
+                        editId = "";
+                        editMode = false;
+                        hideLoader();
+                        notyf.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error)
+                    },
+
+
+                })
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ route('candidate.education.store') }}",
+                    data: formData,
+                    beforeSend: function() {
+                        showLoader();
+                    },
+                    success: function(response) {
+                        fetchEducation();
+                        $('#education-form').trigger("reset");
+                        $('#educationModal').modal('hide');
+
+                        hideLoader();
+                        notyf.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                        hideLoader();
+                    }
+                })
+            }
+
+        });
+
+         $('body').on('click', '.edit-education', function() {
+             $('#education-form').trigger("reset");
+
+             let url = $(this).attr('href');
+
+             $.ajax({
+                 method: 'GET',
+                 url: url,
+                 data: {},
+
+                 beforeSend: function() {
+                     showLoader();
+                 },
+
+                 success: function(response) {
+                     editId = response.id
+                     editMode = true;
+
+                     $.each(response, function(index, value) {
+                         $(`input[name="${index}"]:text`).val(value);
+
+                         if (index === 'note') {
+                             $(`textarea[name="${index}"]`).val(value);
+                         }
+                     })
+                     hideLoader();
+                 },
+                 error: function(xhr, status, error) {
+                     console.log(error);
+                     hideLoader();
+                 }
+             })
+         })
+
+        // Delete education item
+         /*$("body").on('click', '.delete-education', function(e) {
+             e.preventDefault();
+
+             let url = $(this).attr('href');
+
+             Swal.fire({
+                 title: "Bạn có chắc chắn không?",
+                 text: "Bạn sẽ không thể hoàn tác!",
+                 icon: "warning",
+                 showCancelButton: true,
+                 confirmButtonColor: "#3085d6",
+                 cancelButtonColor: "#d33",
+                 confirmButtonText: "Đồng ý!"
+             }).then((result) => {
+                 if (result.isConfirmed) {
+
+                     $.ajax({
+                         method: 'DELETE',
+                         url: url,
+                         data: {
+                             _token: "{{ csrf_token() }}"
+                         },
+                         beforeSend: function() {
+                             showLoader();
+                         },
+                         success: function(response) {
+                             fetchEducation();
+                             hideLoader();
+                             notyf.success(response.message);
+                         },
+                         error: function(xhr, status, error) {
+                             console.log(xhr);
+                             swal(xhr.responseJSON.message, {
+                                 icon: 'error',
+                             });
+                             hideLoader();
+                         }
+                     })
+                 }
+             });
+         });*/
+
+         $("body").on('click', '.delete-education', function(e) {
+            e.preventDefault();
+
+            let url = $(this).attr('href');
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        method: 'DELETE',
+                        url: url,
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        beforeSend: function() {
+                            showLoader();
+                        },
+                        success: function(response) {
+                            fetchEducation();
+                            hideLoader();
+                            notyf.success(response.message);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            swal(xhr.responseJSON.message, {
+                                icon: 'error',
+                            });
+                            hideLoader();
+
+                        }
+                    })
+                }
+            });
+        });
+
     </script>
 @endpush
