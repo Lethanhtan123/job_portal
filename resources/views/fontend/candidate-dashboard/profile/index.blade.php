@@ -26,28 +26,29 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                aria-selected="true">Basic</button>
+                                aria-selected="true">Thông tin</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                                aria-selected="false">Profile</button>
+                                aria-selected="false">Hồ sơ</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-experience-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-experience" type="button" role="tab"
-                                aria-controls="pills-experience" aria-selected="false">Exeperience & Education</button>
+                                aria-controls="pills-experience" aria-selected="false">Kinh nghiệm & Bằng cấp</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                                aria-selected="false">Account Settings</button>
+                            <button class="nav-link" id="pills-account-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-account" type="button" role="tab" aria-controls="pills-account"
+                                aria-selected="false">Cài đặt tài khoản</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         @include('fontend.candidate-dashboard.profile.sections.basic-sections')
                         @include('fontend.candidate-dashboard.profile.sections.profile-sections')
                         @include('fontend.candidate-dashboard.profile.sections.experience-sections')
+                        @include('fontend.candidate-dashboard.profile.sections.account-sections')
                     </div>
                 </div>
             </div>
@@ -128,7 +129,7 @@
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm Kinh nghiệm</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm Bằng cấp</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

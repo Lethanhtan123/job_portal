@@ -27,8 +27,8 @@
                         <x-auth-session-status class="mb-4" :status="session('status')" />
 
                         <div class="text-center">
-                            <h2 class="mb-5 text-brand-1">Login</h2>
-                            <p class="font-sm text-muted mb-30">Please provide your valid cradentials.</p>
+                            <h2 class="mb-5 text-brand-1">Đăng nhập</h2>
+                            <p class="font-sm text-muted mb-30">Vui lòng cung cấp thông tin xác thực hợp lệ của bạn.</p>
                         </div>
                         <form class="login-register text-start mt-20" method="POST" action="{{ route('login') }}">
                             @csrf
@@ -38,7 +38,7 @@
                                         <label class="form-label" for="input-3">Email *</label>
                                         <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                             id="input-3" type="email" required="" name="email"
-                                            placeholder="stevenjob" value="{{ old('email') }}">
+                                            placeholder="Email" value="{{ old('email') }}">
 
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
@@ -47,8 +47,8 @@
                                 <div class="col-xl-12">
                                     <div class="form-group icon-side">
                                         <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="password">Password *</label>
-                                            <a href="{{ route('password.request') }}">Forgot password?</a>
+                                            <label class="form-label" for="password">Mật khẩu *</label>
+                                            <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
@@ -62,16 +62,16 @@
                                     <div class="form-check form-group form-check-inline">
                                         <input class="form-check-input" style="margin-right: 10px" type="checkbox"
                                             name="remember">
-                                        <label class="form-check-label" for="typeCandidate"> Remember me</label>
+                                        <label class="form-check-label" for="typeCandidate"> Lưu thông tin đăng nhập.</label>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-default hover-up w-100" type="submit" name="login">Login</button>
+                                <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng nhập</button>
                             </div>
-                            <div class="text-muted text-center">Don't have an account?
-                                <a href="{{ route('register') }}">Registration</a>
+                            <div class="text-muted text-center">Bạn chưa có tài khoản?
+                                <a href="{{ route('register') }}">Đăng ký</a>
                             </div>
                         </form>
                         {{-- <div class="text-center mt-20">

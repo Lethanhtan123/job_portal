@@ -43,6 +43,7 @@ require __DIR__ . '/auth.php';
 Route::get('get-cities/{country_id}', [LocationController::class, 'getCityOfCountry'])->name('get-cities');
 Route::get('get-districts/{city_id}', [LocationController::class, 'getDistrictsOfCity'])->name('get-districts');
 
+
 Route::get('companies', [FrontendCompanyPageController::class, 'index'])->name('companies.index');
 Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->name('companies.show');
 
