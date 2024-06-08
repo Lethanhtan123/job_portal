@@ -48,7 +48,7 @@
     </div>
     <div class="w-education">
         <div class="d-flex justify-content-between align-items-center">
-            <h4>Trình độ học vấn</h4>
+            <h4>Bằng cấp</h4>
             <div class="box-button">
                 <button onclick="$('#education-form').trigger('reset'); editId=''; editMode=false;"
                     class="font-bold btn btn-apply font-md " data-bs-toggle="modal"

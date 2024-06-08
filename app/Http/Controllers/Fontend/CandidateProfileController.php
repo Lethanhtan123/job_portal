@@ -10,6 +10,7 @@ use App\Models\CandidateEducation;
 use App\Models\CandidateExperience;
 use App\Models\CandidateLanguage;
 use App\Models\CandidateSkill;
+use App\Models\Country;
 use App\Models\Experience;
 use App\Models\Language;
 use App\Models\Profession;
@@ -36,8 +37,9 @@ class CandidateProfileController extends Controller
         $professions = Profession::all();
         $skills = Skill::all();
         $languages = Language::all();
+        $countries = Country::all();
 
-        return view('fontend.candidate-dashboard.profile.index', compact('candidate', 'experiences', 'professions', 'skills', 'languages', 'candidateExperiences', 'candidateEducations'));
+        return view('fontend.candidate-dashboard.profile.index', compact('candidate', 'experiences', 'professions', 'skills', 'languages', 'candidateExperiences', 'candidateEducations','countries'));
     }
 
     // uppdate basic info of cadidate
