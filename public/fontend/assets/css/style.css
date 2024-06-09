@@ -7885,10 +7885,12 @@ ul li:last-child .card-list-4 {
     top: 0;
     right: 0;
 }
-.hero_section{
+
+.hero_section {
     background-size: cover;
     padding: 5px 0px 50px 0px;
 }
+
 .job-skill {
     background: var(--colorPrimary) !important;
     padding: 7px 10px 7px 10px !important;
@@ -7912,23 +7914,28 @@ ul li:last-child .card-list-4 {
     background: #f05d04 !important;
     color: white !important;
 }
-.width53{
+
+.width53 {
     width: 53px !important;
 }
+
 .highlight:hover {
     color: white !important;
 }
+
 .min_w {
     min-width: max-content;
     margin-right: 20px;
 }
-.box-map iframe{
+
+.box-map iframe {
     height: 50vh !important;
 }
+
 .x-radio {
     height: 18px !important;
     width: 40px !important;
-  }
+}
 
 
 
@@ -7947,20 +7954,25 @@ ul li:last-child .card-list-4 {
     position: relative;
     top: 6px;
 }
-.list-checkbox.overflow{
+
+.list-checkbox.overflow {
     max-height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
     width: 100%;
 }
+
 .list-checkbox.overflow::-webkit-scrollbar {
-    width: 2px; /* Độ rộng của thanh cuộn */
+    width: 2px;
+    /* Độ rộng của thanh cuộn */
 }
 
 /* Tùy chỉnh màu sắc của thanh cuộn */
 .list-checkbox.overflow::-webkit-scrollbar-thumb {
-    background-color: #1ca774; /* Màu của thanh cuộn */
+    background-color: #1ca774;
+    /* Màu của thanh cuộn */
 }
+
 .nav-tabs {
     border: 0px;
     display: inline-block;
@@ -9810,6 +9822,14 @@ footer .color-text-paragraph {
     left: unset;
     top: unset;
     bottom: 10px;
+}
+
+.form-group.icon-side .form-control.is-invalid ~ i,
+.form-group.icon-side .was-validated .form-control:invalid ~ i {
+    right: 32px;
+        left: unset;
+        top: 60px;
+        bottom: unset;
 }
 
 .preloader_demo {

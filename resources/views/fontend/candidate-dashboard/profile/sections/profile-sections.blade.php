@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Gender *
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Giới tính *
                     </label>
                     <select name="gender" id=""
                         class="{{ $errors->has('gender') ? 'is-invalid' : '' }} form-control form-icons select-active">
-                        <option value=""> Select one </option>
-                        <option @selected($candidate?->gender === 'male') value="male">Male</option>
-                        <option @selected($candidate?->gender === 'female') value="female">Female</option>
+                        <option value=""> Chọn giới tính </option>
+                        <option @selected($candidate?->gender === 'male') value="male">Nam</option>
+                        <option @selected($candidate?->gender === 'female') value="female">Nữ</option>
                     </select>
                     <x-input-error :messages="$errors->get('gender')" class="mt-2" />
                 </div>
@@ -19,23 +19,23 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Marital Status *
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Trình trạng hôn nhân *
                     </label>
                     <select name="marital_status" id=""
                         class="{{ $errors->has('marital_status') ? 'is-invalid' : '' }} form-control form-icons select-active">
-                        <option value=""> Select one </option>
-                        <option @selected($candidate?->marital_status === 'single') value="single">Single</option>
-                        <option @selected($candidate?->marital_status === 'married') value="married">Married</option>
+                        <option value=""> Chọn tình trạng hôn nhân </option>
+                        <option @selected($candidate?->marital_status === 'single') value="single">Độc thân</option>
+                        <option @selected($candidate?->marital_status === 'married') value="married">Đã kết hôn</option>
                     </select>
                     <x-input-error :messages="$errors->get('marital_status')" class="mt-2" />
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Profession *</label>
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Nghề nghiệp *</label>
                     <select name="profession" id=""
                         class="{{ $errors->has('profession') ? 'is-invalid' : '' }} form-control form-icons select-active">
-                        <option value=""> Select one </option>
+                        <option value=""> Chọn nghề nghiệp </option>
                         @foreach ($professions as $profession)
                             <option @selected($profession->id === $candidate?->profession_id) value="{{ $profession->id }}"> {{ $profession->name }}
                             </option>
@@ -46,19 +46,19 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Your availability</label>
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Tình trạng hiện tại</label>
                     <select name="availability" id=""
                         class="{{ $errors->has('availability') ? 'is-invalid' : '' }} form-control form-icons select-active">
                         <option value=""> Select one </option>
-                        <option @selected($candidate?->status === 'available') value="available">Available</option>
-                        <option @selected($candidate?->status === 'not_available') value="not_available">Not available</option>
+                        <option @selected($candidate?->status === 'available') value="available">Sẵn sàng nhận việc</option>
+                        <option @selected($candidate?->status === 'not_available') value="not_available">Chưa sẵn sàng nhận việc</option>
                     </select>
                     <x-input-error :messages="$errors->get('availability')" class="mt-2" />
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Skills you have
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Kĩ năng
                     </label>
                     <select multiple="" name="skill[]" id=""
                         class=" {{ $errors->has('skill') ? 'is-invalid' : '' }} select-height  form-icons select-active">
@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-sm text-capitalize color-text-mutted">Languages You Know
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Thành thạo ngôn ngữ
                     </label>
                     <select multiple="" name="language_you_know[]" id=""
                         class=" {{ $errors->has('language_you_know') ? 'is-invalid' : '' }}  select-height form-icons select-active">
@@ -96,7 +96,7 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <label class="font-sm color-text-mutted mb-10">Biography *</label>
+                    <label class="font-sm color-text-mutted mb-10">Tiểu sử *</label>
                     <textarea name="biography" id="editor" class="{{ hasError($errors, 'biography') }}">{!! $candidate?->bio !!}</textarea>
                     <x-input-error :messages="$errors->get('biography')" class="mt-2" />
                 </div>
@@ -106,7 +106,7 @@
         </div>
 
         <div class="box-button mt-15">
-            <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
+            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
         </div>
     </form>
 </div>

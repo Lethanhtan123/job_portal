@@ -8,7 +8,7 @@
                 </div>
                 <div class="btm-box-avt mb-3">
                     <div class="form-group">
-                        <label class="mb-10 font-sm text-capitalize color-text-mutted">Profile picture *
+                        <label class="mb-10 font-md text-capitalize color-text-mutted">Ảnh đại diện *
                         </label>
                         <input class="form-control  {{ $errors->has('profile_picture') ? 'is-invalid' : '' }} "
                             type="file" value="" name="profile_picture">
@@ -19,7 +19,7 @@
 
                 <div class="btm-box-avt">
                     <div class="form-group">
-                        <label class="mb-10 font-sm text-capitalize color-text-mutted">CV <span class="text-success">{{ $candidate?->cv ? '( Have attached cv.)' : '' }}</span>
+                        <label class="mb-10 font-md text-capitalize color-text-mutted">CV <span class="text-success">{{ $candidate?->cv ? '(Bạn đã đính kèm 1 CV)' : '' }}</span>
                         </label>
                         <input class="form-control  {{ $errors->has('cv') ? 'is-invalid' : '' }} " type="file"
                             value="" name="cv">
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Fullname *
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Họ tên *
                             </label>
                             <input class="form-control {{ $errors->has('full_name') ? 'is-invalid' : '' }} "
                                 type="text" value="{{ $candidate?->full_name }}" name="full_name">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Title/Tagline
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Tiêu đề
                             </label>
                             <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }} " type="text"
                                 value="{{ $candidate?->title }}" name="title">
@@ -50,9 +50,9 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group select-style">
-                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Experience Level *</label>
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Kinh nghiệm *</label>
                             <select name="experience_level" id=""  class="{{ $errors->has('experience_level') ? 'is-invalid' : '' }} form-control form-icons select-active">
-                                <option value=""> Select one </option>
+                                <option value=""> Chọn </option>
                                 @foreach ($experiences as $exp)
                                     <option @selected($exp->id === $candidate?->experience_id) value="{{ $exp->id }}"> {{ $exp->name }} </option>
                                 @endforeach
@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Website
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Website
                             </label>
                             <input class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }} "
                                 type="text" value="{{ $candidate?->website }}" name="website">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Date of birth</label>
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Ngày sinh *</label>
                             <input
                                 class="form-control datepicker  {{ $errors->has('birth_date') ? 'is-invalid' : '' }}"
                                 name="birth_date" type="text" value="{{ $candidate?->birth_date }}">
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="box-button mt-15">
-            <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
+            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
         </div>
     </form>
 </div>
