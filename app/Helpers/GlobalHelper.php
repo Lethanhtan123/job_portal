@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Candidate;
 use App\Models\Company;
 
 if(!function_exists('hasError')) {
@@ -73,5 +74,38 @@ if(!function_exists('formatLocation')) {
         }
 
         return $location;
+    }
+}
+
+if (!function_exists('isCompanyProfileComplete')) {
+    function isCompanyProfileComplete(): bool
+    {
+        $requiredFields = ['logo', 'banner', 'bio', 'vision', 'name', 'industry_type_id', 'organization_type_id', 'team_size_id', 'establishment_date', 'phone', 'email', 'country'];
+        $companyProfile = Company::where('user_id', auth()->user()->id)->first();
+
+        foreach ($requiredFields as $field) {
+            if (empty($companyProfile->{$field})) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+if (!function_exists('isCandidateProfileComplete')) {
+    function isCandidateProfileComplete(): bool
+    {
+        $requiredFields = ['experience_id', 'profession_id', 'image', 'full_name', 'birth_date', 'gender', 'bio', 'marital_status', 'country', 'status'];
+
+        $candidateProfile = Candidate::where('user_id', auth()->user()->id)->first();
+
+        foreach ($requiredFields as $field) {
+            if (empty($candidateProfile->{$field})) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

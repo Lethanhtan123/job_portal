@@ -59,8 +59,11 @@ Route::group(
     function () {
         Route::get('/dashboard', [CandidateDashboardController::class, 'index'])->name('dashboard');
         Route::get('/profile', [CandidateProfileController::class, 'index'])->name('profile.index');
-        Route::post('/profile/basic-info-upate',[CandidateProfileController::class,'basicInfoUpdate'])->name('profile.basic-info.update');
-        Route::post('/profile/profile-info-upate', [CandidateProfileController::class, 'profileInfoUpdate'])->name('profile.profile-info.update');
+        Route::post('/profile/basic-info-update',[CandidateProfileController::class,'basicInfoUpdate'])->name('profile.basic-info.update');
+        Route::post('/profile/profile-info-update', [CandidateProfileController::class, 'profileInfoUpdate'])->name('profile.profile-info.update');
+        Route::post('/profile/account-info-update', [CandidateProfileController::class, 'accountInfoUpdate'])->name('profile.account-info.update');
+        Route::post('/profile/account-email-update', [CandidateProfileController::class, 'accountEmailUpdate'])->name('profile.account-email.update');
+        Route::post('/profile/account-password-update', [CandidateProfileController::class, 'accountPasswordUpdate'])->name('profile.account-password.update');
 
         Route::resource('experience', CandidateExperienceController::class);
         Route::resource('education', CandidateEducationController::class);

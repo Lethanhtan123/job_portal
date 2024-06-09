@@ -45,22 +45,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 mt-30">
-                                    <div class="dash_alert_box p-30 bg-danger rounded-4 d-flex flex-wrap">
-                                        <span class="img">
-                                            <img src="assets/imgs/avatar/ava_17.png" alt="alert">
-                                        </span>
-                                        <div class="text">
-                                            <h4>This is demo heading</h4>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem aliquam quasi
-                                                deleniti nesciunt
-                                                obcaecati labore, magnam suscipit repudiandae corrupti laborum.</p>
+                            @if (!isCandidateProfileComplete())
+                                <div class="row">
+                                    <div class="col-12 mt-30">
+                                        <div class="dash_alert_box p-30 bg-danger rounded-4 d-flex flex-wrap">
+                                            <span class="img">
+                                                <img src="{{ asset(auth()->user()->image) }}" alt="Ảnh đại diện" title="Ảnh đại diện">
+                                            </span>
+                                            <div class="text">
+                                                <h4>Hãy thiết lập hồ sơ của bạn</h4>
+                                                <p>Bạn không thể truy cập tất cả các tính năng của trang web nếu bạn không thiết lập tài khoản của mình trước tiên. Hãy đảm bảo rằng bạn đã hoàn tất thiết lập tài khoản của mình.</p>
+                                            </div>
+                                            <a href="{{ route('candidate.profile.index') }}" class="btn btn-default rounded-1">Thiết lập hồ sơ</a>
                                         </div>
-                                        <a href="#" class="btn btn-default rounded-1">Edit Profile</a>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
