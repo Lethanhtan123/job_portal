@@ -7599,9 +7599,9 @@ ul li:last-child .card-list-4 {
 }
 
 .sidebar-shadow.none-shadow {
-    padding: 0px 20px 0px 0px;
-    border: 0px;
-    border-radius: 0px;
+    /* padding: 0px 20px 0px 0px; */
+    /* border: 0px; */
+    /* border-radius: 0px; */
 }
 
 .buttons-filter .btn {
@@ -9824,12 +9824,12 @@ footer .color-text-paragraph {
     bottom: 10px;
 }
 
-.form-group.icon-side .form-control.is-invalid ~ i,
-.form-group.icon-side .was-validated .form-control:invalid ~ i {
+.form-group.icon-side .form-control.is-invalid~i,
+.form-group.icon-side .was-validated .form-control:invalid~i {
     right: 32px;
-        left: unset;
-        top: 60px;
-        bottom: unset;
+    left: unset;
+    top: 60px;
+    bottom: unset;
 }
 
 .preloader_demo {
