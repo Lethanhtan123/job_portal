@@ -11,7 +11,7 @@ class FrontendCandidatePageController extends Controller
 {
     function index(): View
     {
-        $candidates=Candidate::Where(['profile_completion'=>0,'visibility'=>0])->get();
+        $candidates=Candidate::where(['profile_complete'=>1,'visibility'=>1])->get();
         return view('fontend.pages.candidate-index',compact('candidates'));
     }
 }
