@@ -11,11 +11,11 @@
         <table class="table table-striped mt-15">
             <thead>
                 <tr>
-                    <th>Company</th>
-                    <th>Department</th>
-                    <th>Designation</th>
-                    <th>Period</th>
-                    <th class="w-th-action ">Action</th>
+                    <th>Công ty</th>
+                    <th>Phòng</th>
+                    <th>Chức vụ</th>
+                    <th>Giai đoạn</th>
+                    <th class="w-th-action ">Thao tác</th>
                 </tr>
             </thead>
 
@@ -48,7 +48,7 @@
     </div>
     <div class="w-education">
         <div class="d-flex justify-content-between align-items-center">
-            <h4>Trình độ học vấn</h4>
+            <h4>Bằng cấp</h4>
             <div class="box-button">
                 <button onclick="$('#education-form').trigger('reset'); editId=''; editMode=false;"
                     class="font-bold btn btn-apply font-md " data-bs-toggle="modal"
@@ -58,29 +58,27 @@
         <table class="table table-striped mt-15">
             <thead>
                 <tr>
-                    <th>Company</th>
-                    <th>Department</th>
-                    <th>Designation</th>
-                    <th>Period</th>
-                    <th class="w-th-action ">Action</th>
+                    <th>Bằng cấp</th>
+                    <th>Bậc</th>
+                    <th>Năm hoàn thành</th>
+                    <th class="w-th-action ">Thao tác</th>
                 </tr>
             </thead>
 
-            <tbody class="experience-tbody">
-                @forelse ($candidateExperiences as $canEx)
+            <tbody class="education-tbody">
+                @forelse ($candidateEducations as $canEdu)
                     <tr>
-                        <td>{{ $canEx->company }}</td>
-                        <td>{{ $canEx->department }}</td>
-                        <td>{{ $canEx->designation }}</td>
-                        <td>{{ $canEx->start }} - {{ $canEx->currently_working === 1 ? 'Current' : $canEx->end }}</td>
+                        <td>{{ $canEdu->degree }}</td>
+                        <td>{{ $canEdu->level }}</td>
+                        <td>{{ $canEdu->year }}</td>
 
                         <td class="d-flex justify-content-between align-items-center flex-wrap">
-                            <a href="{{ route('candidate.experience.edit', $canEx->id) }}"
-                                class="btn btn-sm rounded btn-primary edit-experience text-white" data-bs-toggle="modal"
-                                data-bs-target="#experienceModal"><i
+                            <a href="{{ route('candidate.education.edit', $canEdu->id) }}"
+                                class="btn btn-sm rounded btn-primary edit-education text-white" data-bs-toggle="modal"
+                                data-bs-target="#educationModal"><i
                                     class="fa-regular fa-pen-to-square text-white"></i></a>
-                            <a href="{{ route('candidate.experience.destroy', $canEx->id) }}"
-                                class="delete-experience btn btn-sm btn-danger rounded delete-item text-white"><i
+                            <a href="{{ route('candidate.education.destroy', $canEdu->id) }}"
+                                class="delete-education btn btn-sm btn-danger rounded delete-item text-white"><i
                                     class="fa-solid fa-trash-can text-white"></i></a>
                         </td>
                     </tr>

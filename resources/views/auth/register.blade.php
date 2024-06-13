@@ -23,17 +23,21 @@
                     <div class="login-register-cover">
                         <div class="text-center">
                             <h2 class="mb-5 text-brand-1">Đăng ký</h2>
+
                             <p class="font-sm text-muted mb-30">Bạn chưa có tài khoản? ,Tạo một cái nào.</p>
+
                         </div>
                         <form class="mt-20 login-register text-start" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="form-group">
+
                                         <label class="form-label" for="input-1">Tên  *</label>
+
                                         <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
                                             id="input-1" type="text" required="" name="name"
-                                            placeholder="Steven Job" value="{{ old('name') }}">
+                                            placeholder="Họ tên" value="{{ old('name') }}">
                                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                     </div>
                                 </div>
@@ -43,7 +47,7 @@
                                         <label class="form-label" for="input-2">Email *</label>
                                         <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                             id="input-2" type="email" required="" name="email"
-                                            placeholder="stevenjob@gmail.com" value="{{ old('email') }}">
+                                            placeholder="Email" value="{{ old('email') }}">
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
                                 </div>
@@ -61,7 +65,8 @@
 
                                 <div class="col-xl-6">
                                     <div class="form-group icon-side">
-                                        <label class="form-label" for="input-5">Nhập lại mật khẩu *</label>
+                                  <label class="form-label" for="input-5">Nhập lại mật khẩu *</label>
+
                                         <input
                                             class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                             id="input-5" type="password" required="" name="password_confirmation"
@@ -74,7 +79,9 @@
 
                                 <div class="mb-3 col-12">
                                     <hr>
+
                                     <h6 for="" class="mb-2">Chọn loại tài khoản</h6>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="account_type"
                                             id="typeCandidate" value="candidate">
@@ -83,7 +90,9 @@
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="account_type" id="typeCompany"
                                             value="company">
+
                                         <label class="form-check-label" for="typeCompany">Doanh nghiệp</label>
+
                                     </div>
 
                                     @if ($errors->has('account_type'))
@@ -96,7 +105,9 @@
                                 <div class="form-group">
                                     <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng ký</button>
                                 </div>
+
                                 <div class="text-center text-muted">Tôi đã có tài khoản?
+
                                     <a href="{{ route('login') }}">Đăng nhập</a>
                                 </div>
                         </form>

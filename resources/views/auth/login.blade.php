@@ -38,7 +38,7 @@
                                         <label class="form-label" for="input-3">Email *</label>
                                         <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                             id="input-3" type="email" required="" name="email"
-                                            placeholder="stevenjob" value="{{ old('email') }}">
+                                            placeholder="Email" value="{{ old('email') }}">
 
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
@@ -48,7 +48,9 @@
                                     <div class="form-group icon-side">
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Mật khẩu *</label>
+
                                             <a href="{{ route('password.request') }}">Quân mật khẩu?</a>
+
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
@@ -62,7 +64,7 @@
                                     <div class="form-check form-group form-check-inline">
                                         <input class="form-check-input" style="margin-right: 10px" type="checkbox"
                                             name="remember">
-                                        <label class="form-check-label" for="typeCandidate"> Remember me</label>
+                                        <label class="form-check-label" for="typeCandidate"> Lưu thông tin đăng nhập.</label>
                                     </div>
                                 </div>
 
@@ -70,7 +72,9 @@
                             <div class="form-group">
                                 <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng nhập</button>
                             </div>
+
                             <div class="text-center text-muted">Bạn chưa có tài khoản?
+
                                 <a href="{{ route('register') }}">Đăng ký</a>
                             </div>
                         </form>

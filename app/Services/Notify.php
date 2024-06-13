@@ -6,17 +6,17 @@ class Notify {
 
     //Create success notify
     static function createdNotifycation(){
-       return notyf()->success('Created Successfully', 'Success!');
+       return notyf()->addSuccess('Thêm mới thành công', 'Thành công!');
 
     }
      //Updated success notify
      static function updatedNotifycation(){
-        return notyf()->success('Updated Successfully', 'Success!');
+        return notyf()->addSuccess('Cập nhật thành công', 'Thành công!');
 
      }
 
      static function deletedNotifycation(){
-        return notyf()->success('Deleted Successfully', 'Success!');
+        return notyf()->addSuccess('Xóa thành công', 'Thành công!');
 
      }
 }
