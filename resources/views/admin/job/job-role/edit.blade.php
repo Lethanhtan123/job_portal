@@ -2,20 +2,20 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <h1>Job roles</h1>
+        <h1>Chức vụ</h1>
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Update job role</h4>
+                    <h4>Cập nhật chức vụ</h4>
                 </div>
                 <div class=" card-body">
                   <form action="{{ route('admin.job-roles.update',$Jobrole->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="">Name</label>
+                        <label for="">Tên</label>
                         <input type="text" name="name"
                         class="form-control {{ hasError($errors, 'name') }}" id=""
                         value="{{ old('name',$Jobrole->name) }}"
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </div>
                   </form>
                 </div>

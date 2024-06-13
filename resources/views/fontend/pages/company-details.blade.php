@@ -18,6 +18,9 @@
 
 <section class="section-box-2">
     <div class="container">
+
+        <div class="mt-30"></div>
+        <div class="banner-hero banner-image-single"><img style="height: 374px; object-fit: cover;" src="{{ asset($company->banner) }}" alt="joblist"></div>
         <div class="box-company-profile">
             <div class="mt-10 row">
                 <div class="col-lg-8 col-md-12">
@@ -42,14 +45,14 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-about" role="tabpanel"
                             aria-labelledby="tab-about">
-                            <h4>Welcome to {{ $company->name }}</h4>
+                            <h4>{{ $company->name }}</h4>
                             <p>{{$company->bio}}</p>
                         </div>
 
                     </div>
                 </div>
                 <div class="box-related-job content-page" id="open-positions">
-                    <h5 class="mb-30">Open Jobs</h5>
+                    <h5 class="mb-30">Tin tuyển dụng</h5>
                     <div class="box-list-jobs display-list">
                         @forelse ($openJobs as $job)
                         <div class="col-xl-12 col-md-4">
@@ -70,11 +73,11 @@
                                     <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                         <div class="pl-15 mb-15 mt-30">
                                             @if ($job->featured)
-                                            <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Featured</a>
+                                            <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Nổi bật</a>
                                             @endif
                                             @if ($job->highlight)
                                             <a class="mr-5 btn btn-grey-small highlight"
-                                                href="javascript:;">Highlight</a>
+                                                href="javascript:;">Phổ biến</a>
                                             @endif
                                         </div>
                                     </div>
@@ -128,7 +131,7 @@
                             </div>
                         </div>
                         @empty
-                        <h5 class="text-center">No Open Job Found! 😥</h5>
+                        <h5 class="text-center">Không có tin tuyển dụng! 😥</h5>
                         @endforelse
 
                     </div>

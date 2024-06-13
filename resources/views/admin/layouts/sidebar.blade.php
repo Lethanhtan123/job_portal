@@ -10,7 +10,7 @@
             <li class="menu-header">Dashboard</li>
             <li class="dropdown {{ setSidebarActive(['admin.dashboard']) }}">
                 <a href="{{ route('admin.dashboard') }}" class="nav-link"><i
-                        class="fas fa-fire"></i><span>Dashboard</span></a>
+                        class="fas fa-fire"></i><span>Bảng điều kiển</span></a>
 
             </li>
             <li class="menu-header">Starter</li>
@@ -26,21 +26,21 @@
                 ] ) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Actributes</span></a>
+                    <span>Thuộc tính</span></a>
                 <ul class="dropdown-menu">
 
                     <li><a class="{{ setSidebarActive(['admin.industry-types.*']) }} nav-link"
-                            href="{{ route('admin.industry-types.index') }}">Industry types</a></li>
+                            href="{{ route('admin.industry-types.index') }}">Loại doanh nghiệp</a></li>
 
                     {{-- <li><a class="{{ setSidebarActive(['admin.organization-types.*']) }} nav-link"
                             href="{{ route('admin.organization-types.index') }}">Organization types</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.languages.*']) }} nav-link"
-                            href="{{ route('admin.languages.index') }}">Languages</a></li>
+                            href="{{ route('admin.languages.index') }}">Ngôn ngữ</a></li>
                     <li><a class="{{ setSidebarActive(['admin.professions.*']) }} nav-link"
-                            href="{{ route('admin.professions.index') }}">Professions</a></li>
+                            href="{{ route('admin.professions.index') }}">Công việc</a></li>
 
                     <li><a class="{{ setSidebarActive(['admin.skills.*']) }} nav-link"
-                            href="{{ route('admin.skills.index') }}">Skills</a></li>
+                            href="{{ route('admin.skills.index') }}">Kỹ năng</a></li>
 
                 </ul>
             </li>
@@ -53,17 +53,17 @@
                 'admin.city.*'] ) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Location</span></a>
+                    <span>Vị trí, địa điểm</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="{{ setSidebarActive(['admin.country.*']) }} nav-link"
-                            href="{{ route('admin.country.index') }}">Countries</a></li>
+                            href="{{ route('admin.country.index') }}">Quốc gia</a></li>
                     {{-- <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
                             href="{{ route('admin.state.index') }}">State</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link"
-                            href="{{ route('admin.city.index') }}">City</a></li>
+                            href="{{ route('admin.city.index') }}">Thành phố</a></li>
 
                     <li><a class="{{ setSidebarActive(['admin.district.*']) }} nav-link"
-                            href="{{ route('admin.district.index') }}">District</a></li>
+                            href="{{ route('admin.district.index') }}">Quận/huyện</a></li>
                 </ul>
             </li>
 
@@ -81,38 +81,38 @@
                 ] ) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Job</span></a>
+                    <span>Thuộc tính tuyển dụng</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setSidebarActive(['admin.job-categories.*']) }}">
                         <a href="{{ route('admin.job-categories.index') }}" class="">
-                            <span>Job Category</span></a>
+                            <span>Loại nghành</span></a>
                     </li>
                     <li class="{{ setSidebarActive(['admin.educations.*']) }}">
                         <a href="{{ route('admin.educations.index') }}" class="">
-                            <span>Education</span></a>
+                            <span>Học vấn</span></a>
                     </li>
 
                     <li class="{{ setSidebarActive(['admin.job-types.*']) }}">
                         <a href="{{ route('admin.job-types.index') }}" class="">
-                            <span>Job Type</span></a>
+                            <span>Loại công việc</span></a>
                     </li>
 
                     <li class="{{ setSidebarActive(['admin.salary-types.*']) }}">
                         <a href="{{ route('admin.salary-types.index') }}" class="">
-                            <span>Salary Type</span></a>
+                            <span>Loại lương</span></a>
                     </li>
                     <li class="{{ setSidebarActive(['admin.job-roles.*']) }}">
                         <a href="{{ route('admin.job-roles.index') }}" class="">
-                            <span>Job Role</span></a>
+                            <span>Chức vụ</span></a>
                     </li>
                     <li class="{{ setSidebarActive(['admin.job-experiences.*']) }}">
                         <a href="{{ route('admin.job-experiences.index') }}" class="">
-                            <span>Job Experience</span></a>
+                            <span>Kinh nghiệm công việc</span></a>
                     </li>
 
                     <li class="{{ setSidebarActive(['admin.job-tags.*']) }}">
                         <a href="{{ route('admin.job-tags.index') }}" class="">
-                            <span>Job Tag</span></a>
+                            <span>Tag (tuyển dụng)</span></a>
                     </li>
                 </ul>
             </li>
@@ -121,7 +121,7 @@
             <li class="{{ setSidebarActive(['admin.jobs.*']) }}">
                 <a href="{{ route('admin.jobs.index') }}" class="">
                     <i class="fas fa-columns"></i>
-                    <span>Job Post</span></a>
+                    <span>Tin tuyển dụng</span></a>
             </li>
 
             <li class="{{ setSidebarActive(['admin.blogs.*']) }}">

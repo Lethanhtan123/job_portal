@@ -53,8 +53,8 @@ class FrontendCompanyPageController extends Controller
             });
         }
 
-        
-        $companies = $query->paginate(21);
+
+        $companies = $query->Orderby('id','DESC')->paginate(12);
 
 
         return view('fontend.pages.company-index',compact('companies','countries','selectedDistricts','selectedCites','industryTypes'));

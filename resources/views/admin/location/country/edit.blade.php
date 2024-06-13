@@ -2,20 +2,20 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <h1>All Country</h1>
+        <h1>Quốc gia</h1>
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Update Country</h4>
+                    <h4>Cập nhật quốc gia</h4>
                 </div>
                 <div class=" card-body">
                   <form action="{{ route('admin.country.update',$Country->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="">Name</label>
+                        <label for="">Tên</label>
                         <input type="text" name="name"
                         class="form-control {{ hasError($errors, 'name') }}" id=""
                         value="{{ old('name',$Country->name) }}"
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </div>
                   </form>
                 </div>

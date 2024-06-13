@@ -3,18 +3,18 @@
     <section class="section">
         <div class="section-header">
             <a href="{{ route('admin.professions.index') }}">
-                <h1>All Profession</h1>
+                <h1>Công việc</h1>
             </a>
         </div>
         <div class="section-body">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Advanced Table</h4>
+                        <h4>Danh sách công việc</h4>
                         <div class="card-header-form">
                             <form action="{{ route('admin.professions.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="search">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm" name="search">
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-primary"><i
                                                 class="fas fa-search"></i></button>
@@ -23,15 +23,15 @@
                             </form>
                         </div>
 
-                        <a href="{{ route('admin.professions.create') }}" class="ml-2 btn btn-primary">Create new</a>
+                        <a href="{{ route('admin.professions.create') }}" class="ml-2 btn btn-primary">Tạo mới</a>
                     </div>
                     <div class="p-0 card-body">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Slug</th>
-                                    <th style="width: 20%">Action</th>
+                                    <th>Tên</th>
+                                    <th>Đường dẫn</th>
+                                    <th style="width: 20%">Chức năng</th>
                                 </tr>
 
                                 <tbody>
@@ -41,12 +41,12 @@
                                             <th>{{ $profession->slug }}</th>
                                             <th>
                                                 <a href="{{ route('admin.professions.edit', $profession->id) }}"
-                                                    class="btn btn-sm btn-primary">Edit</a>
+                                                    class="btn btn-sm btn-primary">Cập nhật</a>
                                                 <a href="{{ route('admin.professions.destroy', $profession->id) }}"
-                                                    class="btn btn-sm btn-danger delete-item">Delete</a>
+                                                    class="btn btn-sm btn-danger delete-item">Xóa</a>
                                             </th>
                                         </tr>
-                                        @empty 
+                                        @empty
                                         <tr>
                                         <td colspan="3" class="text-center" > No result found!</td>
                                         </tr>

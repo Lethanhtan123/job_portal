@@ -19,15 +19,16 @@
 
   <section class="section-box-2">
     <div class="container">
-      {{-- <div class="banner-hero banner-image-single"><img style="height: 300px;object-fit: cover;" src="{{ asset($job->company->banner) }}" alt="joblist">
-      </div> --}}
-      <div class="mt-10"></div>
+        <div class="mt-30"></div>
+      <div class="banner-hero banner-image-single"><img style="height: 300px;object-fit: cover;" src="{{ asset($job->company->banner) }}" alt="joblist">
+      </div>
+      <div class="mt-30"></div>
       <div class="mt-10 row">
         <div class="col-lg-8 col-md-12">
           <h3>{{ $job->title }}</h3>
           <div class="mt-0 mb-15">
             <span class="card-briefcase">{{ $job->jobType->name }}</span>
-            <span class="card-briefcase">{{ $job->jobExperience?->name }}</span>
+            <span class="mt-10 card-briefcase">{{ $job->jobExperience?->name }}</span>
             <span class="card-time"><span>{{ $job->created_at->diffForHumans() }}</span></span>
             </div>
         </div>
@@ -181,7 +182,7 @@
 
           <div class="sidebar-border">
             <div class="sidebar-heading">
-                <h6 class="f-18">Skills</h6>
+                <h6 class="f-18">Kỹ năng cần</h6>
             </div>
             <div class="sidebar-list-job">
                 @foreach ($job->skills as $jobSkill)

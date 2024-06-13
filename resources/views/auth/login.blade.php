@@ -6,10 +6,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h2 class="mb-20">Blog</h2>
+                        <h2 class="mb-20">Đăng nhập</h2>
                         <ul class="breadcrumbs">
                             <li><a class="home-icon" href="index.html">Home</a></li>
-                            <li>Blog</li>
+                            <li>Đăng nhập</li>
                         </ul>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
     <section class="pt-120 login-register">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
+                <div class="mx-auto col-lg-5 col-md-6 col-sm-12">
                     <div class="login-register-cover">
 
                         <!-- Session Status -->
@@ -30,7 +30,7 @@
                             <h2 class="mb-5 text-brand-1">Đăng nhập</h2>
                             <p class="font-sm text-muted mb-30">Vui lòng cung cấp thông tin xác thực hợp lệ của bạn.</p>
                         </div>
-                        <form class="login-register text-start mt-20" method="POST" action="{{ route('login') }}">
+                        <form class="mt-20 login-register text-start" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-xl-12">
@@ -48,7 +48,9 @@
                                     <div class="form-group icon-side">
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Mật khẩu *</label>
-                                            <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
+
+                                            <a href="{{ route('password.request') }}">Quân mật khẩu?</a>
+
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                             id="input-4" type="password" required="" name="password"
@@ -70,13 +72,15 @@
                             <div class="form-group">
                                 <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng nhập</button>
                             </div>
-                            <div class="text-muted text-center">Bạn chưa có tài khoản?
+
+                            <div class="text-center text-muted">Bạn chưa có tài khoản?
+
                                 <a href="{{ route('register') }}">Đăng ký</a>
                             </div>
                         </form>
-                        {{-- <div class="text-center mt-20">
+                        {{-- <div class="mt-20 text-center">
               <div class="divider-text-center"><span>Or continue with</span></div>
-              <button class="btn social-login hover-up mt-20"><img src="assets/imgs/template/icons/icon-google.svg"
+              <button class="mt-20 btn social-login hover-up"><img src="assets/imgs/template/icons/icon-google.svg"
                   alt="joblist"><strong>Sign up with Google</strong></button>
             </div> --}}
                     </div>
