@@ -39,10 +39,10 @@
                     @auth
                         @if (auth()->user()->role === 'company')
                             <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:250px"
-                                href="{{ route('company.dashboard') }}">Company dashboard</a>
+                                href="{{ route('company.dashboard') }}">Trang cá nhân</a>
                         @elseif (auth()->user()->role === 'candidate')
                         <a class="ml-40 btn btn-default btn-shadow hover-up" style="min-width:250px"
-                        href="{{ route('candidate.dashboard') }}">Candidate dashboard</a>
+                        href="{{ route('candidate.dashboard') }}">Trang cá nhân</a>
                         @endif
                     @endauth
 

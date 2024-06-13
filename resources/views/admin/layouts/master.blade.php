@@ -37,8 +37,6 @@
 
             @include('admin.layouts.sidebar')
 
-
-
             <!-- Main Content -->
             <div class="main-content">
                 @yield('contents')
@@ -77,7 +75,7 @@
     <script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
 
     @notifyCss
-    
+
     @stack('scripts')
 
     <script>
@@ -92,8 +90,8 @@
         e.preventDefault();
 
         swal({
-        title: 'Are you sure?',
-                text: 'Once deleted, you will not be able to recover this data!',
+        title: 'Bạn có chắc muốn xóa?',
+                text: 'Sau khi xóa, bạn sẽ không thể khôi phục dữ liệu này!',
                 icon: 'warning',
                 buttons: true,
                 dangerMode: true,

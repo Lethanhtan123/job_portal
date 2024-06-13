@@ -3,14 +3,14 @@
     <section class="section">
         <div class="section-header">
             <a href="{{ route('admin.skills.index') }}">
-                <h1>All skill</h1>
+                <h1>Kỹ năng</h1>
             </a>
         </div>
         <div class="section-body">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Advanced Table</h4>
+                        <h4>Danh sách kỹ năng</h4>
                         <div class="card-header-form">
                             <form action="{{ route('admin.skills.index') }}" method="GET">
                                 <div class="input-group">
@@ -23,15 +23,15 @@
                             </form>
                         </div>
 
-                        <a href="{{ route('admin.skills.create') }}" class="ml-2 btn btn-primary">Create new</a>
+                        <a href="{{ route('admin.skills.create') }}" class="ml-2 btn btn-primary">Tạo mới</a>
                     </div>
                     <div class="p-0 card-body">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Slug</th>
-                                    <th style="width: 20%">Action</th>
+                                    <th>Tên</th>
+                                    <th>Đường dẫn</th>
+                                    <th style="width: 20%">Chức năng</th>
                                 </tr>
 
                                 <tbody>
@@ -41,12 +41,12 @@
                                             <th>{{ $skill->slug }}</th>
                                             <th>
                                                 <a href="{{ route('admin.skills.edit', $skill->id) }}"
-                                                    class="btn btn-sm btn-primary">Edit</a>
+                                                    class="btn btn-sm btn-primary">Cập nhật</a>
                                                 <a href="{{ route('admin.skills.destroy', $skill->id) }}"
-                                                    class="btn btn-sm btn-danger delete-item">Delete</a>
+                                                    class="btn btn-sm btn-danger delete-item">Xóa</a>
                                             </th>
                                         </tr>
-                                        @empty 
+                                        @empty
                                         <tr>
                                         <td colspan="3" class="text-center" > No result found!</td>
                                         </tr>

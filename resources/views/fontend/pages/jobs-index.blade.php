@@ -45,11 +45,11 @@
                                     <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                         <div class="pl-15 mb-15 mt-30">
                                             @if ($job->featured)
-                                            <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Featured</a>
+                                            <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Nổi bật</a>
                                             @endif
                                             @if ($job->highlight)
                                             <a class="mr-5 btn btn-grey-small highlight"
-                                                href="javascript:;">Highlight</a>
+                                                href="javascript:;">Phổ biến</a>
                                             @endif
                                         </div>
                                     </div>

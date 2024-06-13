@@ -38,8 +38,7 @@
                                         ) }}</span>
                                     <div class="mt-30"><a class="btn btn-grey-big"
                                             href="{{ route('companies.show', $item->slug) }}"><span>{{ $item->jobs_count
-                                                }}</span><span> Jobs
-                                                Open</span></a></div>
+                                                }}</span><span> Tin tuyển dụng</span></a></div>
                                 </div>
                             </div>
                         </div>

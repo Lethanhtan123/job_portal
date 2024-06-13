@@ -35,7 +35,7 @@
                     <div class="row">
                       <div class="col-lg-6 col-6">
                         <div class="d-flex">
-                          <div class="info-right-img"><span class="font-bold font-sm color-brand-1 op-70">{{ $blog->author->name }}</span><br></div>
+                          {{-- <div class="info-right-img"><span class="font-bold font-sm color-brand-1 op-70">{{ $blog->author->name }}</span><br></div> --}}
                         </div>
                       </div>
                       <div class="col-lg-6 text-end col-6 pt-15"><span class="color-text-paragraph-2 font-xs">{{ formatDate($blog->created_at) }}</span></div>
@@ -60,13 +60,13 @@
             <div class="mb-40 widget_search">
               <div class="search-form">
                 <form action="{{ route('blogs.index') }}">
-                  <input type="text" placeholder="Search…" name="search" value="{{ request()->search }}">
+                  <input type="text" placeholder="Tìm kiếm" name="search" value="{{ request()->search }}">
                   <button type="submit"><i class="fi-rr-search"></i></button>
                 </form>
               </div>
             </div>
             <div class="sidebar-shadow sidebar-news-small">
-              <h5 class="sidebar-title">Featured</h5>
+              <h5 class="sidebar-title">Tin tức nổi bật</h5>
               <div class="post-list-small">
                 @foreach ($featured as $blog)
                 <div class="post-list-small-item d-flex align-items-center">
@@ -75,7 +75,10 @@
                   <div class="content">
                     <a href="{{ route('blogs.show', $blog->slug) }}"><h5>{{ $blog->title }}</h5></a>
                     <div class="post-meta text-muted d-flex align-items-center mb-15">
-                      <div class="mr-20 author d-flex align-items-center"><span>{{ $blog->author->name }}</span></div>
+                      {{-- <div class="mr-20 author d-flex align-items-center"><span>{{ $blog->author->name }}</span></div> --}}
+
+                      <div class="mr-20 author d-flex align-items-center"><span>{{ formatDate($blog->created_at) }}</span></div>
+
                     </div>
                   </div>
                 </div>

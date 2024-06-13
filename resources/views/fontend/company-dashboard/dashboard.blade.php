@@ -5,10 +5,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h2 class="mb-20">Blog</h2>
+                        <h2 class="mb-20">Thông tin cá nhân</h2>
                         <ul class="breadcrumbs">
                             <li><a class="home-icon" href="index.html">Home</a></li>
-                            <li>Blog</li>
+                            <li>Trang cá nhân</li>
                         </ul>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 mt-30">
-                                    <div class="dash_alert_box p-30 bg-danger rounded-4 d-flex flex-wrap">
+                                    <div class="flex-wrap dash_alert_box p-30 bg-danger rounded-4 d-flex">
                                         <span class="img">
                                             <img src="assets/imgs/avatar/ava_17.png" alt="alert">
                                         </span>

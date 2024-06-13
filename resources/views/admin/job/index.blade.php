@@ -3,18 +3,18 @@
 <section class="section">
     <div class="section-header">
         <a href="{{ route('admin.jobs.index') }}">
-            <h1>Job Post</h1>
+            <h1>Tin tuyển dụng</h1>
         </a>
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>All Job post</h4>
+                    <h4>Danh sách tin tuyển dụng</h4>
                     <div class="card-header-form">
                         <form action="{{ route('admin.jobs.index') }}" method="GET">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm" name="search">
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
                                 </div>
@@ -22,20 +22,20 @@
                         </form>
                     </div>
 
-                    <a href="{{ route('admin.jobs.create') }}" class="ml-2 btn btn-primary">Create new</a>
+                    <a href="{{ route('admin.jobs.create') }}" class="ml-2 btn btn-primary">Tạo mới</a>
                 </div>
                 <div class="p-0 card-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <tr>
-                                <th>Job</th>
-                                <th>Category/Role</th>
-                                <th>Salary</th>
+                                <th>Tin tuyển dụng</th>
+                                <th style="width: 15%">Loại nghành/Chức vụ</th>
+                                <th style="width: 15%">Loại lương</th>
                                 <th>Tỷ giá</th>
-                                <th>Deadline</th>
-                                <th>Status</th>
-                                <th>Change Status</th>
-                                <th style="width: 20%">Action</th>
+                                <th>Hạo chót đăng ký</th>
+                                <th>Trạng thái</th>
+                                <th>Thay đổi trạng thái</th>
+                                <th style="width: 13%">Chức năng</th>
                             </tr>
 
                             <tbody>
@@ -50,7 +50,7 @@
                                             <div>
                                                 <b>{{ $job->title }}</b>
                                                 <br>
-                                                <span>{{ $job->company->name }} - {{ $job->jobType->name }}</span>
+                                                {{-- <span>{{ $job->company->name }} - {{ $job->jobType->name }}</span> --}}
                                             </div>
                                         </div>
                                     </td>

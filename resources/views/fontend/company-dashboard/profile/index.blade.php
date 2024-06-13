@@ -5,10 +5,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h2 class="mb-20">My Profile</h2>
+                        <h2 class="mb-20">Thông tin cá nhân</h2>
                         <ul class="breadcrumbs">
                             <li><a class="home-icon" href="index.html">Home</a></li>
-                            <li>My Profile</li>
+                            <li>Trang cá nhân</li>
                         </ul>
                     </div>
                 </div>
@@ -26,17 +26,17 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                aria-selected="true">Company Info</button>
+                                aria-selected="true">Thông tin doanh nghiệp</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                                aria-selected="false">Founding Info</button>
+                                aria-selected="false">Thông tin thành lập</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                                aria-selected="false">Account Settings</button>
+                                aria-selected="false">Cài đặt tài khoản</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="btm-box-avt">
                                             <div class="form-group">
-                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Banner *
+                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Ảnh nền *
                                                 </label>
                                                 <input class="form-control  {{ $errors->has('banner') ? 'is-invalid' : '' }} "
                                                     type="file" value="" name="banner">
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Company name *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên doanh nghiệp *
                                             </label>
                                             <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }} "
                                                 type="text" value="{{ $companyInfo?->name }}" name="name">
@@ -87,7 +87,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Company bio *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Mô tả doanh nghiệp *
                                             </label>
                                             <textarea name="bio" class="  {{ $errors->has('bio') ? 'is-invalid' : '' }}  summernote">{{ $companyInfo?->bio }}</textarea>
                                             <x-input-error :messages="$errors->get('bio')" class="mt-2" />
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="box-button mt-15">
-                                    <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
+                                    <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
                                 </div>
 
                             </form>
@@ -111,8 +111,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm color-text-mutted">Establishment Date</label>
-                                            <input type="text" name="establishment_date"
+                                            <label class="mb-10 font-sm color-text-mutted">Năm thành lập</label>
+                                            <input id="inputdate" type="date" name="establishment_date"
                                                 class="form-control datepicker {{ $errors->has('establishment_date') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->establishment_date }}">
                                             <x-input-error :messages="$errors->get('establishment_date')" class="mt-2" />
@@ -143,7 +143,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm color-text-mutted">Phone *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Điện thoại *</label>
                                             <input type="text" name="phone"
                                                 class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->phone }}">
@@ -154,7 +154,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Country *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Quốc gia *</label>
                                             <select name="country" id=""
                                                 class="form-control form-icons country select-active {{ $errors->has('country') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->country }}">
@@ -171,7 +171,7 @@
 
                                      <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">City *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Thành phố *</label>
                                             <select name="city" id=""
                                                 class="form-control form-icons city select-active {{ $errors->has('city') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->city }}">
@@ -188,7 +188,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">District *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Quận huyện *</label>
                                             <select name="district" id=""
                                                 class="form-control form-icons districts select-active {{ $errors->has('district') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->districts }}">
@@ -205,7 +205,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Industry Type *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Loại doanh nghiệp *</label>
                                             <select name="industry_type" id=""
                                                 class="form-control form-icons industry_type select-active {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
                                                 <option value="">Select</option>
@@ -239,7 +239,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm color-text-mutted">Address</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Địa chỉ</label>
                                             <input type="text" name="address"
                                                 class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->address }}">
@@ -250,7 +250,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm color-text-mutted">Map Link</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Link bản đồ (Link iframe)</label>
                                             <input type="text" name="map_link" class="form-control"
                                                 value="{{ $companyInfo?->map_link }}">
                                         </div>
@@ -258,7 +258,7 @@
 
                                 </div>
                                 <div class="box-button mt-15">
-                                    <button class="font-bold btn btn-apply-big font-md">Save All Changes</button>
+                                    <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
                                 </div>
                             </form>
                         </div>
@@ -451,5 +451,29 @@
                 this.classList.toggle("fa-eye-slash");
             });
         });
+
+
+
+        $(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+
+    // Giảm 1 ngày để lấy ngày hôm trước
+    dtToday.setDate(dtToday.getDate() - 1);
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var minDate = year + '-' + month + '-' + day;
+    $('#inputdate').attr('max', minDate);
+});
     </script>
 @endpush

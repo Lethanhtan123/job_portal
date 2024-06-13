@@ -2,19 +2,19 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <h1>Salary types</h1>
+        <h1>Loại trả lương</h1>
     </div>
     <div class="section-body">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Create salary type</h4>
+                    <h4>Tạo mới oại trả lương</h4>
                 </div>
                 <div class=" card-body">
                     <form action="{{ route('admin.salary-types.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="">Name</label>
+                            <label for="">Tên</label>
                             <input type="text" name="name" class="form-control {{ hasError($errors, 'name') }}" id=""
                                 value="{{ old('name') }}">
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-primary">Tạo</button>
                         </div>
                     </form>
                 </div>
