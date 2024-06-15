@@ -669,6 +669,10 @@ h6 {
     font-size: 18px;
 }
 
+.f-22 {
+    font-size: 22px;
+}
+
 .box-related-job {
     display: inline-block;
     width: 100%;
@@ -6914,7 +6918,7 @@ ul li:last-child .card-list-4 {
     width: 100%;
     height: 1px;
     z-index: 1;
-    border-top: 1px solid rgba(6, 18, 36, 0.1);
+    border-top: 1px solid rgba(6, 20, 36, 0.1);
 }
 
 .heading-border span {
@@ -9865,4 +9869,73 @@ footer .color-text-paragraph {
 
 .w-experience {
     margin-bottom: 30px;
+}
+
+.card-grid-2 .card-block-info a.view-detail-resume {
+    margin-right: 0 !important;
+}
+
+.banner-image-single.avt-can img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.text-description.w-100 {
+    max-width: unset;
+    margin-bottom: 2px;
+}
+
+.sidebar-text-info.s-end span.small-heading {
+    background: var(--colorPrimary);
+    color: #fff;
+    padding: 5px 8px;
+    margin: 0 2px 2px 0;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.sidebar_fixed {
+    position: sticky;
+    top: 90px;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+
+ul.timeline:before {
+    content: ' ';
+    background: #ddd;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+
+ul.timeline>li {
+    margin: 20px 0;
+    padding-left: 70px;
+}
+
+ul.timeline>li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid var(--colorPrimary);
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+.w-t-w {
+    font-size: 15px;
+    font-weight: 700;
 }
