@@ -169,7 +169,6 @@
                             <li class="">
                                 {{ formatLocation(
                                 $company->companyCountry->name,
-
                                 ) }}
                             </li>
 

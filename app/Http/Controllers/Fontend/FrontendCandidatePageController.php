@@ -14,4 +14,11 @@ class FrontendCandidatePageController extends Controller
         $candidates=Candidate::where(['profile_complete'=>1,'visibility'=>1])->get();
         return view('fontend.pages.candidate-index',compact('candidates'));
     }
+
+    function show(string $slug) : View
+     {
+        $candidate = Candidate::where(['profile_complete' => 1, 'visibility' => 1, 'slug' => $slug])->firstOrFail();
+
+        return view('fontend.pages.candidate-details', compact('candidate'));
+    }
 }

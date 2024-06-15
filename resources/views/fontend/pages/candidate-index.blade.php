@@ -396,14 +396,14 @@
                                         <div class="card-grid-2-image-left text-center">
                                             <div class="card-grid-2-image-rd online text-center pe-0 mx-auto">
                                                 <a class="text-decoration-none text-center d-block"
-                                                    href="candidate-details.html">
+                                                    href="{{ route('candidates.show', $item->slug) }}">
                                                     <figure>
                                                         <img alt="{{ $item->full_name }}" src="{{ asset($item->image) }}">
                                                     </figure>
                                                 </a>
                                             </div>
                                             <div class="pt-10 card-profile">
-                                                <a class="mb-3" href="candidate-details.html">
+                                                <a class="mb-3" href="{{ route('candidates.show', $item->slug) }}">
                                                     <h5 class="text-center">{{ $item->full_name }}</h5>
                                                 </a>
                                                 <span
@@ -442,17 +442,17 @@
                                         </div>
                                         <div class="card-block-info">
                                             @if ($item->status === 'available')
-                                                <p class="font-md d-block text-center color-text-paragraph-2">Sẵn sàng nhận việc</p>
+                                                <p class="font-md d-block text-center color-text-paragraph-2">Sẵn sàng nhận
+                                                    việc</p>
                                             @endif
                                             <div class="card-2-bottom card-2-bottom-candidate mt-30">
                                                 <div class="text-start">
-                                                    <a class="mb-10 mr-5 btn btn-tags-sm" href="jobs-grid.html">Figma</a>
-                                                    <a class="mb-10 mr-5 btn btn-tags-sm" href="jobs-grid.html">Adobe
-                                                        XD</a>
-                                                    <a class="mb-10 mr-5 btn btn-tags-sm" href="jobs-grid.html">PSD</a>
-                                                    <a class="mb-10 mr-5 btn btn-tags-sm" href="jobs-grid.html">App</a>
-                                                    <a class="mb-10 mr-5 btn btn-tags-sm"
-                                                        href="jobs-grid.html">Digital</a>
+                                                    @foreach ($item->skills as $key => $canSkill)
+                                                        @if ($loop->index <= 5)
+                                                            <a class="mb-10 mr-5 btn btn-tags-sm"
+                                                                href="">{{ $canSkill->skill->name }}</a>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="employers-info align-items-center justify-content-center mt-15">
@@ -460,14 +460,11 @@
                                                     <div class="col-6">
                                                         <span class="d-flex align-items-center">
                                                             <i class="ml-0 mr-5 fi-rr-marker"></i>
-                                                            <span class="font-sm color-text-mutted">Chicago,US</span>
+                                                            <span class="font-sm color-text-mutted">{{ $item->candidateCountry->name }}</span>
                                                         </span>
                                                     </div>
-                                                    <div class="col-6">
-                                                        <span class="d-flex justify-content-end align-items-center">
-                                                            <i class="mr-5 fi-rr-clock"></i>
-                                                            <span class="font-sm color-brand-1">$45 / hour </span>
-                                                        </span>
+                                                    <div class="col-6 text-end">
+                                                        <a href="{{ route('candidates.show', $item->slug) }}" class="view-detail-resume text-decoration-none text-success font-md text-capitalize d-inline-block " >Xem hồ sơ</a>
                                                     </div>
                                                 </div>
                                             </div>
