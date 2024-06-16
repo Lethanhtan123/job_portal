@@ -7317,7 +7317,7 @@ ul li:last-child .card-list-4 {
     padding: 0;
     line-height: 40px;
     text-align: center;
-    margin-right: 5px;
+    margin: 0;
 }
 
 .paginations .pager li a:hover {
@@ -7354,6 +7354,18 @@ ul li:last-child .card-list-4 {
     z-index: -1;
     top: 8px;
     left: -1px;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    height: 40px;
+    line-height: 35px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 .paginations .pager li .pager-prev {
@@ -7950,6 +7962,11 @@ ul li:last-child .card-list-4 {
     color: #fff !important;
     background-color: var(--colorPrimary) !important;
     border-color: var(--colorPrimary) !important;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    padding: 0;
 }
 
 .min-value-money {
