@@ -11,7 +11,7 @@
                         <li class="has-children"><a class="active" href="{{ route('home') }}">Trang chủ</a></li>
                         <li class="has-children"><a href="{{ route('jobs.index') }}">Tin Tuyển Dụng</a></li>
                         <li class="has-children"><a href="{{ route('companies.index') }}">Nhà Tuyển Dụng</a></li>
-                        <li class="has-children"><a href="candidates-grid.html">Ứng Viên</a></li>
+                        <li class="has-children"><a href="{{ route('candidates.index') }}">Ứng Viên</a></li>
                         <li class="has-children"><a href="blog-grid.html">Pages</a>
                             <ul class="sub-menu">
                                 <li><a href="page-about.html">About Us</a></li>

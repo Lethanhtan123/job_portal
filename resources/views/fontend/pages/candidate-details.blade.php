@@ -171,13 +171,7 @@
                                         <strong class="small-heading">{{ $candidate->marital_status }}</strong>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="sidebar-icon-item"><i class="fi-rr-time-fast"></i></div>
-                                    <div class="sidebar-text-info"><span class="text-description w-100">Trình độ giáo
-                                            dục</span>
-                                        <strong class="small-heading">{{ $candidate->experience->name }}</strong>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
                         <div class="sidebar-list-job">
