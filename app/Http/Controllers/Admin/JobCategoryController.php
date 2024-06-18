@@ -45,6 +45,8 @@ class JobCategoryController extends Controller
         $category = new JobCategory();
         $category->icon=$request->icon;
         $category->name=$request->name;
+        $category->show_at_popular=$request->show_at_popular;
+        $category->show_at_featured=$request->show_at_featured;
         $category->save();
 
         Notify::createdNotifycation();
@@ -81,6 +83,9 @@ class JobCategoryController extends Controller
         $category = JobCategory::findOrFail($id);
         if($request->filled('icon')) $category->icon=$request->icon;
         $category->name=$request->name;
+        $category->show_at_popular=$request->show_at_popular;
+        $category->show_at_featured=$request->show_at_featured;
+
         $category->save();
 
         Notify::updatedNotifycation();

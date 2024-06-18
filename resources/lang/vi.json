@@ -1,0 +1,32 @@
+
+{
+    "1 second ago": "1 giây trước",
+    ":count seconds ago": ":count giây trước",
+    "1 minute ago": "1 phút trước",
+    ":count minutes ago": ":count phút trước",
+    "1 hour ago": "1 giờ trước",
+    ":count hours ago": ":count giờ trước",
+    "1 day ago": "1 ngày trước",
+    ":count days ago": ":count ngày trước",
+    "1 week ago": "1 tuần trước",
+    ":count weeks ago": ":count tuần trước",
+    "1 month ago": "1 tháng trước",
+    ":count months ago": ":count tháng trước",
+    "1 year ago": "1 năm trước",
+    ":count years ago": ":count năm trước",
+
+    "1 second from now": "1 giây nữa",
+    ":count seconds from now": ":count giây nữa",
+    "1 minute from now": "1 phút nữa",
+    ":count minutes from now": ":count phút nữa",
+    "1 hour from now": "1 giờ nữa",
+    ":count hours from now": ":count giờ nữa",
+    "1 day from now": "1 ngày nữa",
+    ":count days from now": ":count ngày nữa",
+    "1 week from now": "1 tuần nữa",
+    ":count weeks from now": ":count tuần nữa",
+    "1 month from now": "1 tháng nữa",
+    ":count months from now": ":count tháng nữa",
+    "1 year from now": "1 năm nữa",
+    ":count years from now": ":count năm nữa"
+}

@@ -1924,7 +1924,7 @@ label {
     color: #1ca774;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .futured_jobs .card-grid-2 .card-text-price b {
@@ -7011,6 +7011,11 @@ ul li:last-child .card-list-4 {
     min-width: 120px;
     max-width: 120px;
 }
+.nav_tab_job {
+    padding: 10px 15px !important;
+    font-size: 15px !important;
+}
+
 
 .sidebar-list-job {
     border-top: 1px solid rgba(6, 18, 36, 0.1);
