@@ -60,17 +60,18 @@ if(!function_exists('formatLocation')) {
     function formatLocation($country = null, $city = null,$district = null, $address = null) : string
     {
         $location = '';
-        if($country) {
-            $location .= $city ? ''.$country : $country;
-        }
-        if($city) {
-            $location .= $district ? ', '.$city : $city;
-        }
-        if($district) {
-            $location .= $address ? ', '.$district : $district;
-        }
+
         if($address) {
             $location .= $address;
+        }
+        if ($district) {
+            $location .= $address ? ', ' . $district : $district;
+        }
+        if ($city) {
+            $location .= $district ? ', ' . $city : $city;
+        }
+        if ($country) {
+            $location .= $city ? ', ' . $country : $country;
         }
 
         return $location;

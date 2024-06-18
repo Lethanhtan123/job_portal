@@ -7007,9 +7007,9 @@ ul li:last-child .card-list-4 {
     color: #66789C;
     line-height: 22px;
     display: inline-block;
-    width: 50%;
-    min-width: 120px;
-    max-width: 120px;
+    max-width: 50%;
+    min-width: 165px;
+    /* max-width: 165px; */
 }
 
 .sidebar-list-job {
@@ -7119,6 +7119,7 @@ ul li:last-child .card-list-4 {
 
 .job-overview .sidebar-text-info {
     display: flex;
+    width: calc(100% - 30px);
 }
 
 .job-overview .sidebar-text-info .small-heading {
@@ -9955,4 +9956,10 @@ ul.timeline>li:before {
 .w-t-w {
     font-size: 15px;
     font-weight: 700;
+}
+
+.min_w_lc.text-description {
+    min-width: 75px;
+    margin-right: 20px;
+    width: unset;
 }
