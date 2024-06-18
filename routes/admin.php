@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\JobCategoryController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\JobExperienceController;
+use App\Http\Controllers\Admin\JobLocationController;
 use App\Http\Controllers\Admin\JobRoleController;
 use App\Http\Controllers\Admin\JobTypeController;
 use App\Http\Controllers\Admin\LanguageController;
@@ -112,6 +113,9 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     /** Job Experience Routes */
     Route::resource('job-experiences', JobExperienceController::class);
 
+    /** Job Location Routes */
+    Route::resource('job-location', JobLocationController::class);
+
     /** Job Tag */
     Route::resource('job-tags', TagController::class);
 
@@ -122,7 +126,7 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
     /** Blog Routes */
     Route::resource('blogs', BlogController::class);
 
-      /** Hero Section */
-      Route::resource('hero', HeroController::class);
+    /** Hero Section */
+    Route::resource('hero', HeroController::class);
 });
 

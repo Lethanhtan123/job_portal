@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Country;
 use App\Models\Hero;
+use App\Models\Job;
 use App\Models\JobCategory;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -17,6 +19,39 @@ class HomeController extends Controller
         $hero = Hero::first();
         $countries = Country::all();
         $jobCategories = JobCategory::all();
-        return view('fontend.home.index' ,compact('hero','jobCategories','countries'));
+        $jobCount= Job::Count();
+
+        $popularJobCategories = JobCategory::withCount(['jobs' => function ($query) {
+            $query->where('status', 'active')
+                  ->where('deadline', '>=', now()->toDateString());
+        }])
+        ->where('show_at_popular', 1)
+        ->get();
+
+        $featuredCategories = JobCategory::where('show_at_featured', 1)->take(10)->get();
+
+        $companies = Company::with('companyCountry', 'jobs')
+        ->select('id', 'logo', 'name', 'slug', 'country', 'profile_completion', 'visibility')
+        ->withCount(['jobs' => function ($query) {
+            $query->where(['status' => 'active'])
+                ->where('deadline', '>=', date('Y-m-d'));
+        }])->where(['profile_completion' => 1, 'visibility' => 1])->latest()->take(15)->get();
+
+        //$locations = Job::latest()->take(8)->get();
+
+
+
+
+        return view('fontend.home.index' ,
+        compact(
+            'hero',
+            'jobCategories',
+            'countries',
+            'jobCount',
+            'popularJobCategories',
+            'featuredCategories',
+            'companies',
+
+        ));
     }
 }

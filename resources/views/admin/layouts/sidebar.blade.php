@@ -135,6 +135,13 @@
                     <i class="fas fa-columns"></i>
                     <span>Tìm kiếm trang chủ</span></a>
             </li>
+
+            <li class="{{ setSidebarActive(['admin.job-location.*']) }}">
+                <a class="" href="{{ route('admin.job-location.index') }}">
+                    <i class="fas fa-columns"></i>
+                    Nơi tuyển dụng</a>
+            </li>
+
         </ul>
 
         {{-- <div class="p-3 mt-4 mb-4 hide-sidebar-mini">

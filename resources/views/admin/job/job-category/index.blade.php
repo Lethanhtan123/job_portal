@@ -30,19 +30,41 @@
                                 <th>Icon</th>
                                 <th>Tên</th>
                                 <th>Đường dẫn</th>
+                                <th>Phổ biến</th>
+                                <th>Nổi bật</th>
                                 <th style="width: 20%">Chức năng</th>
                             </tr>
 
                             <tbody>
                                 @forelse ($Category as $item)
                                 <tr>
-                                    <th><i style="font-size:30px;" class="{{ $item->icon }}"></i></th>
-                                    <th>{{ $item->name }}</th>
-                                    <th>{{ $item->slug }}</th>
-                                    <th>
+                                    <td><i style="font-size:30px;" class="{{ $item->icon }}"></i></td>
+                                    <td>{{ $item->name }}</td>
+
+
+
+                                    <td>{{ $item->slug }}</td>
+
+                                    <td>
+                                        @if ($item->show_at_popular === 1)
+                                            <span class="badge badge-success">Yes</span>
+                                        @else
+                                            <span class="badge badge-danger">No</span>
+                                        @endif
+                                    </td>
+
+                                    <td>
+                                        @if ($item->show_at_featured === 1)
+                                            <span class="badge badge-success">Yes</span>
+                                        @else
+                                            <span class="badge badge-danger">No</span>
+                                        @endif
+                                    </td>
+
+                                    <td>
                                         <a href="{{ route('admin.job-categories.edit',$item->id) }}" class="btn btn-sm btn-primary">Cập nhật</a>
                                         <a href="{{ route('admin.job-categories.destroy',$item->id) }}" class="btn btn-sm btn-danger delete-item">Xóa</a>
-                                    </th>
+                                    </td>
                                 </tr>
                                 @empty
                                 <tr>
