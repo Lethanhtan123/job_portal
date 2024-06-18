@@ -83,7 +83,7 @@
                                             </div>
                                             @else
                                             <div class="col-lg-7 col-7"><span class="card-text-price">
-                                                    {{ $job->custom_salary }}
+                                                    {{ $job->custom_salary }} {{ $job->tygia }}/VNĐ
                                                 </span><span class="text-muted"></span>
                                             </div>
                                             @endif
