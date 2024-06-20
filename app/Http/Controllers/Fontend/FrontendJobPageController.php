@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AppliedJob;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\District;
@@ -10,7 +11,9 @@ use App\Models\Job;
 use App\Models\JobCategory;
 use App\Models\JobType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
+use Response;
 
 class FrontendJobPageController extends Controller
 {
@@ -96,8 +99,26 @@ class FrontendJobPageController extends Controller
     function show(string $slug) : View {
         $job = Job::where('slug', $slug)->firstOrFail();
         $openJobs = Job::where('company_id', $job->company->id)->where('status', 'active')->where('deadline', '>=', date('d-m-Y'))->count();
-        // $alreadyApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->exists();
-        return view('fontend.pages.job-show', compact('job','openJobs' ));
+        $alreadyApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->exists();
+        return view('fontend.pages.job-show', compact('job','openJobs', 'alreadyApplied'));
+    }
+
+    function applyJob(string $id) {
+        if(!auth()->check()) {
+            throw ValidationException::withMessages(['Vui lòng đăng nhập để ứng tuyển.']);
+        }
+
+        $alreadyApplied = AppliedJob::where(['job_id' => $id, 'candidate_id' => auth()->user()?->id])->exists();
+        if($alreadyApplied) {
+            throw ValidationException::withMessages(['Bạn đã ứng tuyển công việc này!']);
+        }
+
+        $apllyJob = new AppliedJob();
+        $apllyJob->job_id = $id;
+        $apllyJob->candidate_id = auth()->user()->id;
+        $apllyJob->save();
+
+        return response(['message' => 'Ứng tuyển thành công!'], 200);
     }
 
     /**

@@ -76,14 +76,14 @@
                                     <div class="mt-20 card-2-bottom">
                                         <div class="row">
                                             @if ($job->salary_mode === 'range')
-                                            <div class="col-lg-7 col-7"><span class="card-text-price"> Mức lương :
+                                            <div class="col-lg-7 col-7"><span class="card-text-price"> Mức lương:
                                                     {{ $job->min_salary }} - {{ $job->max_salary }} {{
                                                     config('settings.site_default_currency') }} {{ $job->tygia }}/VNĐ
                                                 </span><span class="text-muted"></span>
                                             </div>
                                             @else
                                             <div class="col-lg-7 col-7"><span class="card-text-price">
-                                                    {{ $job->custom_salary }} {{ $job->tygia }}/VNĐ
+                                                    {{ $job->custom_salary }}
                                                 </span><span class="text-muted"></span>
                                             </div>
                                             @endif
@@ -179,7 +179,7 @@
                                             $item->name }}</option>
                                         @endforeach
                                         @else
-                                        <option value="">Quận,huyện</option>
+                                        <option value="">Quận/Huyện</option>
                                         @endif
                                     </select>
                                     <button class="mt-10 submit btn btn-default rounded-1 w-100"
