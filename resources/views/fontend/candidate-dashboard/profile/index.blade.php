@@ -435,48 +435,6 @@
          })
 
         // Delete education item
-         /*$("body").on('click', '.delete-education', function(e) {
-             e.preventDefault();
-
-             let url = $(this).attr('href');
-
-             Swal.fire({
-                 title: "Bạn có chắc chắn không?",
-                 text: "Bạn sẽ không thể hoàn tác!",
-                 icon: "warning",
-                 showCancelButton: true,
-                 confirmButtonColor: "#3085d6",
-                 cancelButtonColor: "#d33",
-                 confirmButtonText: "Đồng ý!"
-             }).then((result) => {
-                 if (result.isConfirmed) {
-
-                     $.ajax({
-                         method: 'DELETE',
-                         url: url,
-                         data: {
-                             _token: "{{ csrf_token() }}"
-                         },
-                         beforeSend: function() {
-                             showLoader();
-                         },
-                         success: function(response) {
-                             fetchEducation();
-                             hideLoader();
-                             notyf.success(response.message);
-                         },
-                         error: function(xhr, status, error) {
-                             console.log(xhr);
-                             swal(xhr.responseJSON.message, {
-                                 icon: 'error',
-                             });
-                             hideLoader();
-                         }
-                     })
-                 }
-             });
-         });*/
-
          $("body").on('click', '.delete-education', function(e) {
             e.preventDefault();
 

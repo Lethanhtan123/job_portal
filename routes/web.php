@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Fontend\CandidateDashboardController;
 use App\Http\Controllers\Fontend\CandidateEducationController;
 use App\Http\Controllers\Fontend\CandidateExperienceController;
+use App\Http\Controllers\Fontend\CandidateMyJobController;
 use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
@@ -60,7 +61,7 @@ Route::group(
     function () {
         Route::get('/dashboard', [CandidateDashboardController::class, 'index'])->name('dashboard');
         Route::get('/profile', [CandidateProfileController::class, 'index'])->name('profile.index');
-        Route::post('/profile/basic-info-update',[CandidateProfileController::class,'basicInfoUpdate'])->name('profile.basic-info.update');
+        Route::post('/profile/basic-info-update', [CandidateProfileController::class, 'basicInfoUpdate'])->name('profile.basic-info.update');
         Route::post('/profile/profile-info-update', [CandidateProfileController::class, 'profileInfoUpdate'])->name('profile.profile-info.update');
         Route::post('/profile/account-info-update', [CandidateProfileController::class, 'accountInfoUpdate'])->name('profile.account-info.update');
         Route::post('/profile/account-email-update', [CandidateProfileController::class, 'accountEmailUpdate'])->name('profile.account-email.update');
@@ -68,7 +69,11 @@ Route::group(
 
         Route::resource('experience', CandidateExperienceController::class);
         Route::resource('education', CandidateEducationController::class);
+
+        Route::get('applied-jobs', [CandidateMyJobController::class, 'index'])->name('applied-jobs.index');
     }
+
+
 );
 
 //**Company Routes */
@@ -92,9 +97,8 @@ Route::group(
 
         /** Job Routes */
         //Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
+
         Route::resource('jobs', JobController::class);
-
-
     }
 );
 
@@ -102,7 +106,7 @@ Route::group(
 /** Find a job route */
 Route::get('jobs', [FrontendJobPageController::class, 'index'])->name('jobs.index');
 Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('jobs.show');
-//Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
+Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
 //Route::get('job-bookmark/{id}', [CandidateJobBookmarkController::class, 'save'])->name('job.bookmark');
 
 /** Blog Routes */

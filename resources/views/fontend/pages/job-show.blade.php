@@ -34,11 +34,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 text-lg-end">
-                    @if (1)
+                    @if ($alreadyApplied)
                         <div class="btn btn-apply-icon btn-apply btn-apply-big hover-up apply-now"
-                            style="background-color:#8d8c8c">Applied</div>
+                            style="background-color:#8d8c8c">Đã ứng tuyển</div>
                     @else
-                        <div class="btn btn-apply-icon btn-apply btn-apply-big hover-up apply-now">Apply now</div>
+                        <div class="btn btn-apply-icon btn-apply btn-apply-big hover-up apply-now">Ứng tuyển ngay </div>
                     @endif
                 </div>
             </div>
@@ -84,7 +84,7 @@
                                             {{ $job->min_salary }} - {{ $job->max_salary }}/{{ $job->tygia }}VNĐ
                                             {{ config('settings.site_default_currency') }}
                                         @else
-                                            {{ $job->custom_salary . ' ' . $job->tygia }} VNĐ
+                                            {{ $job->custom_salary }}
                                         @endif
                                     </strong></div>
                             </div>
@@ -134,7 +134,7 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/deadline.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w">Hạn chót nộp hồ
+                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w">Hạn cuối nộp hồ
                                         sơ: </span><strong class="small-heading">{{ formatDate($job->deadline) }}</strong>
                                 </div>
                             </div>
@@ -215,7 +215,7 @@
 
                     <div class="sidebar-border">
                         <div class="sidebar-heading">
-                            <h6 class="f-18">Kỹ năng cần</h6>
+                            <h6 class="f-18">Yêu cầu kỹ năng</h6>
                         </div>
                         <div class="sidebar-list-job">
                             @foreach ($job->skills as $jobSkill)
@@ -254,7 +254,7 @@
     </section>
 @endsection
 
-{{-- @push('scripts')
+ @push('scripts')
   <script>
     $(document).ready(function() {
         $('.apply-now').on('click', function() {
@@ -278,4 +278,4 @@
         })
     })
   </script>
-@endpush --}}
+@endpush
