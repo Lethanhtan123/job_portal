@@ -5,7 +5,7 @@
             </li>
             <li><a class="mb-20 btn btn-border" href="{{ route('company.profile') }}">Trang cá nhân</a></li>
             <li><a class="mb-20 btn btn-border" href="{{ route('company.jobs.index') }}">Tin tuyển dụng</a></li>
-            <li><a class="mb-20 btn btn-border" href="candidate-profile-save-jobs.html">Saved Jobs</a></li>
+            {{-- <li><a class="mb-20 btn btn-border" href="candidate-profile-save-jobs.html">Saved Jobs</a></li> --}}
 
             <li>
                 <form method="POST" action="{{ route('logout') }}">

@@ -13,4 +13,9 @@ class AppliedJob extends Model
     function job() : BelongsTo {
         return $this->belongsTo(Job::class,'job_id','id');
     }
+
+    function candidate(): BelongsTo
+    {
+        return $this->belongsTo(Candidate::class, 'candidate_id', 'user_id');
+    }
 }

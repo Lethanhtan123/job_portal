@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Fontend\CandidateBookmarkController;
 use App\Http\Controllers\Fontend\CandidateDashboardController;
 use App\Http\Controllers\Fontend\CandidateEducationController;
 use App\Http\Controllers\Fontend\CandidateExperienceController;
@@ -71,6 +72,7 @@ Route::group(
         Route::resource('education', CandidateEducationController::class);
 
         Route::get('applied-jobs', [CandidateMyJobController::class, 'index'])->name('applied-jobs.index');
+        Route::get('bookmarked-jobs', [CandidateBookmarkController::class, 'index'])->name('bookmarked-jobs.index');
     }
 
 
@@ -96,8 +98,7 @@ Route::group(
         Route::post('/profile/password-update', [CompanyProfileController::class, 'updatePassword'])->name('profile.password-update');
 
         /** Job Routes */
-        //Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
-
+        Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
         Route::resource('jobs', JobController::class);
     }
 );
@@ -107,7 +108,7 @@ Route::group(
 Route::get('jobs', [FrontendJobPageController::class, 'index'])->name('jobs.index');
 Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('jobs.show');
 Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
-//Route::get('job-bookmark/{id}', [CandidateJobBookmarkController::class, 'save'])->name('job.bookmark');
+Route::get('job-bookmark/{id}', [CandidateBookmarkController::class, 'save'])->name('job.bookmark');
 
 /** Blog Routes */
 Route::get('blogs', [FontendFontendBlogPageController::class, 'index'])->name('blogs.index');
