@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Fontend\JobCreateRequest;
+use App\Models\AppliedJob;
 use App\Models\City;
 use App\Models\Company;
 use App\Models\Country;
@@ -37,10 +38,19 @@ class JobController extends Controller
     public function index()
     {
         $query = Job::query();
-        // $query->withCount('applications');
+        $query->withCount('applications');
         $this->search($query, ['title', 'slug']);
         $jobs = $query->where('company_id', auth()->user()->company?->id)->orderBy('id', 'DESC')->paginate(20);
         return view('fontend.company-dashboard.job.index', compact('jobs'));
+    }
+
+    function applications(string $id): View
+    {
+        $applications = AppliedJob::where('job_id', $id)->paginate(20);
+
+        $jobTitle = Job::select('title')->where('id', $id)->first();
+
+        return view('fontend.company-dashboard.applications.index', compact('applications', 'jobTitle'));
     }
 
     /**

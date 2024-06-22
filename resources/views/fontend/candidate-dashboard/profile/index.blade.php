@@ -5,10 +5,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h2 class="mb-20">My Profile</h2>
+                        <h2 class="mb-20">Trang cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
-                            <li>My Profile</li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
+                            <li>Hồ sơ</li>
                         </ul>
                     </div>
                 </div>
@@ -240,7 +240,7 @@
                         $('#experience-form').trigger("reset");
                         $('#experienceModal').modal('hide');
 
-                      hideLoader();
+                        hideLoader();
                         notyf.success(response.message);
                     },
                     error: function(xhr, status, error) {
@@ -400,42 +400,42 @@
 
         });
 
-         $('body').on('click', '.edit-education', function() {
-             $('#education-form').trigger("reset");
+        $('body').on('click', '.edit-education', function() {
+            $('#education-form').trigger("reset");
 
-             let url = $(this).attr('href');
+            let url = $(this).attr('href');
 
-             $.ajax({
-                 method: 'GET',
-                 url: url,
-                 data: {},
+            $.ajax({
+                method: 'GET',
+                url: url,
+                data: {},
 
-                 beforeSend: function() {
-                     showLoader();
-                 },
+                beforeSend: function() {
+                    showLoader();
+                },
 
-                 success: function(response) {
-                     editId = response.id
-                     editMode = true;
+                success: function(response) {
+                    editId = response.id
+                    editMode = true;
 
-                     $.each(response, function(index, value) {
-                         $(`input[name="${index}"]:text`).val(value);
+                    $.each(response, function(index, value) {
+                        $(`input[name="${index}"]:text`).val(value);
 
-                         if (index === 'note') {
-                             $(`textarea[name="${index}"]`).val(value);
-                         }
-                     })
-                     hideLoader();
-                 },
-                 error: function(xhr, status, error) {
-                     console.log(error);
-                     hideLoader();
-                 }
-             })
-         })
+                        if (index === 'note') {
+                            $(`textarea[name="${index}"]`).val(value);
+                        }
+                    })
+                    hideLoader();
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                    hideLoader();
+                }
+            })
+        })
 
         // Delete education item
-         $("body").on('click', '.delete-education', function(e) {
+        $("body").on('click', '.delete-education', function(e) {
             e.preventDefault();
 
             let url = $(this).attr('href');
@@ -477,6 +477,5 @@
                 }
             });
         });
-
     </script>
 @endpush

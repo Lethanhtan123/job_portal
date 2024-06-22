@@ -68,7 +68,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/job-level.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w joblevel-icon">Chức
+                                <div class="ml-10 sidebar-text-info"><span
+                                        class="mb-10 text-description min_w joblevel-icon">Chức
                                         vụ: </span><strong class="small-heading">{{ $job->jobRole->name }}</strong></div>
                             </div>
                         </div>
@@ -78,8 +79,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/salary.svg') }}" alt="joblist">
                                 </div>
                                 <div class="ml-10 sidebar-text-info"><span
-                                        class="mb-10 text-description salary-icon min_w text-description">Mức lương: </span><strong
-                                        class="small-heading">
+                                        class="mb-10 text-description salary-icon min_w text-description">Mức lương:
+                                    </span><strong class="small-heading">
                                         @if ($job->salary_mode === 'range')
                                             {{ $job->min_salary }} - {{ $job->max_salary }}/{{ $job->tygia }}VNĐ
                                             {{ config('settings.site_default_currency') }}
@@ -113,7 +114,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/job-level.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 w-sl-mem text-description min_w joblevel-icon">Số
+                                <div class="ml-10 sidebar-text-info"><span
+                                        class="mb-10 w-sl-mem text-description min_w joblevel-icon">Số
                                         lượng cần tuyển: </span><strong
                                         class="small-heading w-sl-mem">{{ $job->vacancies }}</strong></div>
                             </div>
@@ -125,7 +127,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/job-type.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w jobtype-icon">Loại
+                                <div class="ml-10 sidebar-text-info"><span
+                                        class="mb-10 text-description min_w jobtype-icon">Loại
                                         công việc: </span><strong class="small-heading">{{ $job->jobType->name }}</strong>
                                 </div>
                             </div>
@@ -134,7 +137,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/deadline.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w">Hạn cuối nộp hồ
+                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description min_w">Hạn cuối nộp
+                                        hồ
                                         sơ: </span><strong class="small-heading">{{ formatDate($job->deadline) }}</strong>
                                 </div>
                             </div>
@@ -144,7 +148,8 @@
                                 <div class="sidebar-icon-item"><img
                                         src="{{ asset('fontend/assets/imgs/page/job-single/updated.svg') }}"
                                         alt="joblist"></div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 text-description jobtype-icon min_w">Yêu
+                                <div class="ml-10 sidebar-text-info"><span
+                                        class="mb-10 text-description jobtype-icon min_w">Yêu
                                         cầu trình độ: </span><strong
                                         class="small-heading">{{ $job->jobEduction?->name }}</strong></div>
                             </div>
@@ -153,7 +158,8 @@
                                         src="{{ asset('fontend/assets/imgs/page/job-single/location.svg') }}"
                                         alt="joblist">
                                 </div>
-                                <div class="ml-10 sidebar-text-info"><span class="mb-10 min_w_lc text-description">Địa điểm:
+                                <div class="ml-10 sidebar-text-info"><span class="mb-10 min_w_lc text-description">Địa
+                                        điểm:
                                     </span><strong
                                         class="small-heading">{{ formatLocation($job->country?->name, $job->city?->name, $job->district?->name, $job->address) }}</strong>
                                 </div>
@@ -254,28 +260,30 @@
     </section>
 @endsection
 
- @push('scripts')
-  <script>
-    $(document).ready(function() {
-        $('.apply-now').on('click', function() {
-            $.ajax({
-                method: 'POST',
-                url: "{{ route('apply-job.store', $job->id) }}",
-                data: {_token:"{{ csrf_token() }}"},
-                beforeSend: function() {
-
-                },
-                success: function(response) {
-                    notyf.success(response.message);
-                },
-                error: function(xhr, status, error) {
-                    let erorrs = xhr.responseJSON.errors;
-                    $.each(erorrs, function(index, value) {
-                        notyf.error(value[index]);
-                    });
-                }
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.apply-now').on('click', function() {
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ route('apply-job.store', $job->id) }}",
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    beforeSend: function() {
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                        notyf.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        let erorrs = xhr.responseJSON.errors;
+                        $.each(erorrs, function(index, value) {
+                            notyf.error(value[index]);
+                        });
+                    }
+                })
             })
         })
-    })
-  </script>
+    </script>
 @endpush

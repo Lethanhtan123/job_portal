@@ -8,7 +8,7 @@
                         <h2 class="mb-20">Trang cá nhân</h2>
                         <ul class="breadcrumbs">
                             <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
-                            <li>Công việc đã ứng tuyển</li>
+                            <li>Tin tức đã lưu</li>
                         </ul>
                     </div>
                 </div>
@@ -23,25 +23,25 @@
                 <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-50">
                     <div class="w-my-job">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4>Công việc đã ứng tuyển</h4>
+                            <h4>Tin tức đã lưu</h4>
                         </div>
                         <table class="table table-striped mt-15">
                             <thead>
                                 <tr>
-                                    <th>Công ty</th>
+                                    <th>Công việc</th>
                                     <th>Lương</th>
                                     <th>Thời gian</th>
                                     <th>Tình trạng</th>
-                                    <th class="w-th-action ">Thao tác</th>
+                                    <th class="">Thao tác</th>
                                 </tr>
                             </thead>
 
                             <tbody class="experience-tbody">
-                                @forelse ($appliedJobs as $item)
+                                @forelse ($bookmarks as $item)
                                     <tr>
 
-                                        <td class="align-middle" >
-                                            <div class="d-flex align-items-center flex-wrap">
+                                        <td>
+                                            <div class="d-flex align-items-center">
                                                 <a class="d-block">
                                                     <img style="width:50px;height:50px;object-fit:cover;"
                                                         src="{{ asset($item->job->company->logo) }}"
@@ -50,7 +50,7 @@
                                                 </a>
                                                 <p class="mb-0 ms-2">
                                                     <a class="d-block font-md">
-                                                        {{ $item->job->company->name }}
+                                                        {{ $item->job->title }}
                                                     </a>
                                                     <span
                                                         class="d-block com-lc font-sm">{{ $item->job?->company?->companyCountry->name }}</span>
@@ -70,8 +70,8 @@
                                                 @endif
                                             </p>
                                         </td>
-                                        <td class="align-middle" >{{ formatDate($item->created_at) }}</td>
-                                        <td class="align-middle" >
+                                        <td class="align-middle">{{ formatDate($item->created_at) }}</td>
+                                        <td class="align-middle">
                                             @if ($item->job->deadline < date('Y-m-d'))
                                                 <span class="badge bg-danger ">Đã hết hạn</span>
                                             @else
@@ -79,7 +79,7 @@
                                             @endif
                                         </td>
 
-                                        <td class="align-middle" >
+                                        <td class="align-middle">
                                             <a href="{{ route('jobs.show', $item->job->slug) }}"
                                                 class="btn btn-sm rounded btn-primary text-white"><i
                                                     class="fa fa-eye text-white"></i></a>

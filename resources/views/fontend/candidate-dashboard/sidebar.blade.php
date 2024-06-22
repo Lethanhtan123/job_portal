@@ -5,13 +5,13 @@
             </li>
             <li><a class="btn btn-border mb-20" href="{{ route('candidate.profile.index') }}">Hồ sơ</a></li>
             <li><a class="btn btn-border mb-20" href="{{ route('candidate.applied-jobs.index') }}">Công việc đã ứng tuyển</a></li>
-            <li><a class="btn btn-border mb-20" href="candidate-profile-save-jobs.html">Tin đã lưu</a></li>
+            <li><a class="btn btn-border mb-20" href="{{ route('candidate.bookmarked-jobs.index') }}">Tin đã lưu</a></li>
 
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="btn btn-border mb-20"  onclick="event.preventDefault();
-                    this.closest('form').submit();" href="{{ route('logout') }}">Logout</a>
+                    this.closest('form').submit();" href="{{ route('logout') }}">Đăng xuất</a>
                 </form>
             </li>
         </ul>

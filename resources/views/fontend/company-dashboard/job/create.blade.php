@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Hạn chót đăng ký <span class="text-danger">*</span></label>
+                                            <label for="">Hạn cuối đăng ký <span class="text-danger">*</span></label>
                                             <input type="date" id="inputdate"
                                                 class="inputdate form-control  {{ hasError($errors, 'deadline') }}"
                                                 name="deadline" value="{{ old('deadline') }}">
@@ -441,7 +441,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Tạo</button>
+                            <button type="submit" class="font-bold btn btn-apply font-md">Tạo</button>
                         </div>
                     </form>
                 </div>
