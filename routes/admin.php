@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\IndustryTypeController;
 use App\Http\Controllers\Admin\JobCategoryController;
@@ -31,7 +32,7 @@ use App\Http\Controllers\Admin\ProfessionController;
 use App\Http\Controllers\Admin\SalaryTypeController;
 use App\Http\Controllers\Admin\SearchMainController;
 use App\Http\Controllers\Admin\SkillController;
-
+use App\Http\Controllers\Admin\SocialIconController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\TagController;
 use App\Models\Search_Main;
@@ -128,5 +129,11 @@ Route::group(['middleware'=>['auth:admin'],'prefix'=>'admin','as'=>'admin.'],fun
 
     /** Hero Section */
     Route::resource('hero', HeroController::class);
+
+    /** Footer  */
+    Route::resource('footer', FooterController::class);
+
+    /** Social Icon route */
+    Route::resource('social-icon', SocialIconController::class);
 });
 

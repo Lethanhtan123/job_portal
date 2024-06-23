@@ -8,12 +8,14 @@ use App\Http\Controllers\Fontend\CandidateProfileController;
 use App\Http\Controllers\Fontend\CompanyDashboardController;
 use App\Http\Controllers\Fontend\CompanyFrofileController;
 use App\Http\Controllers\Fontend\CompanyProfileController;
+use App\Http\Controllers\Fontend\ContactController;
 use App\Http\Controllers\Fontend\FontendBlogPageController as FontendFontendBlogPageController;
 use App\Http\Controllers\Fontend\FrontendCandidatePageController;
 use App\Http\Controllers\Fontend\FrontendCompanyPageController;
 use App\Http\Controllers\Fontend\FrontendJobPageController;
 use App\Http\Controllers\Fontend\HomeController;
 use App\Http\Controllers\Fontend\JobController;
+use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\FontendBlogPageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\CandidateExperience;
@@ -108,3 +110,7 @@ Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('job
 /** Blog Routes */
 Route::get('blogs', [FontendFontendBlogPageController::class, 'index'])->name('blogs.index');
 Route::get('blogs/{slug}', [FontendFontendBlogPageController::class, 'show'])->name('blogs.show');
+
+/** Count Routes */
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactController::class, 'sendMail'])->name('send-mail');

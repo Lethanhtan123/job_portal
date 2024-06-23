@@ -67,8 +67,8 @@
                                     <label for="">Status</label>
                                     <select name="status" id="" class="form-control {{ hasError($errors, 'status') }}" >
                                         <option value="">Chọn</option>
-                                        <option @selected($location->status == 'featured') value="featured">Featured</option>
-                                        <option @selected($location->status == 'hot') value="hot">HOT</option>
+                                        <option @selected($location->status == 'featured') value="featured">Nổi bật</option>
+                                        <option @selected($location->status == 'hot') value="hot">Hot</option>
                                     </select>
                                     <x-input-error :messages="$errors->get('status')" class="mt-2" />
                                 </div>

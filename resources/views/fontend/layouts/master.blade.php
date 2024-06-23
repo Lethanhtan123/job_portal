@@ -56,7 +56,7 @@
 
     </main>
 
-    <section class="section-box subscription_box">
+    {{-- <section class="section-box subscription_box">
         <div class="container">
             <div class="box-newsletter">
                 <div class="newsletter_textarea">
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     @include('fontend.layouts.footer')
 

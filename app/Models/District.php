@@ -16,4 +16,8 @@ class District extends Model
      function City() : BelongsTo {
         return $this->belongsTo(City::class);
     }
+
+    // function companies() {
+    //     return $this->hasMany(Company::class, 'district', 'id');
+    // }
 }

@@ -142,6 +142,18 @@
                     Nơi tuyển dụng</a>
             </li>
 
+            <li class="{{ setSidebarActive(['admin.footer.*']) }}">
+                <a class="" href="{{ route('admin.footer.index') }}">
+                    <i class="fas fa-columns"></i>
+                    Footer</a>
+            </li>
+
+            <li class="{{ setSidebarActive(['admin.social-icon.*']) }}">
+                <a class="" href="{{ route('admin.social-icon.index') }}">
+                    <i class="fas fa-columns"></i>
+                    Mạng xã hội</a>
+            </li>
+
         </ul>
 
         {{-- <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
