@@ -9972,3 +9972,7 @@ ul.timeline>li:before {
 .active-bookmark {
     color: var(--colorPrimary) !important;
 }
+
+.w-r-content {
+    width: calc(100% - 110px);
+}

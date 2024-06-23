@@ -19,7 +19,7 @@ class CandidateBookmarkController extends Controller
     function save(string $id)
     {
         if (!auth()->check()) {
-            throw ValidationException::withMessages(['Vui lòng đang nhập!']);
+            throw ValidationException::withMessages(['Vui lòng đăng nhập!']);
         }
         if (auth()->check() && auth()->user()->role !== 'candidate') {
             throw ValidationException::withMessages(['Chỉ Ứng viên được đánh dấu bài viết!']);
@@ -36,5 +36,20 @@ class CandidateBookmarkController extends Controller
         $bookmark->save();
 
         return response(['message' => 'Đánh dấu bài viết thành công!', 'id' => $id]);
+    }
+
+    public function destroy(string $id)
+    {
+        try {
+            $bookmark = JobBookmark::findOrFail($id);
+            if (auth()->user()->candidateProfile->id !== $bookmark->candidate_id) {
+                abort(404);
+            }
+            $bookmark->delete();
+            return response(['message' => 'Xóa dữ liệu thành công!'], 200);
+        } catch (\Exception $e) {
+            logger($e);
+            return response(['message' => 'Có lỗi xảy ra. Vui lòng thử lại!'], 500);
+        }
     }
 }
