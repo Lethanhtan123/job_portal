@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Company;
 use App\Models\Country;
 use App\Models\Hero;
 use App\Models\Job;
 use App\Models\JobCategory;
+use App\Models\JobLocation;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -37,9 +39,8 @@ class HomeController extends Controller
                 ->where('deadline', '>=', date('Y-m-d'));
         }])->where(['profile_completion' => 1, 'visibility' => 1])->latest()->take(15)->get();
 
-        //$locations = Job::latest()->take(8)->get();
-
-
+        $locations = JobLocation::where(['status' => 'hot'])->latest()->take(8)->get();
+        $blogs = Blog::latest()->take(6)->get();
 
 
         return view('fontend.home.index' ,
@@ -51,6 +52,8 @@ class HomeController extends Controller
             'popularJobCategories',
             'featuredCategories',
             'companies',
+            'locations',
+            'blogs'
 
         ));
     }
