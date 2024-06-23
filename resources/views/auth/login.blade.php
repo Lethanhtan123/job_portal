@@ -49,7 +49,7 @@
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Mật khẩu *</label>
 
-                                            <a href="{{ route('password.request') }}">Quân mật khẩu?</a>
+                                            <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
 
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"

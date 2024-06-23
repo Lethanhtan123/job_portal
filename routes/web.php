@@ -111,6 +111,9 @@ Route::get('jobs', [FrontendJobPageController::class, 'index'])->name('jobs.inde
 Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('jobs.show');
 Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
 Route::get('job-bookmark/{id}', [CandidateBookmarkController::class, 'save'])->name('job.bookmark');
+Route::delete('bookmark-delete/{id}', [CandidateBookmarkController::class,'destroy'])->name('job-bookmark.destroy');
+
+
 
 /** Blog Routes */
 Route::get('blogs', [FontendFontendBlogPageController::class, 'index'])->name('blogs.index');

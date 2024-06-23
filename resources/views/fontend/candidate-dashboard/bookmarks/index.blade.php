@@ -32,7 +32,7 @@
                                     <th>Lương</th>
                                     <th>Thời gian</th>
                                     <th>Tình trạng</th>
-                                    <th class="">Thao tác</th>
+                                    <th class="w-th-action">Thao tác</th>
                                 </tr>
                             </thead>
 
@@ -59,7 +59,7 @@
                                         </td>
 
 
-                                        <td class="align-middle" >
+                                        <td class="align-middle">
                                             <p class="mb-0">
                                                 @if ($item->job->salary_mode === 'range')
                                                     {{ $item->job->min_salary }} -
@@ -83,7 +83,9 @@
                                             <a href="{{ route('jobs.show', $item->job->slug) }}"
                                                 class="btn btn-sm rounded btn-primary text-white"><i
                                                     class="fa fa-eye text-white"></i></a>
-
+                                            <a href="{{ route('job-bookmark.destroy', $item->id) }}"
+                                                class=" btn btn-sm btn-danger rounded delete-item text-white"><i
+                                                    class="fa-solid fa-trash-can text-white"></i></a>
                                         </td>
                                     </tr>
                                 @empty
