@@ -20,8 +20,9 @@
                                         <h4>{{ $company->name }}</h4>
                                     </div>
                                     <div class="mt-5 text-info-bottom"><span
-                                            class="font-xs color-text-mutted icon-location">{{ $company->companyCountry->name }}</span><span class="mt-5 font-xs color-text-mutted float-end">{{ $company->jobs_count }} <span>
-                                                Tin tuyển dụng</span></span></div>
+                                            class="font-xs color-text-mutted icon-location">{{ $company->companyCountry->name }}</span><span class="mt-5 font-xs color-text-mutted float-end">
+                                                <span class="{{ optional($company)->jobs_count > 0 ? 'have_job' : '' }}">
+                                                    {{ $company->jobs_count }} Tin tuyển dụng</span></span></div>
                                 </div>
                             </a>
                         </div>

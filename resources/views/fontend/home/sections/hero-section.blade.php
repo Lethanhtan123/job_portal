@@ -21,7 +21,7 @@
                                 <form action="{{ route('jobs.index') }}" method="GET">
                                     <div class="box-industry">
                                         <select class="mr-10 form-input select-active input-industry" name="category">
-                                            <option value="">Industry</option>
+                                            <option value="">Loại doanh nghiệp</option>
                                             @foreach ($jobCategories as $category)
                                             <option value="{{ $category->slug }}">{{ $category->name }}</option>
                                             @endforeach
@@ -29,7 +29,7 @@
                                         </select>
                                     </div>
                                     <select class="mr-10 form-input select-active" name="country">
-                                        <option value="">Location</option>
+                                        <option value="">Khu vực</option>
                                         @foreach ($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
 

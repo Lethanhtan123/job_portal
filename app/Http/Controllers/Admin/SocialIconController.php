@@ -4,30 +4,32 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SocialIcon;
+use App\Services\Notify;
 use Illuminate\Http\Request;
-use Illuminate\View\View as ViewView;
-use View;
 
 class SocialIconController extends Controller
 {
+    // function __construct()
+    // {
+    //     $this->middleware(['permission:site footer']);
+    // }
+
     /**
      * Display a listing of the resource.
      */
-
-    public function index(): ViewView
+    public function index()
     {
-        $query = SocialIcon::query();
-        $this->search($query, ['name']);
-        $skills = $query->Orderby('id', 'DESC')->paginate(10);
+        $icons = SocialIcon::paginate(20);
 
-        return view('admin.skill.index', compact('skills'));
+        return view('admin.social-icon.index', compact('icons'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('admin.social-icon.create');
     }
 
     /**
@@ -35,23 +37,29 @@ class SocialIconController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'icon' => ['required', 'string'],
+            'url' => ['required']
+        ]);
+
+        $social = new SocialIcon();
+        $social->icon = $request->icon;
+        $social->url = $request->url;
+        $social->save();
+
+        Notify::createdNotifycation();
+        return to_route('admin.social-icon.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $icon = SocialIcon::findOrFail($id);
+        return view('admin.social-icon.edit', compact('icon'));
+
     }
 
     /**
@@ -59,7 +67,17 @@ class SocialIconController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'url' => ['required']
+        ]);
+
+        $social = SocialIcon::findOrFail($id);
+        if($request->filled('icon')) $social->icon = $request->icon;
+        $social->url = $request->url;
+        $social->save();
+
+        Notify::updatedNotifycation();
+        return to_route('admin.social-icon.index');
     }
 
     /**
@@ -67,6 +85,14 @@ class SocialIconController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            SocialIcon::findOrFail($id)->delete();
+            Notify::deletedNotifycation();
+            return response(['message' => 'success'], 200);
+
+        }catch(\Exception $e) {
+            logger($e);
+            return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
+        }
     }
 }

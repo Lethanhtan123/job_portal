@@ -21,7 +21,7 @@
                                 </div>
                             </form>
                         </div>
-                        <a href="{{ route('admin.job-location.create') }}" class="ms-2 btn btn-primary"> <i class="fas fa-plus-circle"></i> Create new</a>
+                        <a href="{{ route('admin.job-location.create') }}" class="ms-2 btn btn-primary"> <i class="fas fa-plus-circle"></i> Tạo mới</a>
                     </div>
                     <div class="p-0 card-body">
                         <div class="table-responsive">
@@ -40,7 +40,7 @@
                                         <td>{{ $location->country->name }}</td>
                                         <td>{{ $location->district->name }}</td>
                                         <td>
-                                            <span class="badge badge-primary">{{ $location->status }}</span>
+                                            <span class="badge badge-primary">{{ $location->status === 'hot' ? 'HOT' : 'Nổi bật' }}</span>
                                         </td>
 
                                         <td>

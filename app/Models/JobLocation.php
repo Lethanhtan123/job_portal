@@ -14,6 +14,10 @@ class JobLocation extends Model
         return $this->belongsTo(Country::class);
     }
 
+    function city() : BelongsTo {
+        return $this->belongsTo(City::class);
+    }
+
     function district() : BelongsTo {
         return $this->belongsTo(District::class);
     }
