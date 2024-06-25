@@ -3,15 +3,16 @@
         <div class="text-center">
             <h2 class="mb-10 section-title wow animate__animated animate__fadeInUp">Công việc nổi bật</h2>
             <p class="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Tương lai sẽ tốt đẹp hơn với sự đồng hành của chúng tôi</p>
-            <div class="mt-40 list-tabs">
-                <ul class="nav nav-tabs" role="tablist">
-                    @foreach ($featuredCategories as $category)
-                        <li><a class="nav_tab_job {{ $loop->index === 0 ? 'active' : '' }}" id="nav-tab-job-{{ $category->id }}"
+            <div class="mt-40 list-tabs"><ul class="nav nav-tabs" role="tablist">
+                @foreach ($featuredCategories as $category)
+                <li><a class="nav_tab_job
+                                        {{ $loop->index === 0 ? 'active' : '' }}
+                           
+                            "id="nav-tab-job-{{ $category->id }}"
                                 href="#tab-job-{{ $category->id }}" data-bs-toggle="tab" role="tab"
                                 aria-controls="tab-job-{{ $category->id }}"
-                                aria-selected="true">{{ $category->name }}</a></li>
+                                aria-selected="true">{{ $category->name }} ({{ $category->jobs_count }})</a></li>
                     @endforeach
-
                 </ul>
             </div>
         </div>

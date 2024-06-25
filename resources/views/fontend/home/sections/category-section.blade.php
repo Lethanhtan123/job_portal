@@ -2,7 +2,7 @@
     <div class="section-box wow animate__animated animate__fadeIn">
         <div class="container">
             <div class="text-center">
-                <h2 class="mb-10 section-title wow animate__animated animate__fadeInUp">Nhóm nghành phổ biến</h2>
+                <h2 class="mb-10 section-title wow animate__animated animate__fadeInUp">Nhóm ngành phổ biến</h2>
                 <p class="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">{{ $jobCount}} tin
                     tuyển dụng đang có</p>
             </div>
@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="text-info-right">
                                   <h4>{{ Str::limit($category->name, 20, '...') }}</h4>
-                                  <p class="font-xs">{{ $category->jobs_count }}<span> Tin tuyển dụng</span></p>
+                                  <p class="font-xs  {{ optional($category)->jobs_count > 0 ? 'active' : '' }}">{{ $category->jobs_count }}<span> Tin tuyển dụng</span></p>
                                 </div>
                               </div>
                             </a>

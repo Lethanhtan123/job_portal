@@ -30,7 +30,12 @@ class HomeController extends Controller
         ->where('show_at_popular', 1)
         ->get();
 
-        $featuredCategories = JobCategory::where('show_at_featured', 1)->take(10)->get();
+        $featuredCategories = JobCategory::withCount(['jobs' => function ($query) {
+            $query->where('status', 'active')
+                  ->where('deadline', '>=', now()->toDateString());
+        }])
+        ->where('show_at_featured', 1)
+        ->take(10)->get();
 
         $companies = Company::with('companyCountry', 'jobs')
         ->select('id', 'logo', 'name', 'slug', 'country', 'profile_completion', 'visibility')

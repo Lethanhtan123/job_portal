@@ -1,7 +1,7 @@
 <section class="section-box mt-50">
     <div class="container">
         <div class="text-center">
-            <h2 class="mb-10 section-title wow animate__animated animate__fadeInUp">Nơi tuyển dụng hot</h2>
+            <h2 class="mb-10 section-title wow animate__animated animate__fadeInUp">Khu vực tuyển dụng</h2>
             <p class="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Chúng tôi đồng hành cùng bạn trên mỗi bước đường.</p>
         </div>
     </div>
@@ -15,10 +15,10 @@
                         </a>
                         <div class="informations">
                             <a href="{{ route('companies.index', ['country' => $location->country_id]) }}">
-                                <h5>{{ $location->country->name }}, {{ $location->district->name }}</h5>
+                                <h5>{{ $location->country->name }}, {{ $location->city->name }}, {{ $location->district->name }}</h5>
                             </a>
                             <div class="row">
-                                <div class="col-lg-6 col-6"><span
+                                <div class="col-lg-6 col-6 {{ $location->city_id }}"><span
                                         class="text-14 color-text-paragraph-2">{{ $location->country->companies->count() }}
                                         companies</span></div>
                                 <div class="col-lg-6 col-6 text-end"><span

@@ -139,7 +139,7 @@
             <li class="{{ setSidebarActive(['admin.job-location.*']) }}">
                 <a class="" href="{{ route('admin.job-location.index') }}">
                     <i class="fas fa-columns"></i>
-                    Nơi tuyển dụng</a>
+                    Khu vực tuyển dụng</a>
             </li>
 
             <li class="{{ setSidebarActive(['admin.footer.*']) }}">

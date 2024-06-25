@@ -3,18 +3,18 @@
 @section('contents')
     <section class="section">
         <div class="section-header">
-            <h1>Social Icons</h1>
+            <h1>Icon mạng xã hội</h1>
         </div>
 
         <div class="section-body">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>All Icons</h4>
+                        <h4>Danh sách mạng xã hội</h4>
                         <div class="card-header-form">
 
                         </div>
-                        <a href="{{ route('admin.social-icon.create') }}" class="btn btn-primary"> <i class="fas fa-plus-circle"></i> Create new</a>
+                        <a href="{{ route('admin.social-icon.create') }}" class="btn btn-primary"> <i class="fas fa-plus-circle"></i> Tạo mới</a>
                     </div>
                     <div class="p-0 card-body">
                         <div class="table-responsive">
@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>Icon</th>
                                     <th>Url</th>
-                                    <th style="width: 10%">Action</th>
+                                    <th style="width: 20%">Chức năng</th>
                                 </tr>
                             <tbody>
                                 @forelse ($icons as $icon)
@@ -47,9 +47,9 @@
                     </div>
                     <div class="text-right card-footer">
                         <nav class="d-inline-block">
-                            @if ($icons->hasPages())
+                            {{-- @if ($icons->hasPages())
                                 {{ $icons->withQueryString()->links() }}
-                            @endif
+                            @endif --}}
                         </nav>
                     </div>
                 </div>

@@ -1949,6 +1949,31 @@ label {
     color: #1ca774;
     font-weight: 600;
 }
+.font-xs.active{
+    color: orangered!important;
+}
+.nav_tab_job.have_job{
+    color: orangered!important;
+}
+.have_job{
+    color: orangered!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .card-grid-2:hover {
     border-color: #B4C0E0;
@@ -3133,7 +3158,7 @@ ul li:last-child .card-list-4 {
     width: 100% !important;
     margin-right: 10px;
     position: relative;
-    max-width: 180px;
+    max-width: 203px;
 }
 
 .banner-hero .block-banner .form-find .select2::after {
@@ -3173,7 +3198,7 @@ ul li:last-child .card-list-4 {
 
 .banner-hero .block-banner .form-find .box-industry {
     width: 100%;
-    max-width: 180px;
+    max-width: 216px;
 }
 
 .banner-hero .block-banner .form-find .box-industry .select2::before {
@@ -3704,6 +3729,29 @@ ul li:last-child .card-list-4 {
     color: #1ca774;
     font-weight: 500;
 }
+.row_footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer_desc {
+    width: 37%;
+    margin-top: -46px;
+    text-align: center;
+    font-size: 15px !important;
+    line-height: 27px !important;
+}
+.footer_logo{height: 65px;}
+
+
+
+
+
+
+
+
+
 
 .user-account {
     display: flex;
