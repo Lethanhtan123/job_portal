@@ -295,13 +295,14 @@
             let url = $(this).attr('href');
 
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "Bạn có chắc chắn muốn xóa?",
+                text: "Bạn sẽ không thể khôi phục lại!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
+                confirmButtonText: "Đồng ý",
+            cancelButtonText: "Đóng",
             }).then((result) => {
                 if (result.isConfirmed) {
 

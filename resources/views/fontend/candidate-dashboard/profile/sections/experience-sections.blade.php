@@ -25,7 +25,7 @@
                         <td>{{ $canEx->company }}</td>
                         <td>{{ $canEx->department }}</td>
                         <td>{{ $canEx->designation }}</td>
-                        <td>{{ $canEx->start }} - {{ $canEx->currently_working === 1 ? 'Current' : $canEx->end }}</td>
+                        <td>{{ $canEx->start }} - {{ $canEx->currently_working === 1 ? 'Hiện tại' : $canEx->end }}</td>
 
                         <td class="d-flex justify-content-between align-items-center flex-wrap">
                             <a href="{{ route('candidate.experience.edit', $canEx->id) }}"

@@ -44,7 +44,7 @@ class CandidateExperienceController extends Controller
 
         $experience->save();
 
-        return response(['message' => 'Created Successfully'], 200);
+        return response(['message' => 'Thêm mới thành công.'], 200);
     }
 
     /**
@@ -87,7 +87,7 @@ class CandidateExperienceController extends Controller
 
         $experience->save();
 
-        return response(['message' => 'Update Successfully'], 200);
+        return response(['message' => 'Cập nhật thành công'], 200);
     }
 
     /**
@@ -101,10 +101,10 @@ class CandidateExperienceController extends Controller
                 abort(404);
             }
             $experience->delete();
-            return response(['message' => 'Deleted Successfully!'], 200);
+            return response(['message' => 'Xóa thành công!'], 200);
         } catch (\Exception $e) {
             logger($e);
-            return response(['message' => 'Something Went Wrong Please Try Again!'], 500);
+            return response(['message' => 'Có lỗi xảy ra, vui lòng thực hiện lại!'], 500);
         }
     }
 }

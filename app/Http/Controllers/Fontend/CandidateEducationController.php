@@ -99,7 +99,7 @@ class CandidateEducationController extends Controller
             return response(['message' => 'Xóa dữ liệu thành công!'], 200);
         } catch (\Exception $e) {
             logger($e);
-            return response(['message' => 'Có lỗi xảy ra. Vui lòng thử lại!'], 500);
+            return response(['message' => 'Có lỗi xảy ra. Vui lòng thực hiện lại!'], 500);
         }
     }
 }

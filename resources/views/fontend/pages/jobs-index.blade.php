@@ -102,7 +102,7 @@
                                                     @endphp
 
                                                     <div class="col-lg-5 col-5 text-end">
-                                                        <div class="btn bookmark-btn job-bookmark"
+                                                        <div class="btn border-0 bookmark-btn job-bookmark"
                                                             data-id="{{ $job->id }}">
 
                                                             @if (in_array($job->id, $bookmarkedIds))
@@ -344,30 +344,6 @@
         });
 
 
-        $('.job-bookmark').on('click', function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            $.ajax({
-                method: 'GET',
-                url: '{{ route("job.bookmark", ":id") }}'.replace(":id", id),
-                data: {},
-                success: function(response) {
-                     $('.job-bookmark').each(function() {
-                    let elementId = $(this).data('id');
 
-                    if(elementId == response.id) {
-                        $(this).find('i').addClass('fas fa-bookmark active-bookmark');
-                    }
-                })
-                    notyf.success(response.message);
-                },
-                error: function(xhr, status, error) {
-                    let errors = xhr.responseJSON.errors;
-                    $.each(errors, function(index, value) {
-                        notyf.error(value[index]);
-                    });
-                }
-            })
-        });
     </script>
 @endpush

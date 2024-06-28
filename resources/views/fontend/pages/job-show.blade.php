@@ -172,7 +172,27 @@
                     <div class="mt-2 author-single"><span>{{ $job->company->name }}</span></div>
                     <div class="single-apply-jobs">
                         <div class="row align-items-center">
-                            <div class="col-md-5"><a class="btn btn-border" href="#">Save job</a></div>
+                            @php
+                                $bookmarkedIds = \App\Models\JobBookmark::where(
+                                    'candidate_id',
+                                    auth()?->user()?->candidateProfile?->id,
+                                )
+                                    ->pluck('job_id')
+                                    ->toArray();
+
+                            @endphp
+
+                            <div class="ol-md-5">
+                                <div class="btn bookmark-btn border-0 p-0 job-bookmark" data-id="{{ $job->id }}">
+
+                                    @if (in_array($job->id, $bookmarkedIds))
+                                        <a class="btn btn-secondary">Đã thêm vào danh sách</a>
+                                    @else
+                                        <a class="btn btn-success">Lưu bài viết</a>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="col-md-7 text-lg-end social-share">
                                 <h6 class="mr-10 color-text-paragraph-2 d-inline-block d-baseline">Chia sẻ: </h6>
                                 <a data-social="facebook" class="mr-5 d-inline-block d-middle" href="#"><img
@@ -270,8 +290,7 @@
                     data: {
                         _token: "{{ csrf_token() }}"
                     },
-                    beforeSend: function() {
-                    },
+                    beforeSend: function() {},
                     success: function(response) {
                         window.location.reload();
                         notyf.success(response.message);
