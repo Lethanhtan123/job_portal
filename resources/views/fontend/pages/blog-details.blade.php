@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Tin tức</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="index.html">Trang chủ</a></li>
                             <li>{{ $blog->title }}</li>
                         </ul>
                     </div>

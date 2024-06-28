@@ -99,16 +99,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="paginations mt-60">
-                            <ul class="pager">
-                                <li><a class="pager-prev" href="#"><i class="fas fa-arrow-left"></i></a></li>
-                                <li><a class="pager-number" href="#">1</a></li>
-                                <li><a class="pager-number" href="#">2</a></li>
-                                <li><a class="pager-number active" href="#">3</a></li>
-                                <li><a class="pager-number" href="#">4</a></li>
-                                <li><a class="pager-next" href="#"><i class="fas fa-arrow-right"></i></a></li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12 pl-40 pl-lg-15 mt-lg-30">

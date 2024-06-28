@@ -45,13 +45,14 @@
         let url = $(this).attr('href');
 
         Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            title: "Bạn có chắc chắn muốn xóa?",
+            text: "Bạn sẽ không thể khôi phục lại thao tác!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Đồng ý",
+            cancelButtonText: "Đóng",
         }).then((result) => {
             if (result.isConfirmed) {
 
@@ -80,5 +81,29 @@
         });
     });
 
-
+    $('.job-bookmark').on('click', function(e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+        $.ajax({
+            method: 'GET',
+            url: '{{ route("job.bookmark", ":id") }}'.replace(":id", id),
+            data: {},
+            success: function(response) {
+                $('.job-bookmark').each(function() {
+                    let elementId = $(this).data('id');
+                    if (elementId == response.id) {
+                        $(this).find('i').addClass('fas fa-bookmark active-bookmark');
+                    }
+                    window.location.reload();
+                })
+                notyf.success(response.message);
+            },
+            error: function(xhr, status, error) {
+                let errors = xhr.responseJSON.errors;
+                $.each(errors, function(index, value) {
+                    notyf.error(value[index]);
+                });
+            }
+        })
+    });
 </script>
