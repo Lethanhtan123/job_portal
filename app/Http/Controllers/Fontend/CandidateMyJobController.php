@@ -11,7 +11,7 @@ class CandidateMyJobController extends Controller
 {
     function index() : View {
 
-        $appliedJobs = AppliedJob::with('job')->where('candidate_id',auth()->user()->id)->paginate(10);
+        $appliedJobs = AppliedJob::with('job')->where('candidate_id',auth()->user()->id)->orderBy('id','DESC')->paginate(10);
 
         return view('fontend.candidate-dashboard.my-job.index',compact('appliedJobs'));
     }
@@ -20,7 +20,7 @@ class CandidateMyJobController extends Controller
     {
         try {
             $applied = AppliedJob::findOrFail($id);
-            if (auth()->user()->candidateProfile->id !== $applied->candidate_id) {
+            if (auth()->user()->id !== $applied->candidate_id) {
                 abort(404);
             }
             $applied->delete();
