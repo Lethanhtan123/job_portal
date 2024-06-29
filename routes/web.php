@@ -76,11 +76,12 @@ Route::group(
         Route::get('applied-jobs', [CandidateMyJobController::class, 'index'])->name('applied-jobs.index');
         Route::get('bookmarked-jobs', [CandidateBookmarkController::class, 'index'])->name('bookmarked-jobs.index');
         Route::delete('bookmark-delete/{id}', [CandidateBookmarkController::class, 'destroy'])->name('job-bookmark.destroy');
-        Route::delete('applied-delete/{id}', [CandidateMyJobController::class, 'destroy'])->name('job-apply.destroy');
     }
 
 
 );
+
+Route::delete('applied-delete/{id}', [CandidateMyJobController::class, 'destroy'])->name('job-apply.destroy');
 
 //**Company Routes */
 Route::group(

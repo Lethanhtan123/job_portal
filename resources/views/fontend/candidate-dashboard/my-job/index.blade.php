@@ -84,7 +84,7 @@
                                                 class="btn btn-sm rounded btn-primary text-white"><i
                                                     class="fa fa-eye text-white"></i></a>
 
-                                            <a href="{{ route('candidate.job-apply.destroy', $item->id) }}"
+                                            <a href="{{ route('job-apply.destroy', $item->id) }}"
                                                 class=" btn btn-sm btn-danger rounded delete-item text-white"><i
                                                     class="fa-solid fa-trash-can text-white"></i></a>
 

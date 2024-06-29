@@ -26,24 +26,19 @@
                         <h3 class="mt-0 mb-0 color-brand-1">{{ Auth::user()->name }}</h3>
                         <div class="dashboard_overview">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-md-6">
                                     <div class="dash_overview_item bg-info-subtle">
-                                        <h2>12 <span>job applied</span></h2>
+                                        <h2> {{ $jobAppliedCount }} <span> công việc đã ứng tuyển</span></h2>
                                         <span class="icon"><i class="fas fa-briefcase"></i></span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
+                                <div class="col-md-6">
                                     <div class="dash_overview_item bg-danger-subtle">
-                                        <h2>12 <span>job applied</span></h2>
-                                        <span class="icon"><i class="fas fa-briefcase"></i></span>
+                                        <h2> {{ $jobBookmarkCount }} <span> tin đã lưu</span></h2>
+                                        <span class="icon"><i class="fas fa-bookmark"></i></span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="dash_overview_item bg-warning-subtle">
-                                        <h2>12 <span>job applied</span></h2>
-                                        <span class="icon"><i class="fas fa-briefcase"></i></span>
-                                    </div>
-                                </div>
+
                             </div>
                             @if (!isCandidateProfileComplete())
                                 <div class="row">
