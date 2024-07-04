@@ -21,8 +21,7 @@
       </div>
       <div class="footer-bottom mt-50">
         <div class="row">
-            <div class="col-md-6"><span class="font-xs color-text-paragraph">{{ $footerDetails?->copyright }}</span></div>
-
+            <div class="col-md-6"><span class="font-xs color-text-paragraph">&copy; Copyright 2024 {{ $footerDetails?->copyright }}. All rights reserved.</span></div>
         </div>
     </div>
     </div>
