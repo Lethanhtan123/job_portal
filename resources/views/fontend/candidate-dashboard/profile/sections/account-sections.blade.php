@@ -73,17 +73,17 @@
                             <label class="mb-10 font-md text-capitalize color-text-mutted">Số điện thoại 1
                             </label>
                             <input class="form-control {{ $errors->has('phone_one') ? 'is-invalid' : '' }} "
-                                type="text" value="{{ $candidate?->phone_one }}" name="phone_one">
+                                type="number" value="{{ $candidate?->phone_one }}" name="phone_one">
                             <x-input-error :messages="$errors->get('phone_one')" class="mt-2" />
                         </div>
 
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="mb-10 font-md text-capitalize color-text-mutted">Số điện thoại 2
+                            <label class="mb-10 font-md text-capitalize color-text-mutted"> Số Zalo
                             </label>
                             <input class="form-control {{ $errors->has('phone_two') ? 'is-invalid' : '' }} "
-                                type="text" value="{{ $candidate?->phone_two }}" name="phone_two">
+                                type="number" value="{{ $candidate?->phone_two }}" name="phone_two">
                             <x-input-error :messages="$errors->get('phone_two')" class="mt-2" />
                         </div>
                     </div>
@@ -170,7 +170,7 @@
 
                 $.ajax({
                     mehtod: 'GET',
-                    url: '{{ route('get-cities', ':id') }}'.replace(":id", country_id),
+                    url: '{{ route("get-cities", ":id") }}'.replace(":id", country_id),
                     data: {},
                     success: function(response) {
                         let html = '';
@@ -192,7 +192,7 @@
 
                 $.ajax({
                     mehtod: 'GET',
-                    url: '{{ route('get-districts', ':id') }}'.replace(":id", city_id),
+                    url: '{{ route("get-districts", ":id") }}'.replace(":id", city_id),
                     data: {},
                     success: function(response) {
                         let html = '';

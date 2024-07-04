@@ -25,7 +25,7 @@
 
                         <div class="row display-list">
                             @forelse ($jobs as $job)
-                                <div class="col-xl-12 col-md-4">
+                                <div class="col-12">
                                     <div class="card-grid-2 hover-up"><span class="flash"></span>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12">

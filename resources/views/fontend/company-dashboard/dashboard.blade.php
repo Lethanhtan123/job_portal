@@ -28,39 +28,24 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="dash_overview_item bg-info-subtle">
-                                        <h2>12 <span>job applied</span></h2>
+                                        <h2> {{ $activePosts }} <span>Tin đang tuyển</span></h2>
                                         <span class="icon"><i class="fas fa-briefcase"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="dash_overview_item bg-danger-subtle">
-                                        <h2>12 <span>job applied</span></h2>
+                                        <h2> {{ $expiredPosts }} <span>Tin hết hạn</span></h2>
                                         <span class="icon"><i class="fas fa-briefcase"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="dash_overview_item bg-warning-subtle">
-                                        <h2>12 <span>job applied</span></h2>
+                                        <h2> {{ $totalPosts }} <span>Tin đã đăng</span></h2>
                                         <span class="icon"><i class="fas fa-briefcase"></i></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 mt-30">
-                                    <div class="flex-wrap dash_alert_box p-30 bg-danger rounded-4 d-flex">
-                                        <span class="img">
-                                            <img src="assets/imgs/avatar/ava_17.png" alt="alert">
-                                        </span>
-                                        <div class="text">
-                                            <h4>This is demo heading</h4>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem aliquam quasi
-                                                deleniti nesciunt
-                                                obcaecati labore, magnam suscipit repudiandae corrupti laborum.</p>
-                                        </div>
-                                        <a href="#" class="btn btn-default rounded-1">Edit Profile</a>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -68,5 +53,4 @@
         </div>
     </section>
 
-    <div class="mt-120"></div>
 @endsection
