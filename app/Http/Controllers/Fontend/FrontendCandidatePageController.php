@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Fontend;
 use App\Http\Controllers\Controller;
 use App\Models\Candidate;
 use App\Models\Experience;
+use App\Models\Language;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -19,6 +20,8 @@ class FrontendCandidatePageController extends Controller
 
         $experiences = Experience::all();
 
+        $languages = Language::all();
+
         $query = Candidate::query();
         $query->where(['profile_complete' => 1, 'visibility' => 1]);
 
@@ -30,14 +33,21 @@ class FrontendCandidatePageController extends Controller
         }
 
         if ($request->has('experience') && $request->filled('experience')) {
-
             $query->where('experience_id', $request->experience);
+        }
 
+        if ($request->has('languages') && $request->filled('languages')) {
+            $ids = Language::whereIn('slug',
+                $request->languages
+            )->pluck('id')->toArray();
+            $query->whereHas('languages', function ($subquery) use ($ids) {
+                $subquery->whereIn('language_id', $ids);
+            });
         }
 
         $candidates = $query->paginate(12);
 
-        return view('fontend.pages.candidate-index', compact('candidates', 'skills', 'experiences'));
+        return view('fontend.pages.candidate-index', compact('candidates', 'skills', 'experiences', 'languages'));
     }
 
     function show(string $slug): View

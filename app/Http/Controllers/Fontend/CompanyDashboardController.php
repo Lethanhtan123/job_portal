@@ -13,9 +13,9 @@ class CompanyDashboardController extends Controller
     function index(): View
     {
         $now = Carbon::now();
-        $activePosts = Job::where('company_id', auth()->user()->company->id)->where('status','active')->where('deadline', '>=', $now)->count();
-        $totalPosts = Job::where('company_id', auth()->user()->company->id)->count();
-        $expiredPosts = Job::where('company_id', auth()->user()->company->id)->where('deadline', '<', $now)->count();
+        $activePosts = Job::where('company_id', auth()->user()->company?->id)->where('status','active')->where('deadline', '>=', $now)->count();
+        $totalPosts = Job::where('company_id', auth()->user()->company?->id)->count();
+        $expiredPosts = Job::where('company_id', auth()->user()->company?->id)->where('deadline', '<', $now)->count();
         return view('fontend.company-dashboard.dashboard', compact('activePosts', 'totalPosts', 'expiredPosts'));
     }
 }

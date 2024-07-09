@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Trang cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Trang chủ</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Chi tiết Ứng viên</li>
                         </ul>
                     </div>
@@ -156,14 +156,27 @@
                                     <div class="sidebar-icon-item"><i class="fi fi-rr-venus-mars"></i></div>
                                     <div class="sidebar-text-info">
                                         <span class="text-description w-100">Giới tính</span>
-                                        <strong class="small-heading">{{ $candidate->gender }}</strong>
+                                        <strong class="small-heading">
+                                        @if ($candidate?->gender === 'male')
+                                               Nam
+                                            @else
+                                                Nữ
+                                                @endif</strong>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sidebar-icon-item"><i class="fi-rr-time-fast"></i></div>
+                                    <div class="sidebar-icon-item"><img
+                                            src="{{ asset('fontend/assets/imgs/template/marital.png') }}"
+                                            title="Tình trạng hôn nhân" alt="Tình trạng hôn nhân"></div>
                                     <div class="sidebar-text-info">
                                         <span class="text-description w-100">Tình trạng hôn nhân</span>
-                                        <strong class="small-heading">{{ $candidate->marital_status }}</strong>
+                                        <strong class="small-heading">
+                                            @if ($candidate?->marital_status === 'single')
+                                                Độc thân
+                                            @else
+                                                Đã kết hôn
+                                                @endif
+                                        </strong>
                                     </div>
                                 </li>
 

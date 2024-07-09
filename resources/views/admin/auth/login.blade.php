@@ -55,7 +55,7 @@
                                 </div>
                             </form>
                             <div class="simple-footer">
-                                Copyright &copy; T&T {{ date('Y') }}
+                                Copyright &copy; DREAMJOB {{ date('Y') }}
                             </div>
 
                         </div>

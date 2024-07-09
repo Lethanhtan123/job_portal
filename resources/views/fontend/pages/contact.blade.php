@@ -8,7 +8,7 @@
           <div class="col-lg-12">
             <h2 class="mb-20">Liên hệ</h2>
             <ul class="breadcrumbs">
-              <li><a class="home-icon" href="{{ url('/') }}">Home</a></li>
+              <li><a class="home-icon" href="{{ url('/') }}">Trang chủ</a></li>
               <li>Liên hệ</li>
             </ul>
           </div>

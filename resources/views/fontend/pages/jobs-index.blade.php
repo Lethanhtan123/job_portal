@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Tuyển dụng</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="{{ url('/') }}">Home</a></li>
+                            <li><a class="home-icon" href="{{ url('home') }}">Trang chủ</a></li>
                             <li>Tin tuyển dụng</li>
                         </ul>
                     </div>

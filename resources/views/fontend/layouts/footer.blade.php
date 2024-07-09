@@ -8,7 +8,7 @@
     @endphp
         <div class="row_footer">
             <a class="footer_logo" href="index.html">
-                <img alt="joblist" src="{{ $footerDetails?->logo }}">
+                <img alt="dreamjob" src="{{ $footerDetails?->logo }}">
             </a>
             <div class="mt-20 mb-20 footer_desc font-xs color-text-paragraph-2">{{ $footerDetails?->details }}</div>
             <div class="footer-social">
@@ -25,4 +25,14 @@
         </div>
     </div>
     </div>
+
+    <a class="btn-map btn-frame text-decoration-none" target="_blank" href="https://www.messenger.com/t/306383955902729"
+        style="bottom:190px;">
+        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+        <i><img src="{{ asset('fontend/assets/imgs/template/mess.png') }}" alt="">
+        </i>
+    </a>
+
   </footer>
+

@@ -6,10 +6,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
-                    <h2 class="mb-20">Orders</h2>
+                    <h2 class="mb-20">Trang cá nhân</h2>
                     <ul class="breadcrumbs">
-                        <li><a class="home-icon" href="index.html">Home</a></li>
-                        <li>Orders</li>
+                        <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
+                        <li>Tin tuyển dụng</li>
                     </ul>
                 </div>
             </div>
@@ -29,13 +29,13 @@
                         @method('PUT')
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Job Details
+                                Chi tiết tin tyển dụng
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Title <span class="text-danger">*</span></label>
+                                            <label for="">Tiêu đề <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control {{ hasError($errors, 'title') }}"
                                                 name="title" value="{{ old('title',$job->title) }}">
                                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
@@ -44,7 +44,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
-                                            <label for="">Category <span class="text-danger">*</span></label>
+                                            <label for="">Loại ngành <span class="text-danger">*</span></label>
                                             <select name="category" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'category') }}">
                                                 <option value="">Choose</option>
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Total Vacancies <span class="text-danger">*</span></label>
+                                            <label for="">Số lượng cần tuyển <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control {{ hasError($errors, 'vacancies') }}"
                                                 name="vacancies" value="{{ old('vacancies',$job->vacancies) }}">
                                             <x-input-error :messages="$errors->get('vacancies')" class="mt-2" />
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Deadline <span class="text-danger">*</span></label>
+                                            <label for="">Hạn cuối đăng ký <span class="text-danger">*</span></label>
                                             <input type="date" id="inputdate"
                                                 class="inputdate form-control  {{ hasError($errors, 'deadline') }}"
                                                 name="deadline" value="{{ old('deadline',$job->deadline) }}">
@@ -79,13 +79,13 @@
 
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Location
+                               Vị trí, địa điểm
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group select-style">
-                                            <label for="">Country </label>
+                                            <label for="">Quốc gia </label>
                                             <select name="country" id=""
                                                 class="form-control form-icons select-active country {{ hasError($errors, 'country') }}">
                                                 <option value="">Choose</option>
@@ -109,7 +109,7 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="form-group select-style">
-                                            <label for="">City </label>
+                                            <label for="">Tỉnh/Thành phố </label>
                                             <select name="city" id=""
                                                 class="form-control form-icons select-active city {{ hasError($errors, 'city') }}">
                                                 <option value="">Choose</option>
@@ -124,7 +124,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group select-style">
-                                            <label for="">District </label>
+                                            <label for="">Quận/huyện </label>
                                             <select name="district" id=""
                                                 class="form-control form-icons select-active district {{ hasError($errors, 'district') }}">
                                                 <option value="">Choose</option>
@@ -139,7 +139,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Address</label>
+                                            <label for="">Địa chỉ</label>
                                             <input type="text" class="form-control {{ hasError($errors, 'address') }}"
                                                 name="address" value="{{ old('address',$job->address) }}">
                                             <x-input-error :messages="$errors->get('address')" class="mt-2" />
@@ -153,7 +153,7 @@
 
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Salary Details
+                                Chi tiết lương
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -167,7 +167,7 @@
                                                         class="from-control {{ hasError($errors, 'salary_mode') }}"
                                                         name="salary_mode" checked value="range">
                                                     <label style="margin-left: 5px;
-                                                    margin-top: -4px;" for="salary_range">Salary Range </label>
+                                                    margin-top: -4px;" for="salary_range">Lương cố định(khoảng)</label>
                                                     <x-input-error :messages="$errors->get('salary_mode')"
                                                         class="mt-2" />
                                                 </div>
@@ -180,7 +180,7 @@
                                                         class="from-control {{ hasError($errors, 'salary_mode') }}"
                                                         name="salary_mode" value="custom">
                                                     <label style="margin-left: 5px;
-                                                    margin-top: -4px;" for="custom_salary">Custom Salary </label>
+                                                    margin-top: -4px;" for="custom_salary">Lương thỏa thuận  </label>
                                                     <x-input-error :messages="$errors->get('salary_mode')"
                                                         class="mt-2" />
                                                 </div>
@@ -205,7 +205,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Maximum Salary <span
+                                                    <label for="">Lương tối đa <span
                                                             class="text-danger">*</span></label>
                                                     <input type="text"
                                                         class="form-control max_salary {{ hasError($errors, 'max_salary') }}"
@@ -216,7 +216,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Minimum Salary <span
+                                                    <label for="">Lương tối thiểu<span
                                                             class="text-danger">*</span></label>
                                                     <input type="text"
                                                         class="form-control min_salary {{ hasError($errors, 'min_salary') }}"
@@ -230,7 +230,7 @@
 
                                     <div class="col-md-12 custom_salary_part d-none">
                                         <div class="form-group">
-                                            <label for="">Custom Salary <span class="text-danger">*</span></label>
+                                            <label for="">Lương thỏa thuận <span class="text-danger">*</span></label>
                                             <input type="text"
                                                 class="form-control {{ hasError($errors, 'custom_salary') }}"
                                                 name="custom_salary" value="{{ old('custom_salary',$job->custom_salary) }}">
@@ -240,7 +240,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
-                                            <label for="">Salary Type <span class="text-danger">*</span> </label>
+                                            <label for="">Loại trả lương <span class="text-danger">*</span> </label>
                                             <select name="salary_type" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'salary_type') }}">
                                                 <option value="">Choose</option>
@@ -260,13 +260,13 @@
 
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Attributes
+                                Tùy chọn khác
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label for="">Experience <span class="text-danger ">*</span></label>
+                                            <label for="">Kinh nghiệm <span class="text-danger ">*</span></label>
                                             <select name="experience" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'experience') }}">
                                                 <option value="">Choose</option>
@@ -280,7 +280,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label for="">Job Role <span class="text-danger ">*</span></label>
+                                            <label for="">Chức vụ <span class="text-danger ">*</span></label>
                                             <select name="job_role" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'job_role') }}">
                                                 <option value="">Choose</option>
@@ -293,7 +293,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label for="">Education <span class="text-danger ">*</span></label>
+                                            <label for="">Trình độ học vấn <span class="text-danger ">*</span></label>
                                             <select name="education" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'education') }}">
                                                 <option value="">Choose</option>
@@ -307,7 +307,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label for="">Job Type <span class="text-danger ">*</span></label>
+                                            <label for="">Loại công việc <span class="text-danger ">*</span></label>
                                             <select name="job_type" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'job_type') }}">
                                                 <option value="">Choose</option>
@@ -351,7 +351,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
-                                            <label for="">Skills <span class="text-danger ">*</span></label>
+                                            <label for="">Kỹ năng <span class="text-danger ">*</span></label>
                                             <select name="skills[]" id="" multiple
                                                 class="form-control form-icons select-active {{ hasError($errors, 'skills') }}">
                                                 <option value="">Choose</option>
@@ -374,19 +374,19 @@
 
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Application Options
+                               Theo dõi thông tin
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
-                                            <label for="">Receive Applications <span class="text-danger">*</span>
+                                            <label for="">Nhận ứng tuyển tại <span class="text-danger">*</span>
                                             </label>
                                             <select name="receive_applications" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'receive_applications') }}">
-                                                <option @selected($job->apply_on == 'app') value="app">On Our Platform</option>
-                                                <option @selected($job->apply_on == 'email') value="email">On your email address</option>
-                                                <option @selected($job->apply_on == 'custom_url') value="custom_url">On a custom link</option>
+
+                                                <option @selected($job->apply_on == 'email') value="email">Liên hệ qua email</option>
+                                                <option @selected($job->apply_on == 'custom_url') value="custom_url">Liên hệ qua link</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('receive_applications')"
                                                 class="mt-2" />
@@ -399,7 +399,7 @@
 
                         <div class="mb-3 card">
                             <div class="card-header">
-                                Promote
+                                Hiển thị
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -412,7 +412,7 @@
                                                         class="from-control {{ hasError($errors, 'featured') }}"
                                                         name="featured" value="1">
                                                     <label style="margin-left: 5px;
-                                                    margin-top: -4px;" for="featured">Featured </label>
+                                                    margin-top: -4px;" for="featured">Nổi bật </label>
                                                     <x-input-error :messages="$errors->get('featured')" class="mt-2" />
                                                 </div>
                                             </div>
@@ -423,7 +423,7 @@
                                                         class="from-control {{ hasError($errors, 'highlight') }}"
                                                         name="highlight" value="1">
                                                     <label style="margin-left: 5px;
-                                                    margin-top: -4px;" for="highlight">Highlight </label>
+                                                    margin-top: -4px;" for="highlight">Phổ biến </label>
                                                     <x-input-error :messages="$errors->get('highlight')" class="mt-2" />
                                                 </div>
                                             </div>
@@ -452,7 +452,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                     </form>
                 </div>

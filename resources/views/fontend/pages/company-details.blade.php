@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Thông tin nhà tuyển dụng</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="{{ route('companies.index') }}">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('companies.index') }}">Trang chủ</a></li>
                             <li>Thông tin nhà tuyển dụng</li>
                         </ul>
                     </div>
@@ -170,7 +170,7 @@
                             <div class="avatar-sidebar">
                                 <figure><img alt="joblist" src="{{ asset($company->logo) }}"></figure>
                                 <div class="sidebar-info"><span class="sidebar-company">{{ $company->name }}</span><span
-                                        class="mt-1 card-location">{{ formatLocation($company->companyCountry->name) }}</span>
+                                        class="mt-1 card-location">  {{ formatLocation($company->companyCountry?->name) }}</span>
                                     {{-- @if ($openJobs > 0)
                                 <a class="link-underline mt-15"
                                     href="{{route('companies.show', $job->company->slug)}}">{{ $openJobs }} Tin tuyển
@@ -185,7 +185,8 @@
                             </div>
                             <ul class=" ul-disc">
                                 <li class="">
-                                    {{ formatLocation($company->companyCountry->name) }}
+                                    {{-- {{ formatLocation($company->companyCountry->name) }} --}}
+                                     {{ formatLocation($company->companyCountry?->name, $company->companyCity?->name, $company->companyDistrict?->name, $company->address) }}
                                 </li>
 
                                 <li>Phone: {{ $company->phone }}</li>

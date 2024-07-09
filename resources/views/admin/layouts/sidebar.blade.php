@@ -58,7 +58,7 @@
                     {{-- <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
                             href="{{ route('admin.state.index') }}">State</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link"
-                            href="{{ route('admin.city.index') }}">Thành phố</a></li>
+                            href="{{ route('admin.city.index') }}">Tỉnh/Thành phố</a></li>
 
                     <li><a class="{{ setSidebarActive(['admin.district.*']) }} nav-link"
                             href="{{ route('admin.district.index') }}">Quận/huyện</a></li>
@@ -225,6 +225,9 @@
                 </div>
             </div>
         </li> --}}
+        <li class="mr-3" > <a class="d-block text-decoration-none home-re" target="_blank" href="{{ route('home') }}">
+                       Xem website <i class="fas fa-share"></i>
+                    </a> </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="assets/img/avatar/avatar-1.png" class="mr-1 rounded-circle">

@@ -70,7 +70,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="mb-10 font-md text-capitalize color-text-mutted">Số điện thoại 1
+                            <label class="mb-10 font-md text-capitalize color-text-mutted">Số điện thoại
                             </label>
                             <input class="form-control {{ $errors->has('phone_one') ? 'is-invalid' : '' }} "
                                 type="number" value="{{ $candidate?->phone_one }}" name="phone_one">
@@ -102,7 +102,7 @@
             </div>
         </div>
         <div class="box-button mt-15 w-50">
-            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
+            <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
         </div>
     </form>
 
@@ -117,7 +117,7 @@
                 <x-input-error :messages="$errors->get('account_email')" class="mt-2" />
             </div>
             <div class="box-button mt-15 w-50">
-                <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
+                <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
             </div>
         </form>
         <div class="mt-4">
@@ -150,7 +150,7 @@
                 </div>
 
                 <div class="box-button mt-15 w-50">
-                    <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
+                    <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
                 </div>
             </form>
         </div>

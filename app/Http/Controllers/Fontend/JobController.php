@@ -233,6 +233,7 @@ class JobController extends Controller
         $job->status = 'active';
         $job->save();
 
+        JobTag::where('job_id', $id)->delete();
          // insert tags
          foreach($request->tags as $tag) {
             $createTag = new JobTag();
@@ -241,6 +242,7 @@ class JobController extends Controller
             $createTag->save();
         }
 
+        JobSkills::where('job_id', $id)->delete();
         // insert skills
         foreach($request->skills as $skill) {
             $createSkill = new JobSkills();

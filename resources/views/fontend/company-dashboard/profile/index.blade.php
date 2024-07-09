@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Thông tin cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Trang cá nhân</li>
                         </ul>
                     </div>
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="btm-box-avt">
                                             <div class="form-group">
-                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Ảnh nền *
+                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Banner *
                                                 </label>
                                                 <input
                                                     class="form-control  {{ $errors->has('banner') ? 'is-invalid' : '' }} "
@@ -116,7 +116,7 @@
                                         <div class="form-group">
                                             <label class="mb-10 font-sm color-text-mutted">Năm thành lập</label>
                                             <input id="inputdate" type="date" name="establishment_date"
-                                                class="form-control datepicker {{ $errors->has('establishment_date') ? 'is-invalid' : '' }}"
+                                                class="form-control {{ $errors->has('establishment_date') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->establishment_date }}">
                                             <x-input-error :messages="$errors->get('establishment_date')" class="mt-2" />
 
@@ -164,6 +164,21 @@
 
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group select-style">
+                                            <label class="mb-10 font-sm color-text-mutted">Loại doanh nghiệp *</label>
+                                            <select name="industry_type_id" id=""
+                                                class="form-control form-icons industry_type_id select-active {{ $errors->has('industry_type_id') ? 'is-invalid' : '' }}">
+                                                <option value="">Select</option>
+                                                @foreach ($IndustryType as $item)
+                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
+                                                        {{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label class="mb-10 font-sm color-text-mutted">Quốc gia *</label>
@@ -183,7 +198,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Thành phố *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Tỉnh/Thành phố *</label>
                                             <select name="city" id=""
                                                 class="{{ hasError($errors, 'city') }} city form-control form-icons select-active">
                                                 <option value="">Chọn tỉnh/thành phố </option>
@@ -215,20 +230,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Loại doanh nghiệp *</label>
-                                            <select name="industry_type_id" id=""
-                                                class="form-control form-icons industry_type_id select-active {{ $errors->has('industry_type_id') ? 'is-invalid' : '' }}">
-                                                <option value="">Select</option>
-                                                @foreach ($IndustryType as $item)
-                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
-                                                        {{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
-                                        </div>
-                                    </div>
 
 
 
@@ -285,7 +286,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên doanh nghiệp
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên tài khoản doanh nghiệp
                                                 *
                                             </label>
                                             <input class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
