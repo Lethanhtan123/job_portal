@@ -32,7 +32,7 @@
                                 <th style="width: 15%">Loại nghành/Chức vụ</th>
                                 <th style="width: 15%">Loại lương</th>
                                 <th>Tỷ giá</th>
-                                <th>Hạo chót đăng ký</th>
+                                <th>Hạo cuối đăng ký</th>
                                 <th>Trạng thái</th>
                                 <th>Thay đổi trạng thái</th>
                                 <th style="width: 13%">Chức năng</th>

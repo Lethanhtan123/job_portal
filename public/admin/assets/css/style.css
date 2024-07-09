@@ -2740,6 +2740,21 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   padding-left: 61px;
   background-color: #fff; }
 
+  .home-re {
+      text-decoration: none;
+      color: #fff;
+      line-height: 35px;
+      position: relative;
+      bottom: 0;
+      transition: .4s;
+  }
+
+  .home-re:hover {
+     bottom: 5px;
+      text-decoration: none;
+    color: #fff;
+  }
+
 @media (max-width: 1024px) {
   .sidebar-gone-hide {
     display: none !important; }

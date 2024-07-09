@@ -75,7 +75,7 @@
                                             @if ($item->job->deadline < date('Y-m-d'))
                                                 <span class="badge bg-danger ">Đã hết hạn</span>
                                             @else
-                                                <span class="badge bg-success ">Hiện hành</span>
+                                                <span class="badge bg-success ">Đang tuyển</span>
                                             @endif
                                         </td>
 

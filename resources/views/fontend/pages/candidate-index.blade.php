@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Ứng viên</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Ứng viên</li>
                         </ul>
                     </div>
@@ -42,9 +42,19 @@
                                                     @foreach ($skills as $skill)
                                                         <option  @selected(request()->has('skills') ? in_array($skill->slug, request()->skills) : false) value="{{ $skill->slug }}"> {{ $skill->name }}</option>
                                                     @endforeach
-
                                                 </select>
-
+                                            </div>
+                                        </div>
+                                        <div class="filter-block mb-30">
+                                            <div class="form-group select-style">
+                                                <label class="f-18 mb-2">Khả năng ngôn ngữ</label>
+                                                <select name="languages[]" multiple
+                                                    class="form-control form-icons select-active">
+                                                    <option value="" > All</option>
+                                                    @foreach ($languages as $lang)
+                                                        <option  @selected(request()->has('languages') ? in_array($lang->slug, request()->languages) : false) value="{{ $lang->slug }}"> {{ $lang->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +120,7 @@
                                                 <div class="text-start">
                                                     @foreach ($item->skills as $key => $canSkill)
                                                         @if ($loop->index <= 5)
-                                                            <a class="mb-10 mr-5 btn btn-tags-sm"
+                                                            <a class="mb-10 mr-5 btn btn-tags-sm tag-skill-can"
                                                                 href="">{{ $canSkill->skill->name }}</a>
                                                         @endif
                                                     @endforeach
@@ -136,6 +146,7 @@
                                     </div>
                                 </div>
                             @empty
+                                <h5 class="text-center">Tiếc quá không tìm thấy dữ liệu! 😥</h5>
                             @endforelse
                             <div class="col-12">
                                 <div class="paginations mt-35">

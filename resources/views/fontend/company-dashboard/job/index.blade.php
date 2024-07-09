@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Trang cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Tin tuyển dụng</li>
                         </ul>
                     </div>
@@ -90,11 +90,11 @@
                                                 <td>{{ formatDate($job->deadline) }}</td>
                                                 <td>
                                                     @if ($job->status === 'pending')
-                                                        <span class="badge bg-warning">Peinding</span>
+                                                        <span class="badge bg-warning">Đang chờ duyệt</span>
                                                     @elseif ($job->deadline > date('Y-m-d'))
-                                                        <span class="badge bg-success ">Active</span>
+                                                        <span class="badge bg-success ">Đang tuyển</span>
                                                     @else
-                                                        <span class="badge bg-danger ">Expired</span>
+                                                        <span class="badge bg-danger ">Đã hết hạn</span>
                                                     @endif
                                                 </td>
 
@@ -117,7 +117,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="12" class="text-center">No result found!</td>
+                                                <td colspan="12" class="text-center">Chưa có bài viết!</td>
                                             </tr>
                                         @endforelse
 

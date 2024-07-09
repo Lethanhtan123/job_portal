@@ -13,7 +13,7 @@ class CandidateDashboardController extends Controller
 {
     function index() : View{
         $jobAppliedCount = AppliedJob::where('candidate_id', auth()->user()->id)->count();
-        $jobBookmarkCount = JobBookmark::where('candidate_id', auth()->user()->candidateProfile->id)->count();
+        $jobBookmarkCount = JobBookmark::where('candidate_id', auth()->user()->candidateProfile?->id)->count();
         return view('fontend.candidate-dashboard.dashboard',compact('jobAppliedCount','jobBookmarkCount'));
     }
 }

@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Thông tin cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Trang cá nhân</li>
                         </ul>
                     </div>

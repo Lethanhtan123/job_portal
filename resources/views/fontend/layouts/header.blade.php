@@ -2,8 +2,15 @@
     <div class="container">
         <div class="main-header">
             <div class="header-left">
-                <div class="header-logo peShiner"><a class="d-flex" href="{{ route('home') }}"><img alt="joblist"
-                            src="{{ asset('fontend/assets/imgs/template/logo.png') }}"></a></div>
+                <div class="header-logo peShiner">
+                    @php
+                        $logo = \App\Models\Footer::first();
+
+                    @endphp
+                    <a class="footer_logo" href="{{ route('home') }}">
+                        <img alt="dreamjob" src="{{ $logo?->logo }}">
+                    </a>
+                </div>
             </div>
             <div class="header-nav">
                 <nav class="nav-main-menu">

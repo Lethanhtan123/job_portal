@@ -78,6 +78,7 @@ class CompanyProfileController extends Controller
     }
 
     function updateFoundingInfo(CompanyFoundingInfoUpdateRequest $request) : RedirectResponse {
+       
         Company::updateOrCreate(
             ['user_id' => auth()->user()->id],
             [
