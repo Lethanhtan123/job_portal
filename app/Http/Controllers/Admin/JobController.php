@@ -118,7 +118,7 @@ class JobController extends Controller
         $job->featured = $request->featured;
         $job->highlight = $request->highlight;
         $job->description = $request->description;
-        $job->status = 'active';
+        $job->status = 'pending';
         $job->save();
 
          // insert tags

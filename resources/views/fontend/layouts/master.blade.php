@@ -80,7 +80,6 @@
     </section> --}}
 
     @include('fontend.layouts.footer')
-
     <script src="{{ asset('fontend/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
 
     <script src="{{ asset('fontend/assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
@@ -106,8 +105,8 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/goodshare.js@6/goodshare.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="http://translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit"
-    async defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=GoogleLanguageTranslatorInit"></script>
+
     <script src="{{ asset('fontend/assets/js/main.js?v=4.1') }}"></script>
 
 

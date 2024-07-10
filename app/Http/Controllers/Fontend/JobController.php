@@ -248,6 +248,13 @@ class JobController extends Controller
             $createSkill->skill_id = $skill;
             $createSkill->save();
         }
+        JobSkills::where('job_id', $id)->delete();
+        foreach($request->skills as $skill) {
+            $createSkill = new JobSkills();
+            $createSkill->job_id = $job->id;
+            $createSkill->skill_id = $skill;
+            $createSkill->save();
+        }
 
         Notify::updatedNotifycation();
 
