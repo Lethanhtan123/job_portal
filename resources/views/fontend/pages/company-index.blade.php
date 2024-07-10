@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Nhà Tuyển Dụng</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('companies.index') }}">Trang chủ</a></li>
                             <li>Nhà Tuyển Dụng</li>
                         </ul>
                     </div>

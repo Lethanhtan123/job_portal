@@ -40,17 +40,17 @@ class FrontendJobPageController extends Controller
         }
 
         if($request->has('country') && $request->filled('country')) {
-            $query->where('country', $request->country);
+            $query->where('country_id', $request->country);
         }
 
         if($request->has('city') && $request->filled('city')) {
-            $query->where('city', $request->city);
+            $query->where('city_id', $request->city);
             $selectedCities = City::where('country_id', $request->country)->get();
             $selectedDistricts = District::where('city_id', $request->city)->get();
         }
 
         if($request->has('district') && $request->filled('district')) {
-            $query->where('district', $request->district);
+            $query->where('district_id', $request->district);
         }
 
         if($request->has('category') && $request->filled('category')) {

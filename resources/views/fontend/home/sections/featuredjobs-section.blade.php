@@ -7,7 +7,7 @@
                 @foreach ($featuredCategories as $category)
                 <li><a class="nav_tab_job
                                         {{ $loop->index === 0 ? 'active' : '' }}
-                           
+
                             "id="nav-tab-job-{{ $category->id }}"
                                 href="#tab-job-{{ $category->id }}" data-bs-toggle="tab" role="tab"
                                 aria-controls="tab-job-{{ $category->id }}"
@@ -34,14 +34,14 @@
                             @endphp
                             @foreach ($featuredJobs as $job)
                                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
-                                    <div class="card-grid-2 hover-up">
+                                    <div class="card-grid-2 card-job-hot hover-up">
                                         <div class="card-grid-2-image-left"><span class="flash"></span>
                                             <div class="image-box"><img src="{{ asset($job->company?->logo) }}"
                                                     alt="joblist"></div>
 
                                         </div>
                                         <div class="card-block-info">
-                                            <h6><a href="{{ route('jobs.show', $job->slug) }}">{{ Str::limit($job->title, 28, '...') }}</a>
+                                            <h6><a class="text-split me-0" href="{{ route('jobs.show', $job->slug) }}">{{ $job->title }}</a>
                                             </h6>
                                             <div class="mt-5 mb-2"><span
                                                     class="card-briefcase">{{ $job->jobType->name }}</span><span

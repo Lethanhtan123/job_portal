@@ -49,7 +49,7 @@
                                         <div class="d-flex justify-content-between">
                                             <label class="form-label" for="password">Mật khẩu *</label>
 
-                                            <a href="{{ route('password.request') }}">Quân mật khẩu?</a>
+                                            <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
 
                                         </div>
                                         <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
@@ -60,23 +60,23 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-12">
+                                {{-- <div class="col-xl-12">
                                     <div class="form-check form-group form-check-inline">
                                         <input class="form-check-input" style="margin-right: 10px" type="checkbox"
                                             name="remember">
                                         <label class="form-check-label" for="typeCandidate"> Lưu thông tin đăng nhập.</label>
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng nhập</button>
                             </div>
 
-                            <div class="text-center text-muted">Bạn chưa có tài khoản?
+                            {{-- <div class="text-center text-muted">Bạn chưa có tài khoản?
 
                                 <a href="{{ route('register') }}">Đăng ký</a>
-                            </div>
+                            </div> --}}
                         </form>
                         {{-- <div class="mt-20 text-center">
               <div class="divider-text-center"><span>Or continue with</span></div>

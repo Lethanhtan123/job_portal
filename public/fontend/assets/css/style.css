@@ -995,7 +995,7 @@ h6,
 
 .btn-apply-big.btn-apply-icon {
     padding-left: 50px;
-    background-position: 21px 17px;
+    background-position: 18px 10px;
 }
 
 .btn-apply-big:hover {
@@ -1121,7 +1121,8 @@ h6,
     border-radius: 4px;
 }
 
-.btn-send-message:hover {
+.btn-send-message:hover,
+.btn-chat-zalo.btn-send-message:hover {
     background-color: #05264E;
     color: #ffffff;
 }
@@ -1713,7 +1714,7 @@ label {
 
 .noUi-stacking .noUi-handle {
     /* This class is applied to the lower origin when
-     its values is > 50%. */
+ its values is > 50%. */
     z-index: 10;
 }
 
@@ -1915,6 +1916,11 @@ label {
     padding: 25px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: relative;
+    min-height: 358px;
+}
+
+.card-grid-2.card-job-hot {
+    min-height: 415px;
 }
 
 .futured_jobs .card-grid-2 .card-text-price {
@@ -1949,14 +1955,17 @@ label {
     color: #1ca774;
     font-weight: 600;
 }
-.font-xs.active{
-    color: orangered!important;
+
+.font-xs.active {
+    color: orangered !important;
 }
-.nav_tab_job.have_job{
-    color: orangered!important;
+
+.nav_tab_job.have_job {
+    color: orangered !important;
 }
-.have_job{
-    color: orangered!important;
+
+.have_job {
+    color: orangered !important;
 }
 
 
@@ -2011,17 +2020,18 @@ label {
     border-radius: 50%;
     height: 80px;
     width: 80px;
+    object-fit: cover;
 }
 
 .card-grid-2 .card-grid-2-image-rd.online figure::before {
-    height: 18px;
+    /*height: 18px;
     width: 18px;
     border-radius: 50%;
     content: "";
     position: absolute;
     bottom: 13px;
     right: 9px;
-    background: #00c070;
+    background: #00c070;*/
 }
 
 .card-grid-2.grid-bd-16 {
@@ -2085,7 +2095,7 @@ label {
     overflow: hidden;
 }
 
-.card-grid-2 .card-block-info a {
+.card-grid-2 .card-block-info a.btn-grey-small {
     background: none;
     border: none;
     padding: 0;
@@ -2249,6 +2259,9 @@ label {
     margin-bottom: 20px;
     border-radius: 50%;
     overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .card-grid-2 .card-grid-2-image-left .right-info .name-job {
@@ -2368,9 +2381,11 @@ label {
 }
 
 .card-grid-3 .card-block-info {
-    display: inline-block;
     width: 100%;
     padding: 25px;
+    min-height: 226px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-grid-3 .card-block-info .card-block-rating span {
@@ -3241,7 +3256,7 @@ ul li:last-child .card-list-4 {
 }
 
 .banner-hero .heading-banner {
-    font-size: 48px;
+    font-size: 44px;
     line-height: 60px;
     color: #05264E;
     max-width: 85%;
@@ -3266,7 +3281,7 @@ ul li:last-child .card-list-4 {
 .banner-hero .banner-description {
     position: relative;
     font-size: 18px;
-    color: #4F5E64;
+    color: #000;
 }
 
 .banner-hero.banner-image-single {
@@ -3525,14 +3540,14 @@ ul li:last-child .card-list-4 {
 
 /* .header .main-menu li a:hover::before,
 .header .main-menu li a.active::before {
-  content: "";
-  height: 2px;
-  width: 100%;
-  background-color: #1ca774;
-  position: absolute;
-  bottom: -10px;
-  left: 0px;
-} */
+ content: "";
+ height: 2px;
+ width: 100%;
+ background-color: #1ca774;
+ position: absolute;
+ bottom: -10px;
+ left: 0px;
+ } */
 
 .header .main-menu li a i {
     font-size: 10px;
@@ -3729,20 +3744,25 @@ ul li:last-child .card-list-4 {
     color: #1ca774;
     font-weight: 500;
 }
-.row_footer{
+
+.row_footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .footer_desc {
-    width: 37%;
+    width: 32%;
     margin-top: -46px;
     text-align: center;
-    font-size: 15px !important;
+    font-size: 16px !important;
     line-height: 27px !important;
 }
-.footer_logo{height: 65px;}
+
+.footer_logo {
+    height: 65px;
+}
 
 
 
@@ -5274,7 +5294,7 @@ ul li:last-child .card-list-4 {
 }
 
 /***************************
-    Page section margin
+ Page section margin
 ****************************/
 .mtb-0 {
     margin: 0;
@@ -7078,6 +7098,7 @@ ul li:last-child .card-list-4 {
     min-width: 165px;
     /* max-width: 165px; */
 }
+
 .nav_tab_job {
     padding: 10px 15px !important;
     font-size: 15px !important;
@@ -9227,296 +9248,7 @@ ul li:last-child .card-list-4 {
     }
 }
 
-@media (max-width: 575.98px) {
 
-    .footer .footer-col-1,
-    .footer .footer-col-2,
-    .footer .footer-col-3,
-    .footer .footer-col-4,
-    .footer .footer-col-5,
-    .footer .footer-col-6 {
-        width: 100%;
-    }
-
-    .box-we-hiring .text-2 {
-        text-align: center;
-        width: 100%;
-        padding: 15px 0px 10px 0px;
-    }
-
-    .box-we-hiring .text-3 {
-        width: 100%;
-        text-align: center;
-    }
-
-    .section-box.mt-70,
-    .section-box.mt-80,
-    .section-box.mt-100,
-    .section-box.mt-40 {
-        margin-top: 30px !important;
-    }
-
-    .header.sticky-bar .col-lg-7 .burger-icon {
-        right: 15px;
-    }
-
-    .banner-hero.hero-1 h1 {
-        font-size: 38px;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
-    }
-
-    .mt-sm-15 {
-        margin-top: 15px !important;
-    }
-
-    .mt-sm-30 {
-        margin-top: 30px !important;
-    }
-
-    .pt-sm-15 {
-        padding-top: 15px;
-    }
-
-    .swiper-group-6 {
-        max-height: 140px;
-    }
-
-    .box-swiper .swiper-container .item-logo {
-        box-shadow: none;
-    }
-
-    .list-partners li {
-        padding: 15px 15px;
-    }
-
-    .box-newsletter {
-        padding: 50px 15px;
-    }
-
-    .box-newsletter .text-md-newsletter {
-        font-size: 22px;
-        line-height: 28px;
-        margin-bottom: 25px;
-        margin-top: 0;
-    }
-
-    .box-newsletter .text-lg-newsletter {
-        font-size: 32px;
-    }
-
-    .box-newsletter form {
-        display: block;
-    }
-
-    .footer ul.mt-40 {
-        margin-top: 15px !important;
-        margin-bottom: 20px !important;
-    }
-
-    .bg-banner-about.banner-home-3 {
-        border-bottom-right-radius: 30px;
-        border-bottom-left-radius: 30px;
-    }
-
-    .bg-banner-about.banner-home-3 .banner-hero .block-banner {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-
-    .card-job-top--info-heading {
-        margin-bottom: 10px;
-    }
-
-    .card-job-top--price {
-        margin-top: 15px;
-        display: block;
-    }
-
-    .box-info-job {
-        padding: 0 !important;
-    }
-
-    .block-job-bg::before {
-        display: none;
-    }
-
-    .box-mw-60 {
-        max-width: 100% !important;
-    }
-
-    .banner-hero.banner-homepage-3 .block-banner {
-        padding: 30px 15px;
-    }
-
-    .box-image-findjob img {
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
-
-    .nav-right li {
-        margin-bottom: 15px;
-    }
-
-    .block-pricing.mt-125 {
-        margin-top: 50px !important;
-    }
-
-    .box-filters .list-tags-job {
-        display: none;
-    }
-
-    .job-fillter.d-flex {
-        display: block !important;
-    }
-
-    .job-fillter.d-flex .box-button-find {
-        float: none;
-    }
-
-    .job-fillter.d-flex .btn {
-        padding-left: 10px !important;
-    }
-
-    .job-fillter.d-flex .dropdown {
-        margin: 0 0 10px 0;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .box-shadow-bdrd-15.box-filters {
-        padding-bottom: 30px;
-    }
-
-    .social-share .btn-sm {
-        padding: 10px 11px;
-    }
-
-    .card-employers .col-sm-6 {
-        width: 50%;
-    }
-
-    .archive-header h3 {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .card-blog-1 .tags {
-        display: none;
-    }
-
-    .card-blog-1 .post-meta {
-        font-size: 12px;
-    }
-
-    .card-blog-1.post-list {
-        display: block;
-    }
-
-    .card-blog-1.post-list .post-thumb {
-        max-width: 100%;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .card-blog-1.post-list .post-title {
-        font-size: 18px;
-    }
-
-    .single-body blockquote {
-        padding: 15px 20px;
-        border-radius: 5px;
-        margin: 15px auto;
-        font-size: 18px;
-        max-width: 100%;
-    }
-
-    .single-body blockquote p {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    .bg-banner-about {
-        border-bottom-right-radius: 40px;
-        border-bottom-left-radius: 40px;
-        padding: 15px 15px 40px 15px;
-    }
-
-    .bg-banner-about .heading-lg {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .banner-about::before {
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-    }
-
-    .section-title-large {
-        font-size: 38px;
-    }
-
-    .block-banner-1 img,
-    .block-banner-2 img,
-    .block-banner-3 img {
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 484.98px) {
-    .swiper-style-2 .item-5 {
-        width: 100%;
-    }
-
-    .text-sortby {
-        display: none;
-    }
-
-    .paginations .pager li .pager-prev {
-        margin-right: 0px;
-    }
-
-    .paginations .pager li .pager-next {
-        margin-left: 0px;
-    }
-
-    .paginations .pager li a {
-        line-height: 24px;
-        font-size: 16px;
-    }
-
-    .box-radius-8 {
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-    }
-
-    .box-radius-8 .image {
-        min-width: 100%;
-        padding-right: 0px;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-        line-height: 28px;
-    }
-
-    .box-newsletter-2 .font-lg {
-        font-size: 14px;
-        line-height: 20px;
-    }
-}
-
-@media (max-width: 374.98px) {
-    .image-profile {
-        max-width: 100%;
-        width: 100%;
-    }
-}
 
 @media (min-width: 1400px) {
     .container.wide {
@@ -9539,16 +9271,6 @@ ul li:last-child .card-list-4 {
     }
 }
 
-/*# sourceMappingURL=style.css.map */
-
-
-
-
-
-
-
-
-/* custom css start */
 :root {
     --colorPrimary: #1ca774;
     --colorBlack: #05264E;
@@ -9577,6 +9299,7 @@ ul li:last-child .card-list-4 {
     border: 3px solid #fff;
     overflow: hidden;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: #fff;
 }
 
 .banner-hero .banner-inner .banner-imgs .block-1 img {
@@ -9707,6 +9430,8 @@ footer .color-text-paragraph {
     width: 50px;
     height: 50px;
     display: inline-block;
+    line-height: 50px;
+    background: #fff;
 }
 
 .company_page .btn-grey-big {
@@ -10038,4 +9763,436 @@ ul.timeline>li:before {
 
 .active-bookmark {
     color: var(--colorPrimary) !important;
+}
+
+.w-r-content {
+    width: calc(100% - 110px);
+}
+
+.btn-chat-zalo.btn-send-message {
+    background: var(--colorPrimary);
+    color: #fff;
+    padding: 14px 28px;
+}
+
+.btn-chat-zalo svg {
+    stroke: #fff;
+    fill: #fff;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.img-fit {
+    object-fit: cover;
+}
+
+.pic-news img {
+    height: 263px;
+}
+
+.text-split {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-block-info h5 a.text-split {
+    -webkit-line-clamp: 3;
+}
+
+.tag-skill-can {
+    background: transparent;
+    padding: 0;
+}
+
+/* Button Frame */
+.btn-frame {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.btn-frame i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1ca774;
+    box-shadow: 0px 4px 4px 0px rgba(118, 118, 118, 0.25);
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.btn-frame i img {
+    vertical-align: middle;
+    width: 70%;
+}
+
+.btn-frame .animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.btn-frame .kenit-alo-circle {
+    width: 60px;
+    height: 60px;
+    top: -5px;
+    right: -5px;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid rgba(7, 116, 62, 0.8);
+    opacity: 0.1;
+    border-color: var(--main-color);
+    opacity: 0.5;
+}
+
+.btn-frame .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+.btn-frame .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.btn-frame .kenit-alo-circle-fill {
+    width: 70px;
+    height: 70px;
+    top: -10px;
+    right: -10px;
+    position: absolute;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background-color: rgba(7, 41, 103, 0.35);
+    opacity: 0.4;
+}
+
+.btn-frame .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+
+@media (max-width: 575.98px) {
+
+    .footer .footer-col-1,
+    .footer .footer-col-2,
+    .footer .footer-col-3,
+    .footer .footer-col-4,
+    .footer .footer-col-5,
+    .footer .footer-col-6 {
+        width: 100%;
+    }
+
+    .box-we-hiring .text-2 {
+        text-align: center;
+        width: 100%;
+        padding: 15px 0px 10px 0px;
+    }
+
+    .box-we-hiring .text-3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-box.mt-70,
+    .section-box.mt-80,
+    .section-box.mt-100,
+    .section-box.mt-40 {
+        margin-top: 30px !important;
+    }
+
+    .header.sticky-bar .col-lg-7 .burger-icon {
+        right: 15px;
+    }
+
+    .banner-hero.hero-1 h1 {
+        font-size: 38px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .mt-sm-15 {
+        margin-top: 15px !important;
+    }
+
+    .mt-sm-30 {
+        margin-top: 30px !important;
+    }
+
+    .pt-sm-15 {
+        padding-top: 15px;
+    }
+
+    .swiper-group-6 {
+        max-height: 140px;
+    }
+
+    .box-swiper .swiper-container .item-logo {
+        box-shadow: none;
+    }
+
+    .list-partners li {
+        padding: 15px 15px;
+    }
+
+    .btn-apply-big {
+        padding: 10px;
+        font-size: 14px !important;
+    background-position: 18px 10px;
+
+    }
+
+    .sidebar-border, .sidebar-shadow {
+padding: 10px;}
+
+    .box-newsletter {
+        padding: 50px 15px;
+    }
+
+    .box-newsletter .text-md-newsletter {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 25px;
+        margin-top: 0;
+    }
+
+    .box-newsletter .text-lg-newsletter {
+        font-size: 32px;
+    }
+
+    .box-newsletter form {
+        display: block;
+    }
+
+    .footer ul.mt-40 {
+        margin-top: 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .bg-banner-about.banner-home-3 {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .bg-banner-about.banner-home-3 .banner-hero .block-banner {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .card-job-top--info-heading {
+        margin-bottom: 10px;
+    }
+
+    .card-job-top--price {
+        margin-top: 15px;
+        display: block;
+    }
+
+    .box-info-job {
+        padding: 0 !important;
+    }
+
+    .block-job-bg::before {
+        display: none;
+    }
+
+    .box-mw-60 {
+        max-width: 100% !important;
+    }
+
+    .banner-hero.banner-homepage-3 .block-banner {
+        padding: 30px 15px;
+    }
+
+    .box-image-findjob img {
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .nav-right li {
+        margin-bottom: 15px;
+    }
+
+    .block-pricing.mt-125 {
+        margin-top: 50px !important;
+    }
+
+    .box-filters .list-tags-job {
+        display: none;
+    }
+
+    .job-fillter.d-flex {
+        display: block !important;
+    }
+
+    .job-fillter.d-flex .box-button-find {
+        float: none;
+    }
+
+    .job-fillter.d-flex .btn {
+        padding-left: 10px !important;
+    }
+
+    .job-fillter.d-flex .dropdown {
+        margin: 0 0 10px 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .box-shadow-bdrd-15.box-filters {
+        padding-bottom: 30px;
+    }
+
+    .social-share .btn-sm {
+        padding: 10px 11px;
+    }
+
+    .card-employers .col-sm-6 {
+        width: 50%;
+    }
+
+    .archive-header h3 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .card-blog-1 .tags {
+        display: none;
+    }
+
+    .card-blog-1 .post-meta {
+        font-size: 12px;
+    }
+
+    .card-blog-1.post-list {
+        display: block;
+    }
+
+    .card-blog-1.post-list .post-thumb {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .card-blog-1.post-list .post-title {
+        font-size: 18px;
+    }
+
+    .single-body blockquote {
+        padding: 15px 20px;
+        border-radius: 5px;
+        margin: 15px auto;
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    .single-body blockquote p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .bg-banner-about {
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        padding: 15px 15px 40px 15px;
+    }
+
+    .bg-banner-about .heading-lg {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .banner-about::before {
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .section-title-large {
+        font-size: 38px;
+    }
+
+    .block-banner-1 img,
+    .block-banner-2 img,
+    .block-banner-3 img {
+        margin-bottom: 15px;
+    }
+
+    .footer_desc {
+        width: 90%;
+    }
+}
+
+@media (max-width: 484.98px) {
+    .swiper-style-2 .item-5 {
+        width: 100%;
+    }
+
+    .text-sortby {
+        display: none;
+    }
+
+    .paginations .pager li .pager-prev {
+        margin-right: 0px;
+    }
+
+    .paginations .pager li .pager-next {
+        margin-left: 0px;
+    }
+
+    .paginations .pager li a {
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .box-radius-8 {
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .box-radius-8 .image {
+        min-width: 100%;
+        padding-right: 0px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .box-newsletter-2 .font-lg {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 374.98px) {
+    .image-profile {
+        max-width: 100%;
+        width: 100%;
+    }
 }

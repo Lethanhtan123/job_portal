@@ -5,6 +5,7 @@
             $footerDetails = \App\Models\Footer::first();
             $footerIcons = \App\Models\SocialIcon::all();
 
+
             @endphp
             <div class="row_footer">
                 <a class="footer_logo" href="index.html">
@@ -16,9 +17,11 @@
                     <a class="icon-socials icon-facebook" href="{{ $icon->url }}"><i class="{{ $icon->icon }}"></i></a>
                     @endforeach
 
+
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom mt-50">
             <div class="row">
                 <div class="col-md-6"><span class="font-xs color-text-paragraph">{{ $footerDetails?->copyright }}</span>
@@ -30,6 +33,7 @@
 
    <a class="btn-map btn-frame text-decoration-none" target="_blank" href="https://www.messenger.com/t/306383955902729"
         style="bottom:400px;">
+
         <div class="animated infinite zoomIn kenit-alo-circle"></div>
         <div class="animated infinite pulse kenit-alo-circle-fill"></div>
         <i><img src="{{ asset('fontend/assets/imgs/template/mess.png') }}" alt="">
@@ -37,3 +41,4 @@
     </a>
 
 </footer>
+

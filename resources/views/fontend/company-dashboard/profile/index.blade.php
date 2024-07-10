@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Thông tin cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Trang cá nhân</li>
                         </ul>
                     </div>
@@ -60,15 +60,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                     <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="mb-2 box-avt">
                                             <x-image-preview :height="200" :width="400" :source="$companyInfo?->banner" />
                                         </div>
                                         <div class="btm-box-avt">
                                             <div class="form-group">
-                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Ảnh nền *
+                                                <label class="mb-10 font-sm text-capitalize color-text-mutted">Banner *
                                                 </label>
-                                                <input class="form-control  {{ $errors->has('banner') ? 'is-invalid' : '' }} "
+                                                <input
+                                                    class="form-control  {{ $errors->has('banner') ? 'is-invalid' : '' }} "
                                                     type="file" value="" name="banner">
                                                 <x-input-error :messages="$errors->get('banner')" class="mt-2" />
                                             </div>
@@ -76,7 +77,8 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên doanh nghiệp *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên doanh nghiệp
+                                                *
                                             </label>
                                             <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }} "
                                                 type="text" value="{{ $companyInfo?->name }}" name="name">
@@ -87,7 +89,8 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Mô tả doanh nghiệp *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Mô tả doanh
+                                                nghiệp *
                                             </label>
                                             <textarea name="bio" class="  {{ $errors->has('bio') ? 'is-invalid' : '' }}  summernote">{{ $companyInfo?->bio }}</textarea>
                                             <x-input-error :messages="$errors->get('bio')" class="mt-2" />
@@ -113,7 +116,7 @@
                                         <div class="form-group">
                                             <label class="mb-10 font-sm color-text-mutted">Năm thành lập</label>
                                             <input id="inputdate" type="date" name="establishment_date"
-                                                class="form-control datepicker {{ $errors->has('establishment_date') ? 'is-invalid' : '' }}"
+                                                class="form-control {{ $errors->has('establishment_date') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->establishment_date }}">
                                             <x-input-error :messages="$errors->get('establishment_date')" class="mt-2" />
 
@@ -151,7 +154,31 @@
 
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="mb-10 font-sm color-text-mutted">Số Zalo</label>
+                                            <input type="text" name="zalo"
+                                                class="form-control {{ $errors->has('zalo') ? 'is-invalid' : '' }}"
+                                                value="{{ $companyInfo?->zalo }}">
+                                            <x-input-error :messages="$errors->get('zalo')" class="mt-2" />
 
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group select-style">
+                                            <label class="mb-10 font-sm color-text-mutted">Loại doanh nghiệp *</label>
+                                            <select name="industry_type_id" id=""
+                                                class="form-control form-icons industry_type_id select-active {{ $errors->has('industry_type_id') ? 'is-invalid' : '' }}">
+                                                <option value="">Select</option>
+                                                @foreach ($IndustryType as $item)
+                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
+                                                        {{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label class="mb-10 font-sm color-text-mutted">Quốc gia *</label>
@@ -169,16 +196,16 @@
                                         </div>
                                     </div>
 
-                                     <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Thành phố *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Tỉnh/Thành phố *</label>
                                             <select name="city" id=""
-                                                class="form-control form-icons city select-active {{ $errors->has('city') ? 'is-invalid' : '' }}"
-                                                value="{{ $companyInfo?->city }}">
-                                                <option value="">Select</option>
-                                                @foreach ($City as $item)
-                                                    <option @selected($item->id === $companyInfo?->city) value="{{ $item->id }}">
-                                                        {{ $item->name }}</option>
+                                                class="{{ hasError($errors, 'city') }} city form-control form-icons select-active">
+                                                <option value="">Chọn tỉnh/thành phố </option>
+                                                @foreach ($cities as $city)
+                                                    <option @selected($city->id === $companyInfo?->city) value="{{ $city->id }}">
+                                                        {{ $city->name }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                             <x-input-error :messages="$errors->get('city')" class="mt-2" />
@@ -188,13 +215,13 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Quận huyện *</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Quận/huyện *</label>
                                             <select name="district" id=""
-                                                class="form-control form-icons districts select-active {{ $errors->has('district') ? 'is-invalid' : '' }}"
+                                                class="form-control form-icons district select-active {{ $errors->has('district') ? 'is-invalid' : '' }}"
                                                 value="{{ $companyInfo?->districts }}">
-                                                <option value="">Select</option>
-                                                @foreach ($District as $item)
-                                                    <option @selected($item->id === $companyInfo?->districts) value="{{ $item->id }}">
+                                                <option value=""> Chọn quận/huyện</option>
+                                                @foreach ($districts as $item)
+                                                    <option @selected($item->id === $companyInfo?->district) value="{{ $item->id }}">
                                                         {{ $item->name }}</option>
                                                 @endforeach
                                             </select>
@@ -203,20 +230,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group select-style">
-                                            <label class="mb-10 font-sm color-text-mutted">Loại doanh nghiệp *</label>
-                                            <select name="industry_type" id=""
-                                                class="form-control form-icons industry_type select-active {{ $errors->has('industry_type') ? 'is-invalid' : '' }}">
-                                                <option value="">Select</option>
-                                                @foreach ($IndustryType as $item)
-                                                    <option @selected($item->id === $companyInfo?->industry_type_id) value="{{ $item->id }}">
-                                                        {{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <x-input-error :messages="$errors->get('industry_type')" class="mt-2" />
-                                        </div>
-                                    </div>
 
 
 
@@ -250,7 +263,8 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="mb-10 font-sm color-text-mutted">Link bản đồ (Link iframe)</label>
+                                            <label class="mb-10 font-sm color-text-mutted">Link bản đồ (Link
+                                                iframe)</label>
                                             <input type="text" name="map_link" class="form-control"
                                                 value="{{ $companyInfo?->map_link }}">
                                         </div>
@@ -272,7 +286,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Username *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Tên tài khoản doanh nghiệp
+                                                *
                                             </label>
                                             <input class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                                                 type="text" name="name" value="{{ auth()->user()->name }}">
@@ -290,8 +305,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="mt-2 mb-4 box-button w-25">
-                                            <button class="font-bold btn btn-apply font-md">Save All Changes</button>
+                                        <div class="mt-2 mb-4 box-button w-50">
+                                            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay
+                                                đổi</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -303,11 +320,12 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group icon-side">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Password *
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Mật khẩu *
                                             </label>
                                             <input
                                                 class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                                                type="password" name="password" id="password_com">
+                                                type="password" name="password" id="password_com"
+                                                placeholder="*********">
                                             <i class="fa-regular fa-eye" id="togglePasswordCom"></i>
 
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
@@ -316,11 +334,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group icon-side">
-                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Confirm Password
+                                            <label class="mb-10 font-sm text-capitalize color-text-mutted">Xác nhận mật
+                                                khẩu
                                                 * </label>
                                             <input
                                                 class="form-control  {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
-                                                type="password" name="password_confirmation" id="password_com_cf">
+                                                type="password" name="password_confirmation" id="password_com_cf"
+                                                placeholder="*********">
                                             <i class="fa-regular fa-eye" id="togglePasswordComCf"></i>
 
                                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
@@ -328,8 +348,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="mt-2 mb-4 box-button w-25">
-                                            <button class="font-bold btn btn-apply font-md">Save All Changes</button>
+                                        <div class="mt-2 mb-4 box-button w-50">
+                                            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay
+                                                đổi</button>
+
                                         </div>
                                     </div>
 
@@ -429,6 +451,53 @@
 
 @push('scripts')
     <script>
+        $(document).ready(function() {
+            $('.country').on('change', function() {
+                let country_id = $(this).val();
+                // remove all previous cities
+                $('.district').html("");
+
+                $.ajax({
+                    mehtod: 'GET',
+                    url: '{{ route('get-cities', ':id') }}'.replace(":id", country_id),
+                    data: {},
+                    success: function(response) {
+                        let html = '';
+
+                        $.each(response, function(index, value) {
+                            html +=
+                                `<option value="${value.id}" >${value.name}</option>`
+                        });
+
+                        $('.city').html(html);
+                    },
+                    error: function(xhr, status, error) {}
+                })
+            })
+
+            // get cities
+            $('.city').on('change', function() {
+                let city_id = $(this).val();
+
+                $.ajax({
+                    mehtod: 'GET',
+                    url: '{{ route('get-districts', ':id') }}'.replace(":id", city_id),
+                    data: {},
+                    success: function(response) {
+                        let html = '';
+
+                        $.each(response, function(index, value) {
+                            html +=
+                                `<option value="${value.id}" >${value.name}</option>`
+                        });
+
+                        $('.district').html(html);
+                    },
+                    error: function(xhr, status, error) {}
+                })
+            })
+        });
+
         window.addEventListener("DOMContentLoaded", function() {
             const togglePassword = document.querySelector("#togglePasswordCom");
             const togglePasswordCf = document.querySelector("#togglePasswordComCf");
@@ -437,7 +506,7 @@
 
             togglePassword.addEventListener("click", function(e) {
                 // toggle the type attribute
-                const type =  password.getAttribute("type") === "password" ? "text" : "password";
+                const type = password.getAttribute("type") === "password" ? "text" : "password";
                 password.setAttribute("type", type);
                 // toggle the eye / eye slash icon
                 this.classList.toggle("fa-eye-slash");
@@ -445,7 +514,7 @@
 
             togglePasswordCf.addEventListener("click", function(e) {
                 // toggle the type attribute
-                const typeCf =  passwordConfirm.getAttribute("type") === "password" ? "text" : "password";
+                const typeCf = passwordConfirm.getAttribute("type") === "password" ? "text" : "password";
                 passwordConfirm.setAttribute("type", typeCf);
                 // toggle the eye / eye slash icon
                 this.classList.toggle("fa-eye-slash");
@@ -454,26 +523,26 @@
 
 
 
-        $(function(){
-    var dtToday = new Date();
+        $(function() {
+            var dtToday = new Date();
 
-    var month = dtToday.getMonth() + 1;
-    var day = dtToday.getDate();
-    var year = dtToday.getFullYear();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
 
-    // Giảm 1 ngày để lấy ngày hôm trước
-    dtToday.setDate(dtToday.getDate() - 1);
+            // Giảm 1 ngày để lấy ngày hôm trước
+            dtToday.setDate(dtToday.getDate() - 1);
 
-    var month = dtToday.getMonth() + 1;
-    var day = dtToday.getDate();
-    var year = dtToday.getFullYear();
-    if(month < 10)
-        month = '0' + month.toString();
-    if(day < 10)
-        day = '0' + day.toString();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
 
-    var minDate = year + '-' + month + '-' + day;
-    $('#inputdate').attr('max', minDate);
-});
+            var minDate = year + '-' + month + '-' + day;
+            $('#inputdate').attr('max', minDate);
+        });
     </script>
 @endpush

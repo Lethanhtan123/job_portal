@@ -7,7 +7,7 @@
           <div class="col-lg-12">
             <h2 class="mb-20">Tin tức liên quan</h2>
             <ul class="breadcrumbs">
-              <li><a class="home-icon" href="index.html">Home</a></li>
+              <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
               <li>Tin tức</li>
             </ul>
           </div>
@@ -70,7 +70,7 @@
               <div class="post-list-small">
                 @foreach ($featured as $blog)
                 <div class="post-list-small-item d-flex align-items-center">
-                  <figure class="thumb mr-15"><img src="{{ asset($blog->image) }}" alt="joblist">
+                  <figure class="thumb mr-15"><img class="img-fit" src="{{ asset($blog->image) }}" alt="joblist">
                   </figure>
                   <div class="content">
                     <a href="{{ route('blogs.show', $blog->slug) }}"><h5>{{ $blog->title }}</h5></a>
