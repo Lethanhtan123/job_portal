@@ -72,7 +72,7 @@ class FrontendJobPageController extends Controller
             $query->whereIn('job_type_id', $typeIds);
         }
 
-        $jobs = $query->paginate(6);
+        $jobs = $query->orderBy('id','DESC')->paginate(6);
         return view('fontend.pages.jobs-index',compact('jobs','countries','jobCategories','selectedDistricts','selectedCites','JobType'));
 
     }

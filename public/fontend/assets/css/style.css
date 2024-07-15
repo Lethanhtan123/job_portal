@@ -995,7 +995,7 @@ h6,
 
 .btn-apply-big.btn-apply-icon {
     padding-left: 50px;
-    background-position: 18px 10px;
+    background-position: 18px 17px;
 }
 
 .btn-apply-big:hover {
@@ -7022,6 +7022,7 @@ ul li:last-child .card-list-4 {
     width: 80px;
     height: 80px;
     border-radius: 16px;
+    object-fit: contain;
 }
 
 .sidebar-border .sidebar-heading .avatar-sidebar .sidebar-info,
@@ -9350,8 +9351,13 @@ ul li:last-child .card-list-4 {
 
 .box-swiper .swiper-container .item-logo .image-left img {
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     object-fit: cover !important;
+    background: #fff !important;
+}
+
+.item-logo .image-left {
+    background: #fff !important;
 }
 
 .footer {
@@ -9545,6 +9551,9 @@ footer .color-text-paragraph {
 }
 
 /** custom css **/
+.image-left.bg-icon-cat-hot {
+    background: var(--colorPrimary) !important;
+}
 
 /** css profile edit **/
 .nav-cus .nav-link {
@@ -9942,12 +9951,14 @@ ul.timeline>li:before {
     .btn-apply-big {
         padding: 10px;
         font-size: 14px !important;
-    background-position: 18px 10px;
+        background-position: 18px 10px;
 
     }
 
-    .sidebar-border, .sidebar-shadow {
-padding: 10px;}
+    .sidebar-border,
+    .sidebar-shadow {
+        padding: 10px;
+    }
 
     .box-newsletter {
         padding: 50px 15px;

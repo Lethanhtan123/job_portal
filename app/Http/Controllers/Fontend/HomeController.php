@@ -40,14 +40,14 @@ class HomeController extends Controller
             ->where('show_at_featured', 1)
             ->take(10)->get();
 
-        $companies = Company::with('companyDistrict', 'companyCountry', 'jobs')
-            ->select('id', 'logo', 'name', 'slug', 'district', 'country', 'profile_completion', 'visibility')
+        $companies = Company::with('companyDistrict', 'companyCity', 'companyCountry', 'jobs')
+            ->select('id', 'logo', 'name', 'slug', 'district', 'city', 'country', 'profile_completion', 'visibility')
             ->withCount(['jobs' => function ($query) {
                 $query->where(['status' => 'active'])
                     ->where('deadline', '>=', date('Y-m-d'));
             }])->where(['profile_completion' => 1, 'visibility' => 1])->latest()->take(15)->get();
 
-        $locations = JobLocation::where(['status' => 'hot'])->latest()->take(8)->get();
+        $locations = JobLocation::latest()->take(8)->get();
 
         $blogs = Blog::latest()->take(6)->get();
 
