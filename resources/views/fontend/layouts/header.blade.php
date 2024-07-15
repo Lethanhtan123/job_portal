@@ -33,6 +33,7 @@
                     @endguest
 
                     @auth
+
                         @if (auth()->user()->role === 'company')
                             <a class="ml-40 btn btn-default btn-shadow hover-up" style="width:250px"
                                 href="{{ route('company.dashboard') }}">Trang cá nhân</a>
@@ -40,6 +41,7 @@
                         <a class="ml-40 btn btn-default btn-shadow hover-up" style="min-width:250px"
                         href="{{ route('candidate.dashboard') }}">Trang cá nhân</a>
                         @endif
+
                     @endauth
 
                 </div>
@@ -129,4 +131,76 @@
         </div>
     </div>
 </div>
+
+
+
+@push('scripts')
+
+<script type="text/javascript">
+   $(document).ready(function() {
+    if ($(".lang_current").length > 0) {
+        $(".lang_current").click(function(event) {
+            $(".box_changelang .box_solang").slideToggle();
+        });
+    }
+
+    $('.box_solang a').on("click", function() {
+        let $act = $(this).toggleClass('active');
+        var lang = $(this).data('lang');
+        var photo = $(this).attr('data-photo');
+        $('.box_solang a').not($act).removeClass('active');
+        $("#lang_txt").text(lang); // Sử dụng text() thay vì innerHTML để tránh lỗi khi không có giá trị
+        $('.lang-v').removeClass('lang-v');
+        $('.lang_current img').attr('src', photo);
+    });
+
+    function GoogleLanguageTranslatorInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'vi',
+            autoDisplay: false
+        }, 'google_language_translator');
+    }
+    function GTranslateFireEvent(a, b) {
+        try {
+            if (document.createEvent) {
+                var c = document.createEvent("HTMLEvents");
+                c.initEvent(b, true, true);
+                a.dispatchEvent(c);
+
+            } else {
+                var c = document.createEventObject();
+                a.fireEvent('on' + b, c);
+            }
+        } catch (e) {}
+    }
+
+    function doGoogleLanguageTranslator(a) {
+        console.log('Selected language:', lang);
+        if (a.value) a = a.value;
+        if (a == '') return;
+        var b = a.split('|')[1];
+        var c;
+        var d = document.getElementsByTagName('select');
+        for (var i = 0; i < d.length; i++)
+            if (d[i].className == 'goog-te-combo') c = d[i];
+        if (document.getElementById('google_language_translator') == null || document.getElementById('google_language_translator').innerHTML.length == 0 || c.length == 0 || c.innerHTML.length == 0) {
+            setTimeout(function() {
+                    doGoogleLanguageTranslator(a)
+                },
+                100)
+        } else {
+            c.value = b;
+            GTranslateFireEvent(c, 'change');
+            GTranslateFireEvent(c, 'change');
+            if (b == 'km') {
+                $('.hotline-header').addClass('fs');
+            }
+        }
+    }
+
+});
+
+</script>
+
+@endpush
 
