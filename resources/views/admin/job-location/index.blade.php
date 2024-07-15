@@ -38,7 +38,7 @@
                                     <tr>
                                         <td><img src="{{ asset($location->image) }}" style="height: 60px; width=100px; object-fit:cover" alt=""></td>
                                         <td>{{ $location->country->name }}</td>
-                                        <td>{{ $location->district->name }}</td>
+                                        <td>{{ $location->district?->name }}</td>
                                         <td>
                                             <span class="badge badge-primary">{{ $location->status === 'hot' ? 'HOT' : 'Nổi bật' }}</span>
                                         </td>

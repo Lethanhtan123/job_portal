@@ -12,7 +12,7 @@ class CandidateBookmarkController extends Controller
 {
     function index(): View
     {
-        $bookmarks = JobBookmark::where('candidate_id', auth()->user()->candidateProfile->id)->paginate(10);
+        $bookmarks = JobBookmark::where('candidate_id', auth()->user()->id)->paginate(10);
         return view('fontend.candidate-dashboard.bookmarks.index', compact('bookmarks'));
     }
 
@@ -24,7 +24,8 @@ class CandidateBookmarkController extends Controller
         if (auth()->check() && auth()->user()->role !== 'candidate') {
             throw ValidationException::withMessages(['Chỉ Ứng viên được lưu bài viết!']);
         }
-        $alreadyMarked = JobBookmark::where(['job_id' => $id, 'candidate_id' => auth()->user()->candidateProfile->id])->exists();
+
+        $alreadyMarked = JobBookmark::where(['job_id' => $id, 'candidate_id' => auth()->user()->id])->exists();
 
         if ($alreadyMarked) {
             throw ValidationException::withMessages(['Đã thêm vào danh sách quan tâm!']);
@@ -32,7 +33,7 @@ class CandidateBookmarkController extends Controller
 
         $bookmark = new JobBookmark();
         $bookmark->job_id = $id;
-        $bookmark->candidate_id = auth()->user()->candidateProfile->id;
+        $bookmark->candidate_id = auth()->user()->id;
         $bookmark->save();
 
         return response(['message' => 'Đánh lưu bài viết thành công!', 'id' => $id]);

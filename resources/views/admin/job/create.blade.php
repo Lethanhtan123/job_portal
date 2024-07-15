@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Loại nghành <span class="text-danger">*</span></label>
+                                            <label for="">Loại ngành <span class="text-danger">*</span></label>
                                             <select name="category" id=""
                                                 class="form-control select2 {{ hasError($errors, 'category') }}">
                                                 <option value="">Choose</option>
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Hạn chón đăng ký <span class="text-danger">*</span></label>
+                                            <label for="">Hạn cuối đăng ký <span class="text-danger">*</span></label>
                                             <input type="date" id="inputdate" data-date-end-date="0d"
                                                 class="form-control  {{ hasError($errors, 'deadline') }}"
                                                 name="deadline" value="{{ old('deadline') }}">
@@ -117,7 +117,7 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Thành phố </label>
+                                            <label for="">Tỉnh/Thành phố </label>
                                             <select name="city" id=""
                                                 class="form-control select2 city {{ hasError($errors, 'city') }}">
                                                 <option value="">Choose</option>
@@ -132,7 +132,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Quận huyện </label>
+                                            <label for="">Quận/huyện </label>
                                             <select name="district" id=""
                                                 class="form-control select2 district {{ hasError($errors, 'district') }}">
                                                 <option value="">Choose</option>
@@ -192,7 +192,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Tỷ giá <span class="text-danger">*</span> </label>
+                                                    <label for="">Đơn vị <span class="text-danger"></span> </label>
                                                     <select name="tygia" id=""
                                                         class="form-control select2 {{ hasError($errors, 'tygia') }}">
                                                         <option value="">Choose</option>
@@ -368,13 +368,13 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Liên hệ
+                                Theo dõi thông tin
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nhận đăng ký tại <span class="text-danger">*</span>
+                                            <label for="">Nhận ứng tuyển tại <span class="text-danger">*</span>
                                             </label>
                                             <select name="receive_applications" id=""
                                                 class="form-control select2 {{ hasError($errors, 'receive_applications') }}">

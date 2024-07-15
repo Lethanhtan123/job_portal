@@ -48,9 +48,23 @@
 
                         </div>
                     </div>
+                    @if (!isCompanyProfileComplete())
+                        <div class="dash_alert_box p-30 mt-4 bg-danger rounded-4 d-flex flex-wrap">
+                            <span class="img">
+                                <img src="{{ asset(auth()->user()->image) }}" alt="Ảnh đại diện" title="Ảnh đại diện">
+                            </span>
+                            <div class="text">
+                                <h4>Hãy thiết lập hồ sơ của bạn</h4>
+                                <p>Bạn không thể truy cập tất cả các tính năng của trang web nếu bạn không thiết lập
+                                    tài khoản của mình trước tiên. Hãy đảm bảo rằng bạn đã hoàn tất thiết lập tài
+                                    khoản của mình.</p>
+                            </div>
+                            <a href="{{ route('company.profile') }}" class="btn btn-default rounded-1">Thiết
+                                lập hồ sơ</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
