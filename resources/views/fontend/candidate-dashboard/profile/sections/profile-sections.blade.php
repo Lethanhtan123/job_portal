@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-md text-capitalize color-text-mutted">Kĩ năng
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Kỹ năng
                     </label>
                     <select multiple="" name="skill[]" id=""
                         class=" {{ $errors->has('skill') ? 'is-invalid' : '' }} select-height  form-icons select-active">
@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group select-style">
-                    <label class="mb-10 font-md text-capitalize color-text-mutted">Thành thạo ngôn ngữ
+                    <label class="mb-10 font-md text-capitalize color-text-mutted">Khả năng ngôn ngữ
                     </label>
                     <select multiple="" name="language_you_know[]" id=""
                         class=" {{ $errors->has('language_you_know') ? 'is-invalid' : '' }}  select-height form-icons select-active">
@@ -106,7 +106,7 @@
         </div>
 
         <div class="box-button mt-15">
-            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
+            <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
         </div>
     </form>
 </div>

@@ -10,7 +10,7 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>Login</h4>
+                            <h4>Đăng nhập</h4>
                         </div>
 
                         <div class="card-body">
@@ -27,12 +27,12 @@
 
                                 <div class="form-group">
                                     <div class="d-block">
-                                        <label for="password" class="control-label">Password</label>
-                                        <div class="float-right">
+                                        <label for="password" class="control-label">Mật khẩu</label>
+                                        {{-- <div class="float-right">
                                             <a href="{{ route('admin.password.request') }}" class="text-small">
-                                                Forgot Password?
+                                                Quên mật khẩu
                                             </a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <input id="password" type="password" class="form-control" name="password"
                                         tabindex="2" required>
@@ -40,22 +40,22 @@
 
                                 </div>
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="remember" class="custom-control-input" tabindex="3"
                                             id="remember-me">
-                                        <label class="custom-control-label" for="remember-me">Remember Me</label>
+                                        <label class="custom-control-label" for="remember-me">Lưu đăng nhập</label>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                        Login
+                                        Đăng nhập
                                     </button>
                                 </div>
                             </form>
                             <div class="simple-footer">
-                                Copyright &copy; websolution {{ date('Y') }}
+                                Copyright &copy; DREAMJOB {{ date('Y') }}
                             </div>
 
                         </div>

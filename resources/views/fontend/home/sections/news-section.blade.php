@@ -13,11 +13,11 @@
                 @foreach ($blogs as $blog)
                 <div class="swiper-slide">
                   <div class="card-grid-3 hover-up wow animate__animated animate__fadeIn">
-                    <div class="text-center card-grid-3-image"><a href="{{ route('blogs.show', $blog->slug) }}">
-                        <figure><img alt="joblist" src="{{ asset($blog->image) }}"></figure>
+                    <div class="text-center pic-news card-grid-3-image"><a href="{{ route('blogs.show', $blog->slug) }}">
+                        <figure><img class="img-fit" alt="joblist" src="{{ asset($blog->image) }}"></figure>
                       </a></div>
                     <div class="card-block-info">
-                      <h5><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
+                      <h5><a class="new_name text-split"  href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
                       <p class="mt-10 color-text-paragraph font-sm">{{ Str::limit(strip_tags($blog->description), 100, '...') }}</p>
                       <div class="mt-20 card-2-bottom">
                         <div class="row">

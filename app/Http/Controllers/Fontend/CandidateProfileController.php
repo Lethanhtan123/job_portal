@@ -131,7 +131,7 @@ class CandidateProfileController extends Controller
             [
                 'country' => $request->country,
                 'city' => $request->city,
-                'disctrict' => $request->disctrict,
+                'district' => $request->district,
                 'address' => $request->address,
                 'phone_one' => $request->phone_one,
                 'phone_two' => $request->phone_two,

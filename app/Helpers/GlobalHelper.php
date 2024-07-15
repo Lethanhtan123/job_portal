@@ -3,8 +3,8 @@
 use App\Models\Candidate;
 use App\Models\Company;
 
-if(!function_exists('hasError')) {
-    function hasError($errors, string $name) : ?String
+if (!function_exists('hasError')) {
+    function hasError($errors, string $name): ?String
     {
         return $errors->has($name) ? 'is-invalid' : '';
     }
@@ -12,11 +12,11 @@ if(!function_exists('hasError')) {
 
 
 /** Set sidebar active */
-if(!function_exists('setSidebarActive')) {
-    function setSidebarActive(array $routes) : ?String
+if (!function_exists('setSidebarActive')) {
+    function setSidebarActive(array $routes): ?String
     {
-        foreach($routes as $route) {
-            if(request()->routeIs($route)) {
+        foreach ($routes as $route) {
+            if (request()->routeIs($route)) {
                 return 'active';
             }
         }
@@ -25,16 +25,15 @@ if(!function_exists('setSidebarActive')) {
 }
 
 /** check profile completion */
-if(!function_exists('isCompanyProfileComplete')) {
-    function isCompanyProfileComplete() : bool
+if (!function_exists('isCompanyProfileComplete')) {
+    function isCompanyProfileComplete(): bool
     {
         $requiredFields = ['logo', 'bio', 'name', 'establishment_date', 'phone', 'email', 'country'];
         $companyProfile = Company::where('user_id', auth()->user()->id)->first();
 
-        foreach($requiredFields as $field) {
-            if(empty($companyProfile->{$field})) {
+        foreach ($requiredFields as $field) {
+            if (empty($companyProfile->{$field})) {
                 return false;
-
             }
         }
 
@@ -42,10 +41,10 @@ if(!function_exists('isCompanyProfileComplete')) {
     }
 }
 /** format date */
-if(!function_exists('formatDate')) {
-    function formatDate(?string $date) : ?string
+if (!function_exists('formatDate')) {
+    function formatDate(?string $date): ?string
     {
-        if($date) {
+        if ($date) {
             return date('d/m/Y',  strtotime($date));
         }
 
@@ -56,23 +55,27 @@ if(!function_exists('formatDate')) {
 
 
 /** format location */
-if(!function_exists('formatLocation')) {
-    function formatLocation($country = null, $city = null,$district = null, $address = null) : string
+if (!function_exists('formatLocation')) {
+    function formatLocation($country = null, $city = null, $district = null, $address = null): string
     {
         $location = '';
 
-        if($address) {
+        if ($address) {
             $location .= $address;
         }
+
         if ($district) {
             $location .= $address ? ', ' . $district : $district;
         }
+
         if ($city) {
-            $location .= $district ? ', ' . $city : $city;
+            $location .= ($address || $district) ? ', ' . $city : $city;
         }
+
         if ($country) {
-            $location .= $city ? ', ' . $country : $country;
+            $location .= ($address || $district || $city) ? ', ' . $country : $country;
         }
+
 
         return $location;
     }

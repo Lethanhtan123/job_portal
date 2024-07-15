@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Ứng viên</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Ứng viên</li>
                         </ul>
                     </div>
@@ -35,16 +35,26 @@
 
                                         <div class="filter-block mb-30">
                                             <div class="form-group select-style">
-                                                <label class="f-18 mb-2">Kỹ năng</label>
+                                                <label class="mb-2 f-18">Kỹ năng</label>
                                                 <select name="skills[]" multiple
                                                     class="form-control form-icons select-active">
                                                     <option value="" > All</option>
                                                     @foreach ($skills as $skill)
                                                         <option  @selected(request()->has('skills') ? in_array($skill->slug, request()->skills) : false) value="{{ $skill->slug }}"> {{ $skill->name }}</option>
                                                     @endforeach
-
                                                 </select>
-
+                                            </div>
+                                        </div>
+                                        <div class="filter-block mb-30">
+                                            <div class="form-group select-style">
+                                                <label class="mb-2 f-18">Khả năng ngôn ngữ</label>
+                                                <select name="languages[]" multiple
+                                                    class="form-control form-icons select-active">
+                                                    <option value="" > All</option>
+                                                    @foreach ($languages as $lang)
+                                                        <option  @selected(request()->has('languages') ? in_array($lang->slug, request()->languages) : false) value="{{ $lang->slug }}"> {{ $lang->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +81,7 @@
                                     </div>
 
                                     <button class="mt-10 submit btn btn-default rounded-1 w-100"
-                                        type="submit">Search</button>
+                                        type="submit">Tìm kiếm</button>
                                 </form>
                             </div>
                         </div>
@@ -81,9 +91,9 @@
                             @forelse ($candidates as $item)
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card-grid-2 hover-up">
-                                        <div class="card-grid-2-image-left text-center">
-                                            <div class="card-grid-2-image-rd online text-center pe-0 mx-auto">
-                                                <a class="text-decoration-none text-center d-block"
+                                        <div class="text-center card-grid-2-image-left">
+                                            <div class="mx-auto text-center card-grid-2-image-rd online pe-0">
+                                                <a class="text-center text-decoration-none d-block"
                                                     href="{{ route('candidates.show', $item->slug) }}">
                                                     <figure>
                                                         <img alt="{{ $item->full_name }}" src="{{ asset($item->image) }}">
@@ -95,7 +105,7 @@
                                                     <h5 class="text-center">{{ $item->full_name }}</h5>
                                                 </a>
                                                 <span
-                                                    class="font-xs d-block text-center color-text-mutted">{{ $item->title }}</span>
+                                                    class="text-center font-xs d-block color-text-mutted">{{ $item->title }}</span>
                                                 <div class="pt-5 rate-reviews-small">
 
                                                 </div>
@@ -103,14 +113,15 @@
                                         </div>
                                         <div class="card-block-info">
                                             @if ($item->status === 'available')
-                                                <p class="font-md d-block text-center color-text-paragraph-2">Sẵn sàng nhận
-                                                    việc</p>
-                                            @endif
+                                            <p class="mt-1 text-center font-md d-block color-text-paragraph-2 color_main1">Sẵn sàng nhận việc</p>
+                                        @else
+                                            <p class="mt-1 text-center font-md d-block color-text-paragraph-2 color_main2">Không sẵn sàng nhận việc</p>
+                                        @endif
                                             <div class="card-2-bottom card-2-bottom-candidate mt-30">
                                                 <div class="text-start">
                                                     @foreach ($item->skills as $key => $canSkill)
                                                         @if ($loop->index <= 5)
-                                                            <a class="mb-10 mr-5 btn btn-tags-sm"
+                                                            <a class="mb-10 mr-5 btn btn-tags-sm tag-skill-can"
                                                                 href="">{{ $canSkill->skill->name }}</a>
                                                         @endif
                                                     @endforeach
@@ -136,6 +147,7 @@
                                     </div>
                                 </div>
                             @empty
+                                <h5 class="text-center">Tiếc quá không tìm thấy dữ liệu! 😥</h5>
                             @endforelse
                             <div class="col-12">
                                 <div class="paginations mt-35">

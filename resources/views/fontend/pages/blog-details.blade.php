@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Tin tức</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>{{ $blog->title }}</li>
                         </ul>
                     </div>
@@ -23,7 +23,7 @@
                     <!-- <div class="max-width-single"><a class="btn btn-tag" href="#">Job Tips</a> -->
                     <h2 class="mt-20 mb-30">{{ $blog->title }}</h2>
                     <div class="mx-auto post-meta text-muted d-flex">
-                        <div class="author d-flex mr-30"><span>{{ $blog->author->name }}</span></div>
+                        <div class="author d-flex mr-30"><span>{{ $blog->author?->name }}</span></div>
                         <div class="date"><span class="mr-20 font-xs color-text-paragraph-2 d-inline-block">
                                 {{ formatDate($blog->created_at) }}</span></div>
                     </div>

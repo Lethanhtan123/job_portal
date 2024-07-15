@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Tuyển dụng</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="{{ url('/') }}">Home</a></li>
+                            <li><a class="home-icon" href="{{ url('home') }}">Trang chủ</a></li>
                             <li>Tin tuyển dụng</li>
                         </ul>
                     </div>
@@ -25,7 +25,7 @@
 
                         <div class="row display-list">
                             @forelse ($jobs as $job)
-                                <div class="col-xl-12 col-md-4">
+                                <div class="col-12">
                                     <div class="card-grid-2 hover-up"><span class="flash"></span>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -102,7 +102,7 @@
                                                     @endphp
 
                                                     <div class="col-lg-5 col-5 text-end">
-                                                        <div class="btn bookmark-btn job-bookmark"
+                                                        <div class="border-0 btn bookmark-btn job-bookmark"
                                                             data-id="{{ $job->id }}">
 
                                                             @if (in_array($job->id, $bookmarkedIds))
@@ -227,7 +227,7 @@
                                             <div class="box-input-money">
                                                 <input class="input-disabled form-control min-value-money" type="text"
                                                     name="min-value-money" disabled="disabled" value="">
-                                                <input class="form-control min-value" type="hidden" name="min-value"
+                                                <input class="form-control min-value" type="hidden" name="min_salary"
                                                     value="">
                                             </div>
                                         </div>
@@ -344,30 +344,6 @@
         });
 
 
-        $('.job-bookmark').on('click', function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            $.ajax({
-                method: 'GET',
-                url: '{{ route("job.bookmark", ":id") }}'.replace(":id", id),
-                data: {},
-                success: function(response) {
-                     $('.job-bookmark').each(function() {
-                    let elementId = $(this).data('id');
 
-                    if(elementId == response.id) {
-                        $(this).find('i').addClass('fas fa-bookmark active-bookmark');
-                    }
-                })
-                    notyf.success(response.message);
-                },
-                error: function(xhr, status, error) {
-                    let errors = xhr.responseJSON.errors;
-                    $.each(errors, function(index, value) {
-                        notyf.error(value[index]);
-                    });
-                }
-            })
-        });
     </script>
 @endpush

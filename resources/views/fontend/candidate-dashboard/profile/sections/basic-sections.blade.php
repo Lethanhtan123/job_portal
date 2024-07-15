@@ -72,9 +72,9 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="mb-10 font-md text-capitalize color-text-mutted">Ngày sinh *</label>
-                            <input
-                                class="form-control datepicker  {{ $errors->has('birth_date') ? 'is-invalid' : '' }}"
-                                name="birth_date" type="text" value="{{ $candidate?->birth_date }}">
+                            <input id="inputdate"
+                                class="form-control  {{ $errors->has('birth_date') ? 'is-invalid' : '' }}"
+                                name="birth_date" type="date" value="{{ $candidate?->birth_date }}">
                             <x-input-error :messages="$errors->get('birth_date')" class="mt-2" />
                         </div>
                     </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="box-button mt-15">
-            <button class="font-bold btn btn-apply-big font-md">Lưu tất cả thay đổi</button>
+            <button class="font-bold btn btn-apply-big font-md">Lưu thay đổi</button>
         </div>
     </form>
 </div>

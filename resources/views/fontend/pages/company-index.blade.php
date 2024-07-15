@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Nhà Tuyển Dụng</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('companies.index') }}">Trang chủ</a></li>
                             <li>Nhà Tuyển Dụng</li>
                         </ul>
                     </div>
@@ -115,7 +115,7 @@
                                             @endif
                                         </select>
                                         <button class="mt-10 submit btn btn-default rounded-1 w-100"
-                                            type="submit">Search</button>
+                                            type="submit">Tìm kiếm</button>
                                     </div>
                                 </div>
                             </form>
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
 
-                                <button class="mt-10 submit btn btn-default rounded-1 w-100" type="submit">Search</button>
+                                <button class="mt-10 submit btn btn-default rounded-1 w-100" type="submit">Tìm kiếm</button>
                             </form>
 
                         </div>

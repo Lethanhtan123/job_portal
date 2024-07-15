@@ -1,29 +1,29 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="">Administrator</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="">Admin</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="dropdown {{ setSidebarActive(['admin.dashboard']) }}">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i
-                        class="fas fa-fire"></i><span>Bảng điều kiển</span></a>
+                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Bảng điều
+                        kiển</span></a>
 
             </li>
             <li class="menu-header">Starter</li>
-            <li class="dropdown
+            <li
+                class="dropdown
 
-            {{ setSidebarActive(
-                ['admin.industry-types.*',
+            {{ setSidebarActive([
+                'admin.industry-types.*',
                 'admin.organization-types.*',
                 'admin.languages.*',
                 'admin.professions.*',
                 'admin.skills.*',
-
-                ] ) }}
+            ]) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Thuộc tính</span></a>
@@ -45,12 +45,10 @@
                 </ul>
             </li>
 
-            <li class="dropdown
+            <li
+                class="dropdown
 
-            {{ setSidebarActive(
-                ['admin.country.*',
-                'admin.state.*',
-                'admin.city.*'] ) }}
+            {{ setSidebarActive(['admin.country.*', 'admin.state.*', 'admin.city.*']) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Vị trí, địa điểm</span></a>
@@ -60,7 +58,7 @@
                     {{-- <li><a class="{{ setSidebarActive(['admin.state.*']) }} nav-link"
                             href="{{ route('admin.state.index') }}">State</a></li> --}}
                     <li><a class="{{ setSidebarActive(['admin.city.*']) }} nav-link"
-                            href="{{ route('admin.city.index') }}">Thành phố</a></li>
+                            href="{{ route('admin.city.index') }}">Tỉnh/Thành phố</a></li>
 
                     <li><a class="{{ setSidebarActive(['admin.district.*']) }} nav-link"
                             href="{{ route('admin.district.index') }}">Quận/huyện</a></li>
@@ -68,24 +66,25 @@
             </li>
 
 
-            <li class="dropdown
+            <li
+                class="dropdown
 
-            {{ setSidebarActive(
-                ['admin.job-categories.*',
+            {{ setSidebarActive([
+                'admin.job-categories.*',
                 'admin.educations.*',
                 'admin.salary-types.*',
                 'admin.job-types.*',
                 'admin.job-roles.*',
                 'admin.job-experiences.*',
-                'admin.job-tags.*'
-                ] ) }}
+                'admin.job-tags.*',
+            ]) }}
             ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Thuộc tính tuyển dụng</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ setSidebarActive(['admin.job-categories.*']) }}">
                         <a href="{{ route('admin.job-categories.index') }}" class="">
-                            <span>Loại nghành</span></a>
+                            <span>Loại ngành</span></a>
                     </li>
                     <li class="{{ setSidebarActive(['admin.educations.*']) }}">
                         <a href="{{ route('admin.educations.index') }}" class="">
@@ -139,19 +138,19 @@
             <li class="{{ setSidebarActive(['admin.job-location.*']) }}">
                 <a class="" href="{{ route('admin.job-location.index') }}">
                     <i class="fas fa-columns"></i>
-                    Khu vực tuyển dụng</a>
+                    <span>Khu vực tuyển dụng</span> </a>
             </li>
 
             <li class="{{ setSidebarActive(['admin.footer.*']) }}">
                 <a class="" href="{{ route('admin.footer.index') }}">
                     <i class="fas fa-columns"></i>
-                    Footer</a>
+                    <span> Footer</span> </a>
             </li>
 
             <li class="{{ setSidebarActive(['admin.social-icon.*']) }}">
                 <a class="" href="{{ route('admin.social-icon.index') }}">
                     <i class="fas fa-columns"></i>
-                    Mạng xã hội</a>
+                    <span> Mạng xã hội</span> </a>
             </li>
 
         </ul>
@@ -169,13 +168,13 @@
         <ul class="mr-3 navbar-nav">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
             </li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
-                        class="fas fa-search"></i></a></li>
+            {{-- <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                        class="fas fa-search"></i></a></li> --}}
         </ul>
 
     </form>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+        {{-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                 class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Messages
@@ -225,28 +224,33 @@
                     <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
-        </li>
+        </li> --}}
+        <li class="mr-3" > <a class="d-block text-decoration-none home-re" target="_blank" href="{{ route('home') }}">
+                       Xem website <i class="fas fa-share"></i>
+                    </a> </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="assets/img/avatar/avatar-1.png" class="mr-1 rounded-circle">
-                <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                <div class="d-sm-none d-lg-inline-block">Admin</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
 
-                <a href="features-profile.html" class="dropdown-item has-icon">
+                {{-- <a href="features-profile.html" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
 
                 <a href="features-settings.html" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Settings
-                </a>
-                <div class="dropdown-divider"></div>
+                </a> --}}
+
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
 
-                    <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
-                    this.closest('form').submit();" class="dropdown-item has-icon text-danger">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                    <a href="{{ route('admin.logout') }}"
+                        onclick="event.preventDefault();
+                    this.closest('form').submit();"
+                        class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
                     </a>
                 </form>
             </div>

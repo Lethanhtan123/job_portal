@@ -6,10 +6,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
-                        <h2 class="mb-20">Reset Password</h2>
+                        <h2 class="mb-20">Đặt lại mật khẩu</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="{{ url('/') }}">Home</a></li>
-                            <li>Reset Password</li>
+                            <li><a class="home-icon" href="{{ url('/') }}">Trang chủ</a></li>
+                            <li>Đặt lại mật khẩu</li>
                         </ul>
                     </div>
                 </div>
@@ -26,9 +26,8 @@
                         <!-- Session Status -->
 
                         <div class="text-center">
-                            <h2 class="mt-10 mb-5 text-brand-1">Reset Password!</h2>
-                            <p class="font-sm text-muted mb-30">Reset your password? No problem. Just let us know your email
-                                address and we will email you a password reset link that will allow you to choose a new one.
+                            <h2 class="mt-10 mb-5 text-brand-1">Đặt lại mật khẩu!</h2>
+                            <p class="font-sm text-muted mb-30">Đặt lại mật khẩu của bạn? Không có vấn đề gì. Chỉ cần cho chúng tôi biết địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết đặt lại mật khẩu qua email để cho phép bạn chọn đặt lại mật khẩu mới.
                             </p>
                         </div>
                         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -40,21 +39,21 @@
                             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                             <div class="form-group">
-                                <label for="input_l">Email*</label>
+                                <label for="input_l">Email *</label>
                                 <input class="form-control " id="input-1" type="email" required="" name="email"
-                                    value="{{ old('email', $request->email) }}" placeholder="stevenjob@gmail.com" readonly>
+                                    value="{{ old('email', $request->email) }}" placeholder="Email" readonly>
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
 
                             <div class="form-group">
-                                <label for="input_l">Password*</label>
+                                <label for="input_l">Mật khẩu *</label>
                                 <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
                                     id="input-2" type="password" required="" name="password" placeholder="*****">
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
 
                             <div class="form-group">
-                                <label for="input_l">password_confirmation*</label>
+                                <label for="input_l">Xác nhận mật khẩu *</label>
                                 <input class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
                                     id="input-3" type="password" required="" name="password_confirmation"
                                     placeholder="*****">
@@ -63,7 +62,7 @@
 
                             <div class="form-group">
                                 <button class="btn btn-default hover-up w-100" type="submit"
-                                    name="continue">Continue</button>
+                                    name="continue">Tiếp tục</button>
                             </div>
                         </form>
                     </div>

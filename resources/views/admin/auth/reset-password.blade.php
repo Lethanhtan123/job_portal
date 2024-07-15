@@ -52,11 +52,11 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>Reset Password</h4>
+                            <h4>Cập nhật lại mật khẩu</h4>
                         </div>
 
                         <div class="card-body">
-                            <p class="text-muted">We will send a link to reset your password</p>
+                            <p class="text-muted">Chúng tôi sẽ gửi cho bạn 1 link để cập nhật lại mật khẩu.</p>
                             <!-- Password Reset Token -->
                             <input type="hidden" name="token" value="{{ $request->route('token') }}">
                             <form method="POST" action="{{ route('admin.password.store') }}">
@@ -69,7 +69,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">New Password</label>
+                                    <label for="password">Mật khẩu mới</label>
                                     <input id="password" type="password"
                                         class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
                                         data-indicator="pwindicator" name="password" tabindex="2" required>
@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password-confirm">Confirm Password</label>
+                                    <label for="password-confirm">Xác nhận mật khẩu</label>
                                     <input id="password-confirm" type="password" class="form-control {{ $errors->has('email')?'is-invalid':'' }}"
                                         name="password_confirmation" tabindex="2" required>
                                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
@@ -86,14 +86,13 @@
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                        Reset Password
-                                    </button>
+                                        Cập nhật lại mật khẩu
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="simple-footer">
-                        Copyright &copy; websolution {{ date('Y') }}
+                        Copyright &copy; T&T {{ date('Y') }}
                     </div>
                 </div>
             </div>

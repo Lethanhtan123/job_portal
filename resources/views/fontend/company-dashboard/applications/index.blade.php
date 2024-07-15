@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <h2 class="mb-20">Trang cá nhân</h2>
                         <ul class="breadcrumbs">
-                            <li><a class="home-icon" href="index.html">Home</a></li>
+                            <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                             <li>Thông tin Ứng viên</li>
                         </ul>
                     </div>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="p-0 card-body">
                             <div class="table-responsive">
-                                <table class=" align-middle table table-striped">
+                                <table class="table align-middle table-striped">
                                     <thead>
                                         <tr>
                                             <th style="">Chi tiết</th>
@@ -42,31 +42,31 @@
                                         @forelse ($applications as $item)
                                             <tr>
                                                 <td class="align-middle">
-                                                    <div class="d-flex align-items-center flex-wrap">
+                                                    <div class="flex-wrap d-flex align-items-center">
                                                         <a class="d-block">
                                                             <img style="width:50px;height:50px;object-fit:cover;"
                                                                 src="{{ asset($item->candidate?->image) }}"
-                                                                title="{{ $item->candidate->full_name }}"
-                                                                alt="{{ $item->candidate->full_name }}">
+                                                                title="{{ $item->candidate?->full_name }}"
+                                                                alt="{{ $item->candidate?->full_name }}">
                                                         </a>
                                                         <p class="mb-0 ms-2">
                                                             <a class="d-block font-md">
-                                                                {{ $item->candidate->full_name }}
+                                                                {{ $item->candidate?->full_name }}
                                                             </a>
-                                                            <span>{{ $item->candidate->profession->name }}</span>
+                                                            <span>{{ $item->candidate?->profession->name }}</span>
                                                         </p>
                                                     </div>
                                                 </td>
                                                 <td class="align-middle">
-                                                    <p class="mb-0">{{ $item->candidate->experience->name }}</p>
+                                                    <p class="mb-0">{{ $item->candidate?->experience->name }}</p>
                                                 </td>
                                                 <td class="align-middle">
-                                                  <a class="font-bold btn btn-apply font-md" href="{{ route('candidates.show',$item->candidate->slug) }}" >Xem hồ sơ</a>
+                                                  <a class="font-bold btn btn-apply font-md" href="{{ route('candidates.show2', ['slug' => $item->candidate?->slug, 'id' => $item->job_id]) }}" >Xem hồ sơ</a>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="12" class="text-center">No result found!</td>
+                                                <td colspan="12" class="text-center">Chưa có ứng viên đăng ký!</td>
                                             </tr>
                                         @endforelse
 

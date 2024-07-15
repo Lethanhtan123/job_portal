@@ -40,17 +40,17 @@ class FrontendJobPageController extends Controller
         }
 
         if($request->has('country') && $request->filled('country')) {
-            $query->where('country', $request->country);
+            $query->where('country_id', $request->country);
         }
 
         if($request->has('city') && $request->filled('city')) {
-            $query->where('city', $request->city);
+            $query->where('city_id', $request->city);
             $selectedCities = City::where('country_id', $request->country)->get();
             $selectedDistricts = District::where('city_id', $request->city)->get();
         }
 
         if($request->has('district') && $request->filled('district')) {
-            $query->where('district', $request->district);
+            $query->where('district_id', $request->district);
         }
 
         if($request->has('category') && $request->filled('category')) {
@@ -63,8 +63,11 @@ class FrontendJobPageController extends Controller
             }
         }
 
-        if($request->has('min_salary') && $request->filled('min_salary') && $request->min_salary > 0) {
-            $query->where('min_salary', '>=', $request->min_salary)->orWhere('max_salary', '>=', $request->min_salary);
+        if ($request->has('min_salary') && $request->filled('min_salary') && $request->min_salary > 0) {
+            $query->where(function($q) use ($request) {
+                $q->where('min_salary', '>=', $request->min_salary)
+                  ->orWhere('max_salary', '>=', $request->min_salary);
+            });
         }
 
         if($request->has('jobtype') && $request->filled('jobtype')) {
@@ -100,7 +103,18 @@ class FrontendJobPageController extends Controller
         $job = Job::where('slug', $slug)->firstOrFail();
         $openJobs = Job::where('company_id', $job->company->id)->where('status', 'active')->where('deadline', '>=', date('d-m-Y'))->count();
         $alreadyApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->exists();
-        return view('fontend.pages.job-show', compact('job','openJobs', 'alreadyApplied'));
+        //$jopApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->firstOrFail();
+
+        return view('fontend.pages.job-show', compact('job','openJobs', 'alreadyApplied',));
+    }
+
+    function show2(string $slug) : View {
+        $job = Job::where('slug', $slug)->firstOrFail();
+        $openJobs = Job::where('company_id', $job->company->id)->where('status', 'active')->where('deadline', '>=', date('d-m-Y'))->count();
+        $alreadyApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->exists();
+        $jopApplied = AppliedJob::where(['job_id' => $job->id, 'candidate_id' => auth()->user()?->id])->firstOrFail();
+
+        return view('fontend.pages.job-show2', compact('job','openJobs', 'alreadyApplied','jopApplied'));
     }
 
     function applyJob(string $id) {

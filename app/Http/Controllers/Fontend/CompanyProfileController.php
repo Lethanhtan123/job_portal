@@ -31,10 +31,13 @@ class CompanyProfileController extends Controller
         $companyInfo = Company::where('user_id', auth()->user()->id)->first();
         $IndustryType= IndustryType::all();
         $Country= Country::all();
-        $State= State::all();
-        $City= City::all();
-        $District = District::all();
-        return view('fontend.company-dashboard.profile.index', compact('companyInfo','Country','IndustryType','City','State','District'));
+        // $State= State::all();
+        // $City= City::all();
+        $cities = City::where('country_id', $companyInfo?->country)->get();
+        $districts = District::where('city_id', $companyInfo?->city)->get();
+
+        // $District = District::all();
+        return view('fontend.company-dashboard.profile.index', compact('companyInfo','Country','IndustryType', 'cities', 'districts'));
     }
 
     function updateComInfo(CompanyInfoUpdateRequest $request): RedirectResponse
@@ -75,17 +78,20 @@ class CompanyProfileController extends Controller
     }
 
     function updateFoundingInfo(CompanyFoundingInfoUpdateRequest $request) : RedirectResponse {
+       
         Company::updateOrCreate(
             ['user_id' => auth()->user()->id],
             [
-                'industry_type_id' => $request->industry_type,
+                'industry_type_id' => $request->industry_type_id,
                 'establishment_date' => $request->establishment_date,
                 'website' => $request->website,
                 'email' => $request->email,
                 'phone' => $request->phone,
+                'zalo' => $request->zalo,
                 'country' => $request->country,
                 // 'state' => $request->state,
                 'city' => $request->city,
+                'district' => $request->district,
                 'address' => $request->address,
                 'map_link' => $request->map_link
             ]

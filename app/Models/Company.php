@@ -21,9 +21,13 @@ class Company extends Model
         'bio',
         'website',
         'establishment_date',
+        'industry_type_id',
         'email',
         'phone',
+        'zalo',
         'country',
+        'city',
+        'district',
         'address',
         'map_link'
     ];

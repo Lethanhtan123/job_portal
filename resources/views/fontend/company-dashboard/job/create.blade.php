@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                     <h2 class="mb-20">Trang cá nhân</h2>
                     <ul class="breadcrumbs">
-                        <li><a class="home-icon" href="index.html">Home</a></li>
+                        <li><a class="home-icon" href="{{ route('home') }}">Trang chủ</a></li>
                         <li>Tin tuyển dụng</li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
-                                            <label for="">Loại nghành <span class="text-danger">*</span></label>
+                                            <label for="">Loại ngành <span class="text-danger">*</span></label>
                                             <select name="category" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'category') }}">
                                                 <option value="">Choose</option>
@@ -108,7 +108,7 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="form-group select-style">
-                                            <label for="">Thành phố</label>
+                                            <label for="">Tỉnh/Thành phố</label>
                                             <select name="city" id=""
                                                 class="form-control form-icons select-active city {{ hasError($errors, 'city') }}">
                                                 <option value="">Choose</option>
@@ -123,7 +123,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group select-style">
-                                            <label for="">Quận huyện </label>
+                                            <label for="">Quận/huyện </label>
                                             <select name="district" id=""
                                                 class="form-control form-icons select-active district {{ hasError($errors, 'district') }}">
                                                 <option value="">Choose</option>
@@ -375,7 +375,7 @@
                                                 class="form-control form-icons select-active {{ hasError($errors, 'receive_applications') }}">
                                                 {{-- <option value="app">On Our Platform</option> --}}
                                                 <option value="email">Liên hệ qua email</option>
-                                                <option value="custom_url">Line6 hệ qua link</option>
+                                                <option value="custom_url">Liên hệ qua link</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('receive_applications')"
                                                 class="mt-2" />

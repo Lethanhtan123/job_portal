@@ -14,7 +14,8 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
 
@@ -24,7 +25,9 @@
 
     <link href="{{ asset('fontend/assets/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontend/assets/css/style.css') }}" rel="stylesheet">
-    <title>joblist - Job Portal HTML Template </title>
+    <link href="{{ asset('fontend/assets/css/style_sub.css') }}" rel="stylesheet">
+
+    <title> DREAMJOB - Kết nối nhà tuyển dụng và Ứng viên </title>
 
 </head>
 
