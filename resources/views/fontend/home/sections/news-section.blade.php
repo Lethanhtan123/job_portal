@@ -17,7 +17,7 @@
                         <figure><img class="img-fit" alt="joblist" src="{{ asset($blog->image) }}"></figure>
                       </a></div>
                     <div class="card-block-info">
-                      <h5><a class="text-split"  href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
+                      <h5><a class="new_name text-split"  href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
                       <p class="mt-10 color-text-paragraph font-sm">{{ Str::limit(strip_tags($blog->description), 100, '...') }}</p>
                       <div class="mt-20 card-2-bottom">
                         <div class="row">

@@ -28,7 +28,7 @@
                         {{-- <div class="logo_company"><img src="{{ $company->logo }}" alt="joblist"></div> --}}
 
                         <h5 class="f-18">{{ $company->name }} <span
-                                class="ml-20 card-location font-regular">{{ $company->companyCountry->name }}</span></h5>
+                                class="ml-20 card-location font-regular">{{ $company->companyCity->name }}, {{ $company->companyCountry->name }}</span></h5>
                     </div>
 
                 </div>
@@ -96,10 +96,10 @@
                                             <div class="mb-15 mt-30">
                                                 @foreach ($job->skills as $jobSkill)
                                                     @if ($loop->index <= 6)
-                                                        <a class="mr-5 btn btn-grey-small job-skill"
+                                                        <a class="mb-2 me-2 btn btn-grey-small job-skill"
                                                             href="javascript:;">{{ $jobSkill->skill->name }}</a>
                                                     @elseif ($loop->index == 7)
-                                                        <a class="mr-5 btn btn-grey-small job-skill"
+                                                        <a class="mr-2 btn btn-grey-small job-skill"
                                                             href="javascript:;">More..</a>
                                                     @endif
                                                 @endforeach
@@ -132,7 +132,7 @@
                                                     @endphp
 
                                                     <div class="col-lg-5 col-5 text-end">
-                                                        <div class="btn border-0 bookmark-btn job-bookmark"
+                                                        <div class="border-0 btn bookmark-btn job-bookmark"
                                                             data-id="{{ $job->id }}">
 
                                                             @if (in_array($job->id, $bookmarkedIds))
@@ -170,7 +170,7 @@
                             <div class="avatar-sidebar">
                                 <figure><img alt="joblist" src="{{ asset($company->logo) }}"></figure>
                                 <div class="sidebar-info"><span class="sidebar-company">{{ $company->name }}</span><span
-                                        class="mt-1 card-location">  {{ formatLocation($company->companyCountry?->name) }}</span>
+                                        class="mt-1 card-location">  {{ formatLocation($company->companyCountry?->name,$company->companyCity?->name,$company->companyDistrict?->name) }}</span>
                                     {{-- @if ($openJobs > 0)
                                 <a class="link-underline mt-15"
                                     href="{{route('companies.show', $job->company->slug)}}">{{ $openJobs }} Tin tuyển
@@ -196,7 +196,7 @@
                             <div class="mt-30">
                                 <a class="btn btn-send-message" href="mailto:{{ $company->email }}">Send Email</a>
                                 @if ($company->zalo)
-                                    <a class="btn btn-chat-zalo  btn-send-message" target="_blank"
+                                    <a class="btn btn-chat-zalo btn-send-message" target="_blank"
                                         href="https://zalo.me/{{ $company->zalo }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100"
                                             height="100" viewBox="0 0 50 50">

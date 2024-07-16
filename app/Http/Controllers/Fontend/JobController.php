@@ -53,6 +53,8 @@ class JobController extends Controller
         return view('fontend.company-dashboard.applications.index', compact('applications', 'jobTitle'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -244,6 +246,13 @@ class JobController extends Controller
 
         JobSkills::where('job_id', $id)->delete();
         // insert skills
+        foreach($request->skills as $skill) {
+            $createSkill = new JobSkills();
+            $createSkill->job_id = $job->id;
+            $createSkill->skill_id = $skill;
+            $createSkill->save();
+        }
+        JobSkills::where('job_id', $id)->delete();
         foreach($request->skills as $skill) {
             $createSkill = new JobSkills();
             $createSkill->job_id = $job->id;

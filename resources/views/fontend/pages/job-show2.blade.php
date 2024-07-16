@@ -185,12 +185,25 @@
                     </div>
                     <div class="mt-2 author-single"><span>{{ $job->company->name }}</span></div>
 
+
+                    @auth
+                        @if (auth()->user()->role === 'candidate')
+                            @if ($jopApplied->company_reply)
+                                <div class="company_reply_box"
+                                    style="">Phản hồi từ doanh nghiệp: {{ $jopApplied->company_reply }}</div>
+                            @else
+                                <div class="company_reply_box">Chưa có phản hồi</div>
+                            @endif
+                        @endif
+                    @endauth
+
+
                     <div class="single-apply-jobs">
                         <div class="row align-items-center">
                             @php
                                 $bookmarkedIds = \App\Models\JobBookmark::where(
                                     'candidate_id',
-                                    auth()?->user()?->id,
+                                    auth()?->user()?->candidateProfile?->id,
                                 )
                                     ->pluck('job_id')
                                     ->toArray();

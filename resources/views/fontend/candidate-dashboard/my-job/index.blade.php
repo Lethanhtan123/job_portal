@@ -22,7 +22,7 @@
                 @include('fontend.candidate-dashboard.sidebar')
                 <div class="col-lg-9 col-md-8 col-sm-12 col-12 mb-50">
                     <div class="w-my-job">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="mb-3 d-flex justify-content-between align-items-center">
                             <h4>Công việc đã ứng tuyển</h4>
                         </div>
                         <table class="table table-striped mt-15">
@@ -80,19 +80,19 @@
                                         </td>
 
                                         <td class="align-middle">
-                                            <a href="{{ route('jobs.show', $item->job->slug) }}"
-                                                class="btn btn-sm rounded btn-primary text-white"><i
-                                                    class="fa fa-eye text-white"></i></a>
+                                            <a href="{{ route('jobs.show2', $item->job->slug) }}"
+                                                class="text-white rounded btn btn-sm btn-primary"><i
+                                                    class="text-white fa fa-eye"></i></a>
 
                                             <a href="{{ route('job-apply.destroy', $item->id) }}"
-                                                class=" btn btn-sm btn-danger rounded delete-item text-white"><i
-                                                    class="fa-solid fa-trash-can text-white"></i></a>
+                                                class="text-white rounded  btn btn-sm btn-danger delete-item"><i
+                                                    class="text-white fa-solid fa-trash-can"></i></a>
 
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class=" text-center">Không tìm thấy dữ liệu</td>
+                                        <td colspan="5" class="text-center ">Không tìm thấy dữ liệu</td>
                                     </tr>
                                 @endforelse
 

@@ -73,10 +73,12 @@
                                 <button class="btn btn-default hover-up w-100" type="submit" name="login">Đăng nhập</button>
                             </div>
 
-                         <div class="text-center text-muted">Bạn chưa có tài khoản?
+
+                            <div class="text-center text-muted">Bạn chưa có tài khoản?
 
                                 <a href="{{ route('register') }}">Đăng ký</a>
-                            </div> 
+                            </div>
+
                         </form>
                         {{-- <div class="mt-20 text-center">
               <div class="divider-text-center"><span>Or continue with</span></div>

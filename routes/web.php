@@ -53,6 +53,10 @@ Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->
 
 Route::get('candidates', [FrontendCandidatePageController::class, 'index'])->name('candidates.index');
 Route::get('candidates/{slug}', [FrontendCandidatePageController::class, 'show'])->name('candidates.show');
+Route::get('candidates/{slug}/{id}', [FrontendCandidatePageController::class, 'show2'])->name('candidates.show2');
+
+Route::post('candidates/reply-update/{candidate}', [FrontendCandidatePageController::class, 'ReplyUpdate'])->name('candidates.reply-update');
+
 
 //**Candidate Routes */
 Route::group(
@@ -106,6 +110,8 @@ Route::group(
         /** Job Routes */
         Route::get('applications/{id}', [JobController::class, 'applications'])->name('job.applications');
         Route::resource('jobs', JobController::class);
+
+
     }
 );
 
@@ -116,6 +122,7 @@ Route::get('jobs/{slug}', [FrontendJobPageController::class, 'show'])->name('job
 Route::post('apply-job/{id}', [FrontendJobPageController::class, 'applyJob'])->name('apply-job.store');
 Route::get('job-bookmark/{id}', [CandidateBookmarkController::class, 'save'])->name('job.bookmark');
 
+Route::get('jobs2/{slug}', [FrontendJobPageController::class, 'show2'])->name('jobs.show2');
 
 
 /** Blog Routes */

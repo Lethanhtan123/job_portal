@@ -115,7 +115,7 @@
                                             @endif
                                         </select>
                                         <button class="mt-10 submit btn btn-default rounded-1 w-100"
-                                            type="submit">Search</button>
+                                            type="submit">Tìm kiếm</button>
                                     </div>
                                 </div>
                             </form>
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
 
-                                <button class="mt-10 submit btn btn-default rounded-1 w-100" type="submit">Search</button>
+                                <button class="mt-10 submit btn btn-default rounded-1 w-100" type="submit">Tìm kiếm</button>
                             </form>
 
                         </div>

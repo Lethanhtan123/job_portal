@@ -63,15 +63,5 @@
     text: placeholderText
     });
 })
-
-
-function GoogleLanguageTranslatorInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'vi',
-        autoDisplay: false
-    }, 'google_language_translator');
-}
 </script>
-
-
 @endpush

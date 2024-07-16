@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AppliedJob;
 use App\Models\Candidate;
 use App\Models\Experience;
+use App\Models\Job;
 use App\Models\Language;
 use App\Models\Skill;
+use App\Services\Notify;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -56,4 +60,32 @@ class FrontendCandidatePageController extends Controller
 
         return view('fontend.pages.candidate-details', compact('candidate'));
     }
+
+
+    function show2(string $slug,string $id): View
+    {
+        $candidate = Candidate::where(['profile_complete' => 1, 'visibility' => 1, 'slug' => $slug])->firstOrFail();
+        $job = Job::where('id', $id)->firstOrFail();
+        $jobapply = AppliedJob::where('job_id', $id)->first();
+
+
+        return view('fontend.pages.candidate-details2', compact('candidate','job','jobapply'));
+    }
+
+    public function ReplyUpdate(Request $request,string $id)
+    {
+        $reply = AppliedJob::findOrFail($id);
+
+        $request->validate([
+        'name' => ['required', 'max:255'],
+        ]);
+        $reply->company_reply = $request->input('name');
+        $reply->save();
+
+        Notify::updatedNotifycation();
+
+        return redirect()->back();
+
+    }
+
 }

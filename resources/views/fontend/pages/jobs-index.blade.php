@@ -102,7 +102,7 @@
                                                     @endphp
 
                                                     <div class="col-lg-5 col-5 text-end">
-                                                        <div class="btn border-0 bookmark-btn job-bookmark"
+                                                        <div class="border-0 btn bookmark-btn job-bookmark"
                                                             data-id="{{ $job->id }}">
 
                                                             @if (in_array($job->id, $bookmarkedIds))
@@ -227,7 +227,7 @@
                                             <div class="box-input-money">
                                                 <input class="input-disabled form-control min-value-money" type="text"
                                                     name="min-value-money" disabled="disabled" value="">
-                                                <input class="form-control min-value" type="hidden" name="min-value"
+                                                <input class="form-control min-value" type="hidden" name="min_salary"
                                                     value="">
                                             </div>
                                         </div>

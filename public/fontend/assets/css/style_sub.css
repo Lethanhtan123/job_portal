@@ -1,0 +1,40 @@
+.text-split{
+    overflow:hidden;text-overflow:ellipsis;
+    white-space:normal;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:3;}
+
+.text-split {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-block-info h5 a.text-split {
+    -webkit-line-clamp: 3;
+}
+
+.new_name { min-height: 78px; }
+.text-split-2{
+    overflow:hidden;text-overflow:ellipsis;
+    white-space:normal;-webkit-box-orient:vertical;
+    display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-line-clamp: 2;
+}
+.post-list-small-item .text-split-2 h5 {
+    margin-bottom: 1px;
+}
+.color_main1{
+    color:#1ca774 ;
+}
+.color_main2{
+    color:red ;
+}
+.w-100{
+    width: 100% !important;
+}
+.text-center.card-location.w-100{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

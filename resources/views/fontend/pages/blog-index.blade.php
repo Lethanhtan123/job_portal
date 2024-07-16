@@ -25,11 +25,11 @@
             @foreach ($blogs as $blog)
             <div class="col-lg-6 mb-30">
               <div class="card-grid-3 hover-up">
-                <div class="text-center card-grid-3-image"><a href="blog-details.html">
+                <div class="text-center pic-news card-grid-3-image"><a href="blog-details.html">
                     <figure><img alt="joblist" src="{{ asset($blog->image) }}"></figure>
                   </a></div>
                 <div class="card-block-info">
-                  <h5><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
+                  <h5><a class="new_name text-split" href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
                   <p class="mt-10 color-text-paragraph font-sm">{{ Str::limit(strip_tags($blog->description), $limit = 150, $end = '...') }}</p>
                   <div class="mt-20 card-2-bottom">
                     <div class="row">
@@ -73,7 +73,7 @@
                   <figure class="thumb mr-15"><img class="img-fit" src="{{ asset($blog->image) }}" alt="joblist">
                   </figure>
                   <div class="content">
-                    <a href="{{ route('blogs.show', $blog->slug) }}"><h5>{{ $blog->title }}</h5></a>
+                    <a class=" text-split-2" href="{{ route('blogs.show', $blog->slug) }}"><h5>{{ $blog->title }}</h5></a>
                     <div class="post-meta text-muted d-flex align-items-center mb-15">
                       {{-- <div class="mr-20 author d-flex align-items-center"><span>{{ $blog->author->name }}</span></div> --}}
 

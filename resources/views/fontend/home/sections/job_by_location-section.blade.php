@@ -10,8 +10,9 @@
         <div class="row mt-50">
             @foreach ($locations as $location)
                 <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
-                    <div class="card-image-top hover-up"><a
-                            href="{{ route('companies.index', ['district' => $location->district_id]) }}">
+
+                    <div class="card-image-top hover-up"><a href="{{ route('companies.index', ['district' => $location->country_id]) }}">
+
                             <div class="image" style="background-image: url({{ asset($location->image) }});"><span
                                     class="lbl-hot">
                                     @if ($location->status === 'featured')

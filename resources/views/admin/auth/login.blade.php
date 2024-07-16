@@ -28,11 +28,11 @@
                                 <div class="form-group">
                                     <div class="d-block">
                                         <label for="password" class="control-label">Mật khẩu</label>
-                                        <div class="float-right">
+                                        {{-- <div class="float-right">
                                             <a href="{{ route('admin.password.request') }}" class="text-small">
                                                 Quên mật khẩu
                                             </a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <input id="password" type="password" class="form-control" name="password"
                                         tabindex="2" required>
