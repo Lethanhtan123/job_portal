@@ -15,7 +15,7 @@
                             @foreach ($pair as $category)
                             <a href="{{ route('jobs.index', ['category' => $category->slug]) }}">
                               <div class="item-logo">
-                                <div class="image-left">
+                                <div class="image-left bg-icon-cat-hot">
                                   <i class="{{ $category->icon }}"></i>
                                 </div>
                                 <div class="text-info-right">

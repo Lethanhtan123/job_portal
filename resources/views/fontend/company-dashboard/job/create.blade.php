@@ -58,8 +58,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Số lượng cần tuyển <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control {{ hasError($errors, 'vacancies') }}"
-                                                name="vacancies" value="{{ old('vacancies') }}">
+                                            <input type="number" class="form-control {{ hasError($errors, 'vacancies') }}"
+                                                name="vacancies" min="1" value="{{ old('vacancies') }}">
                                             <x-input-error :messages="$errors->get('vacancies')" class="mt-2" />
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Tỷ giá <span class="text-danger">*</span> </label>
+                                                    <label for="">Đơn vị <span class="text-danger"></span> </label>
                                                     <select name="tygia" id=""
                                                         class="form-control select2 {{ hasError($errors, 'tygia') }}">
                                                         <option value="">Choose</option>
@@ -266,7 +266,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label for="">Kinh nghiệm <span class="text-danger ">*</span></label>
-                                            <select name="experience" id=""
+                                            <select required name="experience" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'experience') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($experiences as $experience)
@@ -280,7 +280,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label for="">Chức vụ <span class="text-danger ">*</span></label>
-                                            <select name="job_role" id=""
+                                            <select required name="job_role" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'job_role') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($jobRoles as $role)
@@ -293,7 +293,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label for="">Trình độ học vấn</label> <span class="text-danger ">*</span></label>
-                                            <select name="education" id=""
+                                            <select required name="education" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'education') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($educations as $education)
@@ -307,7 +307,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group select-style">
                                             <label for="">Loại công việc <span class="text-danger ">*</span></label>
-                                            <select name="job_type" id=""
+                                            <select required name="job_type" id=""
                                                 class="form-control form-icons select-active {{ hasError($errors, 'job_type') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($jobTypes as $jobType)
@@ -322,7 +322,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
                                             <label for="">Tags <span class="text-danger ">*</span></label>
-                                            <select name="tags[]" id="" multiple
+                                            <select required name="tags[]" id="" multiple
                                                 class="form-control form-icons select-active {{ hasError($errors, 'tags') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($tags as $tag)
@@ -346,7 +346,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group select-style">
                                             <label for="">Kỹ năng <span class="text-danger ">*</span></label>
-                                            <select name="skills[]" id="" multiple
+                                            <select required name="skills[]" id="" multiple
                                                 class="form-control form-icons select-active {{ hasError($errors, 'skills') }}">
                                                 <option value="">Choose</option>
                                                 @foreach ($skills as $skill)

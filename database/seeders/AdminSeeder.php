@@ -18,5 +18,12 @@ class AdminSeeder extends Seeder
         $admin->email = 'superadmin123@gmail.com';
         $admin->password = bcrypt('superadmin');
         $admin->save();
+
+        // \DB::table('admins')->insert([
+        //     ['name'=>'sub admin','email'=>'subadmin@gmail.com','password'=>bcrypt('subadmin')]
+        // ]);
+
     }
+
+
 }

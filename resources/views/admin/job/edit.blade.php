@@ -2,7 +2,7 @@
 @section('contents')
 <section class="section">
     <div class="section-header">
-        <h1>Update Jop post</h1>
+        <h1>Cập nhật tin tuyển dụng</h1>
     </div>
     <div class="section-body">
         @foreach ($errors->all() as $error)
@@ -17,13 +17,13 @@
                         @method('PUT')
                         <div class="card">
                             <div class="card-header">
-                                Job Details
+                                Chi tiết tin tuyển dụng
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Title <span class="text-danger">*</span></label>
+                                            <label for="">Tiêu đề <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control {{ hasError($errors, 'title') }}"
                                                 name="title" value="{{ old('title',$job->title) }}">
                                             <x-input-error :messages="$errors->get('title')" class="mt-2" />
@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Select Company <span class="text-danger ">*</span></label>
+                                            <label for="">Chọn doanh nghiệp <span class="text-danger ">*</span></label>
                                             <select name="company" id=""
                                                 class="form-control select2 {{ hasError($errors, 'company') }}">
                                                 <option value="">Choose</option>
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Category <span class="text-danger">*</span></label>
+                                            <label for="">Loại ngành <span class="text-danger">*</span></label>
                                             <select name="category" id=""
                                                 class="form-control select2 {{ hasError($errors, 'category') }}">
                                                 <option value="">Choose</option>
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Total Vacancies <span class="text-danger">*</span></label>
+                                            <label for="">Số lượng cần tuyển <span class="text-danger">*</span></label>
                                             <input min="0"
                                                 onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                                                 type="number" class="form-control {{ hasError($errors, 'vacancies') }}"
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Deadline <span class="text-danger">*</span></label>
+                                            <label for="">Hạn cuối đăng ký <span class="text-danger">*</span></label>
                                             <input type="date" id="inputdate" data-date-end-date="0d"
                                                 class="form-control  {{ hasError($errors, 'deadline') }}"
                                                 name="deadline" value="{{ old('deadline',$job->deadline) }}">
@@ -82,13 +82,13 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Location
+                                Địa điểm, Vị trí
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Country </label>
+                                            <label for="">Quốc gia </label>
                                             <select name="country" id=""
                                                 class="form-control select2 country {{ hasError($errors, 'country') }}">
                                                 <option value="">Choose</option>
@@ -116,7 +116,7 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">City </label>
+                                            <label for="">Tỉnh/Thành phố </label>
                                             <select name="city" id=""
                                                 class="form-control select2 city {{ hasError($errors, 'city') }}">
                                                 <option value="">Choose</option>
@@ -131,7 +131,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">District </label>
+                                            <label for="">Quận/huyện </label>
                                             <select name="district" id=""
                                                 class="form-control select2 district {{ hasError($errors, 'district') }}">
                                                 <option value="">Choose</option>
@@ -146,7 +146,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Address</label>
+                                            <label for="">Địa chỉ</label>
                                             <input type="text" class="form-control {{ hasError($errors, 'address') }}"
                                                 name="address" value="{{ old('address',$job->address) }}">
                                             <x-input-error :messages="$errors->get('address')" class="mt-2" />
@@ -160,7 +160,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Salary Details
+                                Chi tiết lương
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -172,7 +172,7 @@
                                                         id="salary_range"
                                                         class="from-control {{ hasError($errors, 'salary_mode') }}"
                                                         name="salary_mode" checked value="range">
-                                                    <label for="salary_range">Salary Range </label>
+                                                    <label for="salary_range"> Lương (Khoảng) </label>
                                                     <x-input-error :messages="$errors->get('salary_mode')"
                                                         class="mt-2" />
                                                 </div>
@@ -183,7 +183,7 @@
                                                         id="custom_salary"
                                                         class="from-control {{ hasError($errors, 'salary_mode') }}"
                                                         name="salary_mode" value="custom">
-                                                    <label for="custom_salary">Custom Salary </label>
+                                                    <label for="custom_salary">Lương thỏa thuận </label>
                                                     <x-input-error :messages="$errors->get('salary_mode')"
                                                         class="mt-2" />
                                                 </div>
@@ -191,7 +191,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Tỷ giá <span class="text-danger">*</span> </label>
+                                                    <label for="">Đơn vị <span class="text-danger"></span> </label>
                                                     <select name="tygia" id=""
                                                         class="form-control select2 {{ hasError($errors, 'tygia') }}">
                                                         <option value="">Choose</option>
@@ -208,7 +208,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Maximum Salary <span class="text-danger">*</span></label>
+                                                    <label for="">Lương tối đa <span class="text-danger">*</span></label>
                                                     <input min="0"
                                                         onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                                                         type="number" class="max_salary form-control {{ hasError($errors, 'max_salary') }}"
@@ -218,7 +218,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Minimum Salary <span class="text-danger">*</span></label>
+                                                    <label for="">Lương tối thiểu <span class="text-danger">*</span></label>
                                                     <input min="0"
                                                         onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
                                                         type="number" class="min_salary form-control {{ hasError($errors, 'min_salary') }}"
@@ -231,7 +231,7 @@
 
                                     <div class="col-md-12 custom_salary_part d-none">
                                         <div class="form-group">
-                                            <label for="">Custom Salary <span class="text-danger">*</span></label>
+                                            <label for="">Lương thỏa thuận <span class="text-danger">*</span></label>
                                             <input type="text"
                                                 class="form-control {{ hasError($errors, 'custom_salary') }}"
                                                 name="custom_salary" value="{{ old('custom_salary',$job->custom_salary) }}">
@@ -241,7 +241,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Salary Type <span class="text-danger">*</span> </label>
+                                            <label for="">Loại trả lương <span class="text-danger">*</span> </label>
                                             <select name="salary_type" id=""
                                                 class="form-control select2 {{ hasError($errors, 'salary_type') }}">
                                                 <option value="">Choose</option>
@@ -256,7 +256,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Job Type <span class="text-danger ">*</span></label>
+                                            <label for="">Loại công việc <span class="text-danger ">*</span></label>
                                             <select name="job_type" id=""
                                                 class="form-control select2 {{ hasError($errors, 'job_type') }}">
                                                 <option value="">Choose</option>
@@ -276,14 +276,14 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Attributes
+                                Thuộc tính liên quan khác
                             </div>
                             <div class="card-body">
                                 <div class="row">
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Experience <span class="text-danger ">*</span></label>
+                                            <label for="">Kinh nghiệm <span class="text-danger ">*</span></label>
                                             <select name="experience" id=""
                                                 class="form-control select2 {{ hasError($errors, 'experience') }}">
                                                 <option value="">Choose</option>
@@ -297,7 +297,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Job Role <span class="text-danger ">*</span></label>
+                                            <label for="">Chức vụ <span class="text-danger ">*</span></label>
                                             <select name="job_role" id=""
                                                 class="form-control select2 {{ hasError($errors, 'job_role') }}">
                                                 <option value="">Choose</option>
@@ -310,7 +310,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Education <span class="text-danger ">*</span></label>
+                                            <label for="">Trình độ học vấn <span class="text-danger ">*</span></label>
                                             <select name="education" id=""
                                                 class="form-control select2 {{ hasError($errors, 'education') }}">
                                                 <option value="">Choose</option>
@@ -354,7 +354,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Skills <span class="text-danger ">*</span></label>
+                                            <label for="">Kỹ năng <span class="text-danger ">*</span></label>
                                             <select name="skills[]" id="" multiple
                                                 class="form-control select2 {{ hasError($errors, 'skills') }}">
                                                 <option value="">Choose</option>
@@ -377,7 +377,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Recive Applications
+                                Theo dõi thông tin
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -387,9 +387,9 @@
                                             </label>
                                             <select name="receive_applications" id=""
                                                 class="form-control select2 {{ hasError($errors, 'receive_applications') }}">
-                                                <option @selected($job->apply_on == 'app') value="app">On Our Platform</option>
-                                                <option @selected($job->apply_on == 'email') value="email">On your email address</option>
-                                                <option @selected($job->apply_on == 'custom_url') value="custom_url">On a custom link</option>
+
+                                                <option @selected($job->apply_on == 'email') value="email">Nhận đăng ký qua email</option>
+                                                <option @selected($job->apply_on == 'custom_url') value="custom_url">Nhận đăng ký qua link</option>
                                             </select>
                                             <x-input-error :messages="$errors->get('receive_applications')"
                                                 class="mt-2" />
@@ -402,7 +402,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Promote
+                                Hiển thị
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -413,7 +413,7 @@
                                                     <input @checked($job->featured) type="checkbox" id="featured"
                                                         class="from-control {{ hasError($errors, 'featured') }}"
                                                         name="featured" checked value="1">
-                                                    <label for="featured">Featured </label>
+                                                    <label for="featured">Nổi bật </label>
                                                     <x-input-error :messages="$errors->get('featured')" class="mt-2" />
                                                 </div>
                                             </div>
@@ -422,7 +422,7 @@
                                                     <input @checked($job->highlight) type="checkbox" id="highlight"
                                                         class="from-control {{ hasError($errors, 'highlight') }}"
                                                         name="highlight" value="1">
-                                                    <label for="highlight">Highlight </label>
+                                                    <label for="highlight">Phổ biến </label>
                                                     <x-input-error :messages="$errors->get('highlight')" class="mt-2" />
                                                 </div>
                                             </div>
@@ -435,13 +435,13 @@
 
                         <div class="card">
                             <div class="card-header">
-                                Description
+                                Mô tả
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Description <span class="text-danger">*</span> </label>
+                                            <label for="">Mô tả công việc <span class="text-danger">*</span> </label>
                                             <textarea id="editor" name="description">{!! $job->description !!}</textarea>
                                         </div>
                                     </div>
@@ -451,7 +451,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                     </form>
                 </div>

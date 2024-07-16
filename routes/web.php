@@ -101,6 +101,7 @@ Route::group(
 
         /** Company profile dashboard */
         Route::get('/profile', [CompanyProfileController::class, 'index'])->name('profile');
+        // Route::get('/profile', [CompanyProfileController::class, 'index'])->name('profile.index');
         Route::post('/profile/company-info', [CompanyProfileController::class, 'updateComInfo'])->name('profile.company-info');
         Route::post('/profile/founding-info', [CompanyProfileController::class, 'updateFoundingInfo'])->name('profile.founding-info');
         Route::post('/profile/account-info', [CompanyProfileController::class, 'updateAccountInfo'])->name('profile.account-info');

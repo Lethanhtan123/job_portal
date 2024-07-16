@@ -19,7 +19,8 @@
                                     <div class="text-info-right">
                                         <h4>{{ $company->name }}</h4>
                                     </div>
-                                    <div class="mt-5 text-info-bottom">
+           
+           <div class="mt-5 text-info-bottom">
 
 
                                         <span
@@ -28,6 +29,7 @@
                                             {{ $company->companyDistrict->name . ', '. $company->companyCountry?->name }}</span>
 
                                             <span class="mt-5 text-center font-xs color-text-mutted d-block">
+
                                                 <span class="{{ optional($company)->jobs_count > 0 ? 'have_job' : '' }}">
                                                     {{ $company->jobs_count }} Tin tuyển dụng</span></span></div>
                                 </div>

@@ -18,7 +18,11 @@
                         <li class="has-children"><a class="active" href="{{ route('home') }}">Trang chủ</a></li>
                         <li class="has-children"><a href="{{ route('jobs.index') }}">Tin Tuyển Dụng</a></li>
                         <li class="has-children"><a href="{{ route('companies.index') }}">Nhà Tuyển Dụng</a></li>
-                        <li class="has-children"><a href="{{ route('candidates.index') }}">Ứng Viên</a></li>
+                        @auth
+                            @if (auth()->user()->role === 'company')
+                                <li class="has-children"><a href="{{ route('candidates.index') }}">Ứng Viên</a></li>
+                            @endif
+                        @endauth
                         <li class="has-children"><a href="{{ route('blogs.index') }}">Tin tức</a></li>
                     </ul>
                 </nav>
@@ -101,7 +105,11 @@
                             <li class="has-children"><a class="active" href="{{ route('home') }}">Trang chủ</a></li>
                             <li class="has-children"><a href="{{ route('jobs.index') }}">Tin Tuyển Dụng</a></li>
                             <li class="has-children"><a href="{{ route('companies.index') }}">Nhà Tuyển Dụng</a></li>
-                            <li class="has-children"><a href="{{ route('candidates.index') }}">Ứng Viên</a></li>
+                             @auth
+                            @if (auth()->user()->role === 'company')
+                                <li class="has-children"><a href="{{ route('candidates.index') }}">Ứng Viên</a></li>
+                            @endif
+                        @endauth
                             <li class="has-children"><a href="{{ route('blogs.index') }}">Tin tức</a></li>
                             <li class="has-children">
                                 @guest

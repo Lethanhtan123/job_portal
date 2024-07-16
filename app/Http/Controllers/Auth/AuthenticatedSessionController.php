@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if ($request->user()->role === 'company') {
-            // Alert()::success('Login Successfull', 'Welcome to Job Portal');
+            // Alert()::success('Login Successfull', 'Welcome to DREAMJOB');
             return redirect()->intended(RouteServiceProvider::COMPANY_DASHBOARD);
         } elseif ($request->user()->role === 'candidate') {
             return redirect()->intended(RouteServiceProvider::CANDIDATE_DASHBOARD);

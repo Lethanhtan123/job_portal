@@ -59,8 +59,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Số lượng cần tuyển <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control {{ hasError($errors, 'vacancies') }}"
-                                                name="vacancies" value="{{ old('vacancies',$job->vacancies) }}">
+                                            <input type="number" class="form-control {{ hasError($errors, 'vacancies') }}"
+                                                name="vacancies" min="1" value="{{ old('vacancies',$job->vacancies) }}">
                                             <x-input-error :messages="$errors->get('vacancies')" class="mt-2" />
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Tỷ giá <span class="text-danger">*</span> </label>
+                                                    <label for="">Đơn vị <span class="text-danger"></span> </label>
                                                     <select name="tygia" id=""
                                                         class="form-control select2 {{ hasError($errors, 'tygia') }}">
                                                         <option value="">Choose</option>
