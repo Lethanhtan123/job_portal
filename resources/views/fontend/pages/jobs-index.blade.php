@@ -234,10 +234,10 @@
                                         <div class="box-number-money">
                                             <div class="row mt-30">
                                                 <div class="col-sm-6 col-6"><span class="font-sm color-brand-1">0
-                                                        Triệu/VNĐ</span>
+                                                        Triệu VNĐ</span>
                                                 </div>
                                                 <div class="col-sm-6 col-6 text-end"><span
-                                                        class="font-sm color-brand-1">500 Triệu/VNĐ</span></div>
+                                                        class="font-sm color-brand-1">500 Triệu VNĐ</span></div>
                                             </div>
                                         </div>
                                     </div>
