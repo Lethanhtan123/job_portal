@@ -1529,8 +1529,8 @@ label {
 }
 
 .box-swiper .swiper-container .item-logo:hover {
-    border: 1px solid #B4C0E0;
-    box-shadow: 0px 10px 20px -5px rgba(10, 42, 105, 0.06);
+    border: 1px solid transparent !important;
+    box-shadow: #20ad799c 0px 5px 15px !important;
 }
 
 .box-swiper .swiper-container .item-logo .image-left {
@@ -1934,16 +1934,19 @@ label {
 
 .card-grid-2.card-job-hot {
     min-height: 415px;
+    border: #0000002b solid 1px;
 }
-
+.minheight78{
+    min-height: 78px;
+}
 .futured_jobs .card-grid-2 .card-text-price {
     position: absolute;
-    top: 38px;
+    top: 48px;
     right: 25px;
     color: #1ca774;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .futured_jobs .card-grid-2 .card-text-price b {
@@ -1998,8 +2001,9 @@ label {
 
 
 .card-grid-2:hover {
-    border-color: #B4C0E0;
+    border-color: transparent;
     background-color: #ffffff;
+    box-shadow: #1ca774 0px 5px 15px;
 }
 
 .card-grid-2:hover .btn-apply-now {
@@ -7789,6 +7793,13 @@ ul li:last-child .card-list-4 {
     display: inline-block;
 }
 
+.futured_jobs .highlight {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+
 .content-page .display-list .card-grid-2 .card-block-info .card-text-price span {
     font-size: 12px;
     line-height: 12px;
@@ -8114,7 +8125,7 @@ ul li:last-child .card-list-4 {
 
 .nav-tabs li a {
     display: inline-block;
-    margin: 0px 10px;
+    margin: 6px;
     /* box-shadow: 0px 2px 4px -5px rgb(10, 42, 105); */
     align-items: center;
     padding: 0;
@@ -9407,7 +9418,8 @@ ul li:last-child .card-list-4 {
 
 .recruiters .box-swiper .swiper-container .item-logo {
     background: none;
-    border: 1px solid #1ca7741a !important;
+    border: #0000002b solid 1px !important;
+    min-height: 217px;
 }
 
 .recruiters .box-swiper .swiper-container .item-logo .image-left {
@@ -10207,4 +10219,8 @@ ul.timeline>li:before {
         max-width: 100%;
         width: 100%;
     }
+}
+
+.min_height_52{
+    min-height: 52px;
 }

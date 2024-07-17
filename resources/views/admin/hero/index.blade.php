@@ -19,9 +19,9 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-5">
-                                    <div class="form-group">
+                                   <div class="form-group">
                                         <x-image-preview :height="200" :width="300" :source="$hero?->image" />
-<div class="mt-2"></div>
+                                        <div class="mt-2"></div>
                                         <label for="">Ảnh đại diện</label>
                                         <input type="file" class="form-control {{ hasError($errors, 'image') }}" name="image">
                                         <x-input-error :messages="$errors->get('image')" class="mt-2" />

@@ -19,6 +19,11 @@ class Notify {
         return notyf()->addSuccess('Xóa thành công', 'Thành công!');
 
      }
+
+     static function replyNotifycation(){
+        return notyf()->addSuccess('Gửi phản hồi thành công');
+
+     }
 }
 
 ?>

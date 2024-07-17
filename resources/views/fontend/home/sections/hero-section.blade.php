@@ -37,7 +37,7 @@
                                     </select>
                                     <input id="keyword" class="mr-10 form-input input-keysearch" type="text"
                                         name="search" placeholder="Your keyword... ">
-                                    <button class="btn btn-default btn-find font-sm">Search</button>
+                                    <button class="btn btn-default btn-find font-sm">Tìm kiếm</button>
                                 </form>
 
                                 {{-- <div>

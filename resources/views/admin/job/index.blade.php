@@ -84,15 +84,15 @@
                                             <td>{{ formatDate($job->deadline) }}</td>
                                             <td>
                                                 @if ($job->status === 'pending')
-                                                    <span class="badge bg-warning text-dark">Pending</span>
+                                                    <span class="badge bg-warning text-dark">Chờ duyệt</span>
                                                 @elseif($job->deadline > date('Y-m-d'))
-                                                    <span class="badge bg-primary text-dark">Active</span>
+                                                    <span class="badge bg-primary text-dark">Đang tuyển</span>
                                                 @else
-                                                    <span class="badge bg-danger text-dark">Expired</span>
+                                                    <span class="badge bg-danger text-dark">Ngừng tuyển</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                <div class="form-group mb-0">
+                                                <div class="mb-0 form-group">
                                                     <label class="mt-2 custom-switch">
                                                         <input @checked($job->status === 'active') type="checkbox"
                                                             data-id="{{ $job->id }}" name="custom-switch-checkbox"
@@ -111,7 +111,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3" class="text-center">No result found!</td>
+                                            <td colspan="3" class="text-center">Không tìm thấy kết quả!</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

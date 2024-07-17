@@ -11,20 +11,20 @@
             @foreach ($locations as $location)
                 <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
 
-                    <div class="card-image-top hover-up"><a href="{{ route('companies.index', ['district' => $location->country_id]) }}">
+                    <div class="card-image-top hover-up"><a href="{{ route('companies.index', ['country' => $location->country_id, 'district' => $location->district_id]) }}">
 
                             <div class="image" style="background-image: url({{ asset($location->image) }});"><span
                                     class="lbl-hot">
                                     @if ($location->status === 'featured')
                                         Phổ biến
                                     @else
-                                        {{ $location->status }}
+                                        HOT
                                     @endif
                                 </span></div>
                         </a>
                         <div class="informations">
                             <a href="{{ route('companies.index', ['district' => $location->district_id]) }}">
-                                <h5>{{ $location->district?->name }}, {{ $location->city?->name }},
+                                <h5 class="min_height_52">{{ $location->district?->name }}, {{ $location->city?->name }},
                                     {{ $location->country?->name }}</h5>
                             </a>
                              {{-- <div class="{{ $location->country_id }}">

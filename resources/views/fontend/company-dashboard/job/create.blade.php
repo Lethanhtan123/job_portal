@@ -185,7 +185,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 unit_group">
                                                 <div class="form-group">
                                                     <label for="">Đơn vị <span class="text-danger"></span> </label>
                                                     <select name="tygia" id=""
@@ -472,9 +472,11 @@
     function salaryModeChange(mode) {
         if(mode == 'salary_range') {
             $('.salary_range_part').removeClass('d-none')
+            $('.unit_group').removeClass('d-none')
             $('.custom_salary_part').addClass('d-none')
         }else if (mode == 'custom_salary') {
             $('.salary_range_part').addClass('d-none')
+            $('.unit_group').addClass('d-none')
             $('.custom_salary_part').removeClass('d-none')
         }
     };
