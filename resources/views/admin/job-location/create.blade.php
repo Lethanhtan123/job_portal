@@ -34,7 +34,7 @@
                             <div class="form-group col-md-6">
                                 <label for="">Quốc gia</label>
                                 <select name="country" id=""
-                                    class="form-control select2 {{ hasError($errors, 'country') }}">
+                                    class="form-control country select2 {{ hasError($errors, 'country') }}">
                                     <option value="">Chọn</option>
                                     @foreach ($countries as $country)
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -46,7 +46,7 @@
 
                             <div class="form-group col-md-6">
                                 <label for="">Thành phố</label>
-                                <select name="city" id="" class="form-control select2 {{ hasError($errors, 'city') }}">
+                                <select name="city" id="" class="form-control select2 city {{ hasError($errors, 'city') }}">
                                     <option value="">Chọn</option>
                                     @foreach ($cities as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -59,7 +59,7 @@
                             <div class="form-group col-md-6">
                                 <label for="">Quận,huyện</label>
                                 <select name="district" id=""
-                                    class="form-control select2 {{ hasError($errors, 'district') }}">
+                                    class="form-control select2 district {{ hasError($errors, 'district') }}">
                                     <option value="">Chọn</option>
                                     @foreach ($districts as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>

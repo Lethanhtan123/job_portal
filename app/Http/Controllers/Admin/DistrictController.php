@@ -43,7 +43,7 @@ class DistrictController extends Controller
     public function store(Request $request):RedirectResponse
     {
         $request->validate([
-            'district' => ['required', 'string', 'max:255']
+            'district' => ['required', 'string', 'max:255','unique:districts,name']
         ]);
 
         $district = new District();

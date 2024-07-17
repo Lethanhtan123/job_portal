@@ -14,7 +14,7 @@
                         <div class="card-header-form">
                             <form action="{{ route('admin.skills.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="search">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm" name="search">
                                     <div class="input-group-btn">
                                         <button type="submit" class="btn btn-primary"><i
                                                 class="fas fa-search"></i></button>

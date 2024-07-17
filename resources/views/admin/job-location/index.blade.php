@@ -29,15 +29,18 @@
                                 <tr class="mb-2">
                                     <th>Ảnh</th>
                                     <th>Quốc gia</th>
+                                    <th>Thành Phố</th>
                                     <th>Quận huyện</th>
                                     <th>Trạng thái</th>
                                     <th style="width: 15%">Chức năng</th>
                                 </tr>
                             <tbody>
                                 @forelse ($locations as $location)
-                                    <tr>
-                                        <td><img src="{{ asset($location->image) }}" style="height: 60px; width=100px; object-fit:cover" alt=""></td>
+
+                                    <tr class="">
+                                        <td><img src="{{ asset($location->image) }}"  class="job_location_img"></td>
                                         <td>{{ $location->country->name }}</td>
+                                        <td>{{ $location->city->name }}</td>
                                         <td>{{ $location->district?->name }}</td>
                                         <td>
                                             <span class="badge badge-primary">{{ $location->status === 'hot' ? 'HOT' : 'Nổi bật' }}</span>

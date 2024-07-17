@@ -68,7 +68,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
+                                            {{-- <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                                 <div class="pl-15 mb-15 mt-30">
                                                     @if ($job->featured)
                                                         <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Nổi
@@ -79,7 +79,7 @@
                                                             biến</a>
                                                     @endif
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="card-block-info">
                                             <h4><a href="{{ route('jobs.show', $job->slug) }}">{{ $job->title }}</a>

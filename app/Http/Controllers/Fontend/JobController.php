@@ -124,10 +124,10 @@ class JobController extends Controller
         $job->education_id = $request->education;
         $job->job_type_id = $request->job_type;
         $job->job_type_id = $request->job_type;
-        $job->featured = $request->featured;
-        $job->highlight = $request->highlight;
+        $job->featured = '0';
+        $job->highlight = '0';
         $job->description = $request->description;
-        $job->status = 'active';
+        $job->status = 'pending';
         $job->save();
 
          // insert tags

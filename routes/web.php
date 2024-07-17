@@ -51,6 +51,8 @@ Route::get('get-districts/{city_id}', [LocationController::class, 'getDistrictsO
 Route::get('companies', [FrontendCompanyPageController::class, 'index'])->name('companies.index');
 Route::get('companies/{slug}', [FrontendCompanyPageController::class, 'show'])->name('companies.show');
 
+
+
 Route::get('candidates', [FrontendCandidatePageController::class, 'index'])->name('candidates.index');
 Route::get('candidates/{slug}', [FrontendCandidatePageController::class, 'show'])->name('candidates.show');
 Route::get('candidates/{slug}/{id}', [FrontendCandidatePageController::class, 'show2'])->name('candidates.show2');

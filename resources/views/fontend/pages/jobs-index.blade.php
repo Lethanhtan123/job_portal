@@ -41,7 +41,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
+                                            {{-- <div class="col-lg-6 text-start text-md-end pr-60 col-md-6 col-sm-12">
                                                 <div class="pl-15 mb-15 mt-30">
                                                     @if ($job->featured)
                                                         <a class="mr-5 btn btn-grey-small featured" href="javascript:;">Nổi
@@ -52,7 +52,7 @@
                                                             biến</a>
                                                     @endif
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="card-block-info">
                                             <h4><a href="{{ route('jobs.show', $job->slug) }}">{{ $job->title }}</a></h4>
@@ -237,7 +237,7 @@
                                                         Triệu/VNĐ</span>
                                                 </div>
                                                 <div class="col-sm-6 col-6 text-end"><span
-                                                        class="font-sm color-brand-1">500 Triệu/VNĐ</span></div>
+                                                        class="font-sm color-brand-1">100 Triệu/VNĐ</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -261,7 +261,7 @@
                                     </div>
                                 </div>
                                 <button class="mt-10 submit btn btn-default rounded-1 w-100"
-                                    type="submit">Search</button>
+                                    type="submit">Tìm kiếm</button>
 
                             </form>
 
