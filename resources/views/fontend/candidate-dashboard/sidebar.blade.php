@@ -3,7 +3,7 @@
         <ul class="nav" role="tablist">
             <li><a class="btn btn-border mb-20 active" href="{{ route('candidate.dashboard') }}">Bảng điều khiển</a>
             </li>
-            <li><a class="btn btn-border mb-20" href="{{ route('candidate.profile.index') }}">Hồ sơ</a></li>
+            <li><a class="btn btn-border mb-20 " href="{{ route('candidate.profile.index') }}">Hồ sơ</a></li>
             <li><a class="btn btn-border mb-20" href="{{ route('candidate.applied-jobs.index') }}">Công việc đã ứng tuyển</a></li>
             <li><a class="btn btn-border mb-20" href="{{ route('candidate.bookmarked-jobs.index') }}">Tin đã lưu</a></li>
 

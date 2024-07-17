@@ -43,7 +43,7 @@ class CandidateBookmarkController extends Controller
     {
         try {
             $bookmark = JobBookmark::findOrFail($id);
-            if (auth()->user()->candidateProfile->id !== $bookmark->candidate_id) {
+            if (auth()->user()->id !== $bookmark->candidate_id) {
                 abort(404);
             }
             $bookmark->delete();
