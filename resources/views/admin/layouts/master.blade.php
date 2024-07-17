@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/components.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.min.css') }}">
 
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- /END GA -->
 </head>
@@ -68,6 +69,8 @@
     <script src="{{ asset('admin/assets/modules/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ asset('fontend/assets/js/plugins/Font-Awesome.js') }}"></script>
 
     <!-- Template JS File -->
     <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
@@ -132,5 +135,6 @@
             });
         });
     </script>
+
 </body>
 </html>

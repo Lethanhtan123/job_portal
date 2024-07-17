@@ -2829,3 +2829,10 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 .ck-editor__editable_inline{
     min-height: 300px !important;
 }
+
+
+.job_location_img
+{
+    height: 60px;
+    width: 100px;
+}

@@ -28,14 +28,15 @@
                                         <div class="image-box"><a href="{{ route('companies.show', $item->slug) }}"><img
                                                     src="{{ asset($item->logo) }}" alt="joblist"></a></div>
                                         <div class="mt-10 info-text">
-                                            <h5 class="mb-1 font-bold"><a
+                                            <h5 class="mb-1 font-bold min_height_52"><a
                                                     href="{{ route('companies.show', $item->slug) }}">{{ $item->name }}</a>
                                             </h5>
 
                                             <span
-                                                class="card-location">{{ formatLocation(
+                                                class="card-location ">{{ formatLocation(
                                                     $item->companyCountry->name,
-                                                    // $item->companyState->name
+                                                    $item->companyCity->name,
+                                                    $item->companyDistrict->name
                                                 ) }}</span>
                                             <div class="mt-30"><a class="btn btn-grey-big"
                                                     href="{{ route('companies.show', $item->slug) }}"><span>{{ $item->jobs_count }}</span><span>
@@ -123,7 +124,7 @@
 
                             <form action="">
                                 <div class="mb-20 filter-block">
-                                    <h5 class="medium-heading mb-15">Industry</h5>
+                                    <h5 class="medium-heading mb-15">Loại doanh ngiệp </h5>
                                     <div class="form-group">
                                         <ul class="list-checkbox">
                                             <li class="active">

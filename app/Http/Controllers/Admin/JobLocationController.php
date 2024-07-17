@@ -32,7 +32,7 @@ class JobLocationController extends Controller
     {
         $query= JobLocation::query();
         $this->search($query,['name','country','district','city','status']);
-        $locations = JobLocation::paginate(20);
+        $locations = JobLocation::orderBy('id', 'DESC')->paginate(20);
         return view('admin.job-location.index', compact('locations'));
     }
 

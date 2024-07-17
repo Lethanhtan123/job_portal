@@ -104,10 +104,10 @@
                         <a href="{{ route('admin.job-roles.index') }}" class="">
                             <span>Chức vụ</span></a>
                     </li>
-                    <li class="{{ setSidebarActive(['admin.job-experiences.*']) }}">
+                    {{-- <li class="{{ setSidebarActive(['admin.job-experiences.*']) }}">
                         <a href="{{ route('admin.job-experiences.index') }}" class="">
                             <span>Kinh nghiệm công việc</span></a>
-                    </li>
+                    </li> --}}
 
                     <li class="{{ setSidebarActive(['admin.job-tags.*']) }}">
                         <a href="{{ route('admin.job-tags.index') }}" class="">
@@ -230,17 +230,17 @@
                     </a> </li>
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="assets/img/avatar/avatar-1.png" class="mr-1 rounded-circle">
+                <img alt="image" src="{{ asset(auth()->guard('admin')->user()->image) }}" class="mr-1 rounded-circle">
                 <div class="d-sm-none d-lg-inline-block">Admin</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
 
-                {{-- <a href="features-profile.html" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
+                <a href="{{ route('admin.profile.index') }}" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> Trang cá nhân
                 </a>
 
-                <a href="features-settings.html" class="dropdown-item has-icon">
-                    <i class="fas fa-cog"></i> Settings
+                {{-- <a href="{{ route('admin.site-settings.index') }}" class="dropdown-item has-icon">
+                    <i class="fas fa-cog"></i> Cài đặt
                 </a> --}}
 
                 <form method="POST" action="{{ route('admin.logout') }}">

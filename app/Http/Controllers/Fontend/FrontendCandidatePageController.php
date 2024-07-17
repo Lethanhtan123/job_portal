@@ -31,6 +31,8 @@ class FrontendCandidatePageController extends Controller
 
         if ($request->has('skills') && $request->filled('skills')) {
             $ids = Skill::whereIn('slug', $request->skills)->pluck('id')->toArray();
+
+
             $query->whereHas('skills', function ($subquery) use ($ids) {
                 $subquery->whereIn('skill_id', $ids);
             });
@@ -82,7 +84,7 @@ class FrontendCandidatePageController extends Controller
         $reply->company_reply = $request->input('name');
         $reply->save();
 
-        Notify::updatedNotifycation();
+        Notify::replyNotifycation();
 
         return redirect()->back();
 
